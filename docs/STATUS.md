@@ -9,7 +9,8 @@ _Nothing. The next agent may start._
 
 ## Next
 
-1. Clarify learning and recovery rules in the PRD: lesson/level completion, Leitner scheduling, learning-day and time counting, backup restore and forgotten PIN handling.
+1. Clarify learning and recovery rules in the PRD, one question at a time: lesson/level completion, Leitner scheduling, learning-day and time counting, backup restore and forgotten PIN handling.
+   - **Pending question to the product owner — lesson completion.** Options: A) one finished session; B) every word in the lesson answered correctly at least once (old words keep coming back in reviews); C) 80% of words in Leitner box 4+. Claude recommended B (fast sense of progress, real recognition, mastery continues through reviews). No answer yet.
 2. Approve the PRD (gate "PRD approved").
 3. Choose the tech stack and fill in "Stack and structure" in `AGENTS.md`.
 
@@ -23,6 +24,8 @@ _Nothing. The next agent may start._
 ## Handoff log
 
 Newest first. One line per finished task: date · agent · what was done · anything the next agent must know.
+
+- 2026-10-31 · Claude · Added collaboration rules and merge rule to `AGENTS.md` · Work continues in a new Claude Code session; start from the pending lesson-completion question above.
 
 - 2026-10-31 · Claude · Revised D-18 (open emoji set instead of own SVG), D-19 (per-profile theme), confirmed D-20; added F-33 (About/attribution) · Only record decisions the product owner explicitly chose.
 
