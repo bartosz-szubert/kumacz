@@ -9,6 +9,17 @@ This file is read by every agent (Codex, Claude Code). Keep it short: every line
 2. Read only the PRD sections the task needs (`docs/PRD.md`). Refer to requirements by ID: `F-xx` functional, `N-xx` non-functional, `D-xx` decisions.
 3. Do not scan the whole repository unless the task requires it.
 
+## Working with the product owner (Bartek)
+
+- Talk to him in Polish. Ask one question at a time and wait for the answer.
+- Be concise. Put anything he should copy (names, commands, texts) in a separate code block. When guiding him through steps, number them and ask at the end whether it worked.
+- Never make product decisions for him. Present 2–3 options with pros and cons, give a recommendation with reasons, ask which he chooses.
+- "OK" to a list of next steps is not approval of the decisions inside it; discuss each decision first.
+- Record a decision in the PRD (new `D-xx`) only after he explicitly picks an option.
+- Say plainly when an idea has a weak point (cost, risk, scope, copyright) and propose a better option. Keep MVP scope; suggest new ideas for later versions.
+- Before starting, say in 1–2 sentences what you will do; for PRD or scope changes wait for his "ok".
+- Do not summarise files he can open himself.
+
 ## Workflow (agents work in turns, never in parallel)
 
 - If `docs/STATUS.md` shows a task "In progress" by another agent, stop and ask the product owner.
