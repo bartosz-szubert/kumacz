@@ -4,7 +4,7 @@
 
 | | |
 |---|---|
-| Document version | 0.4 (draft for approval) |
+| Document version | 0.5 (draft for approval) |
 | Date | 2026-10-31 |
 | Product owner | Bartek |
 | Status | For review before development starts ("PRD approved" gate) |
@@ -118,14 +118,15 @@ First module: **English at beginner level**. Further modules (e.g. German, maths
 
 ### 6.5 Levels
 
-- **F-15** Lessons are grouped into levels (section 7). The next level unlocks when the previous one is completed.
+- **F-15** Lessons are grouped into levels (section 7). The next level unlocks when the previous one is completed. A level is completed when all its lessons are completed (F-34) or the skip-level test is passed (F-16) (D-23).
+- **F-34** A lesson is completed when every word in it has been answered correctly at least once. Only checked exercises count (F-09, F-10, F-11); flashcard self-assessment "I know it" (F-08) does not. Its words keep coming back in Leitner reviews afterwards (D-21, D-22).
 - **F-16** "Skip level" test: a short quiz (e.g. 10 questions, min. 80%) lets the child complete a level right away.
 - **F-17** The parent can set a profile's starting level.
 
 ### 6.6 Gamification
 
 - **F-18** Stars: for each completed exercise, a bonus for completing a session, a bonus for reaching the weekly goal.
-- **F-19** Sticker album: after each session the child reveals a sticker related to the lesson topic. A full album page equals a completed level.
+- **F-19** Sticker album: one page per level. After each session the child reveals a sticker related to the lesson topic and it goes on the level's page. Completing the level adds a special large level sticker that closes the page; the page layout must fit a varying number of stickers (D-24).
 - **F-20** Weekly goal: by default 4 learning days out of 7. Days of the week are visualised, there is no "lost streak".
 - **F-21** Short animations and praise messages (in Polish, e.g. "Brawo, prawdziwy z Ciebie Kumacz!" — "Well done, you're a real Kumacz!").
 
@@ -261,3 +262,7 @@ Test period: **3 weeks** of regular use by both children.
 | D-18 | MVP graphics: open-licence emoji set (SVG) bundled with the app, with attribution; own SVG stickers and avatars considered for v1.1 (revised after review) |
 | D-19 | Theme stored per profile; the child switches it on their profile screen without a PIN (not during exercises), the parent in the parent panel (revised after review) |
 | D-20 | British English for learning content, matching school textbooks; prefer an en-GB speech synthesis voice (confirmed after review) |
+| D-21 | Lesson completion: every word in the lesson answered correctly at least once; mastery continues through Leitner reviews (F-34) |
+| D-22 | Only checked exercises (listen and tap, picture → word, context questions) count towards lesson completion; flashcard "I know it" does not (F-34) |
+| D-23 | Level completion: all lessons of the level completed (or skip-level test passed, F-16); no extra end-of-level test (F-15) |
+| D-24 | Sticker album: a sticker after every session; level completion adds a special large sticker that closes the level's page (F-19) |
