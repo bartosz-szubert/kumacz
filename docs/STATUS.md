@@ -9,15 +9,15 @@ _Nothing. The next agent may start._
 
 ## Next
 
-1. Clarify learning and recovery rules in the PRD, one question at a time: level completion, Leitner scheduling, learning-day and time counting, backup restore and forgotten PIN handling.
-   - Next question: align the sticker album (F-19) with D-23 — stickers are per session, but "full album page = completed level" can happen before all lessons are completed.
+1. Clarify learning and recovery rules in the PRD, one question at a time. Still open: Leitner scheduling, learning-day and time counting, backup restore and forgotten PIN handling.
+   - Paused by the product owner after D-24. Next question: Leitner scheduling (F-12, F-13) — how often each box comes back.
 2. Approve the PRD (gate "PRD approved").
 3. Choose the tech stack and fill in "Stack and structure" in `AGENTS.md`.
 
 ## Done
 
 - Public repository created.
-- Lesson and level completion rules: D-21–D-23 (F-34, F-15), PRD v0.5.
+- Lesson and level completion rules and sticker album: D-21–D-24 (F-34, F-15, F-19), PRD v0.5.
 - PRD v0.4 (`docs/PRD.md`); D-18–D-20 reviewed with the product owner: bundled open emoji set, per-profile themes, British English.
 - README.
 - Agent instructions (`AGENTS.md`, `CLAUDE.md`) and this status file.
@@ -26,6 +26,7 @@ _Nothing. The next agent may start._
 
 Newest first. One line per finished task: date · agent · what was done · anything the next agent must know.
 
+- 2026-10-31 · Claude · Recorded sticker album rule (D-24); session paused · Work is on branch `claude/kumacz-zaliczanie-lekcji-0hs0ku` (D-21–D-24, not merged yet); resume with the Leitner scheduling question.
 - 2026-10-31 · Claude · Recorded level completion rule (D-23) · Ask next how F-19 album pages relate to level completion.
 - 2026-10-31 · Claude · Recorded which answers count towards lesson completion (D-22) · Ask next about level completion.
 - 2026-10-31 · Claude · Recorded lesson completion rule (D-21, F-34) · Ask next whether flashcard "I know it" counts towards F-34.
