@@ -229,6 +229,7 @@ Test period: **3 weeks** of regular use by both children.
 2. Technology choice: decision after PRD approval.
 3. Avatars and stickers: emoji or own simple graphics.
 4. Can the child change the theme, or only the parent.
+5. English variant for learning content: British or American spelling (e.g. "colour" / "color").
 
 ## 14. Decision log
 
@@ -250,3 +251,4 @@ Test period: **3 weeks** of regular use by both children.
 | D-14 | Tablet: currently Android (Chrome) as test platform; possible iPad later, so Safari compatibility from the start |
 | D-15 | Repository language: English (README, code, file names, commits, PRD); app UI in Polish |
 | D-16 | PRD kept public in the `kumacz` repo as `docs/PRD.md` |
+| D-17 | Codex and Claude Code both build, in turns, never in parallel; shared rules in `AGENTS.md`, handoff via `docs/STATUS.md`, one task = one branch = one PR |
