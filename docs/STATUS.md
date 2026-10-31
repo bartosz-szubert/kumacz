@@ -16,13 +16,15 @@ _Nothing. The next agent may start._
 ## Done
 
 - Public repository created.
-- PRD v0.3 (`docs/PRD.md`); product choices resolved: SVG assets, child-accessible theme switching and British English (D-18–D-20).
+- PRD v0.4 (`docs/PRD.md`); D-18–D-20 reviewed with the product owner: bundled open emoji set, per-profile themes, British English.
 - README.
 - Agent instructions (`AGENTS.md`, `CLAUDE.md`) and this status file.
 
 ## Handoff log
 
 Newest first. One line per finished task: date · agent · what was done · anything the next agent must know.
+
+- 2026-10-31 · Claude · Revised D-18 (open emoji set instead of own SVG), D-19 (per-profile theme), confirmed D-20; added F-33 (About/attribution) · Only record decisions the product owner explicitly chose.
 
 - 2026-10-31 · Codex · Recorded product decisions D-18–D-20 in PRD v0.3 · PRD remains a draft; clarify learning and recovery rules before approval and technology selection.
 - 2026-10-31 · Claude · Added agent instructions and status file · Agents work in turns; check "In progress" before starting.

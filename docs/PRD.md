@@ -4,7 +4,7 @@
 
 | | |
 |---|---|
-| Document version | 0.3 (draft for approval) |
+| Document version | 0.4 (draft for approval) |
 | Date | 2026-10-31 |
 | Product owner | Bartek |
 | Status | For review before development starts ("PRD approved" gate) |
@@ -67,6 +67,7 @@ First module: **English at beginner level**. Further modules (e.g. German, maths
 - **Family tree**: shared sibling goal.
 - New exercise types: **Memory (pairs)**, **Spell the word from letters**.
 - English level 3.
+- Candidate: own SVG stickers and avatars on top of the open emoji set (D-18), if the MVP test confirms the need.
 
 ### v1.2
 
@@ -145,16 +146,20 @@ First module: **English at beginner level**. Further modules (e.g. German, maths
 
 ### 6.9 Themes
 
-- **F-31** The parent can switch themes in settings. The child can also switch themes outside the PIN-protected parent panel, without entering a PIN:
+- **F-31** The theme is stored per profile. The child switches it on their own profile screen without a PIN (not during exercises); the parent can change it for any profile in the parent panel:
   - **Electric**: yellow, red, navy; light background, energetic accents.
   - **Neon**: purple, pink, turquoise; dark background, glow effect.
 - **F-32** A theme changes only colours, backgrounds and decorations. It contains no characters, logos or names of protected brands.
 
+### 6.10 About
+
+- **F-33** An "About" screen credits third-party assets as their licences require (e.g. the open emoji set, D-18).
+
 ## 7. Content — English
 
 **Reference:** Cambridge **Pre A1 Starters** vocabulary.
-**Language variant:** British English for learning vocabulary, spelling and example sentences (e.g. "colour"). Request an `en-GB` voice for English speech synthesis when available; voice availability and fallback behaviour must be verified in the planned audio prototype.
-**Illustrations:** own simple SVG graphics in a consistent visual style for exercise pictures, avatars and stickers. Bundle them with the app for offline use and consistent rendering across devices; do not use platform emoji as these assets.
+**Language variant:** British English for learning vocabulary, spelling and example sentences (e.g. "colour"), matching the children's school textbooks. Request an `en-GB` voice for English speech synthesis when available; voice availability and fallback behaviour must be verified in the planned audio prototype.
+**Illustrations:** an open-licence emoji set (e.g. OpenMoji or Twemoji) as SVG files bundled with the app, for exercise pictures, avatars and stickers. This gives consistent rendering across devices and offline use without drawing assets before the MVP; do not rely on platform emoji. Licence attribution in the app (F-33). Own SVG stickers and avatars are a v1.1 candidate.
 
 | Level | Topics | Release |
 |---|---|---|
@@ -228,8 +233,8 @@ Test period: **3 weeks** of regular use by both children.
 
 1. ~~Which tablet~~: resolved (D-14).
 2. Technology choice: decision after PRD approval.
-3. ~~Avatars, stickers and exercise illustrations~~: own simple, consistent SVG graphics (D-18).
-4. ~~Who can change the theme~~: both the parent and the child; the child does not need the parent PIN (D-19).
+3. ~~Avatars, stickers and exercise illustrations~~: bundled open-licence emoji set (D-18).
+4. ~~Who can change the theme~~: child on own profile screen and parent; stored per profile (D-19).
 5. ~~English variant for learning content~~: British English (D-20).
 
 ## 14. Decision log
@@ -253,6 +258,6 @@ Test period: **3 weeks** of regular use by both children.
 | D-15 | Repository language: English (README, code, file names, commits, PRD); app UI in Polish |
 | D-16 | PRD kept public in the `kumacz` repo as `docs/PRD.md` |
 | D-17 | Codex and Claude Code both build, in turns, never in parallel; shared rules in `AGENTS.md`, handoff via `docs/STATUS.md`, one task = one branch = one PR |
-| D-18 | Use own simple SVG graphics in a consistent style for exercise illustrations, avatars and stickers; bundle assets for offline use instead of relying on platform emoji |
-| D-19 | Let both the parent and the child switch themes; expose the child's theme control outside the PIN-protected parent panel |
-| D-20 | Use British English for learning vocabulary, spelling and example sentences; prefer an available en-GB speech synthesis voice |
+| D-18 | MVP graphics: open-licence emoji set (SVG) bundled with the app, with attribution; own SVG stickers and avatars considered for v1.1 (revised after review) |
+| D-19 | Theme stored per profile; the child switches it on their profile screen without a PIN (not during exercises), the parent in the parent panel (revised after review) |
+| D-20 | British English for learning content, matching school textbooks; prefer an en-GB speech synthesis voice (confirmed after review) |
