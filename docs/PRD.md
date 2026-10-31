@@ -119,7 +119,7 @@ First module: **English at beginner level**. Further modules (e.g. German, maths
 ### 6.5 Levels
 
 - **F-15** Lessons are grouped into levels (section 7). The next level unlocks when the previous one is completed.
-- **F-34** A lesson is completed when every word in it has been answered correctly at least once. Its words keep coming back in Leitner reviews afterwards (D-21).
+- **F-34** A lesson is completed when every word in it has been answered correctly at least once. Only checked exercises count (F-09, F-10, F-11); flashcard self-assessment "I know it" (F-08) does not. Its words keep coming back in Leitner reviews afterwards (D-21, D-22).
 - **F-16** "Skip level" test: a short quiz (e.g. 10 questions, min. 80%) lets the child complete a level right away.
 - **F-17** The parent can set a profile's starting level.
 
@@ -263,3 +263,4 @@ Test period: **3 weeks** of regular use by both children.
 | D-19 | Theme stored per profile; the child switches it on their profile screen without a PIN (not during exercises), the parent in the parent panel (revised after review) |
 | D-20 | British English for learning content, matching school textbooks; prefer an en-GB speech synthesis voice (confirmed after review) |
 | D-21 | Lesson completion: every word in the lesson answered correctly at least once; mastery continues through Leitner reviews (F-34) |
+| D-22 | Only checked exercises (listen and tap, picture → word, context questions) count towards lesson completion; flashcard "I know it" does not (F-34) |
