@@ -9,14 +9,15 @@ _Nothing. The next agent may start._
 
 ## Next
 
-1. Clarify learning and recovery rules in the PRD, one question at a time: lesson/level completion, Leitner scheduling, learning-day and time counting, backup restore and forgotten PIN handling.
-   - **Pending question to the product owner — lesson completion.** Options: A) one finished session; B) every word in the lesson answered correctly at least once (old words keep coming back in reviews); C) 80% of words in Leitner box 4+. Claude recommended B (fast sense of progress, real recognition, mastery continues through reviews). No answer yet.
+1. Clarify learning and recovery rules in the PRD, one question at a time: level completion, Leitner scheduling, learning-day and time counting, backup restore and forgotten PIN handling.
+   - Next question: which answers count towards lesson completion (F-34) — e.g. should flashcard self-assessment "I know it" (F-08) count, or only multiple-choice exercises (guessing risk)? Then level completion.
 2. Approve the PRD (gate "PRD approved").
 3. Choose the tech stack and fill in "Stack and structure" in `AGENTS.md`.
 
 ## Done
 
 - Public repository created.
+- Lesson completion rule: D-21 / F-34 (option B), PRD v0.5.
 - PRD v0.4 (`docs/PRD.md`); D-18–D-20 reviewed with the product owner: bundled open emoji set, per-profile themes, British English.
 - README.
 - Agent instructions (`AGENTS.md`, `CLAUDE.md`) and this status file.
@@ -24,6 +25,8 @@ _Nothing. The next agent may start._
 ## Handoff log
 
 Newest first. One line per finished task: date · agent · what was done · anything the next agent must know.
+
+- 2026-10-31 · Claude · Recorded lesson completion rule (D-21, F-34) · Ask next whether flashcard "I know it" counts towards F-34.
 
 - 2026-10-31 · Claude · Added collaboration rules and merge rule to `AGENTS.md` · Work continues in a new Claude Code session; start from the pending lesson-completion question above.
 

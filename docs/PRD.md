@@ -4,7 +4,7 @@
 
 | | |
 |---|---|
-| Document version | 0.4 (draft for approval) |
+| Document version | 0.5 (draft for approval) |
 | Date | 2026-10-31 |
 | Product owner | Bartek |
 | Status | For review before development starts ("PRD approved" gate) |
@@ -119,6 +119,7 @@ First module: **English at beginner level**. Further modules (e.g. German, maths
 ### 6.5 Levels
 
 - **F-15** Lessons are grouped into levels (section 7). The next level unlocks when the previous one is completed.
+- **F-34** A lesson is completed when every word in it has been answered correctly at least once. Its words keep coming back in Leitner reviews afterwards (D-21).
 - **F-16** "Skip level" test: a short quiz (e.g. 10 questions, min. 80%) lets the child complete a level right away.
 - **F-17** The parent can set a profile's starting level.
 
@@ -261,3 +262,4 @@ Test period: **3 weeks** of regular use by both children.
 | D-18 | MVP graphics: open-licence emoji set (SVG) bundled with the app, with attribution; own SVG stickers and avatars considered for v1.1 (revised after review) |
 | D-19 | Theme stored per profile; the child switches it on their profile screen without a PIN (not during exercises), the parent in the parent panel (revised after review) |
 | D-20 | British English for learning content, matching school textbooks; prefer an en-GB speech synthesis voice (confirmed after review) |
+| D-21 | Lesson completion: every word in the lesson answered correctly at least once; mastery continues through Leitner reviews (F-34) |
