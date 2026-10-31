@@ -4,7 +4,7 @@
 
 | | |
 |---|---|
-| Document version | 0.2 (draft for approval) |
+| Document version | 0.3 (draft for approval) |
 | Date | 2026-10-31 |
 | Product owner | Bartek |
 | Status | For review before development starts ("PRD approved" gate) |
@@ -107,7 +107,7 @@ First module: **English at beginner level**. Further modules (e.g. German, maths
 | **F-08** | Flashcards with voice-over | picture → flip → word + pronunciation; child marks "I know it" / "not yet" |
 | **F-09** | Listen and tap | voice says a word, child picks 1 of 3–4 pictures |
 | **F-10** | Picture → word | picture shown, child picks the correct written word from 3–4 |
-| **F-11** | Context questions | e.g. "What color is a banana?" → colour tiles |
+| **F-11** | Context questions | e.g. "What colour is a banana?" → colour tiles |
 
 ### 6.4 Review (Leitner)
 
@@ -145,7 +145,7 @@ First module: **English at beginner level**. Further modules (e.g. German, maths
 
 ### 6.9 Themes
 
-- **F-31** Two themes switchable in settings (optionally by the child):
+- **F-31** The parent can switch themes in settings. The child can also switch themes outside the PIN-protected parent panel, without entering a PIN:
   - **Electric**: yellow, red, navy; light background, energetic accents.
   - **Neon**: purple, pink, turquoise; dark background, glow effect.
 - **F-32** A theme changes only colours, backgrounds and decorations. It contains no characters, logos or names of protected brands.
@@ -153,7 +153,8 @@ First module: **English at beginner level**. Further modules (e.g. German, maths
 ## 7. Content — English
 
 **Reference:** Cambridge **Pre A1 Starters** vocabulary.
-**Illustrations:** to be decided (open issue 3).
+**Language variant:** British English for learning vocabulary, spelling and example sentences (e.g. "colour"). Request an `en-GB` voice for English speech synthesis when available; voice availability and fallback behaviour must be verified in the planned audio prototype.
+**Illustrations:** own simple SVG graphics in a consistent visual style for exercise pictures, avatars and stickers. Bundle them with the app for offline use and consistent rendering across devices; do not use platform emoji as these assets.
 
 | Level | Topics | Release |
 |---|---|---|
@@ -227,9 +228,9 @@ Test period: **3 weeks** of regular use by both children.
 
 1. ~~Which tablet~~: resolved (D-14).
 2. Technology choice: decision after PRD approval.
-3. Avatars and stickers: emoji or own simple graphics.
-4. Can the child change the theme, or only the parent.
-5. English variant for learning content: British or American spelling (e.g. "colour" / "color").
+3. ~~Avatars, stickers and exercise illustrations~~: own simple, consistent SVG graphics (D-18).
+4. ~~Who can change the theme~~: both the parent and the child; the child does not need the parent PIN (D-19).
+5. ~~English variant for learning content~~: British English (D-20).
 
 ## 14. Decision log
 
@@ -252,3 +253,6 @@ Test period: **3 weeks** of regular use by both children.
 | D-15 | Repository language: English (README, code, file names, commits, PRD); app UI in Polish |
 | D-16 | PRD kept public in the `kumacz` repo as `docs/PRD.md` |
 | D-17 | Codex and Claude Code both build, in turns, never in parallel; shared rules in `AGENTS.md`, handoff via `docs/STATUS.md`, one task = one branch = one PR |
+| D-18 | Use own simple SVG graphics in a consistent style for exercise illustrations, avatars and stickers; bundle assets for offline use instead of relying on platform emoji |
+| D-19 | Let both the parent and the child switch themes; expose the child's theme control outside the PIN-protected parent panel |
+| D-20 | Use British English for learning vocabulary, spelling and example sentences; prefer an available en-GB speech synthesis voice |
