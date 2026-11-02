@@ -117,7 +117,7 @@ First module: **English at beginner level**. Further modules (e.g. German, maths
 
 ### 6.4 Review (Leitner)
 
-- **F-12** Each word has a box 1–5. A correct answer in a due review using a checked exercise (F-09, F-10, F-11) moves it up by one box, up to box 5 (D-45), with at most one upward move per word per profile per day, across all sessions (D-32). Further correct answers that day are practice and do not move it up again. A wrong answer in a due review moves it down two boxes, not below box 1, and its next review follows the new box (F-13). A wrong answer outside a due review does not change the box; it still counts for the difficult-word list (F-28) and the word is retried later in the session (F-06) (D-51). Flashcard self-assessment (F-08) does not change the box (D-33).
+- **F-12** Each word has a box 1–5. A new word enters box 1 when it is introduced (F-04); its first review is due the next day (D-52). A correct answer in a due review using a checked exercise (F-09, F-10, F-11) moves it up by one box, up to box 5 (D-45), with at most one upward move per word per profile per day, across all sessions (D-32). Further correct answers that day are practice and do not move it up again. A wrong answer in a due review moves it down two boxes, not below box 1, and its next review follows the new box (F-13). A wrong answer outside a due review does not change the box; it still counts for the difficult-word list (F-28) and the word is retried later in the session (F-06) (D-51). Flashcard self-assessment (F-08) does not change the box (D-33).
 - **F-13** The word's resulting box sets when its next review is due (D-29):
 
   | Box | Next review |
@@ -311,3 +311,4 @@ Test period: **3 weeks** of regular use by both children.
 | D-49 | Build the app at minimum cost, including licences: prefer free and open-licence tools, assets and services; anything paid needs the product owner's explicit approval (section 4). |
 | D-50 | Protect local data: request persistent browser storage, show the parent how to install the app on the home screen on first launch, and remind the parent in the parent panel to export a backup when the last one is older than 7 days (F-37). |
 | D-51 | A wrong checked answer in a due review moves the word down two boxes (minimum box 1); a wrong answer outside a due review leaves the box unchanged but counts for difficult words (F-28) and triggers the in-session retry (F-06). Replaces the box-1 reset in F-12 and D-45, so an accidental tap does not undo weeks of progress. |
+| D-52 | A new word enters Leitner box 1 when it is introduced in a session, with its first review due the next day, regardless of answers in that session (F-12). |
