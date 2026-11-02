@@ -129,14 +129,15 @@ First module: **English at beginner level**. Further modules (e.g. German, maths
   | 5 | in 14 days |
 
   Overdue reviews are spread across ordinary short sessions; a backlog does not make a session longer. Correct answers during extra practice before the review is due do not promote the word or change its scheduled review date (D-45).
-- **F-14** A word in box 4 or 5 counts as "mastered". Lesson completion (F-34) and vocabulary mastery are tracked separately.
+- **F-14** A word in box 4 or 5 counts as "mastered", unless it is still "unconfirmed" (F-38). Lesson completion (F-34) and vocabulary mastery are tracked separately.
 
 ### 6.5 Levels
 
 - **F-15** Lessons are grouped into levels (section 7). The next level unlocks when the previous one is completed. A level is completed when all its lessons are completed (F-34) or the skip-level test is passed (F-16) (D-23).
 - **F-34** A lesson is completed when every word in it has been answered correctly at least once. Only checked exercises count (F-09, F-10, F-11); flashcard self-assessment "I know it" (F-08) does not. Its words keep coming back in Leitner reviews afterwards (D-21, D-22).
-- **F-16** "Skip level" test: 10 questions, at least 8 correct to pass. Passing completes the level and unlocks the next one without completing its lessons. It does not mark the level's words as mastered; they stay in reviews (D-31).
-- **F-17** The parent can set a profile's starting level.
+- **F-16** "Skip level" test: 10 questions, at least 8 correct to pass. Passing completes the level and unlocks the next one without completing its lessons. It does not mark the level's words as mastered; they enter reviews as described in F-38 (D-31, D-53).
+- **F-17** The parent can set a profile's starting level. Words of the levels below it enter reviews as described in F-38.
+- **F-38** Words of a level completed by the skip-level test (F-16) or bypassed by the starting level (F-17) that have not been introduced yet are assigned at random, as evenly as possible, to boxes 3, 4 and 5, with the next review due after that box's interval (F-13), so reviews are spread over time. These words are marked "unconfirmed": they do not count as mastered (F-14) until their first correct due review. Words already introduced keep their current box (D-53).
 
 ### 6.6 Gamification
 
@@ -290,7 +291,7 @@ Test period: **3 weeks** of regular use by both children.
 | D-28 | Forgotten-PIN reset without deleting profiles or progress; the local PIN guards against accidental access, not strong authentication (F-25) |
 | D-29 | Leitner review intervals 1, 2, 4, 7, 14 days for boxes 1–5; overdue reviews spread across normal-length sessions (F-13) |
 | D-30 | Mixed sessions: about half due reviews, the rest current lesson, unused review places filled with lesson exercises; separate review-only sessions (F-05) |
-| D-31 | Skip-level test: 10 questions, min. 8 correct; passing completes the level and unlocks the next one, without marking its words as mastered (F-16) |
+| D-31 | Skip-level test: 10 questions, min. 8 correct; passing completes the level and unlocks the next one, without marking its words as mastered (F-16); their Leitner placement is defined by D-53 |
 | D-32 | Leitner: at most one upward move per word per profile per day, across all sessions; further same-day correct answers are practice without another upward move (F-12). This prevents repeated practice in one day from being treated as long-term retention. |
 | D-33 | Only checked exercises (F-09, F-10, F-11) can promote a word in Leitner, subject to D-32. Flashcard self-assessment (F-08), whether "I know it" or "not yet", does not change the box. |
 | D-34 | Introduce at most 3 new words per learning session, leaving room for practice and reviews within the existing 8–12-exercise session (F-04, F-05). |
@@ -312,3 +313,4 @@ Test period: **3 weeks** of regular use by both children.
 | D-50 | Protect local data: request persistent browser storage, show the parent how to install the app on the home screen on first launch, and remind the parent in the parent panel to export a backup when the last one is older than 7 days (F-37). |
 | D-51 | A wrong checked answer in a due review moves the word down two boxes (minimum box 1); a wrong answer outside a due review leaves the box unchanged but counts for difficult words (F-28) and triggers the in-session retry (F-06). Replaces the box-1 reset in F-12 and D-45, so an accidental tap does not undo weeks of progress. |
 | D-52 | A new word enters Leitner box 1 when it is introduced in a session, with its first review due the next day, regardless of answers in that session (F-12). |
+| D-53 | Words of a skipped level (F-16) or a level below the starting level (F-17) that were not introduced yet go at random, about one third each, into boxes 3, 4 and 5, with reviews due after the box interval. They stay "unconfirmed" and do not count as mastered until their first correct due review (F-14, F-38). |
