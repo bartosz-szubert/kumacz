@@ -154,7 +154,7 @@ First module: **English at beginner level**. Further modules (e.g. German, maths
 
 ### 6.8 Parent panel
 
-- **F-25** Access protected by a 4-digit PIN set on first launch. A forgotten-PIN reset lets the parent set a new PIN without deleting profiles or progress. The PIN prevents accidental access; it is not strong access control and does not verify parent identity (D-28).
+- **F-25** Access protected by a 4-digit PIN set on first launch. A forgotten-PIN reset lets the parent set a new PIN without deleting profiles or progress, after solving an adult check: a random two-digit by two-digit multiplication (e.g. 47 × 36) (D-54). The PIN prevents accidental access; it is not strong access control and does not verify parent identity (D-28).
 - **F-26** Profile management: add, edit, delete, set starting level.
 - **F-27** Summary for each child: learning days this week, daily time, completed lessons and levels.
 - **F-28** "Difficult words" list: identify current difficulties from each word's recent checked answers rather than its lifetime error count. As recent performance improves, the word leaves the list; old mistakes alone must not keep it classified as difficult (D-39).
@@ -314,3 +314,4 @@ Test period: **3 weeks** of regular use by both children.
 | D-51 | A wrong checked answer in a due review moves the word down two boxes (minimum box 1); a wrong answer outside a due review leaves the box unchanged but counts for difficult words (F-28) and triggers the in-session retry (F-06). Replaces the box-1 reset in F-12 and D-45, so an accidental tap does not undo weeks of progress. |
 | D-52 | A new word enters Leitner box 1 when it is introduced in a session, with its first review due the next day, regardless of answers in that session (F-12). |
 | D-53 | Words of a skipped level (F-16) or a level below the starting level (F-17) that were not introduced yet go at random, about one third each, into boxes 3, 4 and 5, with reviews due after the box interval. They stay "unconfirmed" and do not count as mastered until their first correct due review (F-14, F-38). |
+| D-54 | Forgotten-PIN reset requires an adult check: a random two-digit by two-digit multiplication. Sufficient for protection against accidental access (D-28); no recovery code (F-25). |
