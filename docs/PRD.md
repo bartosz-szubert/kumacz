@@ -99,7 +99,7 @@ First module: **English at beginner level**. Further modules (e.g. German, maths
 - **F-04** A session is about 8–12 exercises from the current lesson, mixed types, ending with a reward screen. At most 3 new words are introduced per session; the remaining exercises practise previously introduced words and due reviews (D-34). Before its first checked exercise, each new word is introduced with a picture, written English word and pronunciation. Due reviews start with a question rather than repeating the introduction (D-35).
 - **F-05** About half of the exercises in a mixed session are due vocabulary reviews; the rest cover the current lesson. If there are not enough due reviews, the remaining places are filled with current-lesson exercises. The child can also start a separate review-only session (D-30).
 - **F-06** A wrong answer never removes stars. The app shows and reads out the correct answer. The word is retried after several intervening exercises rather than immediately, so the child practises recalling it after a short gap (D-36).
-- **F-07** Every instruction (in Polish) and every word (in English) has a play-audio button. Words are read out automatically when they appear (can be turned off).
+- **F-07** Every instruction (in Polish) and every word (in English) has a play-audio button. Words are read out automatically when they appear (can be turned off), subject to the exercise-specific rule for F-10: before the answer, only the Polish instruction can be played; English word audio, both automatic and on demand, is available only after the child answers (D-43).
 
 - **F-36** Save each completed exercise's result and the session position immediately. After closing or reloading the app, or switching profiles, the child can resume their own unfinished session without losing completed exercise results. Resuming must not award the same exercise or session reward twice. The session-completion bonus and sticker, and qualification as a learning day (F-20), require completing the session and remain subject to the daily reward limit (F-24) (D-38).
 
@@ -109,7 +109,7 @@ First module: **English at beginner level**. Further modules (e.g. German, maths
 |---|---|---|
 | **F-08** | Flashcards with voice-over | picture → flip → word + pronunciation; child marks "I know it" / "not yet"; neither self-assessment changes the Leitner box (D-33) |
 | **F-09** | Listen and tap | voice says a word, child picks 1 of 3–4 pictures |
-| **F-10** | Picture → word | picture shown, child picks the correct written word from 3–4 |
+| **F-10** | Picture → word | picture shown, child picks the correct written word from 3–4; before answering, only the Polish instruction can be played; English pronunciation is available after answering (D-43) |
 | **F-11** | Context questions | e.g. "What colour is a banana?" → colour tiles |
 
 - **F-35** Introduce exercise types progressively: begin with listening and picture-based tasks, then introduce choosing the written word (F-10), so early practice does not depend on reading English words (D-37).
@@ -298,3 +298,4 @@ Test period: **3 weeks** of regular use by both children.
 | D-40 | Evaluate MVP learning improvement by comparing answers to the same words in reviews after a time gap. The total number of difficult words is not the learning success metric, because newly introduced vocabulary can increase it (section 11). |
 | D-41 | Stickers earned from reviews of a completed level continue to go on that level's page. Its special large sticker marks completion rather than closing the page to further stickers; keep one page per level (F-19, clarification of D-24). |
 | D-42 | Enable short, calm reward animations by default. Respect the device's reduced-motion preference by showing the reward without animation (F-21). |
+| D-43 | In picture-to-word exercises (F-10), allow playback of the Polish instruction before the answer, but English pronunciation only after the child answers. Apply this to automatic and on-demand playback so audio does not give away the answer (F-07). |
