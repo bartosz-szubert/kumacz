@@ -155,7 +155,7 @@ First module: **English at beginner level**. Further modules (e.g. German, maths
 - **F-25** Access protected by a 4-digit PIN set on first launch. A forgotten-PIN reset lets the parent set a new PIN without deleting profiles or progress. The PIN prevents accidental access; it is not strong access control and does not verify parent identity (D-28).
 - **F-26** Profile management: add, edit, delete, set starting level.
 - **F-27** Summary for each child: learning days this week, daily time, completed lessons and levels.
-- **F-28** "Difficult words" list: the most frequently missed words.
+- **F-28** "Difficult words" list: identify current difficulties from each word's recent checked answers rather than its lifetime error count. As recent performance improves, the word leaves the list; old mistakes alone must not keep it classified as difficult (D-39).
 - **F-29** Settings: time limit, auto voice-over on/off, theme, change PIN.
 - **F-30** Backup: export all profiles, progress and app settings to a file, and import a backup to restore them. Import replaces all existing data (no merging). The backup is validated first; an invalid backup never replaces current data. Before import the app explains that current data will be overwritten and asks for explicit confirmation (D-27). Merging imports from several sources is a later-version candidate.
 
@@ -294,3 +294,4 @@ Test period: **3 weeks** of regular use by both children.
 | D-36 | After a wrong answer, show and read out the correct answer, then retry the word after several other exercises rather than immediately (F-06). |
 | D-37 | Introduce written-word exercises gradually, after listening and picture-based tasks, rather than mixing all exercise types from the start (F-35). |
 | D-38 | Save progress after every completed exercise and allow an interrupted session to be resumed without losing results or duplicating rewards. Session rewards and learning-day credit still require session completion; the daily reward limit still applies (F-36). |
+| D-39 | Base the difficult-word list on recent checked answers, not lifetime error totals; words leave the list as recent performance improves (F-28). |
