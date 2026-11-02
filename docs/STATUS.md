@@ -9,7 +9,7 @@ _Nothing. The next agent may start._
 
 ## Next
 
-1. Complete the integrated PRD v0.7 review, including remaining rule details and the speech-synthesis/offline-audio validation plan, then approve it (gate "PRD approved"). D-32–D-45 are approved product decisions; the entire PRD is still a draft.
+1. **In progress (Claude, with the product owner):** PRD v0.7 expert review, one question at a time; D-46 recorded. Remaining review points: audio source (pre-recorded vs speech synthesis), storage durability, Leitner reset on errors, initial box for new/skipped words, PIN reset mechanism, stable IDs and data schema version, emoji coverage. Then complete the integrated PRD v0.7 review, including remaining rule details and the speech-synthesis/offline-audio validation plan, then approve it (gate "PRD approved"). D-32–D-45 are approved product decisions; the entire PRD is still a draft.
 2. Choose the tech stack after PRD approval and fill in "Stack and structure" in `AGENTS.md`.
 3. Validate speech synthesis and offline audio behaviour on the target devices.
 

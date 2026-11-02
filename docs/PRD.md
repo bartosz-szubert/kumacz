@@ -184,7 +184,7 @@ First module: **English at beginner level**. Further modules (e.g. German, maths
 | 4 | simple sentences: *I like…*, *I have…*, *It is…* | v1.2 |
 | 5 | movement verbs, weather, days of the week | v1.2 |
 
-Estimate: 4–6 lessons per level, 8–12 words per lesson.
+Estimate: 4–6 lessons per level, 8–12 words per lesson. **MVP level 1: 4 lessons of 8 words (32 words)**, about 11 sessions at 3 new words per session (D-34), so the 3-week test can realistically reach level completion (section 11, D-46).
 
 **Content validation:** after PRD approval and once implementation begins, prepare one pilot lesson and try it with the children before preparing the full content for levels 1–2. Check whether they understand the pictures and instructions, whether the difficulty is appropriate, and whether they can complete the tasks independently. Use the findings to refine the lesson pattern before expanding the content (D-44).
 
@@ -303,3 +303,4 @@ Test period: **3 weeks** of regular use by both children.
 | D-43 | In picture-to-word exercises (F-10), allow playback of the Polish instruction before the answer, but English pronunciation only after the child answers. Apply this to automatic and on-demand playback so audio does not give away the answer (F-07). |
 | D-44 | Validate one pilot lesson with the children during implementation before preparing the full MVP content. Check picture and instruction clarity, difficulty and independent use; refine the lesson pattern before expanding to levels 1–2 (section 7). |
 | D-45 | Only a correct checked answer in a due review can promote a word in Leitner, subject to the once-per-day cap (D-32). Correct answers during earlier extra practice do not promote it or change its scheduled review date; wrong checked answers still reset it to box 1 (F-12, F-13). |
+| D-46 | MVP level 1 has 4 lessons of 8 words (32 words), so that completing a level within the 3-week test is realistic (section 7, section 11). Level 2 size unchanged. |
