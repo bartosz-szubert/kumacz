@@ -210,12 +210,16 @@ module (english) → level (1) → lesson (colours) → items (word, translation
 | **N-07** | First load < 3 s on a typical home connection |
 | **N-08** | Readability: high contrast, large font, no small text |
 | **N-09** | Zero keys, passwords or personal data in the repository |
+| **N-10** | Stable IDs for modules, levels, lessons and words; editing content must not lose progress (D-55) |
+| **N-11** | Stored data and backups carry a data format version; app updates migrate older data (D-55) |
+| **N-12** | Answer history (word, result, date) is kept for the last 90 days and older entries are deleted automatically; it feeds F-28 and the learning metric (section 11) (D-55) |
 
 ## 9. Data and privacy
 
 - **v1.0:** all data stays in the browser on the device (nickname, avatar, progress, settings). Nothing is sent anywhere.
 - **v1.1:** only the parent creates an account. Children's data limited to nickname, avatar and progress. Access protected by database rules (each family sees only its own data).
 - No surnames, dates of birth, photos, voice recordings, third-party analytics or ads.
+- Answer history is limited to the last 90 days (N-12).
 
 ## 10. Architecture — assumptions
 
@@ -223,6 +227,7 @@ module (english) → level (1) → lesson (colours) → items (word, translation
 - **Data layer** separated from the rest of the app: in v1.0 it stores locally, in v1.1 the same layer uses Supabase. The rest of the app does not change.
 - **Content in data files** (JSON) following the structure in section 7.
 - The choice of specific technologies (framework, tooling) is a separate decision after PRD approval.
+- Implementation is split into small stages, each fitting one agent session's token limit; the stage plan is prepared after the technology choice (D-56).
 
 ## 11. MVP success criteria
 
@@ -315,3 +320,5 @@ Test period: **3 weeks** of regular use by both children.
 | D-52 | A new word enters Leitner box 1 when it is introduced in a session, with its first review due the next day, regardless of answers in that session (F-12). |
 | D-53 | Words of a skipped level (F-16) or a level below the starting level (F-17) that were not introduced yet go at random, about one third each, into boxes 3, 4 and 5, with reviews due after the box interval. They stay "unconfirmed" and do not count as mastered until their first correct due review (F-14, F-38). |
 | D-54 | Forgotten-PIN reset requires an adult check: a random two-digit by two-digit multiplication. Sufficient for protection against accidental access (D-28); no recovery code (F-25). |
+| D-55 | Technical data rules: stable content IDs (N-10), a data format version with migration (N-11), and answer history kept for 90 days, older entries deleted automatically (N-12). |
+| D-56 | Implementation will be split into small stages, each fitting one agent session's token limit; the stage plan is prepared after the technology choice (section 10). |
