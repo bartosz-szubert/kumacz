@@ -43,6 +43,7 @@ First module: **English at beginner level**. Further modules (e.g. German, maths
 6. **Content separated from code**: a new module or lesson means new data files, not app changes.
 7. **Minimum data about children**: nickname, avatar and progress only.
 8. **No trademarks**: no characters, logos or names of protected brands.
+9. **Minimum cost**: build with as little spending as possible, including licences. Prefer free and open-licence tools, assets and services; anything paid needs the product owner's explicit approval (D-49).
 
 ## 5. Scope and releases
 
@@ -173,7 +174,7 @@ First module: **English at beginner level**. Further modules (e.g. German, maths
 ## 7. Content — English
 
 **Reference:** Cambridge **Pre A1 Starters** vocabulary.
-**Language variant:** British English for learning vocabulary, spelling and example sentences (e.g. "colour"), matching the children's school textbooks. English words use bundled `en-GB` audio files (N-04, D-47); when speech synthesis is used as a fallback, request an `en-GB` voice. Fallback behaviour must be verified in the planned audio prototype.
+**Language variant:** British English for learning vocabulary, spelling and example sentences (e.g. "colour"), matching the children's school textbooks. English words use bundled `en-GB` audio files (N-04, D-47), generated once with a local open-source speech generator (e.g. Piper), with an `en-GB` voice for English and a Polish voice for instructions (D-48); when speech synthesis is used as a fallback, request an `en-GB` voice. Fallback behaviour must be verified in the planned audio prototype.
 **Illustrations:** an open-licence emoji set (e.g. OpenMoji or Twemoji) as SVG files bundled with the app, for exercise pictures, avatars and stickers. This gives consistent rendering across devices and offline use without drawing assets before the MVP; do not rely on platform emoji. Licence attribution in the app (F-33). Own SVG stickers and avatars are a v1.1 candidate.
 
 | Level | Topics | Release |
@@ -305,3 +306,5 @@ Test period: **3 weeks** of regular use by both children.
 | D-45 | Only a correct checked answer in a due review can promote a word in Leitner, subject to the once-per-day cap (D-32). Correct answers during earlier extra practice do not promote it or change its scheduled review date; wrong checked answers still reset it to box 1 (F-12, F-13). |
 | D-46 | MVP level 1 has 4 lessons of 8 words (32 words), so that completing a level within the 3-week test is realistic (section 7, section 11). Level 2 size unchanged. |
 | D-47 | Audio from pre-prepared files bundled with the app for English words (en-GB) and Polish instructions; browser speech synthesis only as a fallback (N-04). Source and licence of the recordings decided separately. |
+| D-48 | Audio files are generated once with a local open-source speech generator (e.g. Piper): one consistent en-GB voice for English words and one Polish voice for instructions. Before use, verify that the chosen voices' licences allow redistributing the generated files in the public repo; credit them in the About screen if required (F-33). |
+| D-49 | Build the app at minimum cost, including licences: prefer free and open-licence tools, assets and services; anything paid needs the product owner's explicit approval (section 4). |
