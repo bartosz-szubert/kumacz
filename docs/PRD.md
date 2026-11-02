@@ -113,6 +113,7 @@ First module: **English at beginner level**. Further modules (e.g. German, maths
 | **F-10** | Picture → word | picture shown, child picks the correct written word from 3–4; before answering, only the Polish instruction can be played; English pronunciation is available after answering (D-43) |
 | **F-11** | Context questions | e.g. "What colour is a banana?" → colour tiles |
 
+- **F-40** Wrong options in checked exercises (F-09, F-10, F-11) come from the same lesson or category (e.g. other colours). One question never shows two easily confused pictures (e.g. pen and pencil) (D-59).
 - **F-39** The Polish translation of a word is shown, with a play-audio button, on the back of the flashcard (F-08) and after the child answers a checked exercise, never before the answer. The parent panel shows translations next to words, e.g. in the difficult-word list (F-28) (D-58).
 - **F-35** Introduce exercise types progressively: begin with listening and picture-based tasks, then introduce choosing the written word (F-10), so early practice does not depend on reading English words (D-37).
 
@@ -326,3 +327,4 @@ Test period: **3 weeks** of regular use by both children.
 | D-56 | Implementation will be split into small stages, each fitting one agent session's token limit; the stage plan is prepared after the technology choice (section 10). |
 | D-57 | A word enters the learning content only if it has an unambiguous picture in the chosen emoji set; otherwise replace it with another Pre A1 Starters word (section 7). |
 | D-58 | The Polish translation is shown with audio on the flashcard back and after answering a checked exercise, never before the answer; the parent panel shows translations too (F-39). |
+| D-59 | Wrong options in checked exercises come from the same lesson or category, never two easily confused pictures in one question; adaptive difficulty considered after the MVP test (F-40). |
