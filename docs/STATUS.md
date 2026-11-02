@@ -9,13 +9,14 @@ _Nothing. The next agent may start._
 
 ## Next
 
-1. Continue the PRD review one decision at a time: next, when to retry a word after a wrong answer. Leitner promotion and new-word introduction rules are recorded as D-32–D-35.
+1. Continue the PRD review one decision at a time: next, how to introduce written-word exercises for a child still learning to read. Leitner promotion, new-word introduction and delayed retries are recorded as D-32–D-36.
 2. Review remaining ambiguities and approve the PRD (gate "PRD approved").
 3. Choose the tech stack after PRD approval and fill in "Stack and structure" in `AGENTS.md`.
 4. Validate speech synthesis and offline audio behaviour on the target devices.
 
 ## Done
 
+- Recorded retry after several intervening exercises rather than immediately after error feedback (D-36, F-06).
 - Recorded picture, written word and pronunciation before first testing a new word; due reviews start with a question (D-35, F-04).
 - Recorded at most 3 new words per learning session (D-34, F-04).
 - Recorded checked-answer-only Leitner promotion; flashcard self-assessment does not change the box (D-33, F-08, F-12).
@@ -32,6 +33,7 @@ _Nothing. The next agent may start._
 
 Newest first. One line per finished task: date · agent · what was done · anything the next agent must know.
 
+- 2026-11-02 · Codex · Recorded approved delayed retry after error feedback (D-36) in PR #4; merge pending product-owner approval · Next discuss reading demands; exact retry spacing and end-of-session handling remain unspecified.
 - 2026-11-02 · Codex · Recorded approved introduction before testing (D-35) in PR #4; merge pending product-owner approval · Next decide when to retry a wrong answer; remaining review suggestions are proposals.
 - 2026-11-02 · Codex · Recorded approved maximum of 3 new words per session (D-34) in PR #4; merge pending product-owner approval · Next decide how to present new words before testing; remaining review suggestions are proposals.
 - 2026-11-02 · Codex · Recorded approved checked-answer-only Leitner promotion (D-33) in the same PR as D-32; merge pending product-owner approval · Continue with new-word introduction; other review suggestions remain proposals.
