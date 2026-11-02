@@ -9,10 +9,9 @@ _Nothing. The next agent may start._
 
 ## Next
 
-1. Review and merge PR #4 after explicit product-owner approval. D-32–D-45 are approved product decisions, recorded in draft PRD v0.7; this is not approval of the entire PRD.
-2. Complete the integrated PRD review, including remaining rule details and the speech-synthesis/offline-audio validation plan, then approve it (gate "PRD approved").
-3. Choose the tech stack after PRD approval and fill in "Stack and structure" in `AGENTS.md`.
-4. Validate speech synthesis and offline audio behaviour on the target devices.
+1. Complete the integrated PRD v0.7 review, including remaining rule details and the speech-synthesis/offline-audio validation plan, then approve it (gate "PRD approved"). D-32–D-45 are approved product decisions; the entire PRD is still a draft.
+2. Choose the tech stack after PRD approval and fill in "Stack and structure" in `AGENTS.md`.
+3. Validate speech synthesis and offline audio behaviour on the target devices.
 
 ## Done
 
@@ -42,6 +41,7 @@ _Nothing. The next agent may start._
 
 Newest first. One line per finished task: date · agent · what was done · anything the next agent must know.
 
+- 2026-11-02 · Codex · Finalized PRD v0.7 decisions D-32–D-45 and handoff in PR #4; product owner explicitly approved merging · Resume the integrated draft review; whole-PRD approval and technology selection are still pending.
 - 2026-11-02 · Codex · Recorded approved due-review-only Leitner promotion (D-45) in PR #4; D-32–D-45 ready for merge review, explicit merge approval pending · The PRD remains a draft; remaining detailed rules and device-audio validation still need review.
 - 2026-11-02 · Codex · Recorded approved pilot-lesson validation before content expansion (D-44) in PR #4; merge pending product-owner approval · Next clarify Leitner promotion eligibility before the due date; PRD approval and technology selection still precede implementation.
 - 2026-11-02 · Codex · Recorded approved picture-to-word audio timing (D-43) in PR #4; merge pending product-owner approval · Next discuss pilot content validation; speech synthesis and offline audio still need device testing after PRD approval.
