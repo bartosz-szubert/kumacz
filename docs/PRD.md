@@ -178,6 +178,7 @@ First module: **English at beginner level**. Further modules (e.g. German, maths
 **Reference:** Cambridge **Pre A1 Starters** vocabulary.
 **Language variant:** British English for learning vocabulary, spelling and example sentences (e.g. "colour"), matching the children's school textbooks. English words use bundled `en-GB` audio files (N-04, D-47), generated once with a local open-source speech generator (e.g. Piper), with an `en-GB` voice for English and a Polish voice for instructions (D-48); when speech synthesis is used as a fallback, request an `en-GB` voice. Fallback behaviour must be verified in the planned audio prototype.
 **Illustrations:** an open-licence emoji set (e.g. OpenMoji or Twemoji) as SVG files bundled with the app, for exercise pictures, avatars and stickers. This gives consistent rendering across devices and offline use without drawing assets before the MVP; do not rely on platform emoji. Licence attribution in the app (F-33). Own SVG stickers and avatars are a v1.1 candidate.
+**Picture rule:** a word enters the content only if it has an unambiguous picture in the chosen emoji set; otherwise it is replaced by another word from the Pre A1 Starters list (D-57).
 
 | Level | Topics | Release |
 |---|---|---|
@@ -322,3 +323,4 @@ Test period: **3 weeks** of regular use by both children.
 | D-54 | Forgotten-PIN reset requires an adult check: a random two-digit by two-digit multiplication. Sufficient for protection against accidental access (D-28); no recovery code (F-25). |
 | D-55 | Technical data rules: stable content IDs (N-10), a data format version with migration (N-11), and answer history kept for 90 days, older entries deleted automatically (N-12). |
 | D-56 | Implementation will be split into small stages, each fitting one agent session's token limit; the stage plan is prepared after the technology choice (section 10). |
+| D-57 | A word enters the learning content only if it has an unambiguous picture in the chosen emoji set; otherwise replace it with another Pre A1 Starters word (section 7). |

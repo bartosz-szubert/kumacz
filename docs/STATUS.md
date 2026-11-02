@@ -9,7 +9,7 @@ _Nothing. The next agent may start._
 
 ## Next
 
-1. **In progress (Claude, with the product owner):** PRD v0.7 expert review, one question at a time; D-46–D-56 recorded (verify Piper voice licences before generating audio; huggingface.co was not reachable from the session). Remaining review points: emoji coverage. Then complete the integrated PRD v0.7 review, including remaining rule details and the speech-synthesis/offline-audio validation plan, then approve it (gate "PRD approved"). D-32–D-45 are approved product decisions; the entire PRD is still a draft.
+1. **In progress (Claude, with the product owner):** PRD v0.7 expert review, one question at a time; D-46–D-57 recorded (verify Piper voice licences before generating audio; huggingface.co was not reachable from the session). Remaining review points: minor ones (use of the translation field, distractor rules, audio before the first tap). Then complete the integrated PRD v0.7 review, including remaining rule details and the speech-synthesis/offline-audio validation plan, then approve it (gate "PRD approved"). D-32–D-45 are approved product decisions; the entire PRD is still a draft.
 2. Choose the tech stack after PRD approval and fill in "Stack and structure" in `AGENTS.md`; then prepare a stage plan where each stage fits one agent session (D-56).
 3. Validate speech synthesis and offline audio behaviour on the target devices.
 
