@@ -4,7 +4,7 @@
 
 | | |
 |---|---|
-| Document version | 0.6 (draft for approval) |
+| Document version | 0.7 (draft for approval) |
 | Date | 2026-11-02 |
 | Product owner | Bartek |
 | Status | For review before development starts ("PRD approved" gate) |
@@ -96,23 +96,27 @@ First module: **English at beginner level**. Further modules (e.g. German, maths
 
 ### 6.2 Learning session
 
-- **F-04** A session is about 8–12 exercises from the current lesson, mixed types, ending with a reward screen.
+- **F-04** A session is about 8–12 exercises from the current lesson, mixed types, ending with a reward screen. At most 3 new words are introduced per session; the remaining exercises practise previously introduced words and due reviews (D-34). Before its first checked exercise, each new word is introduced with a picture, written English word and pronunciation. Due reviews start with a question rather than repeating the introduction (D-35).
 - **F-05** About half of the exercises in a mixed session are due vocabulary reviews; the rest cover the current lesson. If there are not enough due reviews, the remaining places are filled with current-lesson exercises. The child can also start a separate review-only session (D-30).
-- **F-06** A wrong answer never removes stars. The app shows and reads out the correct answer, and the word comes back later.
-- **F-07** Every instruction (in Polish) and every word (in English) has a play-audio button. Words are read out automatically when they appear (can be turned off).
+- **F-06** A wrong answer never removes stars. The app shows and reads out the correct answer. The word is retried after several intervening exercises rather than immediately, so the child practises recalling it after a short gap (D-36).
+- **F-07** Every instruction (in Polish) and every word (in English) has a play-audio button. Words are read out automatically when they appear (can be turned off), subject to the exercise-specific rule for F-10: before the answer, only the Polish instruction can be played; English word audio, both automatic and on demand, is available only after the child answers (D-43).
+
+- **F-36** Save each completed exercise's result and the session position immediately. After closing or reloading the app, or switching profiles, the child can resume their own unfinished session without losing completed exercise results. Resuming must not award the same exercise or session reward twice. The session-completion bonus, session sticker and qualification as a learning day require completing the session (F-20, D-38). Bonuses and stickers remain subject to the daily reward limit (F-24); that limit does not prevent a completed session from counting as a learning day.
 
 ### 6.3 Exercise types
 
 | ID | Type | Mechanics |
 |---|---|---|
-| **F-08** | Flashcards with voice-over | picture → flip → word + pronunciation; child marks "I know it" / "not yet" |
+| **F-08** | Flashcards with voice-over | picture → flip → word + pronunciation; child marks "I know it" / "not yet"; neither self-assessment changes the Leitner box (D-33) |
 | **F-09** | Listen and tap | voice says a word, child picks 1 of 3–4 pictures |
-| **F-10** | Picture → word | picture shown, child picks the correct written word from 3–4 |
+| **F-10** | Picture → word | picture shown, child picks the correct written word from 3–4; before answering, only the Polish instruction can be played; English pronunciation is available after answering (D-43) |
 | **F-11** | Context questions | e.g. "What colour is a banana?" → colour tiles |
+
+- **F-35** Introduce exercise types progressively: begin with listening and picture-based tasks, then introduce choosing the written word (F-10), so early practice does not depend on reading English words (D-37).
 
 ### 6.4 Review (Leitner)
 
-- **F-12** Each word has a box 1–5. A correct answer moves it up by one box, up to box 5; a wrong one sends it back to box 1.
+- **F-12** Each word has a box 1–5. A correct answer in a due review using a checked exercise (F-09, F-10, F-11) moves it up by one box, up to box 5 (D-45), with at most one upward move per word per profile per day, across all sessions (D-32). Further correct answers that day are practice and do not move it up again. A wrong answer in a checked exercise still sends it back to box 1. Flashcard self-assessment (F-08) does not change the box (D-33).
 - **F-13** The word's resulting box sets when its next review is due (D-29):
 
   | Box | Next review |
@@ -123,7 +127,7 @@ First module: **English at beginner level**. Further modules (e.g. German, maths
   | 4 | in 7 days |
   | 5 | in 14 days |
 
-  Overdue reviews are spread across ordinary short sessions; a backlog does not make a session longer.
+  Overdue reviews are spread across ordinary short sessions; a backlog does not make a session longer. Correct answers during extra practice before the review is due do not promote the word or change its scheduled review date (D-45).
 - **F-14** A word in box 4 or 5 counts as "mastered". Lesson completion (F-34) and vocabulary mastery are tracked separately.
 
 ### 6.5 Levels
@@ -136,9 +140,9 @@ First module: **English at beginner level**. Further modules (e.g. German, maths
 ### 6.6 Gamification
 
 - **F-18** Stars: for each completed exercise, a bonus for completing a session, a bonus for reaching the weekly goal.
-- **F-19** Sticker album: one page per level. After each session the child reveals a sticker related to the lesson topic and it goes on the level's page. Completing the level adds a special large level sticker that closes the page; the page layout must fit a varying number of stickers (D-24). Stickers follow the daily reward limit (F-24).
+- **F-19** Sticker album: one page per level. After each session the child reveals a sticker related to the lesson topic and it goes on the level's page. Completing the level adds a special large level sticker marking completion. The page continues to accept stickers from review sessions for that level; the page layout must fit a varying number of stickers (D-24, D-41). Stickers follow the daily reward limit (F-24).
 - **F-20** Weekly goal: by default 4 learning days out of 7. A day counts after the child completes at least one learning session or review-only session; an unfinished session alone does not count. Days of the week are visualised, there is no "lost streak" (D-25).
-- **F-21** Short animations and praise messages (in Polish, e.g. "Brawo, prawdziwy z Ciebie Kumacz!" — "Well done, you're a real Kumacz!").
+- **F-21** Short, calm reward animations are enabled by default, with praise messages in Polish (e.g. "Brawo, prawdziwy z Ciebie Kumacz!" — "Well done, you're a real Kumacz!"). When the device requests reduced motion, show the reward without animation (D-42).
 
 ### 6.7 Time limit
 
@@ -151,7 +155,7 @@ First module: **English at beginner level**. Further modules (e.g. German, maths
 - **F-25** Access protected by a 4-digit PIN set on first launch. A forgotten-PIN reset lets the parent set a new PIN without deleting profiles or progress. The PIN prevents accidental access; it is not strong access control and does not verify parent identity (D-28).
 - **F-26** Profile management: add, edit, delete, set starting level.
 - **F-27** Summary for each child: learning days this week, daily time, completed lessons and levels.
-- **F-28** "Difficult words" list: the most frequently missed words.
+- **F-28** "Difficult words" list: identify current difficulties from each word's recent checked answers rather than its lifetime error count. As recent performance improves, the word leaves the list; old mistakes alone must not keep it classified as difficult (D-39).
 - **F-29** Settings: time limit, auto voice-over on/off, theme, change PIN.
 - **F-30** Backup: export all profiles, progress and app settings to a file, and import a backup to restore them. Import replaces all existing data (no merging). The backup is validated first; an invalid backup never replaces current data. Before import the app explains that current data will be overwritten and asks for explicit confirmation (D-27). Merging imports from several sources is a later-version candidate.
 
@@ -181,6 +185,8 @@ First module: **English at beginner level**. Further modules (e.g. German, maths
 | 5 | movement verbs, weather, days of the week | v1.2 |
 
 Estimate: 4–6 lessons per level, 8–12 words per lesson.
+
+**Content validation:** after PRD approval and once implementation begins, prepare one pilot lesson and try it with the children before preparing the full content for levels 1–2. Check whether they understand the pictures and instructions, whether the difficulty is appropriate, and whether they can complete the tasks independently. Use the findings to refine the lesson pattern before expanding the content (D-44).
 
 **Content data structure** (the same for all future modules):
 
@@ -224,7 +230,7 @@ Test period: **3 weeks** of regular use by both children.
 | Consistency | each child reaches the weekly goal (min. 4/7 days) in ≥ 2 of 3 weeks |
 | Voluntary use | children at least sometimes ask for the app themselves |
 | Progress | each child completes at least 1 level |
-| Learning | the number of "difficult words" in the parent panel goes down |
+| Learning | performance on the same previously practised words improves across reviews after a time gap; compare the same vocabulary rather than the total number of difficult words (D-40) |
 | Usability | the 1st grader uses the app without adult help |
 
 **v1.1 gate:** meeting the criteria starts work on sync. If they are not met, the core gets fixed first.
@@ -275,7 +281,7 @@ Test period: **3 weeks** of regular use by both children.
 | D-21 | Lesson completion: every word in the lesson answered correctly at least once; mastery continues through Leitner reviews (F-34) |
 | D-22 | Only checked exercises (listen and tap, picture → word, context questions) count towards lesson completion; flashcard "I know it" does not (F-34) |
 | D-23 | Level completion: all lessons of the level completed (or skip-level test passed, F-16); no extra end-of-level test (F-15) |
-| D-24 | Sticker album: a sticker after every session; level completion adds a special large sticker that closes the level's page (F-19) |
+| D-24 | Sticker album: a sticker after every session; level completion adds a special large level sticker marking completion; the page continues to accept review stickers (F-19, clarified by D-41) |
 | D-25 | A learning day counts after at least one completed learning or review-only session; weekly goal stays 4 of 7 days (F-20) |
 | D-26 | Count visible exercise time only, excluding menus and background; pause after 60 s of inactivity, audio playback is not inactivity; 30-minute default limit and post-limit reward rules unchanged (F-22–F-24) |
 | D-27 | MVP backup: full export and replacing import of all profiles, progress and settings; validate before replacing; require overwrite confirmation; merging imports considered later (F-30) |
@@ -283,3 +289,17 @@ Test period: **3 weeks** of regular use by both children.
 | D-29 | Leitner review intervals 1, 2, 4, 7, 14 days for boxes 1–5; overdue reviews spread across normal-length sessions (F-13) |
 | D-30 | Mixed sessions: about half due reviews, the rest current lesson, unused review places filled with lesson exercises; separate review-only sessions (F-05) |
 | D-31 | Skip-level test: 10 questions, min. 8 correct; passing completes the level and unlocks the next one, without marking its words as mastered (F-16) |
+| D-32 | Leitner: at most one upward move per word per profile per day, across all sessions; further same-day correct answers are practice without another upward move (F-12). This prevents repeated practice in one day from being treated as long-term retention. |
+| D-33 | Only checked exercises (F-09, F-10, F-11) can promote a word in Leitner, subject to D-32. Flashcard self-assessment (F-08), whether "I know it" or "not yet", does not change the box. |
+| D-34 | Introduce at most 3 new words per learning session, leaving room for practice and reviews within the existing 8–12-exercise session (F-04, F-05). |
+| D-35 | Introduce each new word with a picture, written English word and pronunciation before asking the child to answer a checked exercise. Due reviews start with a question; they do not repeat the introductory presentation (F-04). |
+| D-36 | After a wrong answer, show and read out the correct answer, then retry the word after several other exercises rather than immediately (F-06). |
+| D-37 | Introduce written-word exercises gradually, after listening and picture-based tasks, rather than mixing all exercise types from the start (F-35). |
+| D-38 | Save progress after every completed exercise and allow an interrupted session to be resumed without losing results or duplicating rewards. Session rewards and learning-day credit still require session completion; the daily reward limit still applies (F-36). |
+| D-39 | Base the difficult-word list on recent checked answers, not lifetime error totals; words leave the list as recent performance improves (F-28). |
+| D-40 | Evaluate MVP learning improvement by comparing answers to the same words in reviews after a time gap. The total number of difficult words is not the learning success metric, because newly introduced vocabulary can increase it (section 11). |
+| D-41 | Stickers earned from reviews of a completed level continue to go on that level's page. Its special large sticker marks completion rather than closing the page to further stickers; keep one page per level (F-19, clarification of D-24). |
+| D-42 | Enable short, calm reward animations by default. Respect the device's reduced-motion preference by showing the reward without animation (F-21). |
+| D-43 | In picture-to-word exercises (F-10), allow playback of the Polish instruction before the answer, but English pronunciation only after the child answers. Apply this to automatic and on-demand playback so audio does not give away the answer (F-07). |
+| D-44 | Validate one pilot lesson with the children during implementation before preparing the full MVP content. Check picture and instruction clarity, difficulty and independent use; refine the lesson pattern before expanding to levels 1–2 (section 7). |
+| D-45 | Only a correct checked answer in a due review can promote a word in Leitner, subject to the once-per-day cap (D-32). Correct answers during earlier extra practice do not promote it or change its scheduled review date; wrong checked answers still reset it to box 1 (F-12, F-13). |
