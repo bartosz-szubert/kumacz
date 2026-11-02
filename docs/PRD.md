@@ -116,7 +116,7 @@ First module: **English at beginner level**. Further modules (e.g. German, maths
 
 ### 6.4 Review (Leitner)
 
-- **F-12** Each word has a box 1–5. A correct answer in a checked exercise (F-09, F-10, F-11) moves it up by one box, up to box 5, with at most one upward move per word per profile per day, across all sessions (D-32). Further correct answers that day are practice and do not move it up again. A wrong answer in a checked exercise still sends it back to box 1. Flashcard self-assessment (F-08) does not change the box (D-33).
+- **F-12** Each word has a box 1–5. A correct answer in a due review using a checked exercise (F-09, F-10, F-11) moves it up by one box, up to box 5 (D-45), with at most one upward move per word per profile per day, across all sessions (D-32). Further correct answers that day are practice and do not move it up again. A wrong answer in a checked exercise still sends it back to box 1. Flashcard self-assessment (F-08) does not change the box (D-33).
 - **F-13** The word's resulting box sets when its next review is due (D-29):
 
   | Box | Next review |
@@ -127,7 +127,7 @@ First module: **English at beginner level**. Further modules (e.g. German, maths
   | 4 | in 7 days |
   | 5 | in 14 days |
 
-  Overdue reviews are spread across ordinary short sessions; a backlog does not make a session longer.
+  Overdue reviews are spread across ordinary short sessions; a backlog does not make a session longer. Correct answers during extra practice before the review is due do not promote the word or change its scheduled review date (D-45).
 - **F-14** A word in box 4 or 5 counts as "mastered". Lesson completion (F-34) and vocabulary mastery are tracked separately.
 
 ### 6.5 Levels
@@ -302,3 +302,4 @@ Test period: **3 weeks** of regular use by both children.
 | D-42 | Enable short, calm reward animations by default. Respect the device's reduced-motion preference by showing the reward without animation (F-21). |
 | D-43 | In picture-to-word exercises (F-10), allow playback of the Polish instruction before the answer, but English pronunciation only after the child answers. Apply this to automatic and on-demand playback so audio does not give away the answer (F-07). |
 | D-44 | Validate one pilot lesson with the children during implementation before preparing the full MVP content. Check picture and instruction clarity, difficulty and independent use; refine the lesson pattern before expanding to levels 1–2 (section 7). |
+| D-45 | Only a correct checked answer in a due review can promote a word in Leitner, subject to the once-per-day cap (D-32). Correct answers during earlier extra practice do not promote it or change its scheduled review date; wrong checked answers still reset it to box 1 (F-12, F-13). |
