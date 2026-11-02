@@ -113,6 +113,7 @@ First module: **English at beginner level**. Further modules (e.g. German, maths
 | **F-10** | Picture → word | picture shown, child picks the correct written word from 3–4; before answering, only the Polish instruction can be played; English pronunciation is available after answering (D-43) |
 | **F-11** | Context questions | e.g. "What colour is a banana?" → colour tiles |
 
+- **F-39** The Polish translation of a word is shown, with a play-audio button, on the back of the flashcard (F-08) and after the child answers a checked exercise, never before the answer. The parent panel shows translations next to words, e.g. in the difficult-word list (F-28) (D-58).
 - **F-35** Introduce exercise types progressively: begin with listening and picture-based tasks, then introduce choosing the written word (F-10), so early practice does not depend on reading English words (D-37).
 
 ### 6.4 Review (Leitner)
@@ -205,7 +206,7 @@ module (english) → level (1) → lesson (colours) → items (word, translation
 | **N-01** | Works in current browsers on computer (Chrome, Edge) and Android tablet (Chrome) as the primary platform; iPad (Safari) compatibility kept from the start, no Android-specific solutions |
 | **N-02** | Responsive layout: tablet portrait and landscape, computer; touch targets min. 48×48 px |
 | **N-03** | Can be added to the tablet home screen (PWA) and works offline after first load |
-| **N-04** | Voice-over from pre-prepared audio files bundled with the app and cached for offline use: English words (`en-GB`) and Polish instructions. Browser speech synthesis is only a fallback when a file is missing or fails to play (no cost, no server) (D-47) |
+| **N-04** | Voice-over from pre-prepared audio files bundled with the app and cached for offline use: English words (`en-GB`), Polish instructions and Polish word translations (F-39). Browser speech synthesis is only a fallback when a file is missing or fails to play (no cost, no server) (D-47) |
 | **N-05** | Static hosting (GitHub Pages) in v1.0, no own server |
 | **N-06** | UI in Polish, learning content in the module's language |
 | **N-07** | First load < 3 s on a typical home connection |
@@ -324,3 +325,4 @@ Test period: **3 weeks** of regular use by both children.
 | D-55 | Technical data rules: stable content IDs (N-10), a data format version with migration (N-11), and answer history kept for 90 days, older entries deleted automatically (N-12). |
 | D-56 | Implementation will be split into small stages, each fitting one agent session's token limit; the stage plan is prepared after the technology choice (section 10). |
 | D-57 | A word enters the learning content only if it has an unambiguous picture in the chosen emoji set; otherwise replace it with another Pre A1 Starters word (section 7). |
+| D-58 | The Polish translation is shown with audio on the flashcard back and after answering a checked exercise, never before the answer; the parent panel shows translations too (F-39). |
