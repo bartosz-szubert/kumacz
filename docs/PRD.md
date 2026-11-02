@@ -142,7 +142,7 @@ First module: **English at beginner level**. Further modules (e.g. German, maths
 - **F-18** Stars: for each completed exercise, a bonus for completing a session, a bonus for reaching the weekly goal.
 - **F-19** Sticker album: one page per level. After each session the child reveals a sticker related to the lesson topic and it goes on the level's page. Completing the level adds a special large level sticker marking completion. The page continues to accept stickers from review sessions for that level; the page layout must fit a varying number of stickers (D-24, D-41). Stickers follow the daily reward limit (F-24).
 - **F-20** Weekly goal: by default 4 learning days out of 7. A day counts after the child completes at least one learning session or review-only session; an unfinished session alone does not count. Days of the week are visualised, there is no "lost streak" (D-25).
-- **F-21** Short animations and praise messages (in Polish, e.g. "Brawo, prawdziwy z Ciebie Kumacz!" — "Well done, you're a real Kumacz!").
+- **F-21** Short, calm reward animations are enabled by default, with praise messages in Polish (e.g. "Brawo, prawdziwy z Ciebie Kumacz!" — "Well done, you're a real Kumacz!"). When the device requests reduced motion, show the reward without animation (D-42).
 
 ### 6.7 Time limit
 
@@ -297,3 +297,4 @@ Test period: **3 weeks** of regular use by both children.
 | D-39 | Base the difficult-word list on recent checked answers, not lifetime error totals; words leave the list as recent performance improves (F-28). |
 | D-40 | Evaluate MVP learning improvement by comparing answers to the same words in reviews after a time gap. The total number of difficult words is not the learning success metric, because newly introduced vocabulary can increase it (section 11). |
 | D-41 | Stickers earned from reviews of a completed level continue to go on that level's page. Its special large sticker marks completion rather than closing the page to further stickers; keep one page per level (F-19, clarification of D-24). |
+| D-42 | Enable short, calm reward animations by default. Respect the device's reduced-motion preference by showing the reward without animation (F-21). |
