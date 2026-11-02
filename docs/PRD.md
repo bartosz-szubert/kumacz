@@ -110,6 +110,8 @@ First module: **English at beginner level**. Further modules (e.g. German, maths
 | **F-10** | Picture → word | picture shown, child picks the correct written word from 3–4 |
 | **F-11** | Context questions | e.g. "What colour is a banana?" → colour tiles |
 
+- **F-35** Introduce exercise types progressively: begin with listening and picture-based tasks, then introduce choosing the written word (F-10), so early practice does not depend on reading English words (D-37).
+
 ### 6.4 Review (Leitner)
 
 - **F-12** Each word has a box 1–5. A correct answer in a checked exercise (F-09, F-10, F-11) moves it up by one box, up to box 5, with at most one upward move per word per profile per day, across all sessions (D-32). Further correct answers that day are practice and do not move it up again. A wrong answer in a checked exercise still sends it back to box 1. Flashcard self-assessment (F-08) does not change the box (D-33).
@@ -288,3 +290,4 @@ Test period: **3 weeks** of regular use by both children.
 | D-34 | Introduce at most 3 new words per learning session, leaving room for practice and reviews within the existing 8–12-exercise session (F-04, F-05). |
 | D-35 | Introduce each new word with a picture, written English word and pronunciation before asking the child to answer a checked exercise. Due reviews start with a question; they do not repeat the introductory presentation (F-04). |
 | D-36 | After a wrong answer, show and read out the correct answer, then retry the word after several other exercises rather than immediately (F-06). |
+| D-37 | Introduce written-word exercises gradually, after listening and picture-based tasks, rather than mixing all exercise types from the start (F-35). |
