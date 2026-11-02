@@ -9,12 +9,13 @@ _Nothing. The next agent may start._
 
 ## Next
 
-1. **In progress (Claude, with the product owner):** PRD v0.7 expert review, one question at a time; D-46–D-59 recorded (verify Piper voice licences before generating audio; huggingface.co was not reachable from the session). Remaining review points: minor ones (audio before the first tap). Then complete the integrated PRD v0.7 review, including remaining rule details and the speech-synthesis/offline-audio validation plan, then approve it (gate "PRD approved"). D-32–D-45 are approved product decisions; the entire PRD is still a draft.
+1. Final product-owner read of PRD v0.8, then approve it (gate "PRD approved"). Before generating audio, verify Piper voice licences (D-48); huggingface.co was not reachable from the Claude session.
 2. Choose the tech stack after PRD approval and fill in "Stack and structure" in `AGENTS.md`; then prepare a stage plan where each stage fits one agent session (D-56).
 3. Validate speech synthesis and offline audio behaviour on the target devices.
 
 ## Done
 
+- Expert PRD review with the product owner: D-46–D-60 (level 1 size, bundled generated audio, minimum cost, data durability, gentler Leitner demotion, initial and skipped-word boxes, PIN reset check, data rules, staged implementation, picture rule, translations, distractors, tap before audio), PRD v0.8.
 - Recorded Leitner promotion only in due reviews; correct earlier practice leaves the box and scheduled review date unchanged (D-45, F-12, F-13).
 - Recorded validation of one pilot lesson with the children during implementation before preparing the full MVP content (D-44, section 7).
 - Recorded English pronunciation only after answering picture-to-word exercises, with Polish instruction playback available before answering (D-43, F-07, F-10).
@@ -41,6 +42,7 @@ _Nothing. The next agent may start._
 
 Newest first. One line per finished task: date · agent · what was done · anything the next agent must know.
 
+- 2026-11-02 · Claude · Expert PRD review, D-46–D-60, PRD v0.8 · All review points closed; next is PRD approval, then tech stack and a stage plan sized to one session each (D-56).
 - 2026-11-02 · Codex · Finalized PRD v0.7 decisions D-32–D-45 and handoff in PR #4; product owner explicitly approved merging · Resume the integrated draft review; whole-PRD approval and technology selection are still pending.
 - 2026-11-02 · Codex · Recorded approved due-review-only Leitner promotion (D-45) in PR #4; D-32–D-45 ready for merge review, explicit merge approval pending · The PRD remains a draft; remaining detailed rules and device-audio validation still need review.
 - 2026-11-02 · Codex · Recorded approved pilot-lesson validation before content expansion (D-44) in PR #4; merge pending product-owner approval · Next clarify Leitner promotion eligibility before the due date; PRD approval and technology selection still precede implementation.
