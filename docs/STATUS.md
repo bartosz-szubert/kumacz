@@ -9,13 +9,14 @@ _Nothing. The next agent may start._
 
 ## Next
 
-1. Continue the PRD review one decision at a time: next, how to present new words before testing. The daily Leitner promotion cap, checked-answer-only promotion and maximum of 3 new words per session are recorded as D-32–D-34.
+1. Continue the PRD review one decision at a time: next, when to retry a word after a wrong answer. Leitner promotion and new-word introduction rules are recorded as D-32–D-35.
 2. Review remaining ambiguities and approve the PRD (gate "PRD approved").
 3. Choose the tech stack after PRD approval and fill in "Stack and structure" in `AGENTS.md`.
 4. Validate speech synthesis and offline audio behaviour on the target devices.
 
 ## Done
 
+- Recorded picture, written word and pronunciation before first testing a new word; due reviews start with a question (D-35, F-04).
 - Recorded at most 3 new words per learning session (D-34, F-04).
 - Recorded checked-answer-only Leitner promotion; flashcard self-assessment does not change the box (D-33, F-08, F-12).
 - Recorded the product owner's choice A: at most one Leitner promotion per word per profile per day (D-32, F-12), PRD v0.7.
@@ -31,6 +32,7 @@ _Nothing. The next agent may start._
 
 Newest first. One line per finished task: date · agent · what was done · anything the next agent must know.
 
+- 2026-11-02 · Codex · Recorded approved introduction before testing (D-35) in PR #4; merge pending product-owner approval · Next decide when to retry a wrong answer; remaining review suggestions are proposals.
 - 2026-11-02 · Codex · Recorded approved maximum of 3 new words per session (D-34) in PR #4; merge pending product-owner approval · Next decide how to present new words before testing; remaining review suggestions are proposals.
 - 2026-11-02 · Codex · Recorded approved checked-answer-only Leitner promotion (D-33) in the same PR as D-32; merge pending product-owner approval · Continue with new-word introduction; other review suggestions remain proposals.
 - 2026-11-02 · Codex · Recorded approved daily Leitner promotion cap (D-32) on `docs/leitner-daily-promotion`; merge pending product-owner approval · D-32 and D-33 are approved; other review suggestions remain proposals.
