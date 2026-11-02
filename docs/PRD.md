@@ -186,6 +186,8 @@ First module: **English at beginner level**. Further modules (e.g. German, maths
 
 Estimate: 4–6 lessons per level, 8–12 words per lesson.
 
+**Content validation:** after PRD approval and once implementation begins, prepare one pilot lesson and try it with the children before preparing the full content for levels 1–2. Check whether they understand the pictures and instructions, whether the difficulty is appropriate, and whether they can complete the tasks independently. Use the findings to refine the lesson pattern before expanding the content (D-44).
+
 **Content data structure** (the same for all future modules):
 
 ```
@@ -299,3 +301,4 @@ Test period: **3 weeks** of regular use by both children.
 | D-41 | Stickers earned from reviews of a completed level continue to go on that level's page. Its special large sticker marks completion rather than closing the page to further stickers; keep one page per level (F-19, clarification of D-24). |
 | D-42 | Enable short, calm reward animations by default. Respect the device's reduced-motion preference by showing the reward without animation (F-21). |
 | D-43 | In picture-to-word exercises (F-10), allow playback of the Polish instruction before the answer, but English pronunciation only after the child answers. Apply this to automatic and on-demand playback so audio does not give away the answer (F-07). |
+| D-44 | Validate one pilot lesson with the children during implementation before preparing the full MVP content. Check picture and instruction clarity, difficulty and independent use; refine the lesson pattern before expanding to levels 1–2 (section 7). |
