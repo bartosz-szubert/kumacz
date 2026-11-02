@@ -9,13 +9,14 @@ _Nothing. The next agent may start._
 
 ## Next
 
-1. Continue the PRD review one decision at a time: next, saving progress and resuming an interrupted session. Learning and progressive exercise-introduction rules are recorded as D-32–D-37.
+1. Continue the PRD review one decision at a time: next, how the parent panel identifies difficult words and measures improvement. Learning and interrupted-session rules are recorded as D-32–D-38.
 2. Review remaining ambiguities and approve the PRD (gate "PRD approved").
 3. Choose the tech stack after PRD approval and fill in "Stack and structure" in `AGENTS.md`.
 4. Validate speech synthesis and offline audio behaviour on the target devices.
 
 ## Done
 
+- Recorded per-exercise saving and interrupted-session resumption, with no duplicate rewards and completion-based session rewards and learning-day credit (D-38, F-36).
 - Recorded gradual introduction of written-word exercises after listening and picture-based tasks (D-37, F-35).
 - Recorded retry after several intervening exercises rather than immediately after error feedback (D-36, F-06).
 - Recorded picture, written word and pronunciation before first testing a new word; due reviews start with a question (D-35, F-04).
@@ -34,6 +35,7 @@ _Nothing. The next agent may start._
 
 Newest first. One line per finished task: date · agent · what was done · anything the next agent must know.
 
+- 2026-11-02 · Codex · Recorded approved per-exercise saving and interrupted-session resumption (D-38, F-36) in PR #4; merge pending product-owner approval · Next discuss difficult-word metrics; remaining review suggestions are proposals.
 - 2026-11-02 · Codex · Recorded approved gradual written-word exercise introduction (D-37, F-35) in PR #4; merge pending product-owner approval · Next discuss interrupted sessions; the precise progression trigger remains unspecified.
 - 2026-11-02 · Codex · Recorded approved delayed retry after error feedback (D-36) in PR #4; merge pending product-owner approval · Next discuss reading demands; exact retry spacing and end-of-session handling remain unspecified.
 - 2026-11-02 · Codex · Recorded approved introduction before testing (D-35) in PR #4; merge pending product-owner approval · Next decide when to retry a wrong answer; remaining review suggestions are proposals.
