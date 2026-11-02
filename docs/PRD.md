@@ -98,7 +98,7 @@ First module: **English at beginner level**. Further modules (e.g. German, maths
 
 - **F-04** A session is about 8–12 exercises from the current lesson, mixed types, ending with a reward screen. At most 3 new words are introduced per session; the remaining exercises practise previously introduced words and due reviews (D-34). Before its first checked exercise, each new word is introduced with a picture, written English word and pronunciation. Due reviews start with a question rather than repeating the introduction (D-35).
 - **F-05** About half of the exercises in a mixed session are due vocabulary reviews; the rest cover the current lesson. If there are not enough due reviews, the remaining places are filled with current-lesson exercises. The child can also start a separate review-only session (D-30).
-- **F-06** A wrong answer never removes stars. The app shows and reads out the correct answer, and the word comes back later.
+- **F-06** A wrong answer never removes stars. The app shows and reads out the correct answer. The word is retried after several intervening exercises rather than immediately, so the child practises recalling it after a short gap (D-36).
 - **F-07** Every instruction (in Polish) and every word (in English) has a play-audio button. Words are read out automatically when they appear (can be turned off).
 
 ### 6.3 Exercise types
@@ -287,3 +287,4 @@ Test period: **3 weeks** of regular use by both children.
 | D-33 | Only checked exercises (F-09, F-10, F-11) can promote a word in Leitner, subject to D-32. Flashcard self-assessment (F-08), whether "I know it" or "not yet", does not change the box. |
 | D-34 | Introduce at most 3 new words per learning session, leaving room for practice and reviews within the existing 8–12-exercise session (F-04, F-05). |
 | D-35 | Introduce each new word with a picture, written English word and pronunciation before asking the child to answer a checked exercise. Due reviews start with a question; they do not repeat the introductory presentation (F-04). |
+| D-36 | After a wrong answer, show and read out the correct answer, then retry the word after several other exercises rather than immediately (F-06). |
