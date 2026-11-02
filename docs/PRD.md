@@ -159,6 +159,7 @@ First module: **English at beginner level**. Further modules (e.g. German, maths
 - **F-28** "Difficult words" list: identify current difficulties from each word's recent checked answers rather than its lifetime error count. As recent performance improves, the word leaves the list; old mistakes alone must not keep it classified as difficult (D-39).
 - **F-29** Settings: time limit, auto voice-over on/off, theme, change PIN.
 - **F-30** Backup: export all profiles, progress and app settings to a file, and import a backup to restore them. Import replaces all existing data (no merging). The backup is validated first; an invalid backup never replaces current data. Before import the app explains that current data will be overwritten and asks for explicit confirmation (D-27). Merging imports from several sources is a later-version candidate.
+- **F-37** Data durability: the app asks the browser for persistent storage; on first launch it shows the parent how to add the app to the home screen (needed on iPad Safari, which otherwise deletes site data after 7 days without a visit); the parent panel reminds the parent to export a backup when the last one is older than 7 days (D-50).
 
 ### 6.9 Themes
 
@@ -244,7 +245,7 @@ Test period: **3 weeks** of regular use by both children.
 | Children get bored quickly | drop in consistency | short sessions, mixed exercise types, themed stickers; observe during tests |
 | No sync in the MVP confuses children | "where are my stars?" | clear information for the parent; progress export; v1.1 right after tests |
 | Children bypass the limit by switching profiles | time exceeded | parent panel shows actual time; conversation instead of blocking |
-| Browser data cleared | progress lost in v1.0 | progress export (F-30); sync in v1.1 |
+| Browser data cleared | progress lost in v1.0 | persistent storage, home-screen install and backup reminder (F-37); backup export (F-30); sync in v1.1 |
 | Scope creep | MVP delayed | stick to v1.0 scope; new ideas go to the backlog |
 
 ## 13. Open issues
@@ -308,3 +309,4 @@ Test period: **3 weeks** of regular use by both children.
 | D-47 | Audio from pre-prepared files bundled with the app for English words (en-GB) and Polish instructions; browser speech synthesis only as a fallback (N-04). Source and licence of the recordings decided separately. |
 | D-48 | Audio files are generated once with a local open-source speech generator (e.g. Piper): one consistent en-GB voice for English words and one Polish voice for instructions. Before use, verify that the chosen voices' licences allow redistributing the generated files in the public repo; credit them in the About screen if required (F-33). |
 | D-49 | Build the app at minimum cost, including licences: prefer free and open-licence tools, assets and services; anything paid needs the product owner's explicit approval (section 4). |
+| D-50 | Protect local data: request persistent browser storage, show the parent how to install the app on the home screen on first launch, and remind the parent in the parent panel to export a backup when the last one is older than 7 days (F-37). |
