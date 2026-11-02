@@ -101,6 +101,8 @@ First module: **English at beginner level**. Further modules (e.g. German, maths
 - **F-06** A wrong answer never removes stars. The app shows and reads out the correct answer. The word is retried after several intervening exercises rather than immediately, so the child practises recalling it after a short gap (D-36).
 - **F-07** Every instruction (in Polish) and every word (in English) has a play-audio button. Words are read out automatically when they appear (can be turned off).
 
+- **F-36** Save each completed exercise's result and the session position immediately. After closing or reloading the app, or switching profiles, the child can resume their own unfinished session without losing completed exercise results. Resuming must not award the same exercise or session reward twice. The session-completion bonus and sticker, and qualification as a learning day (F-20), require completing the session and remain subject to the daily reward limit (F-24) (D-38).
+
 ### 6.3 Exercise types
 
 | ID | Type | Mechanics |
@@ -291,3 +293,4 @@ Test period: **3 weeks** of regular use by both children.
 | D-35 | Introduce each new word with a picture, written English word and pronunciation before asking the child to answer a checked exercise. Due reviews start with a question; they do not repeat the introductory presentation (F-04). |
 | D-36 | After a wrong answer, show and read out the correct answer, then retry the word after several other exercises rather than immediately (F-06). |
 | D-37 | Introduce written-word exercises gradually, after listening and picture-based tasks, rather than mixing all exercise types from the start (F-35). |
+| D-38 | Save progress after every completed exercise and allow an interrupted session to be resumed without losing results or duplicating rewards. Session rewards and learning-day credit still require session completion; the daily reward limit still applies (F-36). |
