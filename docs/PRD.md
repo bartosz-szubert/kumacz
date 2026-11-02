@@ -228,7 +228,7 @@ Test period: **3 weeks** of regular use by both children.
 | Consistency | each child reaches the weekly goal (min. 4/7 days) in ≥ 2 of 3 weeks |
 | Voluntary use | children at least sometimes ask for the app themselves |
 | Progress | each child completes at least 1 level |
-| Learning | the number of "difficult words" in the parent panel goes down |
+| Learning | performance on the same previously practised words improves across reviews after a time gap; compare the same vocabulary rather than the total number of difficult words (D-40) |
 | Usability | the 1st grader uses the app without adult help |
 
 **v1.1 gate:** meeting the criteria starts work on sync. If they are not met, the core gets fixed first.
@@ -295,3 +295,4 @@ Test period: **3 weeks** of regular use by both children.
 | D-37 | Introduce written-word exercises gradually, after listening and picture-based tasks, rather than mixing all exercise types from the start (F-35). |
 | D-38 | Save progress after every completed exercise and allow an interrupted session to be resumed without losing results or duplicating rewards. Session rewards and learning-day credit still require session completion; the daily reward limit still applies (F-36). |
 | D-39 | Base the difficult-word list on recent checked answers, not lifetime error totals; words leave the list as recent performance improves (F-28). |
+| D-40 | Evaluate MVP learning improvement by comparing answers to the same words in reviews after a time gap. The total number of difficult words is not the learning success metric, because newly introduced vocabulary can increase it (section 11). |
