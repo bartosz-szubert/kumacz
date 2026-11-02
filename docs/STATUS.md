@@ -11,7 +11,7 @@ _Nothing. The next agent may start._
 
 1. Final product-owner read of PRD v0.8, then approve it (gate "PRD approved"). Before generating audio, verify Piper voice licences (D-48); huggingface.co was not reachable from the Claude session.
 2. Choose the tech stack after PRD approval and fill in "Stack and structure" in `AGENTS.md`; then prepare a stage plan where each stage fits one agent session (D-56).
-3. Validate speech synthesis and offline audio behaviour on the target devices.
+3. Validate offline playback of bundled audio files and the speech synthesis fallback on the target devices (D-47).
 
 ## Done
 
