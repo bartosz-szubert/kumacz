@@ -9,13 +9,14 @@ _Nothing. The next agent may start._
 
 ## Next
 
-1. Continue the PRD review one decision at a time: next, whether Leitner promotion requires a due review or is also allowed during extra practice before the due date (F-12, F-13). Review decisions are recorded as D-32–D-44.
-2. Review remaining ambiguities and approve the PRD (gate "PRD approved").
+1. Review and merge PR #4 after explicit product-owner approval. D-32–D-45 are approved product decisions, recorded in draft PRD v0.7; this is not approval of the entire PRD.
+2. Complete the integrated PRD review, including remaining rule details and the speech-synthesis/offline-audio validation plan, then approve it (gate "PRD approved").
 3. Choose the tech stack after PRD approval and fill in "Stack and structure" in `AGENTS.md`.
 4. Validate speech synthesis and offline audio behaviour on the target devices.
 
 ## Done
 
+- Recorded Leitner promotion only in due reviews; correct earlier practice leaves the box and scheduled review date unchanged (D-45, F-12, F-13).
 - Recorded validation of one pilot lesson with the children during implementation before preparing the full MVP content (D-44, section 7).
 - Recorded English pronunciation only after answering picture-to-word exercises, with Polish instruction playback available before answering (D-43, F-07, F-10).
 - Recorded short, calm reward animations enabled by default, with static rewards when the device requests reduced motion (D-42, F-21).
@@ -41,6 +42,7 @@ _Nothing. The next agent may start._
 
 Newest first. One line per finished task: date · agent · what was done · anything the next agent must know.
 
+- 2026-11-02 · Codex · Recorded approved due-review-only Leitner promotion (D-45) in PR #4; D-32–D-45 ready for merge review, explicit merge approval pending · The PRD remains a draft; remaining detailed rules and device-audio validation still need review.
 - 2026-11-02 · Codex · Recorded approved pilot-lesson validation before content expansion (D-44) in PR #4; merge pending product-owner approval · Next clarify Leitner promotion eligibility before the due date; PRD approval and technology selection still precede implementation.
 - 2026-11-02 · Codex · Recorded approved picture-to-word audio timing (D-43) in PR #4; merge pending product-owner approval · Next discuss pilot content validation; speech synthesis and offline audio still need device testing after PRD approval.
 - 2026-11-02 · Codex · Recorded approved default calm reward animations and reduced-motion behaviour (D-42) in PR #4; merge pending product-owner approval · Next clarify task-specific audio without revealing answers; remaining review suggestions are proposals.
