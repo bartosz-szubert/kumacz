@@ -4,7 +4,7 @@
 
 | | |
 |---|---|
-| Document version | 0.6 (draft for approval) |
+| Document version | 0.7 (draft for approval) |
 | Date | 2026-11-02 |
 | Product owner | Bartek |
 | Status | For review before development starts ("PRD approved" gate) |
@@ -112,7 +112,7 @@ First module: **English at beginner level**. Further modules (e.g. German, maths
 
 ### 6.4 Review (Leitner)
 
-- **F-12** Each word has a box 1–5. A correct answer moves it up by one box, up to box 5; a wrong one sends it back to box 1.
+- **F-12** Each word has a box 1–5. A correct answer moves it up by one box, up to box 5, with at most one upward move per word per profile per day, across all sessions (D-32). Further correct answers that day are practice and do not move it up again. A wrong answer still sends it back to box 1.
 - **F-13** The word's resulting box sets when its next review is due (D-29):
 
   | Box | Next review |
@@ -283,3 +283,4 @@ Test period: **3 weeks** of regular use by both children.
 | D-29 | Leitner review intervals 1, 2, 4, 7, 14 days for boxes 1–5; overdue reviews spread across normal-length sessions (F-13) |
 | D-30 | Mixed sessions: about half due reviews, the rest current lesson, unused review places filled with lesson exercises; separate review-only sessions (F-05) |
 | D-31 | Skip-level test: 10 questions, min. 8 correct; passing completes the level and unlocks the next one, without marking its words as mastered (F-16) |
+| D-32 | Leitner: at most one upward move per word per profile per day, across all sessions; further same-day correct answers are practice without another upward move (F-12). This prevents repeated practice in one day from being treated as long-term retention. |
