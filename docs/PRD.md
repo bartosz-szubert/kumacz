@@ -4,8 +4,8 @@
 
 | | |
 |---|---|
-| Document version | 0.5 (draft for approval) |
-| Date | 2026-10-31 |
+| Document version | 0.6 (draft for approval) |
+| Date | 2026-11-02 |
 | Product owner | Bartek |
 | Status | For review before development starts ("PRD approved" gate) |
 | Repository | `kumacz` (public, GitHub) |
@@ -97,7 +97,7 @@ First module: **English at beginner level**. Further modules (e.g. German, maths
 ### 6.2 Learning session
 
 - **F-04** A session is about 8–12 exercises from the current lesson, mixed types, ending with a reward screen.
-- **F-05** Exercises mix new words with reviews (Leitner).
+- **F-05** About half of the exercises in a mixed session are due vocabulary reviews; the rest cover the current lesson. If there are not enough due reviews, the remaining places are filled with current-lesson exercises. The child can also start a separate review-only session (D-30).
 - **F-06** A wrong answer never removes stars. The app shows and reads out the correct answer, and the word comes back later.
 - **F-07** Every instruction (in Polish) and every word (in English) has a play-audio button. Words are read out automatically when they appear (can be turned off).
 
@@ -112,38 +112,48 @@ First module: **English at beginner level**. Further modules (e.g. German, maths
 
 ### 6.4 Review (Leitner)
 
-- **F-12** Each word has a box 1–5. A correct answer moves it up, a wrong one sends it back to box 1.
-- **F-13** Words from lower boxes appear more often.
-- **F-14** A word in box 4+ counts as "known".
+- **F-12** Each word has a box 1–5. A correct answer moves it up by one box, up to box 5; a wrong one sends it back to box 1.
+- **F-13** The word's resulting box sets when its next review is due (D-29):
+
+  | Box | Next review |
+  |---|---|
+  | 1 | in 1 day |
+  | 2 | in 2 days |
+  | 3 | in 4 days |
+  | 4 | in 7 days |
+  | 5 | in 14 days |
+
+  Overdue reviews are spread across ordinary short sessions; a backlog does not make a session longer.
+- **F-14** A word in box 4 or 5 counts as "mastered". Lesson completion (F-34) and vocabulary mastery are tracked separately.
 
 ### 6.5 Levels
 
 - **F-15** Lessons are grouped into levels (section 7). The next level unlocks when the previous one is completed. A level is completed when all its lessons are completed (F-34) or the skip-level test is passed (F-16) (D-23).
 - **F-34** A lesson is completed when every word in it has been answered correctly at least once. Only checked exercises count (F-09, F-10, F-11); flashcard self-assessment "I know it" (F-08) does not. Its words keep coming back in Leitner reviews afterwards (D-21, D-22).
-- **F-16** "Skip level" test: a short quiz (e.g. 10 questions, min. 80%) lets the child complete a level right away.
+- **F-16** "Skip level" test: 10 questions, at least 8 correct to pass. Passing completes the level and unlocks the next one without completing its lessons. It does not mark the level's words as mastered; they stay in reviews (D-31).
 - **F-17** The parent can set a profile's starting level.
 
 ### 6.6 Gamification
 
 - **F-18** Stars: for each completed exercise, a bonus for completing a session, a bonus for reaching the weekly goal.
-- **F-19** Sticker album: one page per level. After each session the child reveals a sticker related to the lesson topic and it goes on the level's page. Completing the level adds a special large level sticker that closes the page; the page layout must fit a varying number of stickers (D-24).
-- **F-20** Weekly goal: by default 4 learning days out of 7. Days of the week are visualised, there is no "lost streak".
+- **F-19** Sticker album: one page per level. After each session the child reveals a sticker related to the lesson topic and it goes on the level's page. Completing the level adds a special large level sticker that closes the page; the page layout must fit a varying number of stickers (D-24). Stickers follow the daily reward limit (F-24).
+- **F-20** Weekly goal: by default 4 learning days out of 7. A day counts after the child completes at least one learning session or review-only session; an unfinished session alone does not count. Days of the week are visualised, there is no "lost streak" (D-25).
 - **F-21** Short animations and praise messages (in Polish, e.g. "Brawo, prawdziwy z Ciebie Kumacz!" — "Well done, you're a real Kumacz!").
 
 ### 6.7 Time limit
 
-- **F-22** The app tracks a profile's total learning time per day.
+- **F-22** The app tracks learning time per day, separately for each profile. Only time in exercises with the app visible counts; menus and background time do not. Tracking pauses after 60 seconds without interaction; playing instruction or pronunciation audio is not inactivity (D-26).
 - **F-23** After the limit is exceeded (30 min by default) it shows a gentle message encouraging a break.
 - **F-24** After the limit the child can keep playing but earns no new stars or stickers that day.
 
 ### 6.8 Parent panel
 
-- **F-25** Access protected by a 4-digit PIN set on first launch.
+- **F-25** Access protected by a 4-digit PIN set on first launch. A forgotten-PIN reset lets the parent set a new PIN without deleting profiles or progress. The PIN prevents accidental access; it is not strong access control and does not verify parent identity (D-28).
 - **F-26** Profile management: add, edit, delete, set starting level.
 - **F-27** Summary for each child: learning days this week, daily time, completed lessons and levels.
 - **F-28** "Difficult words" list: the most frequently missed words.
 - **F-29** Settings: time limit, auto voice-over on/off, theme, change PIN.
-- **F-30** Export progress to a file (backup before migrating to v1.1).
+- **F-30** Backup: export all profiles, progress and app settings to a file, and import a backup to restore them. Import replaces all existing data (no merging). The backup is validated first; an invalid backup never replaces current data. Before import the app explains that current data will be overwritten and asks for explicit confirmation (D-27). Merging imports from several sources is a later-version candidate.
 
 ### 6.9 Themes
 
@@ -266,3 +276,10 @@ Test period: **3 weeks** of regular use by both children.
 | D-22 | Only checked exercises (listen and tap, picture → word, context questions) count towards lesson completion; flashcard "I know it" does not (F-34) |
 | D-23 | Level completion: all lessons of the level completed (or skip-level test passed, F-16); no extra end-of-level test (F-15) |
 | D-24 | Sticker album: a sticker after every session; level completion adds a special large sticker that closes the level's page (F-19) |
+| D-25 | A learning day counts after at least one completed learning or review-only session; weekly goal stays 4 of 7 days (F-20) |
+| D-26 | Count visible exercise time only, excluding menus and background; pause after 60 s of inactivity, audio playback is not inactivity; 30-minute default limit and post-limit reward rules unchanged (F-22–F-24) |
+| D-27 | MVP backup: full export and replacing import of all profiles, progress and settings; validate before replacing; require overwrite confirmation; merging imports considered later (F-30) |
+| D-28 | Forgotten-PIN reset without deleting profiles or progress; the local PIN guards against accidental access, not strong authentication (F-25) |
+| D-29 | Leitner review intervals 1, 2, 4, 7, 14 days for boxes 1–5; overdue reviews spread across normal-length sessions (F-13) |
+| D-30 | Mixed sessions: about half due reviews, the rest current lesson, unused review places filled with lesson exercises; separate review-only sessions (F-05) |
+| D-31 | Skip-level test: 10 questions, min. 8 correct; passing completes the level and unlocks the next one, without marking its words as mastered (F-16) |
