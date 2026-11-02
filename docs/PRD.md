@@ -96,7 +96,7 @@ First module: **English at beginner level**. Further modules (e.g. German, maths
 
 ### 6.2 Learning session
 
-- **F-04** A session is about 8–12 exercises from the current lesson, mixed types, ending with a reward screen.
+- **F-04** A session is about 8–12 exercises from the current lesson, mixed types, ending with a reward screen. At most 3 new words are introduced per session; the remaining exercises practise previously introduced words and due reviews (D-34).
 - **F-05** About half of the exercises in a mixed session are due vocabulary reviews; the rest cover the current lesson. If there are not enough due reviews, the remaining places are filled with current-lesson exercises. The child can also start a separate review-only session (D-30).
 - **F-06** A wrong answer never removes stars. The app shows and reads out the correct answer, and the word comes back later.
 - **F-07** Every instruction (in Polish) and every word (in English) has a play-audio button. Words are read out automatically when they appear (can be turned off).
@@ -285,3 +285,4 @@ Test period: **3 weeks** of regular use by both children.
 | D-31 | Skip-level test: 10 questions, min. 8 correct; passing completes the level and unlocks the next one, without marking its words as mastered (F-16) |
 | D-32 | Leitner: at most one upward move per word per profile per day, across all sessions; further same-day correct answers are practice without another upward move (F-12). This prevents repeated practice in one day from being treated as long-term retention. |
 | D-33 | Only checked exercises (F-09, F-10, F-11) can promote a word in Leitner, subject to D-32. Flashcard self-assessment (F-08), whether "I know it" or "not yet", does not change the box. |
+| D-34 | Introduce at most 3 new words per learning session, leaving room for practice and reviews within the existing 8–12-exercise session (F-04, F-05). |
