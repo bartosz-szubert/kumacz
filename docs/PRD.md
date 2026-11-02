@@ -105,14 +105,14 @@ First module: **English at beginner level**. Further modules (e.g. German, maths
 
 | ID | Type | Mechanics |
 |---|---|---|
-| **F-08** | Flashcards with voice-over | picture → flip → word + pronunciation; child marks "I know it" / "not yet" |
+| **F-08** | Flashcards with voice-over | picture → flip → word + pronunciation; child marks "I know it" / "not yet"; neither self-assessment changes the Leitner box (D-33) |
 | **F-09** | Listen and tap | voice says a word, child picks 1 of 3–4 pictures |
 | **F-10** | Picture → word | picture shown, child picks the correct written word from 3–4 |
 | **F-11** | Context questions | e.g. "What colour is a banana?" → colour tiles |
 
 ### 6.4 Review (Leitner)
 
-- **F-12** Each word has a box 1–5. A correct answer moves it up by one box, up to box 5, with at most one upward move per word per profile per day, across all sessions (D-32). Further correct answers that day are practice and do not move it up again. A wrong answer still sends it back to box 1.
+- **F-12** Each word has a box 1–5. A correct answer in a checked exercise (F-09, F-10, F-11) moves it up by one box, up to box 5, with at most one upward move per word per profile per day, across all sessions (D-32). Further correct answers that day are practice and do not move it up again. A wrong answer in a checked exercise still sends it back to box 1. Flashcard self-assessment (F-08) does not change the box (D-33).
 - **F-13** The word's resulting box sets when its next review is due (D-29):
 
   | Box | Next review |
@@ -284,3 +284,4 @@ Test period: **3 weeks** of regular use by both children.
 | D-30 | Mixed sessions: about half due reviews, the rest current lesson, unused review places filled with lesson exercises; separate review-only sessions (F-05) |
 | D-31 | Skip-level test: 10 questions, min. 8 correct; passing completes the level and unlocks the next one, without marking its words as mastered (F-16) |
 | D-32 | Leitner: at most one upward move per word per profile per day, across all sessions; further same-day correct answers are practice without another upward move (F-12). This prevents repeated practice in one day from being treated as long-term retention. |
+| D-33 | Only checked exercises (F-09, F-10, F-11) can promote a word in Leitner, subject to D-32. Flashcard self-assessment (F-08), whether "I know it" or "not yet", does not change the box. |
