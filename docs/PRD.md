@@ -173,7 +173,7 @@ First module: **English at beginner level**. Further modules (e.g. German, maths
 ## 7. Content — English
 
 **Reference:** Cambridge **Pre A1 Starters** vocabulary.
-**Language variant:** British English for learning vocabulary, spelling and example sentences (e.g. "colour"), matching the children's school textbooks. Request an `en-GB` voice for English speech synthesis when available; voice availability and fallback behaviour must be verified in the planned audio prototype.
+**Language variant:** British English for learning vocabulary, spelling and example sentences (e.g. "colour"), matching the children's school textbooks. English words use bundled `en-GB` audio files (N-04, D-47); when speech synthesis is used as a fallback, request an `en-GB` voice. Fallback behaviour must be verified in the planned audio prototype.
 **Illustrations:** an open-licence emoji set (e.g. OpenMoji or Twemoji) as SVG files bundled with the app, for exercise pictures, avatars and stickers. This gives consistent rendering across devices and offline use without drawing assets before the MVP; do not rely on platform emoji. Licence attribution in the app (F-33). Own SVG stickers and avatars are a v1.1 candidate.
 
 | Level | Topics | Release |
@@ -201,7 +201,7 @@ module (english) → level (1) → lesson (colours) → items (word, translation
 | **N-01** | Works in current browsers on computer (Chrome, Edge) and Android tablet (Chrome) as the primary platform; iPad (Safari) compatibility kept from the start, no Android-specific solutions |
 | **N-02** | Responsive layout: tablet portrait and landscape, computer; touch targets min. 48×48 px |
 | **N-03** | Can be added to the tablet home screen (PWA) and works offline after first load |
-| **N-04** | Voice-over based on browser speech synthesis (no cost, no server) |
+| **N-04** | Voice-over from pre-prepared audio files bundled with the app and cached for offline use: English words (`en-GB`) and Polish instructions. Browser speech synthesis is only a fallback when a file is missing or fails to play (no cost, no server) (D-47) |
 | **N-05** | Static hosting (GitHub Pages) in v1.0, no own server |
 | **N-06** | UI in Polish, learning content in the module's language |
 | **N-07** | First load < 3 s on a typical home connection |
@@ -239,7 +239,7 @@ Test period: **3 weeks** of regular use by both children.
 
 | Risk | Impact | Mitigation |
 |---|---|---|
-| Voice-over quality differs between devices | poor pronunciation on some hardware | test voices on the Android tablet and computer at the start; automatically pick the best available English voice; retest if moving to iPad |
+| Voice-over quality differs between devices | poor pronunciation on some hardware | bundled audio files (D-47); speech synthesis only as fallback, tested on the Android tablet and computer; retest if moving to iPad |
 | Children get bored quickly | drop in consistency | short sessions, mixed exercise types, themed stickers; observe during tests |
 | No sync in the MVP confuses children | "where are my stars?" | clear information for the parent; progress export; v1.1 right after tests |
 | Children bypass the limit by switching profiles | time exceeded | parent panel shows actual time; conversation instead of blocking |
@@ -304,3 +304,4 @@ Test period: **3 weeks** of regular use by both children.
 | D-44 | Validate one pilot lesson with the children during implementation before preparing the full MVP content. Check picture and instruction clarity, difficulty and independent use; refine the lesson pattern before expanding to levels 1–2 (section 7). |
 | D-45 | Only a correct checked answer in a due review can promote a word in Leitner, subject to the once-per-day cap (D-32). Correct answers during earlier extra practice do not promote it or change its scheduled review date; wrong checked answers still reset it to box 1 (F-12, F-13). |
 | D-46 | MVP level 1 has 4 lessons of 8 words (32 words), so that completing a level within the 3-week test is realistic (section 7, section 11). Level 2 size unchanged. |
+| D-47 | Audio from pre-prepared files bundled with the app for English words (en-GB) and Polish instructions; browser speech synthesis only as a fallback (N-04). Source and licence of the recordings decided separately. |
