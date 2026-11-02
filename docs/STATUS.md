@@ -9,13 +9,14 @@ _Nothing. The next agent may start._
 
 ## Next
 
-1. Continue the PRD review one decision at a time: next, whether to validate one pilot lesson with the children before preparing the full MVP content. Review decisions are recorded as D-32–D-43.
+1. Continue the PRD review one decision at a time: next, whether Leitner promotion requires a due review or is also allowed during extra practice before the due date (F-12, F-13). Review decisions are recorded as D-32–D-44.
 2. Review remaining ambiguities and approve the PRD (gate "PRD approved").
 3. Choose the tech stack after PRD approval and fill in "Stack and structure" in `AGENTS.md`.
 4. Validate speech synthesis and offline audio behaviour on the target devices.
 
 ## Done
 
+- Recorded validation of one pilot lesson with the children during implementation before preparing the full MVP content (D-44, section 7).
 - Recorded English pronunciation only after answering picture-to-word exercises, with Polish instruction playback available before answering (D-43, F-07, F-10).
 - Recorded short, calm reward animations enabled by default, with static rewards when the device requests reduced motion (D-42, F-21).
 - Recorded review stickers continuing on the completed level's page; its special sticker marks completion without blocking additions (D-41, F-19, clarification of D-24).
@@ -40,6 +41,7 @@ _Nothing. The next agent may start._
 
 Newest first. One line per finished task: date · agent · what was done · anything the next agent must know.
 
+- 2026-11-02 · Codex · Recorded approved pilot-lesson validation before content expansion (D-44) in PR #4; merge pending product-owner approval · Next clarify Leitner promotion eligibility before the due date; PRD approval and technology selection still precede implementation.
 - 2026-11-02 · Codex · Recorded approved picture-to-word audio timing (D-43) in PR #4; merge pending product-owner approval · Next discuss pilot content validation; speech synthesis and offline audio still need device testing after PRD approval.
 - 2026-11-02 · Codex · Recorded approved default calm reward animations and reduced-motion behaviour (D-42) in PR #4; merge pending product-owner approval · Next clarify task-specific audio without revealing answers; remaining review suggestions are proposals.
 - 2026-11-02 · Codex · Recorded approved review-sticker placement on completed level pages (D-41) in PR #4; merge pending product-owner approval · Next discuss reward animations and reduced motion; remaining review suggestions are proposals.
