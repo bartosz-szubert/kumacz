@@ -9,13 +9,14 @@ _Nothing. The next agent may start._
 
 ## Next
 
-1. Continue the PRD review one decision at a time: next, where stickers from reviews of completed levels go in the album (F-19). Learning, session-recovery and assessment rules are recorded as D-32–D-40.
+1. Continue the PRD review one decision at a time: next, reward animation behaviour and reduced-motion support (F-21, N-08). Learning, session-recovery, assessment and album rules are recorded as D-32–D-41.
 2. Review remaining ambiguities and approve the PRD (gate "PRD approved").
 3. Choose the tech stack after PRD approval and fill in "Stack and structure" in `AGENTS.md`.
 4. Validate speech synthesis and offline audio behaviour on the target devices.
 
 ## Done
 
+- Recorded review stickers continuing on the completed level's page; its special sticker marks completion without blocking additions (D-41, F-19, clarification of D-24).
 - Recorded learning improvement measured on the same words across reviews after a time gap, replacing the difficult-word-count metric (D-40, section 11).
 - Recorded a difficult-word list based on recent checked answers rather than lifetime error totals (D-39, F-28).
 - Recorded per-exercise saving and interrupted-session resumption, with no duplicate rewards and completion-based session rewards and learning-day credit (D-38, F-36).
@@ -37,6 +38,7 @@ _Nothing. The next agent may start._
 
 Newest first. One line per finished task: date · agent · what was done · anything the next agent must know.
 
+- 2026-11-02 · Codex · Recorded approved review-sticker placement on completed level pages (D-41) in PR #4; merge pending product-owner approval · Next discuss reward animations and reduced motion; remaining review suggestions are proposals.
 - 2026-11-02 · Codex · Recorded approved same-word delayed-review learning metric (D-40, section 11) in PR #4; merge pending product-owner approval · Next clarify stickers after level completion; the measurement sample and numerical target remain unspecified.
 - 2026-11-02 · Codex · Recorded approved recent-answer difficult-word list (D-39, F-28) in PR #4; merge pending product-owner approval · Next discuss the learning success metric; recent-answer window and classification threshold remain unspecified.
 - 2026-11-02 · Codex · Recorded approved per-exercise saving and interrupted-session resumption (D-38, F-36) in PR #4; merge pending product-owner approval · Next discuss difficult-word metrics; remaining review suggestions are proposals.
