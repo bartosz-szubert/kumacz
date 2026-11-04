@@ -33,6 +33,7 @@ This file is read by every agent (Codex, Claude Code). Keep it short: every line
 
 - Scope follows the PRD. Anything outside it: propose, do not build. Scope changes are recorded as new `D-xx` entries.
 - No trademarks: no characters, logos or names of protected brands, in code, assets or content.
+  This covers the app (everything shipped to users). Agent tooling in `.agents/` and `.claude/` (reviewed skills from bartosz-szubert/agent-skills) is not part of the app and may contain third-party icons; never copy them into the app.
 - Public repo: never commit secrets, API keys, tokens or personal data.
 - Children's data: nickname, avatar, progress only.
 
