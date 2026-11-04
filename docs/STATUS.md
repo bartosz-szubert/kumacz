@@ -9,13 +9,14 @@ _Nothing. The next agent may start._
 
 ## Next
 
-1. Continue the skill-informed PRD review one decision at a time: next, the recent-answer window and threshold for identifying difficult words (F-28). D-61–D-67 are recorded in draft PRD v0.9 on `docs/prd-review-clarifications`, pending merge approval; other review suggestions remain proposals.
+1. Continue the skill-informed PRD review one decision at a time: next, retry spacing and what to do after a wrong answer near the end of a session (F-06). D-61–D-68 are recorded in draft PRD v0.9 on `docs/prd-review-clarifications`, pending merge approval; other review suggestions remain proposals.
 2. Final product-owner read and approval of the integrated PRD (gate "PRD approved"). Before generating audio, verify Piper voice licences (D-48); huggingface.co was not reachable from the Claude session.
 3. Choose the tech stack after PRD approval and fill in "Stack and structure" in `AGENTS.md`; then prepare a stage plan where each stage fits one agent session (D-56).
 4. Validate offline playback of bundled audio files and the speech synthesis fallback on the target devices (D-47).
 
 ## Done
 
+- Recorded difficult words as at least 2 errors in the latest up to 5 checked answers, with removal below that threshold (D-68, F-28).
 - Recorded review intervals in the device's local calendar days, with reviews due from the start of the target date (D-67, F-12, F-13).
 - Recorded continued learning after persistent-storage refusal when ordinary saving works, with parent information and backup reminders; corrected overstrong storage guarantees (D-66, F-37).
 - Recorded paused session progression on failed progress saving, preservation of the last successful save and safe retry before continuing (D-65, F-36, F-43).
@@ -52,6 +53,7 @@ _Nothing. The next agent may start._
 
 Newest first. One line per finished task: date · agent · what was done · anything the next agent must know.
 
+- 2026-11-04 · Codex · Recorded approved 2-errors-in-5 difficult-word rule (D-68) in PR #8; merge pending explicit approval · Next clarify delayed retries near session end; other review proposals and whole-PRD approval remain pending.
 - 2026-11-04 · Codex · Recorded approved local-calendar review intervals (D-67) in PR #8; merge pending explicit approval · Next define the difficult-word window and threshold; other review proposals and whole-PRD approval remain pending.
 - 2026-11-04 · Codex · Recorded approved graceful handling of persistent-storage refusal (D-66) in PR #8 and corrected F-37's unconditional Safari-retention claim; merge pending explicit approval · Next discuss review-day calculation; other review proposals and whole-PRD approval remain pending.
 - 2026-11-04 · Codex · Recorded approved pause-and-retry behaviour for failed progress saving (D-65) in PR #8; merge pending explicit approval · Next distinguish refusal of persistent-storage protection from actual write failure; other review proposals and whole-PRD approval remain pending.
