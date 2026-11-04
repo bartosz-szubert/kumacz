@@ -106,6 +106,8 @@ First module: **English at beginner level**. Further modules (e.g. German, maths
 
 - **F-41** If a bundled audio file cannot play and no eligible local speech-synthesis voice can play it, offer a retry. A listening-dependent exercise remains ungraded while its required audio is unavailable: playback failure is not a wrong answer and must not lower the Leitner box or add an error to the difficult-word history (D-62).
 
+- **F-42** The interface may start before full offline preparation is complete. Show offline readiness only when the complete MVP package is available locally: app resources, both levels' content, pictures and bundled audio (N-03). If preparation is interrupted or incomplete, do not show it as ready; allow downloading to be retried. No per-lesson download management is required from the child (D-63).
+
 ### 6.3 Exercise types
 
 | ID | Type | Mechanics |
@@ -218,11 +220,11 @@ module (english) → level (1) → lesson (colours) → items (word, translation
 |---|---|
 | **N-01** | Works in current browsers on computer (Chrome, Edge) and Android tablet (Chrome) as the primary platform; iPad (Safari) compatibility kept from the start, no Android-specific solutions |
 | **N-02** | Responsive layout: tablet portrait and landscape, computer; touch targets min. 48×48 px |
-| **N-03** | Can be added to the tablet home screen (PWA) and works offline after first load |
+| **N-03** | Can be added to the tablet home screen (PWA). Offline readiness is confirmed only after the app, content for both MVP levels, pictures and all bundled audio have been downloaded and verified as available locally. Opening the interface alone does not establish offline readiness (F-42, D-63) |
 | **N-04** | Voice-over from pre-prepared audio files bundled with the app and cached for offline use: English words (`en-GB`), Polish instructions and Polish word translations (F-39). Browser speech synthesis is only a fallback when a file is missing or fails to play, and may use local voices only; remote speech services are not allowed. If neither source can play, follow F-41 (D-47, D-62) |
 | **N-05** | Static hosting (GitHub Pages) in v1.0, no own server |
 | **N-06** | UI in Polish, learning content in the module's language |
-| **N-07** | First load < 3 s on a typical home connection |
+| **N-07** | First usable interface < 3 s on a typical home connection. Full offline preparation may finish later and is tracked separately (N-03, D-63) |
 | **N-08** | Readability: high contrast, large font, no small text |
 | **N-09** | Zero keys, passwords or personal data in the repository |
 | **N-10** | Stable IDs for modules, levels, lessons and words; editing content must not lose progress (D-55) |
@@ -344,3 +346,4 @@ Test period: **3 weeks** of regular use by both children.
 | D-60 | Every entry into a session starts with a tap (profile tile, or a "Graj dalej" button when resuming) so browser autoplay rules do not block audio in the first exercise (F-36, F-07). |
 | D-61 | MVP level 1 keeps 32 words across 4 lessons: 8 colours, 10 numbers (1–10), 7 animals and 7 fruit. Lesson lengths vary so the full number range fits without increasing the level's vocabulary total (section 7; clarification of D-46). |
 | D-62 | Speech-synthesis fallback may use local voices only, never remote speech services. If both the bundled file and local fallback are unavailable, offer playback retry and leave listening-dependent exercises ungraded; audio failure must not count as a learning error (N-04, F-41, section 9). |
+| D-63 | Confirm offline readiness only after downloading and verifying local availability of the entire MVP package: app resources, both levels' content, pictures and bundled audio. The interface may start earlier; interrupted or incomplete preparation is not shown as ready and can be retried. Downloading is for the full MVP rather than managed per lesson (N-03, N-07, F-42). |
