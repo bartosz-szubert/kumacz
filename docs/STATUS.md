@@ -9,13 +9,14 @@ _Nothing. The next agent may start._
 
 ## Next
 
-1. Continue the skill-informed PRD review one decision at a time: next, the minimum sample size and numerical success threshold for the ordinary-review learning measurement (section 11). D-61–D-71 are recorded in draft PRD v0.9 on `docs/prd-review-clarifications`, pending merge approval; other review suggestions remain proposals.
+1. Review and merge PR #8 after explicit product-owner approval. The skill-informed review decisions D-61–D-72 are recorded in draft PRD v0.9 on `docs/prd-review-clarifications`; whole-PRD approval remains pending.
 2. Final product-owner read and approval of the integrated PRD (gate "PRD approved"). Before generating audio, verify Piper voice licences (D-48); huggingface.co was not reachable from the Claude session.
 3. Choose the tech stack after PRD approval and fill in "Stack and structure" in `AGENTS.md`; then prepare a stage plan where each stage fits one agent session (D-56).
 4. Validate offline playback of bundled audio files and the speech synthesis fallback on the target devices (D-47).
 
 ## Done
 
+- Recorded per-child learning target: at least 10 eligible words, +20 percentage points or maintenance of an initial score of at least 80%; smaller samples are insufficient (D-72, section 11).
 - Recorded learning measurement from first and last independent due-review answers for the same words, per child, without a separate examination (D-71, section 11, N-12).
 - Recorded written-word exercises becoming available per word after its first correct listen-and-tap answer (D-70, F-35, clarification of D-37).
 - Recorded retry after 2 intervening exercises when it fits, otherwise next-session carryover without extending the session (D-69, F-06, clarification of D-36/D-51).
@@ -56,6 +57,7 @@ _Nothing. The next agent may start._
 
 Newest first. One line per finished task: date · agent · what was done · anything the next agent must know.
 
+- 2026-11-04 · Codex · Recorded approved minimum learning sample and success threshold (D-72); D-61–D-72 ready for PR #8 review, merge pending explicit approval · PRD v0.9 remains a draft; final product-owner reading, whole-PRD approval and voice-licence verification are still pending.
 - 2026-11-04 · Codex · Recorded approved ordinary-review learning measurement (D-71) in PR #8; merge pending explicit approval · Next agree the minimum sample and numerical success threshold; whole-PRD approval remains pending.
 - 2026-11-04 · Codex · Recorded approved per-word listening-success trigger for written-word tasks (D-70) in PR #8; merge pending explicit approval · Next define the learning success measurement and target; other review proposals and whole-PRD approval remain pending.
 - 2026-11-04 · Codex · Recorded approved retry spacing and next-session carryover (D-69) in PR #8; merge pending explicit approval · Next define the written-word exercise introduction trigger; other review proposals and whole-PRD approval remain pending.
