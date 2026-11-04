@@ -121,7 +121,7 @@ First module: **English at beginner level**. Further modules (e.g. German, maths
 
 - **F-40** Wrong options in checked exercises (F-09, F-10, F-11) come from the same lesson or category (e.g. other colours). One question never shows two easily confused pictures (e.g. pen and pencil) (D-59).
 - **F-39** The Polish translation of a word is shown, with a play-audio button, on the back of the flashcard (F-08) and after the child answers a checked exercise, never before the answer. The parent panel shows translations next to words, e.g. in the difficult-word list (F-28) (D-58).
-- **F-35** Introduce exercise types progressively: begin with listening and picture-based tasks, then introduce choosing the written word (F-10), so early practice does not depend on reading English words (D-37).
+- **F-35** Introduce exercise types progressively, separately for each word. Choosing its written form (F-10) becomes available only after the child has answered that word correctly at least once in a listen-and-tap exercise (F-09). Until then, use listening and picture-based tasks for the word; flashcard self-assessment does not satisfy this condition. The trigger is word-specific rather than based on the lesson's session number (D-37, D-70).
 
 ### 6.4 Review (Leitner)
 
@@ -325,7 +325,7 @@ Test period: **3 weeks** of regular use by both children.
 | D-34 | Introduce at most 3 new words per learning session, leaving room for practice and reviews within the existing 8–12-exercise session (F-04, F-05). |
 | D-35 | Introduce each new word with a picture, written English word and pronunciation before asking the child to answer a checked exercise. Due reviews start with a question; they do not repeat the introductory presentation (F-04). |
 | D-36 | After a wrong answer, show and read out the correct answer, then retry after other exercises rather than immediately; spacing and end-of-session handling are defined by D-69 (F-06). |
-| D-37 | Introduce written-word exercises gradually, after listening and picture-based tasks, rather than mixing all exercise types from the start (F-35). |
+| D-37 | Introduce written-word exercises gradually after listening and picture-based tasks, rather than mixing all exercise types from the start; the per-word trigger is defined by D-70 (F-35). |
 | D-38 | Save progress after every completed exercise and allow an interrupted session to be resumed without losing results or duplicating rewards. Session rewards and learning-day credit still require session completion; the daily reward limit still applies (F-36). |
 | D-39 | Base the difficult-word list on recent checked answers, not lifetime error totals; words leave the list as recent performance improves (F-28). |
 | D-40 | Evaluate MVP learning improvement by comparing answers to the same words in reviews after a time gap. The total number of difficult words is not the learning success metric, because newly introduced vocabulary can increase it (section 11). |
@@ -358,3 +358,4 @@ Test period: **3 weeks** of regular use by both children.
 | D-67 | Review intervals use local calendar days according to the device's time zone, not full elapsed 24-hour periods. A due review is available from the start of its target calendar date; a new word's first review is available throughout the next day (F-12, F-13). |
 | D-68 | A word is difficult when at least 2 of its latest up to 5 checked answers are wrong, separately per profile and within the retained answer history. The same threshold applies before 5 answers exist. Remove the word when its current window contains fewer than 2 errors; ungraded audio failures do not count (F-28, N-12; clarification of D-39). |
 | D-69 | After a wrong answer, retry the word after 2 other exercises if it fits within the planned session. Otherwise carry it over to the next session. Do not extend the session to accommodate retries (F-06; clarification of D-36 and D-51). |
+| D-70 | Introduce picture-to-word exercises (F-10) separately for each word, only after at least one correct listen-and-tap answer for that word (F-09). Flashcard self-assessment does not qualify; do not unlock written-word tasks simply because a lesson has reached its second session (F-35; clarification of D-37). |
