@@ -9,12 +9,24 @@ _Nothing. The next agent may start._
 
 ## Next
 
-1. Final product-owner read of PRD v0.8, then approve it (gate "PRD approved"). Before generating audio, verify Piper voice licences (D-48); huggingface.co was not reachable from the Claude session.
+1. Final product-owner read and approval of PRD v0.9 (gate "PRD approved"). Before generating audio, verify Piper voice licences (D-48); huggingface.co was not reachable from the Claude session.
 2. Choose the tech stack after PRD approval and fill in "Stack and structure" in `AGENTS.md`; then prepare a stage plan where each stage fits one agent session (D-56).
 3. Validate offline playback of bundled audio files and the speech synthesis fallback on the target devices (D-47).
 
 ## Done
 
+- Recorded per-child learning target: at least 10 eligible words, +20 percentage points or maintenance of an initial score of at least 80%; smaller samples are insufficient (D-72, section 11).
+- Recorded learning measurement from first and last independent due-review answers for the same words, per child, without a separate examination (D-71, section 11, N-12).
+- Recorded written-word exercises becoming available per word after its first correct listen-and-tap answer (D-70, F-35, clarification of D-37).
+- Recorded retry after 2 intervening exercises when it fits, otherwise next-session carryover without extending the session (D-69, F-06, clarification of D-36/D-51).
+- Recorded difficult words as at least 2 errors in the latest up to 5 checked answers, with removal below that threshold (D-68, F-28).
+- Recorded review intervals in the device's local calendar days, with reviews due from the start of the target date (D-67, F-12, F-13).
+- Recorded continued learning after persistent-storage refusal when ordinary saving works, with parent information and backup reminders; corrected overstrong storage guarantees (D-66, F-37).
+- Recorded paused session progression on failed progress saving, preservation of the last successful save and safe retry before continuing (D-65, F-36, F-43).
+- Recorded all-or-nothing backup imports and migrations, preserving existing data on failure and allowing retry (D-64, F-30, N-11, N-13).
+- Recorded offline readiness only after the full MVP package is locally available, separate from initial interface load; incomplete preparation can be retried (D-63, N-03, N-07, F-42).
+- Recorded local-only speech-synthesis fallback and retry without grading when required audio is unavailable (D-62, N-04, F-41), PRD v0.9 draft.
+- Recorded approved level 1 lesson sizes: 8 colours, 10 numbers, 7 animals and 7 fruit, keeping 32 words (D-61, clarification of D-46), PRD v0.9 draft.
 - Coding skills for Codex and Claude Code (test-driven-development, code-review-and-quality, source-driven-development, debugging-and-error-recovery, security-and-hardening) from bartosz-szubert/agent-skills.
 - Agent skills for Codex and Claude Code (diagram-design, humanizer, interview-me) from the reviewed copies in bartosz-szubert/agent-skills; `AGENTS.md` clarifies that the no-trademarks rule covers the app, not agent tooling.
 - Expert PRD review with the product owner: D-46–D-60 (level 1 size, bundled generated audio, minimum cost, data durability, gentler Leitner demotion, initial and skipped-word boxes, PIN reset check, data rules, staged implementation, picture rule, translations, distractors, tap before audio), PRD v0.8.
@@ -44,6 +56,19 @@ _Nothing. The next agent may start._
 
 Newest first. One line per finished task: date · agent · what was done · anything the next agent must know.
 
+- 2026-11-04 · Codex · Finalized skill-informed PRD v0.9 review decisions D-61–D-72 in PR #8; product owner explicitly approved merging · Next is the product owner's final PRD reading; whole-PRD approval, technology choice and voice-licence verification remain pending.
+- 2026-11-04 · Codex · Recorded approved minimum learning sample and success threshold (D-72); D-61–D-72 ready for PR #8 review, merge pending explicit approval · PRD v0.9 remains a draft; final product-owner reading, whole-PRD approval and voice-licence verification are still pending.
+- 2026-11-04 · Codex · Recorded approved ordinary-review learning measurement (D-71) in PR #8; merge pending explicit approval · Next agree the minimum sample and numerical success threshold; whole-PRD approval remains pending.
+- 2026-11-04 · Codex · Recorded approved per-word listening-success trigger for written-word tasks (D-70) in PR #8; merge pending explicit approval · Next define the learning success measurement and target; other review proposals and whole-PRD approval remain pending.
+- 2026-11-04 · Codex · Recorded approved retry spacing and next-session carryover (D-69) in PR #8; merge pending explicit approval · Next define the written-word exercise introduction trigger; other review proposals and whole-PRD approval remain pending.
+- 2026-11-04 · Codex · Recorded approved 2-errors-in-5 difficult-word rule (D-68) in PR #8; merge pending explicit approval · Next clarify delayed retries near session end; other review proposals and whole-PRD approval remain pending.
+- 2026-11-04 · Codex · Recorded approved local-calendar review intervals (D-67) in PR #8; merge pending explicit approval · Next define the difficult-word window and threshold; other review proposals and whole-PRD approval remain pending.
+- 2026-11-04 · Codex · Recorded approved graceful handling of persistent-storage refusal (D-66) in PR #8 and corrected F-37's unconditional Safari-retention claim; merge pending explicit approval · Next discuss review-day calculation; other review proposals and whole-PRD approval remain pending.
+- 2026-11-04 · Codex · Recorded approved pause-and-retry behaviour for failed progress saving (D-65) in PR #8; merge pending explicit approval · Next distinguish refusal of persistent-storage protection from actual write failure; other review proposals and whole-PRD approval remain pending.
+- 2026-11-04 · Codex · Recorded approved all-or-nothing import and migration behaviour (D-64) in PR #8; merge pending explicit approval · Next discuss failed progress saving during learning; other review proposals and whole-PRD approval remain pending.
+- 2026-11-04 · Codex · Recorded approved full-MVP offline-readiness criteria (D-63) in PR #8; merge pending explicit approval · Next discuss failed imports and migrations; other review proposals and whole-PRD approval remain pending.
+- 2026-11-04 · Codex · Recorded approved local-only speech fallback and ungraded listening exercises on audio failure (D-62) in PR #8; merge pending explicit approval · Next decide offline-readiness criteria; other review proposals and whole-PRD approval remain pending.
+- 2026-11-04 · Codex · Recorded product-owner choice A for level 1 lesson sizes (D-61) on `docs/prd-review-clarifications`; merge pending explicit approval · Next discuss local-only speech fallback; other skill-informed review proposals and whole-PRD approval remain pending.
 - 2026-11-04 · Claude · Added coding skills in `.agents/skills/` with symlinks in `.claude/skills/` · Tooling only; `AGENTS.md` rules take precedence over skills. `frontend-ui-engineering` is available in agent-skills once the stack is chosen.
 - 2026-11-04 · Claude · Added agent skills in `.agents/skills/` with symlinks in `.claude/skills/`; trademark rule clarified (product owner's choice B) · Tooling only; product next steps unchanged. Never copy icons from `diagram-design` into the app.
 - 2026-11-02 · Claude · Expert PRD review, D-46–D-60, PRD v0.8 · All review points closed; next is PRD approval, then tech stack and a stage plan sized to one session each (D-56).

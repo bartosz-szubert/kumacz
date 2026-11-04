@@ -4,8 +4,8 @@
 
 | | |
 |---|---|
-| Document version | 0.8 (draft for approval) |
-| Date | 2026-11-02 |
+| Document version | 0.9 (draft for approval) |
+| Date | 2026-11-04 |
 | Product owner | Bartek |
 | Status | For review before development starts ("PRD approved" gate) |
 | Repository | `kumacz` (public, GitHub) |
@@ -99,10 +99,16 @@ First module: **English at beginner level**. Further modules (e.g. German, maths
 
 - **F-04** A session is about 8–12 exercises from the current lesson, mixed types, ending with a reward screen. At most 3 new words are introduced per session; the remaining exercises practise previously introduced words and due reviews (D-34). Before its first checked exercise, each new word is introduced with a picture, written English word and pronunciation. Due reviews start with a question rather than repeating the introduction (D-35).
 - **F-05** About half of the exercises in a mixed session are due vocabulary reviews; the rest cover the current lesson. If there are not enough due reviews, the remaining places are filled with current-lesson exercises. The child can also start a separate review-only session (D-30).
-- **F-06** A wrong answer never removes stars. The app shows and reads out the correct answer. The word is retried after several intervening exercises rather than immediately, so the child practises recalling it after a short gap (D-36).
+- **F-06** A wrong answer never removes stars. The app shows and reads out the correct answer. Retry the word after 2 other exercises if the retry fits within the session's planned length (F-04). Otherwise carry the word over for retry in the next session. Retries must not extend the current session beyond its planned exercise count (D-36, D-69).
 - **F-07** Every instruction (in Polish) and every word (in English) has a play-audio button. Words are read out automatically when they appear (can be turned off), subject to the exercise-specific rule for F-10: before the answer, only the Polish instruction can be played; English word audio, both automatic and on demand, is available only after the child answers (D-43).
 
-- **F-36** Save each completed exercise's result and the session position immediately. After closing or reloading the app, or switching profiles, the child can resume their own unfinished session without losing completed exercise results. Resuming must not award the same exercise or session reward twice. Every entry into a session starts with a tap (the profile tile, or a large "Graj dalej" button when resuming) so the browser allows audio from the first exercise (D-60). The session-completion bonus, session sticker and qualification as a learning day require completing the session (F-20, D-38). Bonuses and stickers remain subject to the daily reward limit (F-24); that limit does not prevent a completed session from counting as a learning day.
+- **F-36** Save each completed exercise's result and the session position immediately. After closing or reloading the app, or switching profiles, the child can resume their own unfinished session from the last successfully saved exercise, retaining all saved results. Handle save failures as specified in F-43 (D-65). Resuming must not award the same exercise or session reward twice. Every entry into a session starts with a tap (the profile tile, or a large "Graj dalej" button when resuming) to initiate audio through user interaction (D-60). Playback may still be blocked or fail; handle unavailable required audio according to F-41 rather than assuming the tap guarantees playback. The session-completion bonus, session sticker and qualification as a learning day require completing the session (F-20, D-38). Bonuses and stickers remain subject to the daily reward limit (F-24); that limit does not prevent a completed session from counting as a learning day.
+
+- **F-41** If a bundled audio file cannot play and no eligible local speech-synthesis voice can play it, offer a retry. A listening-dependent exercise remains ungraded while its required audio is unavailable: playback failure is not a wrong answer and must not lower the Leitner box or add an error to the difficult-word history (D-62).
+
+- **F-42** The interface may start before full offline preparation is complete. Show offline readiness only when the complete MVP package is available locally: app resources, both levels' content, pictures and bundled audio (N-03). If preparation is interrupted or incomplete, do not show it as ready; allow downloading to be retried. No per-lesson download management is required from the child (D-63).
+
+- **F-43** If saving learning progress fails, pause session progression and preserve the last successfully committed state. Explain the problem and offer to retry saving; while the app stays open, retain the pending result for that retry. Do not present unsaved progress as saved or continue to further exercises until saving succeeds. Retrying must not duplicate exercise results or rewards (F-36, D-65).
 
 ### 6.3 Exercise types
 
@@ -115,11 +121,11 @@ First module: **English at beginner level**. Further modules (e.g. German, maths
 
 - **F-40** Wrong options in checked exercises (F-09, F-10, F-11) come from the same lesson or category (e.g. other colours). One question never shows two easily confused pictures (e.g. pen and pencil) (D-59).
 - **F-39** The Polish translation of a word is shown, with a play-audio button, on the back of the flashcard (F-08) and after the child answers a checked exercise, never before the answer. The parent panel shows translations next to words, e.g. in the difficult-word list (F-28) (D-58).
-- **F-35** Introduce exercise types progressively: begin with listening and picture-based tasks, then introduce choosing the written word (F-10), so early practice does not depend on reading English words (D-37).
+- **F-35** Introduce exercise types progressively, separately for each word. Choosing its written form (F-10) becomes available only after the child has answered that word correctly at least once in a listen-and-tap exercise (F-09). Until then, use listening and picture-based tasks for the word; flashcard self-assessment does not satisfy this condition. The trigger is word-specific rather than based on the lesson's session number (D-37, D-70).
 
 ### 6.4 Review (Leitner)
 
-- **F-12** Each word has a box 1–5. A new word enters box 1 when it is introduced (F-04); its first review is due the next day (D-52). A correct answer in a due review using a checked exercise (F-09, F-10, F-11) moves it up by one box, up to box 5 (D-45), with at most one upward move per word per profile per day, across all sessions (D-32). Further correct answers that day are practice and do not move it up again. A wrong answer in a due review moves it down two boxes, not below box 1, and its next review follows the new box (F-13). A wrong answer outside a due review does not change the box; it still counts for the difficult-word list (F-28) and the word is retried later in the session (F-06) (D-51). Flashcard self-assessment (F-08) does not change the box (D-33).
+- **F-12** Each word has a box 1–5. A new word enters box 1 when it is introduced (F-04); its first review is due on the next local calendar date (D-52, D-67). A correct answer in a due review using a checked exercise (F-09, F-10, F-11) moves it up by one box, up to box 5 (D-45), with at most one upward move per word per profile per day, across all sessions (D-32). Further correct answers that day are practice and do not move it up again. A wrong answer in a due review moves it down two boxes, not below box 1, and its next review follows the new box (F-13). A wrong answer outside a due review does not change the box; it still counts for the difficult-word list (F-28) and the word follows the retry policy in F-06, including carryover when needed (D-51, D-69). Flashcard self-assessment (F-08) does not change the box (D-33).
 - **F-13** The word's resulting box sets when its next review is due (D-29):
 
   | Box | Next review |
@@ -129,6 +135,8 @@ First module: **English at beginner level**. Further modules (e.g. German, maths
   | 3 | in 4 days |
   | 4 | in 7 days |
   | 5 | in 14 days |
+
+  Intervals use calendar days in the device's local time zone, rather than elapsed 24-hour periods. A review is due from the start of its target calendar date. For example, a word introduced on Monday at 19:00 has its first review due from the start of Tuesday; the child need not wait until Tuesday at 19:00 (D-67).
 
   Overdue reviews are spread across ordinary short sessions; a backlog does not make a session longer. Correct answers during extra practice before the review is due do not promote the word or change its scheduled review date (D-45).
 - **F-14** A word in box 4 or 5 counts as "mastered", unless it is still "unconfirmed" (F-38). Lesson completion (F-34) and vocabulary mastery are tracked separately.
@@ -159,10 +167,10 @@ First module: **English at beginner level**. Further modules (e.g. German, maths
 - **F-25** Access protected by a 4-digit PIN set on first launch. A forgotten-PIN reset lets the parent set a new PIN without deleting profiles or progress, after solving an adult check: a random two-digit by two-digit multiplication (e.g. 47 × 36) (D-54). The PIN prevents accidental access; it is not strong access control and does not verify parent identity (D-28).
 - **F-26** Profile management: add, edit, delete, set starting level.
 - **F-27** Summary for each child: learning days this week, daily time, completed lessons and levels.
-- **F-28** "Difficult words" list: identify current difficulties from each word's recent checked answers rather than its lifetime error count. As recent performance improves, the word leaves the list; old mistakes alone must not keep it classified as difficult (D-39).
+- **F-28** "Difficult words" list: for each word and profile, use the most recent up to 5 checked answers in the retained answer history (N-12). A word is difficult when this window contains at least 2 wrong answers; with fewer than 5 answers, apply the same threshold to the available answers. Re-evaluate the list as the window changes: a word leaves when fewer than 2 wrong answers remain. Use recent performance rather than lifetime error totals; ungraded audio failures (F-41) are not answers and do not enter this window (D-39, D-68).
 - **F-29** Settings: time limit, auto voice-over on/off, theme, change PIN.
-- **F-30** Backup: export all profiles, progress and app settings to a file, and import a backup to restore them. Import replaces all existing data (no merging). The backup is validated first; an invalid backup never replaces current data. Before import the app explains that current data will be overwritten and asks for explicit confirmation (D-27). Merging imports from several sources is a later-version candidate.
-- **F-37** Data durability: the app asks the browser for persistent storage; on first launch it shows the parent how to add the app to the home screen (needed on iPad Safari, which otherwise deletes site data after 7 days without a visit); the parent panel reminds the parent to export a backup when the last one is older than 7 days (D-50).
+- **F-30** Backup: export all profiles, progress and app settings to a file, and import a backup to restore them. Import replaces all existing data (no merging). The backup is validated first; an invalid backup never replaces current data. Replacement is all-or-nothing: if the import fails, existing data remains unchanged; report the failure and allow retry (N-13, D-64). Before import the app explains that current data will be overwritten and asks for explicit confirmation (D-27). Merging imports from several sources is a later-version candidate.
+- **F-37** Data durability: request persistent browser storage when supported and check whether it was granted. If protection is refused or unavailable but ordinary progress saving works, learning remains available; explain the limited protection in the parent panel and keep backup reminders. On first launch, show the parent how to add the app to the home screen; installation can help storage protection depending on browser policy, but does not guarantee permanent retention. Do not claim that requesting persistence or installing the app guarantees data safety. The parent panel reminds the parent to export a backup when the last one is older than 7 days (D-50, D-66). Actual progress-save failure pauses the session as specified in F-43 (D-65).
 
 ### 6.9 Themes
 
@@ -178,7 +186,7 @@ First module: **English at beginner level**. Further modules (e.g. German, maths
 ## 7. Content — English
 
 **Reference:** Cambridge **Pre A1 Starters** vocabulary.
-**Language variant:** British English for learning vocabulary, spelling and example sentences (e.g. "colour"), matching the children's school textbooks. English words use bundled `en-GB` audio files (N-04, D-47), generated once with a local open-source speech generator (e.g. Piper), with an `en-GB` voice for English and a Polish voice for instructions (D-48); when speech synthesis is used as a fallback, request an `en-GB` voice. Fallback behaviour must be verified in the planned audio prototype.
+**Language variant:** British English for learning vocabulary, spelling and example sentences (e.g. "colour"), matching the children's school textbooks. English words use bundled `en-GB` audio files (N-04, D-47), generated once with a local open-source speech generator (e.g. Piper), with an `en-GB` voice for English and a Polish voice for instructions (D-48); when speech synthesis is used as a fallback, request an `en-GB` voice from the available local voices only (D-62). Fallback behaviour must be verified in the planned audio prototype.
 **Illustrations:** an open-licence emoji set (e.g. OpenMoji or Twemoji) as SVG files bundled with the app, for exercise pictures, avatars and stickers. This gives consistent rendering across devices and offline use without drawing assets before the MVP; do not rely on platform emoji. Licence attribution in the app (F-33). Own SVG stickers and avatars are a v1.1 candidate.
 **Picture rule:** a word enters the content only if it has an unambiguous picture in the chosen emoji set; otherwise it is replaced by another word from the Pre A1 Starters list (D-57).
 
@@ -190,7 +198,17 @@ First module: **English at beginner level**. Further modules (e.g. German, maths
 | 4 | simple sentences: *I like…*, *I have…*, *It is…* | v1.2 |
 | 5 | movement verbs, weather, days of the week | v1.2 |
 
-Estimate: 4–6 lessons per level, 8–12 words per lesson. **MVP level 1: 4 lessons of 8 words (32 words)**, about 11 sessions at 3 new words per session (D-34), so the 3-week test can realistically reach level completion (section 11, D-46).
+General estimate for other levels: 4–6 lessons per level, 8–12 words per lesson. **MVP level 1: 4 lessons totalling 32 words, with varying lesson sizes** (D-46, D-61):
+
+| Lesson | Number of words |
+|---|---|
+| Colours | 8 |
+| Numbers 1–10 | 10 |
+| Animals | 7 |
+| Fruit | 7 |
+| **Total** | **32** |
+
+At most 3 new words are introduced per session (D-34). Introducing 32 words requires at least 11 sessions by word count alone; this is a lower bound, not a guarantee of level completion. Actual session count also depends on lesson boundaries, reviews and correct answers (F-34). The 3-week test still targets completing at least one level (section 11).
 
 **Content validation:** after PRD approval and once implementation begins, prepare one pilot lesson and try it with the children before preparing the full content for levels 1–2. Check whether they understand the pictures and instructions, whether the difficulty is appropriate, and whether they can complete the tasks independently. Use the findings to refine the lesson pattern before expanding the content (D-44).
 
@@ -206,16 +224,17 @@ module (english) → level (1) → lesson (colours) → items (word, translation
 |---|---|
 | **N-01** | Works in current browsers on computer (Chrome, Edge) and Android tablet (Chrome) as the primary platform; iPad (Safari) compatibility kept from the start, no Android-specific solutions |
 | **N-02** | Responsive layout: tablet portrait and landscape, computer; touch targets min. 48×48 px |
-| **N-03** | Can be added to the tablet home screen (PWA) and works offline after first load |
-| **N-04** | Voice-over from pre-prepared audio files bundled with the app and cached for offline use: English words (`en-GB`), Polish instructions and Polish word translations (F-39). Browser speech synthesis is only a fallback when a file is missing or fails to play (no cost, no server) (D-47) |
+| **N-03** | Can be added to the tablet home screen (PWA). Offline readiness is confirmed only after the app, content for both MVP levels, pictures and all bundled audio have been downloaded and verified as available locally. Opening the interface alone does not establish offline readiness (F-42, D-63) |
+| **N-04** | Voice-over from pre-prepared audio files bundled with the app and cached for offline use: English words (`en-GB`), Polish instructions and Polish word translations (F-39). Browser speech synthesis is only a fallback when a file is missing or fails to play, and may use local voices only; remote speech services are not allowed. If neither source can play, follow F-41 (D-47, D-62) |
 | **N-05** | Static hosting (GitHub Pages) in v1.0, no own server |
 | **N-06** | UI in Polish, learning content in the module's language |
-| **N-07** | First load < 3 s on a typical home connection |
+| **N-07** | First usable interface < 3 s on a typical home connection. Full offline preparation may finish later and is tracked separately (N-03, D-63) |
 | **N-08** | Readability: high contrast, large font, no small text |
 | **N-09** | Zero keys, passwords or personal data in the repository |
 | **N-10** | Stable IDs for modules, levels, lessons and words; editing content must not lose progress (D-55) |
-| **N-11** | Stored data and backups carry a data format version; app updates migrate older data (D-55) |
-| **N-12** | Answer history (word, result, date) is kept for the last 90 days and older entries are deleted automatically; it feeds F-28 and the learning metric (section 11) (D-55) |
+| **N-11** | Stored data and backups carry a data format version; app updates migrate older data. Migrations are all-or-nothing and preserve existing data if they fail (N-13, D-55, D-64) |
+| **N-12** | Answer history stores the word, result, date and enough attempt context to distinguish independent due-review answers from practice and corrective retries. Keep the last 90 days and automatically delete older entries; history feeds F-28 and the learning metric (section 11) (D-55, D-71) |
+| **N-13** | Backup imports and data migrations commit the entire change or none of it. Failure or interruption before completion must leave the previously committed data intact, with no partial replacement or automatic reset. Report failures and allow a safe retry without requiring the parent to restore an exported backup (D-64) |
 
 ## 9. Data and privacy
 
@@ -223,6 +242,7 @@ module (english) → level (1) → lesson (colours) → items (word, translation
 - **v1.1:** only the parent creates an account. Children's data limited to nickname, avatar and progress. Access protected by database rules (each family sees only its own data).
 - No surnames, dates of birth, photos, voice recordings, third-party analytics or ads.
 - Answer history is limited to the last 90 days (N-12).
+- Speech-synthesis fallback uses local voices only and never sends text to a remote speech service (D-62).
 
 ## 10. Architecture — assumptions
 
@@ -241,8 +261,12 @@ Test period: **3 weeks** of regular use by both children.
 | Consistency | each child reaches the weekly goal (min. 4/7 days) in ≥ 2 of 3 weeks |
 | Voluntary use | children at least sometimes ask for the app themselves |
 | Progress | each child completes at least 1 level |
-| Learning | performance on the same previously practised words improves across reviews after a time gap; compare the same vocabulary rather than the total number of difficult words (D-40) |
+| Learning | For each child, compare first and last independent due-review answers for at least 10 eligible words. Require an increase of at least 20 percentage points; if initial accuracy is already at least 80%, require final accuracy at least as high as the initial value. Fewer than 10 eligible words means insufficient measurement (D-40, D-71, D-72) |
 | Usability | the 1st grader uses the app without adult help |
+
+**Learning measurement:** use normal checked due-review answers recorded during the test. For each child, include all words with at least two eligible due-review answers; compare the first and last answer for the same set of words. Eligible answers are the initial independent attempt in a due review, before feedback or showing the solution. Exclude corrective retries, flashcard self-assessment and ungraded audio failures. No separate examination is required (D-71). The sample size and target are defined below (D-72).
+
+**Learning target:** use the same eligible word set for both scores. Initial accuracy is the percentage of those words answered correctly on their first eligible due review; final accuracy uses their last eligible due review during the test. For each child separately, require at least 10 eligible words. If initial accuracy is below 80%, final accuracy must exceed it by at least 20 percentage points. If initial accuracy is 80% or higher, final accuracy must be at least the initial accuracy. Evaluate the thresholds before rounding displayed percentages. With fewer than 10 eligible words, report insufficient measurement rather than claiming learning success or failure; the learning criterion is not yet demonstrated (D-72).
 
 **v1.1 gate:** meeting the criteria starts work on sync. If they are not met, the core gets fixed first.
 
@@ -250,7 +274,7 @@ Test period: **3 weeks** of regular use by both children.
 
 | Risk | Impact | Mitigation |
 |---|---|---|
-| Voice-over quality differs between devices | poor pronunciation on some hardware | bundled audio files (D-47); speech synthesis only as fallback, tested on the Android tablet and computer; retest if moving to iPad |
+| Voice-over quality differs between devices | poor pronunciation on some hardware | bundled audio files (D-47); local-only speech synthesis as fallback (D-62); retry without grading when required audio is unavailable (F-41); test on the Android tablet and computer, and retest if moving to iPad |
 | Children get bored quickly | drop in consistency | short sessions, mixed exercise types, themed stickers; observe during tests |
 | No sync in the MVP confuses children | "where are my stars?" | clear information for the parent; progress export; v1.1 right after tests |
 | Children bypass the limit by switching profiles | time exceeded | parent panel shows actual time; conversation instead of blocking |
@@ -304,8 +328,8 @@ Test period: **3 weeks** of regular use by both children.
 | D-33 | Only checked exercises (F-09, F-10, F-11) can promote a word in Leitner, subject to D-32. Flashcard self-assessment (F-08), whether "I know it" or "not yet", does not change the box. |
 | D-34 | Introduce at most 3 new words per learning session, leaving room for practice and reviews within the existing 8–12-exercise session (F-04, F-05). |
 | D-35 | Introduce each new word with a picture, written English word and pronunciation before asking the child to answer a checked exercise. Due reviews start with a question; they do not repeat the introductory presentation (F-04). |
-| D-36 | After a wrong answer, show and read out the correct answer, then retry the word after several other exercises rather than immediately (F-06). |
-| D-37 | Introduce written-word exercises gradually, after listening and picture-based tasks, rather than mixing all exercise types from the start (F-35). |
+| D-36 | After a wrong answer, show and read out the correct answer, then retry after other exercises rather than immediately; spacing and end-of-session handling are defined by D-69 (F-06). |
+| D-37 | Introduce written-word exercises gradually after listening and picture-based tasks, rather than mixing all exercise types from the start; the per-word trigger is defined by D-70 (F-35). |
 | D-38 | Save progress after every completed exercise and allow an interrupted session to be resumed without losing results or duplicating rewards. Session rewards and learning-day credit still require session completion; the daily reward limit still applies (F-36). |
 | D-39 | Base the difficult-word list on recent checked answers, not lifetime error totals; words leave the list as recent performance improves (F-28). |
 | D-40 | Evaluate MVP learning improvement by comparing answers to the same words in reviews after a time gap. The total number of difficult words is not the learning success metric, because newly introduced vocabulary can increase it (section 11). |
@@ -314,12 +338,12 @@ Test period: **3 weeks** of regular use by both children.
 | D-43 | In picture-to-word exercises (F-10), allow playback of the Polish instruction before the answer, but English pronunciation only after the child answers. Apply this to automatic and on-demand playback so audio does not give away the answer (F-07). |
 | D-44 | Validate one pilot lesson with the children during implementation before preparing the full MVP content. Check picture and instruction clarity, difficulty and independent use; refine the lesson pattern before expanding to levels 1–2 (section 7). |
 | D-45 | Only a correct checked answer in a due review can promote a word in Leitner, subject to the once-per-day cap (D-32). Correct answers during earlier extra practice do not promote it or change its scheduled review date; wrong checked answers still reset it to box 1 (F-12, F-13); error handling revised by D-51. |
-| D-46 | MVP level 1 has 4 lessons of 8 words (32 words), so that completing a level within the 3-week test is realistic (section 7, section 11). Level 2 size unchanged. |
-| D-47 | Audio from pre-prepared files bundled with the app for English words (en-GB) and Polish instructions; browser speech synthesis only as a fallback (N-04). Source and licence of the recordings decided separately. |
+| D-46 | MVP level 1 has 4 lessons totalling 32 words, to make completion within the 3-week test realistic (section 7, section 11). Lesson sizes clarified by D-61; level 2 size unchanged. |
+| D-47 | Audio from pre-prepared files bundled with the app for English words (en-GB) and Polish instructions; browser speech synthesis only as a fallback, restricted to local voices by D-62 (N-04). Source and licence of the recordings decided separately. |
 | D-48 | Audio files are generated once with a local open-source speech generator (e.g. Piper): one consistent en-GB voice for English words and one Polish voice for instructions. Before use, verify that the chosen voices' licences allow redistributing the generated files in the public repo; credit them in the About screen if required (F-33). |
 | D-49 | Build the app at minimum cost, including licences: prefer free and open-licence tools, assets and services; anything paid needs the product owner's explicit approval (section 4). |
 | D-50 | Protect local data: request persistent browser storage, show the parent how to install the app on the home screen on first launch, and remind the parent in the parent panel to export a backup when the last one is older than 7 days (F-37). |
-| D-51 | A wrong checked answer in a due review moves the word down two boxes (minimum box 1); a wrong answer outside a due review leaves the box unchanged but counts for difficult words (F-28) and triggers the in-session retry (F-06). Replaces the box-1 reset in F-12 and D-45, so an accidental tap does not undo weeks of progress. |
+| D-51 | A wrong checked answer in a due review moves the word down two boxes (minimum box 1); a wrong answer outside a due review leaves the box unchanged but counts for difficult words (F-28) and triggers the retry policy in F-06, with spacing and carryover clarified by D-69. Replaces the box-1 reset in F-12 and D-45, so an accidental tap does not undo weeks of progress. |
 | D-52 | A new word enters Leitner box 1 when it is introduced in a session, with its first review due the next day, regardless of answers in that session (F-12). |
 | D-53 | Words of a skipped level (F-16) or a level below the starting level (F-17) that were not introduced yet go at random, about one third each, into boxes 3, 4 and 5, with reviews due after the box interval. They stay "unconfirmed" and do not count as mastered until their first correct due review (F-14, F-38). |
 | D-54 | Forgotten-PIN reset requires an adult check: a random two-digit by two-digit multiplication. Sufficient for protection against accidental access (D-28); no recovery code (F-25). |
@@ -328,4 +352,16 @@ Test period: **3 weeks** of regular use by both children.
 | D-57 | A word enters the learning content only if it has an unambiguous picture in the chosen emoji set; otherwise replace it with another Pre A1 Starters word (section 7). |
 | D-58 | The Polish translation is shown with audio on the flashcard back and after answering a checked exercise, never before the answer; the parent panel shows translations too (F-39). |
 | D-59 | Wrong options in checked exercises come from the same lesson or category, never two easily confused pictures in one question; adaptive difficulty considered after the MVP test (F-40). |
-| D-60 | Every entry into a session starts with a tap (profile tile, or a "Graj dalej" button when resuming) so browser autoplay rules do not block audio in the first exercise (F-36, F-07). |
+| D-60 | Every entry into a session starts with a tap (profile tile, or a "Graj dalej" button when resuming) to initiate audio through user interaction. This does not guarantee successful playback; required-audio failures follow F-41 and D-62 (F-36, F-07). |
+| D-61 | MVP level 1 keeps 32 words across 4 lessons: 8 colours, 10 numbers (1–10), 7 animals and 7 fruit. Lesson lengths vary so the full number range fits without increasing the level's vocabulary total (section 7; clarification of D-46). |
+| D-62 | Speech-synthesis fallback may use local voices only, never remote speech services. If both the bundled file and local fallback are unavailable, offer playback retry and leave listening-dependent exercises ungraded; audio failure must not count as a learning error (N-04, F-41, section 9). |
+| D-63 | Confirm offline readiness only after downloading and verifying local availability of the entire MVP package: app resources, both levels' content, pictures and bundled audio. The interface may start earlier; interrupted or incomplete preparation is not shown as ready and can be retried. Downloading is for the full MVP rather than managed per lesson (N-03, N-07, F-42). |
+| D-64 | Backup import and data migration are all-or-nothing. If either operation fails, preserve the existing data in full, report the error and allow retry; the parent is not required to restore a backup manually (F-30, N-11, N-13). |
+| D-65 | A progress-save failure pauses the learning session, preserves the last successful save, explains the problem and allows retry. Continue only after saving succeeds; do not introduce a practice-without-saving mode or duplicate results or rewards on retry (F-36, F-43). |
+| D-66 | Refusal or unavailability of persistent-storage protection does not block learning when ordinary progress saving works. Inform the parent about limited protection and retain backup reminders. Requesting persistence or home-screen installation is not a guarantee against data loss; actual save failures still pause the session under D-65 (F-37). |
+| D-67 | Review intervals use local calendar days according to the device's time zone, not full elapsed 24-hour periods. A due review is available from the start of its target calendar date; a new word's first review is available throughout the next day (F-12, F-13). |
+| D-68 | A word is difficult when at least 2 of its latest up to 5 checked answers are wrong, separately per profile and within the retained answer history. The same threshold applies before 5 answers exist. Remove the word when its current window contains fewer than 2 errors; ungraded audio failures do not count (F-28, N-12; clarification of D-39). |
+| D-69 | After a wrong answer, retry the word after 2 other exercises if it fits within the planned session. Otherwise carry it over to the next session. Do not extend the session to accommodate retries (F-06; clarification of D-36 and D-51). |
+| D-70 | Introduce picture-to-word exercises (F-10) separately for each word, only after at least one correct listen-and-tap answer for that word (F-09). Flashcard self-assessment does not qualify; do not unlock written-word tasks simply because a lesson has reached its second session (F-35; clarification of D-37). |
+| D-71 | Measure learning through ordinary due-review history during the 3-week test, separately per child. Compare the first and last independent due-review answer for the same words, using words with at least two eligible answers. Exclude corrective retries, flashcard self-assessment and ungraded audio failures; do not add a separate examination. Sample size and success threshold are defined by D-72 (section 11, N-12; clarification of D-40). |
+| D-72 | For each child, measure first-versus-last independent due-review accuracy on the same set of at least 10 eligible words. Require at least +20 percentage points if initial accuracy is below 80%; at 80% or above, require maintaining at least the initial accuracy. Fewer than 10 eligible words means insufficient measurement, without concluding learning success or failure (section 11; completion of D-71). |
