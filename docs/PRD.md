@@ -125,7 +125,7 @@ First module: **English at beginner level**. Further modules (e.g. German, maths
 
 ### 6.4 Review (Leitner)
 
-- **F-12** Each word has a box 1–5. A new word enters box 1 when it is introduced (F-04); its first review is due the next day (D-52). A correct answer in a due review using a checked exercise (F-09, F-10, F-11) moves it up by one box, up to box 5 (D-45), with at most one upward move per word per profile per day, across all sessions (D-32). Further correct answers that day are practice and do not move it up again. A wrong answer in a due review moves it down two boxes, not below box 1, and its next review follows the new box (F-13). A wrong answer outside a due review does not change the box; it still counts for the difficult-word list (F-28) and the word is retried later in the session (F-06) (D-51). Flashcard self-assessment (F-08) does not change the box (D-33).
+- **F-12** Each word has a box 1–5. A new word enters box 1 when it is introduced (F-04); its first review is due on the next local calendar date (D-52, D-67). A correct answer in a due review using a checked exercise (F-09, F-10, F-11) moves it up by one box, up to box 5 (D-45), with at most one upward move per word per profile per day, across all sessions (D-32). Further correct answers that day are practice and do not move it up again. A wrong answer in a due review moves it down two boxes, not below box 1, and its next review follows the new box (F-13). A wrong answer outside a due review does not change the box; it still counts for the difficult-word list (F-28) and the word is retried later in the session (F-06) (D-51). Flashcard self-assessment (F-08) does not change the box (D-33).
 - **F-13** The word's resulting box sets when its next review is due (D-29):
 
   | Box | Next review |
@@ -135,6 +135,8 @@ First module: **English at beginner level**. Further modules (e.g. German, maths
   | 3 | in 4 days |
   | 4 | in 7 days |
   | 5 | in 14 days |
+
+  Intervals use calendar days in the device's local time zone, rather than elapsed 24-hour periods. A review is due from the start of its target calendar date. For example, a word introduced on Monday at 19:00 has its first review due from the start of Tuesday; the child need not wait until Tuesday at 19:00 (D-67).
 
   Overdue reviews are spread across ordinary short sessions; a backlog does not make a session longer. Correct answers during extra practice before the review is due do not promote the word or change its scheduled review date (D-45).
 - **F-14** A word in box 4 or 5 counts as "mastered", unless it is still "unconfirmed" (F-38). Lesson completion (F-34) and vocabulary mastery are tracked separately.
@@ -353,3 +355,4 @@ Test period: **3 weeks** of regular use by both children.
 | D-64 | Backup import and data migration are all-or-nothing. If either operation fails, preserve the existing data in full, report the error and allow retry; the parent is not required to restore a backup manually (F-30, N-11, N-13). |
 | D-65 | A progress-save failure pauses the learning session, preserves the last successful save, explains the problem and allows retry. Continue only after saving succeeds; do not introduce a practice-without-saving mode or duplicate results or rewards on retry (F-36, F-43). |
 | D-66 | Refusal or unavailability of persistent-storage protection does not block learning when ordinary progress saving works. Inform the parent about limited protection and retain backup reminders. Requesting persistence or home-screen installation is not a guarantee against data loss; actual save failures still pause the session under D-65 (F-37). |
+| D-67 | Review intervals use local calendar days according to the device's time zone, not full elapsed 24-hour periods. A due review is available from the start of its target calendar date; a new word's first review is available throughout the next day (F-12, F-13). |
