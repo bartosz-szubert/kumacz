@@ -165,7 +165,7 @@ First module: **English at beginner level**. Further modules (e.g. German, maths
 - **F-27** Summary for each child: learning days this week, daily time, completed lessons and levels.
 - **F-28** "Difficult words" list: identify current difficulties from each word's recent checked answers rather than its lifetime error count. As recent performance improves, the word leaves the list; old mistakes alone must not keep it classified as difficult (D-39).
 - **F-29** Settings: time limit, auto voice-over on/off, theme, change PIN.
-- **F-30** Backup: export all profiles, progress and app settings to a file, and import a backup to restore them. Import replaces all existing data (no merging). The backup is validated first; an invalid backup never replaces current data. Before import the app explains that current data will be overwritten and asks for explicit confirmation (D-27). Merging imports from several sources is a later-version candidate.
+- **F-30** Backup: export all profiles, progress and app settings to a file, and import a backup to restore them. Import replaces all existing data (no merging). The backup is validated first; an invalid backup never replaces current data. Replacement is all-or-nothing: if the import fails, existing data remains unchanged; report the failure and allow retry (N-13, D-64). Before import the app explains that current data will be overwritten and asks for explicit confirmation (D-27). Merging imports from several sources is a later-version candidate.
 - **F-37** Data durability: the app asks the browser for persistent storage; on first launch it shows the parent how to add the app to the home screen (needed on iPad Safari, which otherwise deletes site data after 7 days without a visit); the parent panel reminds the parent to export a backup when the last one is older than 7 days (D-50).
 
 ### 6.9 Themes
@@ -228,8 +228,9 @@ module (english) → level (1) → lesson (colours) → items (word, translation
 | **N-08** | Readability: high contrast, large font, no small text |
 | **N-09** | Zero keys, passwords or personal data in the repository |
 | **N-10** | Stable IDs for modules, levels, lessons and words; editing content must not lose progress (D-55) |
-| **N-11** | Stored data and backups carry a data format version; app updates migrate older data (D-55) |
+| **N-11** | Stored data and backups carry a data format version; app updates migrate older data. Migrations are all-or-nothing and preserve existing data if they fail (N-13, D-55, D-64) |
 | **N-12** | Answer history (word, result, date) is kept for the last 90 days and older entries are deleted automatically; it feeds F-28 and the learning metric (section 11) (D-55) |
+| **N-13** | Backup imports and data migrations commit the entire change or none of it. Failure or interruption before completion must leave the previously committed data intact, with no partial replacement or automatic reset. Report failures and allow a safe retry without requiring the parent to restore an exported backup (D-64) |
 
 ## 9. Data and privacy
 
@@ -347,3 +348,4 @@ Test period: **3 weeks** of regular use by both children.
 | D-61 | MVP level 1 keeps 32 words across 4 lessons: 8 colours, 10 numbers (1–10), 7 animals and 7 fruit. Lesson lengths vary so the full number range fits without increasing the level's vocabulary total (section 7; clarification of D-46). |
 | D-62 | Speech-synthesis fallback may use local voices only, never remote speech services. If both the bundled file and local fallback are unavailable, offer playback retry and leave listening-dependent exercises ungraded; audio failure must not count as a learning error (N-04, F-41, section 9). |
 | D-63 | Confirm offline readiness only after downloading and verifying local availability of the entire MVP package: app resources, both levels' content, pictures and bundled audio. The interface may start earlier; interrupted or incomplete preparation is not shown as ready and can be retried. Downloading is for the full MVP rather than managed per lesson (N-03, N-07, F-42). |
+| D-64 | Backup import and data migration are all-or-nothing. If either operation fails, preserve the existing data in full, report the error and allow retry; the parent is not required to restore a backup manually (F-30, N-11, N-13). |
