@@ -233,7 +233,7 @@ module (english) → level (1) → lesson (colours) → items (word, translation
 | **N-09** | Zero keys, passwords or personal data in the repository |
 | **N-10** | Stable IDs for modules, levels, lessons and words; editing content must not lose progress (D-55) |
 | **N-11** | Stored data and backups carry a data format version; app updates migrate older data. Migrations are all-or-nothing and preserve existing data if they fail (N-13, D-55, D-64) |
-| **N-12** | Answer history (word, result, date) is kept for the last 90 days and older entries are deleted automatically; it feeds F-28 and the learning metric (section 11) (D-55) |
+| **N-12** | Answer history stores the word, result, date and enough attempt context to distinguish independent due-review answers from practice and corrective retries. Keep the last 90 days and automatically delete older entries; history feeds F-28 and the learning metric (section 11) (D-55, D-71) |
 | **N-13** | Backup imports and data migrations commit the entire change or none of it. Failure or interruption before completion must leave the previously committed data intact, with no partial replacement or automatic reset. Report failures and allow a safe retry without requiring the parent to restore an exported backup (D-64) |
 
 ## 9. Data and privacy
@@ -261,8 +261,10 @@ Test period: **3 weeks** of regular use by both children.
 | Consistency | each child reaches the weekly goal (min. 4/7 days) in ≥ 2 of 3 weeks |
 | Voluntary use | children at least sometimes ask for the app themselves |
 | Progress | each child completes at least 1 level |
-| Learning | performance on the same previously practised words improves across reviews after a time gap; compare the same vocabulary rather than the total number of difficult words (D-40) |
+| Learning | compare the first and last independent due-review answer for the same words during the 3-week test, separately for each child; use ordinary review history, not an additional test or the total difficult-word count (D-40, D-71) |
 | Usability | the 1st grader uses the app without adult help |
+
+**Learning measurement:** use normal checked due-review answers recorded during the test. For each child, include only words with at least two eligible due-review answers; compare the first and last answer for the same set of words. Eligible answers are the initial independent attempt in a due review, before feedback or showing the solution. Exclude corrective retries, flashcard self-assessment and ungraded audio failures. No separate examination is required (D-71). Minimum sample size and numerical success threshold remain to be agreed.
 
 **v1.1 gate:** meeting the criteria starts work on sync. If they are not met, the core gets fixed first.
 
@@ -359,3 +361,4 @@ Test period: **3 weeks** of regular use by both children.
 | D-68 | A word is difficult when at least 2 of its latest up to 5 checked answers are wrong, separately per profile and within the retained answer history. The same threshold applies before 5 answers exist. Remove the word when its current window contains fewer than 2 errors; ungraded audio failures do not count (F-28, N-12; clarification of D-39). |
 | D-69 | After a wrong answer, retry the word after 2 other exercises if it fits within the planned session. Otherwise carry it over to the next session. Do not extend the session to accommodate retries (F-06; clarification of D-36 and D-51). |
 | D-70 | Introduce picture-to-word exercises (F-10) separately for each word, only after at least one correct listen-and-tap answer for that word (F-09). Flashcard self-assessment does not qualify; do not unlock written-word tasks simply because a lesson has reached its second session (F-35; clarification of D-37). |
+| D-71 | Measure learning through ordinary due-review history during the 3-week test, separately per child. Compare the first and last independent due-review answer for the same words, using words with at least two eligible answers. Exclude corrective retries, flashcard self-assessment and ungraded audio failures; do not add a separate examination. Sample size and success threshold are a separate decision (section 11, N-12; clarification of D-40). |
