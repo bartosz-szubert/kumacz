@@ -4,8 +4,8 @@
 
 | | |
 |---|---|
-| Document version | 0.8 (draft for approval) |
-| Date | 2026-11-02 |
+| Document version | 0.9 (draft for approval) |
+| Date | 2026-11-04 |
 | Product owner | Bartek |
 | Status | For review before development starts ("PRD approved" gate) |
 | Repository | `kumacz` (public, GitHub) |
@@ -190,7 +190,17 @@ First module: **English at beginner level**. Further modules (e.g. German, maths
 | 4 | simple sentences: *I like…*, *I have…*, *It is…* | v1.2 |
 | 5 | movement verbs, weather, days of the week | v1.2 |
 
-Estimate: 4–6 lessons per level, 8–12 words per lesson. **MVP level 1: 4 lessons of 8 words (32 words)**, about 11 sessions at 3 new words per session (D-34), so the 3-week test can realistically reach level completion (section 11, D-46).
+General estimate for other levels: 4–6 lessons per level, 8–12 words per lesson. **MVP level 1: 4 lessons totalling 32 words, with varying lesson sizes** (D-46, D-61):
+
+| Lesson | Number of words |
+|---|---|
+| Colours | 8 |
+| Numbers 1–10 | 10 |
+| Animals | 7 |
+| Fruit | 7 |
+| **Total** | **32** |
+
+At most 3 new words are introduced per session (D-34). Introducing 32 words requires at least 11 sessions by word count alone; this is a lower bound, not a guarantee of level completion. Actual session count also depends on lesson boundaries, reviews and correct answers (F-34). The 3-week test still targets completing at least one level (section 11).
 
 **Content validation:** after PRD approval and once implementation begins, prepare one pilot lesson and try it with the children before preparing the full content for levels 1–2. Check whether they understand the pictures and instructions, whether the difficulty is appropriate, and whether they can complete the tasks independently. Use the findings to refine the lesson pattern before expanding the content (D-44).
 
@@ -314,7 +324,7 @@ Test period: **3 weeks** of regular use by both children.
 | D-43 | In picture-to-word exercises (F-10), allow playback of the Polish instruction before the answer, but English pronunciation only after the child answers. Apply this to automatic and on-demand playback so audio does not give away the answer (F-07). |
 | D-44 | Validate one pilot lesson with the children during implementation before preparing the full MVP content. Check picture and instruction clarity, difficulty and independent use; refine the lesson pattern before expanding to levels 1–2 (section 7). |
 | D-45 | Only a correct checked answer in a due review can promote a word in Leitner, subject to the once-per-day cap (D-32). Correct answers during earlier extra practice do not promote it or change its scheduled review date; wrong checked answers still reset it to box 1 (F-12, F-13); error handling revised by D-51. |
-| D-46 | MVP level 1 has 4 lessons of 8 words (32 words), so that completing a level within the 3-week test is realistic (section 7, section 11). Level 2 size unchanged. |
+| D-46 | MVP level 1 has 4 lessons totalling 32 words, to make completion within the 3-week test realistic (section 7, section 11). Lesson sizes clarified by D-61; level 2 size unchanged. |
 | D-47 | Audio from pre-prepared files bundled with the app for English words (en-GB) and Polish instructions; browser speech synthesis only as a fallback (N-04). Source and licence of the recordings decided separately. |
 | D-48 | Audio files are generated once with a local open-source speech generator (e.g. Piper): one consistent en-GB voice for English words and one Polish voice for instructions. Before use, verify that the chosen voices' licences allow redistributing the generated files in the public repo; credit them in the About screen if required (F-33). |
 | D-49 | Build the app at minimum cost, including licences: prefer free and open-licence tools, assets and services; anything paid needs the product owner's explicit approval (section 4). |
@@ -329,3 +339,4 @@ Test period: **3 weeks** of regular use by both children.
 | D-58 | The Polish translation is shown with audio on the flashcard back and after answering a checked exercise, never before the answer; the parent panel shows translations too (F-39). |
 | D-59 | Wrong options in checked exercises come from the same lesson or category, never two easily confused pictures in one question; adaptive difficulty considered after the MVP test (F-40). |
 | D-60 | Every entry into a session starts with a tap (profile tile, or a "Graj dalej" button when resuming) so browser autoplay rules do not block audio in the first exercise (F-36, F-07). |
+| D-61 | MVP level 1 keeps 32 words across 4 lessons: 8 colours, 10 numbers (1–10), 7 animals and 7 fruit. Lesson lengths vary so the full number range fits without increasing the level's vocabulary total (section 7; clarification of D-46). |
