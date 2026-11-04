@@ -104,6 +104,8 @@ First module: **English at beginner level**. Further modules (e.g. German, maths
 
 - **F-36** Save each completed exercise's result and the session position immediately. After closing or reloading the app, or switching profiles, the child can resume their own unfinished session without losing completed exercise results. Resuming must not award the same exercise or session reward twice. Every entry into a session starts with a tap (the profile tile, or a large "Graj dalej" button when resuming) so the browser allows audio from the first exercise (D-60). The session-completion bonus, session sticker and qualification as a learning day require completing the session (F-20, D-38). Bonuses and stickers remain subject to the daily reward limit (F-24); that limit does not prevent a completed session from counting as a learning day.
 
+- **F-41** If a bundled audio file cannot play and no eligible local speech-synthesis voice can play it, offer a retry. A listening-dependent exercise remains ungraded while its required audio is unavailable: playback failure is not a wrong answer and must not lower the Leitner box or add an error to the difficult-word history (D-62).
+
 ### 6.3 Exercise types
 
 | ID | Type | Mechanics |
@@ -178,7 +180,7 @@ First module: **English at beginner level**. Further modules (e.g. German, maths
 ## 7. Content — English
 
 **Reference:** Cambridge **Pre A1 Starters** vocabulary.
-**Language variant:** British English for learning vocabulary, spelling and example sentences (e.g. "colour"), matching the children's school textbooks. English words use bundled `en-GB` audio files (N-04, D-47), generated once with a local open-source speech generator (e.g. Piper), with an `en-GB` voice for English and a Polish voice for instructions (D-48); when speech synthesis is used as a fallback, request an `en-GB` voice. Fallback behaviour must be verified in the planned audio prototype.
+**Language variant:** British English for learning vocabulary, spelling and example sentences (e.g. "colour"), matching the children's school textbooks. English words use bundled `en-GB` audio files (N-04, D-47), generated once with a local open-source speech generator (e.g. Piper), with an `en-GB` voice for English and a Polish voice for instructions (D-48); when speech synthesis is used as a fallback, request an `en-GB` voice from the available local voices only (D-62). Fallback behaviour must be verified in the planned audio prototype.
 **Illustrations:** an open-licence emoji set (e.g. OpenMoji or Twemoji) as SVG files bundled with the app, for exercise pictures, avatars and stickers. This gives consistent rendering across devices and offline use without drawing assets before the MVP; do not rely on platform emoji. Licence attribution in the app (F-33). Own SVG stickers and avatars are a v1.1 candidate.
 **Picture rule:** a word enters the content only if it has an unambiguous picture in the chosen emoji set; otherwise it is replaced by another word from the Pre A1 Starters list (D-57).
 
@@ -217,7 +219,7 @@ module (english) → level (1) → lesson (colours) → items (word, translation
 | **N-01** | Works in current browsers on computer (Chrome, Edge) and Android tablet (Chrome) as the primary platform; iPad (Safari) compatibility kept from the start, no Android-specific solutions |
 | **N-02** | Responsive layout: tablet portrait and landscape, computer; touch targets min. 48×48 px |
 | **N-03** | Can be added to the tablet home screen (PWA) and works offline after first load |
-| **N-04** | Voice-over from pre-prepared audio files bundled with the app and cached for offline use: English words (`en-GB`), Polish instructions and Polish word translations (F-39). Browser speech synthesis is only a fallback when a file is missing or fails to play (no cost, no server) (D-47) |
+| **N-04** | Voice-over from pre-prepared audio files bundled with the app and cached for offline use: English words (`en-GB`), Polish instructions and Polish word translations (F-39). Browser speech synthesis is only a fallback when a file is missing or fails to play, and may use local voices only; remote speech services are not allowed. If neither source can play, follow F-41 (D-47, D-62) |
 | **N-05** | Static hosting (GitHub Pages) in v1.0, no own server |
 | **N-06** | UI in Polish, learning content in the module's language |
 | **N-07** | First load < 3 s on a typical home connection |
@@ -233,6 +235,7 @@ module (english) → level (1) → lesson (colours) → items (word, translation
 - **v1.1:** only the parent creates an account. Children's data limited to nickname, avatar and progress. Access protected by database rules (each family sees only its own data).
 - No surnames, dates of birth, photos, voice recordings, third-party analytics or ads.
 - Answer history is limited to the last 90 days (N-12).
+- Speech-synthesis fallback uses local voices only and never sends text to a remote speech service (D-62).
 
 ## 10. Architecture — assumptions
 
@@ -260,7 +263,7 @@ Test period: **3 weeks** of regular use by both children.
 
 | Risk | Impact | Mitigation |
 |---|---|---|
-| Voice-over quality differs between devices | poor pronunciation on some hardware | bundled audio files (D-47); speech synthesis only as fallback, tested on the Android tablet and computer; retest if moving to iPad |
+| Voice-over quality differs between devices | poor pronunciation on some hardware | bundled audio files (D-47); local-only speech synthesis as fallback (D-62); retry without grading when required audio is unavailable (F-41); test on the Android tablet and computer, and retest if moving to iPad |
 | Children get bored quickly | drop in consistency | short sessions, mixed exercise types, themed stickers; observe during tests |
 | No sync in the MVP confuses children | "where are my stars?" | clear information for the parent; progress export; v1.1 right after tests |
 | Children bypass the limit by switching profiles | time exceeded | parent panel shows actual time; conversation instead of blocking |
@@ -325,7 +328,7 @@ Test period: **3 weeks** of regular use by both children.
 | D-44 | Validate one pilot lesson with the children during implementation before preparing the full MVP content. Check picture and instruction clarity, difficulty and independent use; refine the lesson pattern before expanding to levels 1–2 (section 7). |
 | D-45 | Only a correct checked answer in a due review can promote a word in Leitner, subject to the once-per-day cap (D-32). Correct answers during earlier extra practice do not promote it or change its scheduled review date; wrong checked answers still reset it to box 1 (F-12, F-13); error handling revised by D-51. |
 | D-46 | MVP level 1 has 4 lessons totalling 32 words, to make completion within the 3-week test realistic (section 7, section 11). Lesson sizes clarified by D-61; level 2 size unchanged. |
-| D-47 | Audio from pre-prepared files bundled with the app for English words (en-GB) and Polish instructions; browser speech synthesis only as a fallback (N-04). Source and licence of the recordings decided separately. |
+| D-47 | Audio from pre-prepared files bundled with the app for English words (en-GB) and Polish instructions; browser speech synthesis only as a fallback, restricted to local voices by D-62 (N-04). Source and licence of the recordings decided separately. |
 | D-48 | Audio files are generated once with a local open-source speech generator (e.g. Piper): one consistent en-GB voice for English words and one Polish voice for instructions. Before use, verify that the chosen voices' licences allow redistributing the generated files in the public repo; credit them in the About screen if required (F-33). |
 | D-49 | Build the app at minimum cost, including licences: prefer free and open-licence tools, assets and services; anything paid needs the product owner's explicit approval (section 4). |
 | D-50 | Protect local data: request persistent browser storage, show the parent how to install the app on the home screen on first launch, and remind the parent in the parent panel to export a backup when the last one is older than 7 days (F-37). |
@@ -340,3 +343,4 @@ Test period: **3 weeks** of regular use by both children.
 | D-59 | Wrong options in checked exercises come from the same lesson or category, never two easily confused pictures in one question; adaptive difficulty considered after the MVP test (F-40). |
 | D-60 | Every entry into a session starts with a tap (profile tile, or a "Graj dalej" button when resuming) so browser autoplay rules do not block audio in the first exercise (F-36, F-07). |
 | D-61 | MVP level 1 keeps 32 words across 4 lessons: 8 colours, 10 numbers (1–10), 7 animals and 7 fruit. Lesson lengths vary so the full number range fits without increasing the level's vocabulary total (section 7; clarification of D-46). |
+| D-62 | Speech-synthesis fallback may use local voices only, never remote speech services. If both the bundled file and local fallback are unavailable, offer playback retry and leave listening-dependent exercises ungraded; audio failure must not count as a learning error (N-04, F-41, section 9). |
