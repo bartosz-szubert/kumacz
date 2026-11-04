@@ -9,13 +9,14 @@ _Nothing. The next agent may start._
 
 ## Next
 
-1. Continue the skill-informed PRD review one decision at a time: next, the trigger for introducing written-word exercises after listening and picture-based tasks (F-35). D-61–D-69 are recorded in draft PRD v0.9 on `docs/prd-review-clarifications`, pending merge approval; other review suggestions remain proposals.
+1. Continue the skill-informed PRD review one decision at a time: next, the concrete measurement method and target for the 3-week learning success criterion (section 11). D-61–D-70 are recorded in draft PRD v0.9 on `docs/prd-review-clarifications`, pending merge approval; other review suggestions remain proposals.
 2. Final product-owner read and approval of the integrated PRD (gate "PRD approved"). Before generating audio, verify Piper voice licences (D-48); huggingface.co was not reachable from the Claude session.
 3. Choose the tech stack after PRD approval and fill in "Stack and structure" in `AGENTS.md`; then prepare a stage plan where each stage fits one agent session (D-56).
 4. Validate offline playback of bundled audio files and the speech synthesis fallback on the target devices (D-47).
 
 ## Done
 
+- Recorded written-word exercises becoming available per word after its first correct listen-and-tap answer (D-70, F-35, clarification of D-37).
 - Recorded retry after 2 intervening exercises when it fits, otherwise next-session carryover without extending the session (D-69, F-06, clarification of D-36/D-51).
 - Recorded difficult words as at least 2 errors in the latest up to 5 checked answers, with removal below that threshold (D-68, F-28).
 - Recorded review intervals in the device's local calendar days, with reviews due from the start of the target date (D-67, F-12, F-13).
@@ -54,6 +55,7 @@ _Nothing. The next agent may start._
 
 Newest first. One line per finished task: date · agent · what was done · anything the next agent must know.
 
+- 2026-11-04 · Codex · Recorded approved per-word listening-success trigger for written-word tasks (D-70) in PR #8; merge pending explicit approval · Next define the learning success measurement and target; other review proposals and whole-PRD approval remain pending.
 - 2026-11-04 · Codex · Recorded approved retry spacing and next-session carryover (D-69) in PR #8; merge pending explicit approval · Next define the written-word exercise introduction trigger; other review proposals and whole-PRD approval remain pending.
 - 2026-11-04 · Codex · Recorded approved 2-errors-in-5 difficult-word rule (D-68) in PR #8; merge pending explicit approval · Next clarify delayed retries near session end; other review proposals and whole-PRD approval remain pending.
 - 2026-11-04 · Codex · Recorded approved local-calendar review intervals (D-67) in PR #8; merge pending explicit approval · Next define the difficult-word window and threshold; other review proposals and whole-PRD approval remain pending.
