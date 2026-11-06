@@ -1,19 +1,20 @@
 # Status
 
-**Phase:** Implementation (ready to start P01)
+**Phase:** Implementation (P01 completed; merge pending)
 **Last updated:** 2026-11-06
 
 ## In progress
 
-_Nothing. The next agent may start._
+_Nothing. P01 is complete on its branch and awaits merge approval._
 
 ## Next
 
-1. P01 Project foundation (`docs/IMPLEMENTATION.md`). Work through the stages in order, one per session; the pilot test build comes early (P09–P10, D-81).
-2. P02 must verify Piper voice licences before generating audio; huggingface.co was not reachable from the Claude session.
+1. Review and merge P01 from `feature/p01-foundation` after explicit product-owner approval. It provides the scaffold and tool configuration only; see `docs/DEVELOPMENT.md` for verification and commands.
+2. P02 Asset and voice licences (`docs/IMPLEMENTATION.md`): verify specific Piper voice licences and Twemoji attribution before generating audio. The earlier Claude session could not reach huggingface.co.
 
 ## Done
 
+- P01 Project foundation: pinned React/TypeScript/Vite, `idb`, Vitest/Playwright configuration, npm lockfile and disabled install scripts. Verified clean frozen install, type-check, static build, audit and production-preview smoke check in system Chromium. Test runners report zero tests by design; no application tests or learning features were added.
 - Second opinion on the technology proposal and stage plan; product owner chose React + TypeScript + Vite, `idb` with per-profile documents, MP3 via Web Audio, an early pilot test build and Twemoji (D-78–D-82). `docs/IMPLEMENTATION.md` reordered into P01–P40 with oversized stages split; `AGENTS.md` stack filled in.
 - Prepared a technology proposal and draft implementation sequence for second opinion in draft PR #11. Final stack/plan adoption is pending; approved PRD v0.10 remains the product baseline.
 - Product owner accepted integrated PRD v0.10; recorded the approval gate as passed (D-77). Next phase: technology selection.
@@ -60,6 +61,7 @@ _Nothing. The next agent may start._
 
 Newest first. One line per finished task: date · agent · what was done · anything the next agent must know.
 
+- 2026-11-06 · Codex · Completed P01 on `feature/p01-foundation`; merge approval pending · Node 24.19.0 / npm 11.9.0, `npm run check` passes, scripts disabled, no test cases yet; P02 licences next, commands/evidence in `docs/DEVELOPMENT.md`.
 - 2026-11-06 · Claude · Second opinion and technology decisions D-78–D-82 in PR #11 (product owner approved writing to Codex's branch) · Start P01; Dexie/multi-table is recorded only as a future option (D-79).
 - 2026-11-06 · Codex · At the product owner's request, kept PR #11 as a proposal for second opinion, converted it to draft and removed the premature final-stack decision/configuration from its diff · Do not merge or start P01 before review and the owner's final confirmation; PRD v0.10 stays approved.
 - 2026-11-06 · Codex · Finalized the approved PRD v0.10 record (D-77) in PR #10; product owner explicitly approved merging · Next present technology options with a recommendation, obtain the product owner's choice, then plan implementation stages (D-56).
