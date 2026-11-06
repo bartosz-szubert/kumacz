@@ -51,3 +51,5 @@ This file is read by every agent (Codex, Claude Code). Keep it short: every line
 - Data: IndexedDB via `idb`; one versioned document per profile plus a separate answer history (D-79).
 - Audio: MP3 played through the Web Audio API (D-80). Pictures: Twemoji, CC BY 4.0 (D-82).
 - Work through the stages in `docs/IMPLEMENTATION.md` in order; keep learning rules in `src/domain`, outside React and storage.
+- Toolchain: Node version in `.nvmrc`, npm version in `package.json`; use the committed `package-lock.json` and `npm ci`. Dependency install scripts are disabled in `.npmrc`.
+- Checks: `npm run check` (types + static build), `npm test` (Vitest), `npm run test:e2e` (Playwright). P01 has no test cases yet; see `docs/DEVELOPMENT.md` before interpreting empty-suite results.

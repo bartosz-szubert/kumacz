@@ -4,7 +4,7 @@
 
 The first module starts with beginner English for children in grades 1–3. The long-term aim is to support all primary-school grades and subjects, including German, maths, natural science and geography. These future modules are outside the initial MVP.
 
-> **Status:** 📝 Planning. PRD v0.10 is approved; technology selection is next. No code yet.
+> **Status:** Development. PRD v0.11 and the technology decisions are approved. P01 project foundation is prepared; the learning app is not ready yet.
 > **Live app:** coming with v1.0 on GitHub Pages.
 
 ## Why
@@ -62,6 +62,8 @@ Kumacz is built product-first. Before any code, the product was defined in a req
 - User interface in Polish; learning content in the module's language.
 
 Technology: React + TypeScript + Vite, local data in IndexedDB (D-78–D-82). See the [technology decision](docs/TECHNOLOGY_PROPOSAL.md) and the [implementation stages](docs/IMPLEMENTATION.md).
+
+For the pinned toolchain, installation, commands and verification status, see [local development](docs/DEVELOPMENT.md).
 
 ## Privacy
 

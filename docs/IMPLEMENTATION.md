@@ -31,7 +31,7 @@ Keep scheduling, answer evaluation and session policies in the domain layer, sep
 
 ## Stages
 
-All stages are pending. Execute them in order, never in parallel. "Test build" stages (up to P10) serve the pilot (D-81) and are not an MVP release.
+Track completed and current stages in `STATUS.md`. Execute the remaining stages in order, never in parallel. "Test build" stages (up to P10) serve the pilot (D-81) and are not an MVP release.
 
 | ID | Focus | Deliverable and acceptance | PRD / prerequisites |
 |---|---|---|---|
