@@ -15,7 +15,7 @@ Kumacz aims to make daily learning approachable, starting with a 7-year-old who 
 
 ## Principles
 
-- **Short and regular:** a daily goal of at least 10 minutes, with longer learning allowed, and a weekly goal (4 of 7 days) instead of streaks that can be lost.
+- **Short and regular:** a daily goal of at least 10 minutes, with longer learning allowed, and a weekly goal (4 of 7 days) instead of streaks that can be lost. A learning day requires both at least 10 minutes of learning and at least one completed session.
 - **Listen before you read:** every word and instruction can be played aloud.
 - **No competition, no penalties:** stars and a sticker album, never leaderboards; a wrong answer never takes anything away.
 - **Built for parents too:** a PIN-protected panel with learning time, progress and the words a child struggles with.
