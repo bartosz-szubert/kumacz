@@ -9,10 +9,9 @@ _Nothing. The next agent may start._
 
 ## Next
 
-1. Review and merge PR #9 after explicit product-owner approval. D-73–D-76 record the product owner's review feedback in draft PRD v0.10; the learning-day clarification is resolved.
-2. Obtain explicit approval of the integrated PRD (gate "PRD approved"); the product owner's "the rest is probably fine" is not final approval. Before generating audio, verify Piper voice licences (D-48); huggingface.co was not reachable from the Claude session.
-3. Choose the tech stack after PRD approval and fill in "Stack and structure" in `AGENTS.md`; then prepare a stage plan where each stage fits one agent session (D-56).
-4. Validate offline playback of bundled audio files and the speech synthesis fallback on the target devices (D-47).
+1. Obtain explicit product-owner approval of the integrated PRD v0.10 (gate "PRD approved"). Before generating audio, verify Piper voice licences (D-48); huggingface.co was not reachable from the Claude session.
+2. Choose the tech stack after PRD approval and fill in "Stack and structure" in `AGENTS.md`; then prepare a stage plan where each stage fits one agent session (D-56).
+3. Validate offline playback of bundled audio files and the speech synthesis fallback on the target devices (D-47).
 
 ## Done
 
@@ -59,6 +58,7 @@ _Nothing. The next agent may start._
 
 Newest first. One line per finished task: date · agent · what was done · anything the next agent must know.
 
+- 2026-11-06 · Codex · Finalized product-owner review changes D-73–D-76 in PR #9; product owner explicitly approved merging · PRD v0.10 remains a draft pending whole-document approval; next choose the stack after approval and verify voice licences before audio generation.
 - 2026-11-06 · Codex · Recorded explicit learning-day clarification as D-76 in PR #9: at least 10 minutes AND at least one completed session on the same day; merge pending approval · Product-review changes D-73–D-76 are ready for merge review; whole-PRD approval remains pending.
 - 2026-11-06 · Codex · Recorded explicit product-owner review feedback as D-73–D-75 on `docs/product-owner-prd-review`; merge pending approval · Clarify how the 10-minute goal relates to weekly learning-day credit; F-20 and D-25 have not been changed, and whole-PRD approval remains pending.
 - 2026-11-04 · Codex · Finalized skill-informed PRD v0.9 review decisions D-61–D-72 in PR #8; product owner explicitly approved merging · Next is the product owner's final PRD reading; whole-PRD approval, technology choice and voice-licence verification remain pending.
