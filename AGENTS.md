@@ -47,4 +47,11 @@ This file is read by every agent (Codex, Claude Code). Keep it short: every line
 
 ## Stack and structure
 
-Not chosen yet. This section will be filled in when the technology decision is made.
+Chosen in D-78: React + TypeScript + Vite; ordinary CSS with custom properties for themes.
+- Data: IndexedDB via Dexie, accessed only through `src/data`; domain rules stay independent of React/storage.
+- Offline: vite-plugin-pwa with Workbox; verify the complete asset package before reporting readiness (D-63).
+- Tests: Vitest for domain/integration checks, Playwright for critical browser flows; real target-device checks still apply.
+- Hosting: static GitHub Pages at the repository base path.
+- Planned boundaries (create as needed): `src/app`, `src/features`, `src/components`, `src/domain`, `src/data`, `src/content`, `src/audio`, `src/pwa`, `public/assets`, `tests/e2e`.
+- Pin compatible tool/runtime versions and define repository scripts in P01; check actual project commands before running checks.
+- Follow `docs/IMPLEMENTATION.md`, one stage/session/branch/PR at a time; read only the current stage's references.
