@@ -4,7 +4,7 @@ P01 provides the application foundation. The current page only mounts the Kumacz
 
 ## Toolchain and installation
 
-Use Node **24.19.0** (`.nvmrc`) and npm **11.9.0** (`packageManager` and `engines` in `package.json`). The supported Node line is 24. Direct dependency versions are exact; `package-lock.json` is the authoritative resolved dependency graph.
+Use Node **24.19.0** (`.nvmrc`) with its bundled npm. `engines` accepts npm **11.9.0 or newer within 11.x**; `packageManager` records the npm version that created the lockfile. Node 24.19.0 ships npm 11.17.0, so `nvm use` followed by `npm ci` works without installing another npm (verified with npm 11.9.0 and 11.17.0). The supported Node line is 24. Direct dependency versions are exact; `package-lock.json` is the authoritative resolved dependency graph.
 
 ```sh
 nvm use

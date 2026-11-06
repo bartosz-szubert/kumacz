@@ -13,6 +13,7 @@ _Nothing. P01 is complete; P02 is next._
 
 ## Done
 
+- Fixed the npm engine requirement: exact npm 11.9.0 rejected the npm 11.17.0 bundled with Node 24.19.0 (`EBADENGINE` on `npm ci`); now `>=11.9.0 <12`. Clean install and `npm run check` verified with both versions.
 - P01 Project foundation (PR #12): pinned React/TypeScript/Vite, `idb`, Vitest/Playwright configuration, npm lockfile and disabled install scripts. Verified clean frozen install, type-check, static build, audit and production-preview smoke check in system Chromium. Test runners report zero tests by design; no application tests or learning features were added.
 - Second opinion on the technology proposal and stage plan; product owner chose React + TypeScript + Vite, `idb` with per-profile documents, MP3 via Web Audio, an early pilot test build and Twemoji (D-78–D-82). `docs/IMPLEMENTATION.md` reordered into P01–P40 with oversized stages split; `AGENTS.md` stack filled in.
 - Prepared a technology proposal and draft implementation sequence for second opinion in draft PR #11. Final stack/plan adoption is pending; approved PRD v0.10 remains the product baseline.
@@ -60,6 +61,7 @@ _Nothing. P01 is complete; P02 is next._
 
 Newest first. One line per finished task: date · agent · what was done · anything the next agent must know.
 
+- 2026-11-06 · Claude · Reviewed P01 (install, types, build, preview smoke check passed) and fixed the npm engine range · P02 remains next; consider a free GitHub Actions check later (product owner to decide).
 - 2026-11-06 · Codex · Finalized P01 in PR #12; product owner explicitly approved merging · Node 24.19.0 / npm 11.9.0, `npm run check` passes, scripts disabled, no test cases yet; P02 licences next, commands/evidence in `docs/DEVELOPMENT.md`.
 - 2026-11-06 · Claude · Second opinion and technology decisions D-78–D-82 in PR #11 (product owner approved writing to Codex's branch) · Start P01; Dexie/multi-table is recorded only as a future option (D-79).
 - 2026-11-06 · Codex · At the product owner's request, kept PR #11 as a proposal for second opinion, converted it to draft and removed the premature final-stack decision/configuration from its diff · Do not merge or start P01 before review and the owner's final confirmation; PRD v0.10 stays approved.
