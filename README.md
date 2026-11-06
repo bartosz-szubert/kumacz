@@ -4,7 +4,7 @@
 
 The first module starts with beginner English for children in grades 1–3. The long-term aim is to support all primary-school grades and subjects, including German, maths, natural science and geography. These future modules are outside the initial MVP.
 
-> **Status:** 📝 Planning. PRD v0.10 is approved; technology selection is next. No code yet.
+> **Status:** 📝 Implementation planning. PRD v0.10 and the technology stack are approved; development has not started.
 > **Live app:** coming with v1.0 on GitHub Pages.
 
 ## Why
@@ -61,7 +61,9 @@ Kumacz is built product-first. Before any code, the product was defined in a req
 - Bundled audio files for voice-over, with local browser speech synthesis as a fallback.
 - User interface in Polish; learning content in the module's language.
 
-The framework and tooling will be chosen in the next phase.
+Chosen stack (D-78): **React + TypeScript + Vite**, **IndexedDB via Dexie**, **vite-plugin-pwa/Workbox**, ordinary CSS with theme variables, **Vitest** and **Playwright**. Compatible versions will be pinned when the project is scaffolded.
+
+See the staged [implementation plan](docs/IMPLEMENTATION.md).
 
 ## Privacy
 
