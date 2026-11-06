@@ -2,7 +2,7 @@
 
 **A learning web app for primary school kids: short daily sessions, gentle gamification, no competition.**
 
-The first module teaches beginner English to children in grades 1–3. More subjects (German, maths) are planned on the same foundation.
+The first module starts with beginner English for children in grades 1–3. The long-term aim is to support all primary-school grades and subjects, including German, maths, natural science and geography. These future modules are outside the initial MVP.
 
 > **Status:** 📝 Planning. Requirements are drafted and under review; no code yet.
 > **Live app:** coming with v1.0 on GitHub Pages.
@@ -11,11 +11,11 @@ The first module teaches beginner English to children in grades 1–3. More subj
 
 Kids pick up the basics of English at school, but there is little at home for short, regular practice that suits a child who is still learning to read. Many apps are paid, overloaded, or built around leaderboards and streaks that punish a missed day. Parents rarely get a clear view of what their child actually practised.
 
-Kumacz aims to be the opposite: a calm 10-minute daily habit that a 7-year-old can use alone and a parent can follow at a glance.
+Kumacz aims to make daily learning approachable, starting with a 7-year-old who can use it alone and a parent who can follow progress at a glance. The daily goal is at least 10 minutes; children can continue for longer.
 
 ## Principles
 
-- **Short and regular:** a daily goal of about 10 minutes and a weekly goal (4 of 7 days) instead of streaks that can be lost.
+- **Short and regular:** a daily goal of at least 10 minutes, with longer learning allowed, and a weekly goal (4 of 7 days) instead of streaks that can be lost.
 - **Listen before you read:** every word and instruction can be played aloud.
 - **No competition, no penalties:** stars and a sticker album, never leaderboards; a wrong answer never takes anything away.
 - **Built for parents too:** a PIN-protected panel with learning time, progress and the words a child struggles with.
@@ -29,6 +29,8 @@ Kumacz aims to be the opposite: a calm 10-minute daily habit that a 7-year-old c
 | English | Cambridge Pre A1 Starters, 5 levels | in planning (first module) |
 | German | to be defined | idea |
 | Maths | Polish national curriculum | idea |
+| Natural science | Polish national curriculum | idea |
+| Geography | Polish national curriculum | idea |
 
 ## Roadmap
 
@@ -55,8 +57,8 @@ Kumacz is built product-first. Before any code, the product was defined in a req
 
 - Static web app hosted on GitHub Pages; no server in v1.0.
 - Designed for tablet (Android first, iPad-compatible) and desktop, touch and mouse.
-- Installable to the home screen and usable offline after the first load.
-- Voice-over via the browser's built-in speech synthesis.
+- Installable to the home screen; ready for offline learning after the complete MVP package is downloaded.
+- Bundled audio files for voice-over, with local browser speech synthesis as a fallback.
 - User interface in Polish; learning content in the module's language.
 
 The framework and tooling will be chosen in the next phase.
