@@ -1,10 +1,11 @@
-# Implementation plan — Kumacz MVP
+# Implementation proposal — Kumacz MVP
 
-Status: working implementation plan after the product owner's stack choice (D-78), 2026-11-06.
+Status: **draft for a second opinion**, 2026-11-06. Stack and stage order are provisional; see [TECHNOLOGY_PROPOSAL.md](TECHNOLOGY_PROPOSAL.md).
 Product baseline: approved PRD v0.10. Product behaviour comes from [PRD.md](PRD.md); current work and handoff belong in [STATUS.md](STATUS.md).
 
-## Execution rules
+## Execution rules after approval
 
+- Start implementation only after the second opinion and the product owner's final confirmation of the stack and plan. Until then these stages are proposals for review.
 - Work in the order below, one agent at a time. Each numbered stage is one focused task, one session, one branch and one PR under AGENTS.md.
 - Read only the current stage and the PRD sections it references. If a stage grows beyond a session, split it before continuing and record the remaining work in STATUS.
 - At stage completion, record what passed, what remains, and the next stage in STATUS. Merge requires the product owner's explicit approval.
@@ -15,7 +16,7 @@ Product baseline: approved PRD v0.10. Product behaviour comes from [PRD.md](PRD.
 - Real children's profiles, progress and exported backups stay out of commits, test fixtures and CI artifacts.
 - A technical prototype is not an MVP release. Full offline readiness requires all final MVP assets (D-63); a successful fixture-cache test alone is insufficient.
 
-## Approved stack and boundaries
+## Proposed stack and boundaries
 
 - UI: React + TypeScript, built with Vite; ordinary CSS with custom properties for Electric and Neon.
 - Data: IndexedDB through Dexie, behind the dedicated data layer. Components never access storage directly.
@@ -33,7 +34,7 @@ All stages below are pending. Prerequisites refer to earlier stages; execute sta
 
 | ID | Focus | Deliverable and acceptance | PRD / prerequisites |
 |---|---|---|---|
-| P01 | Project foundation | React/TypeScript/Vite scaffold, build/type-check scripts, Vitest and Playwright configuration. Pin compatible versions and the package-manager lockfile. Inspect dependency scripts before enabling them; verify a reproducible install. Build and type-check pass. | D-78, N-05, N-09 |
+| P01 | Project foundation | React/TypeScript/Vite scaffold, build/type-check scripts, Vitest and Playwright configuration. Pin compatible versions and the package-manager lockfile. Inspect dependency scripts before enabling them; verify a reproducible install. Build and type-check pass. | Proposed stack above; N-05, N-09 |
 | P02 | Asset and voice feasibility | Verify licences of candidate emoji assets and specific English/Polish voices, including redistribution of generated audio. Record attribution and provenance. Generate a small technical audio fixture only after checks pass. Select suitable assets within D-18/D-48/D-57; paid tools require approval. | P01; D-18, D-48, D-49, D-57 |
 | P03 | Audio player | Bundled English/Polish playback, user-initiated start, local-only speech fallback, replay and failure handling. No grading when required audio is unavailable; no remote voice fallback. | P02; F-07, F-39, F-41, N-04, D-60, D-62 |
 | P04 | Offline technical prototype | Configure PWA manifest, repository-relative paths and caching for a complete fixture package. Verify interrupted preparation is not shown as ready and reopening without network plays the fixtures. Full-MVP readiness waits for P33. | P03; N-03, F-42, D-63 |
