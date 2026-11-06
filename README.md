@@ -4,7 +4,7 @@
 
 The first module starts with beginner English for children in grades 1–3. The long-term aim is to support all primary-school grades and subjects, including German, maths, natural science and geography. These future modules are outside the initial MVP.
 
-> **Status:** 📝 Planning. Requirements are drafted and under review; no code yet.
+> **Status:** 📝 Planning. PRD v0.10 is approved; technology selection is next. No code yet.
 > **Live app:** coming with v1.0 on GitHub Pages.
 
 ## Why
