@@ -1,6 +1,6 @@
 # Kumacz — instructions for coding agents
 
-Kumacz is a learning web app for primary school kids. First module: beginner English for grades 1–3.
+Kumacz is a learning web app intended to grow across all primary-school grades and subjects. The initial MVP is beginner English for grades 1–3 (D-73, D-75).
 This file is read by every agent (Codex, Claude Code). Keep it short: every line costs tokens on every task.
 
 ## Start every task here

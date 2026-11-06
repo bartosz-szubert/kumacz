@@ -4,8 +4,8 @@
 
 | | |
 |---|---|
-| Document version | 0.9 (draft for approval) |
-| Date | 2026-11-04 |
+| Document version | 0.10 (draft for approval) |
+| Date | 2026-11-06 |
 | Product owner | Bartek |
 | Status | For review before development starts ("PRD approved" gate) |
 | Repository | `kumacz` (public, GitHub) |
@@ -15,9 +15,9 @@
 
 ## 1. Product goal
 
-Kumacz is an educational web app for children in grades 1–3 of primary school. It teaches through short daily sessions with gentle gamification that **rewards consistency, not competition**.
+Kumacz is an educational web app for primary-school pupils. Its long-term aim is to support learning across all primary-school grades. The initial release starts with children in grades 1–3 and beginner English (D-73). It supports regular daily practice with gentle gamification that **rewards consistency, not competition**.
 
-First module: **English at beginner level**. Further modules (e.g. German, maths, aligned with the Polish national curriculum) should be addable without rebuilding the app.
+First module: **English at beginner level**. Future modules may include German, maths, natural science, geography and other primary-school subjects, aligned with the Polish national curriculum. Content is separated from code to support this expansion; these subjects are a long-term direction, outside the current MVP (D-75).
 
 ## 2. Problem
 
@@ -27,6 +27,8 @@ First module: **English at beginner level**. Further modules (e.g. German, maths
 
 ## 3. Users
 
+The personas below describe the initial MVP users. Older primary-school pupils are part of the long-term audience; their content and needs will be specified in later releases (D-73).
+
 | Persona | Description | Key needs |
 |---|---|---|
 | **Child A**: 1st grader | reads with difficulty, knows single English words | voice-over, pictures instead of text, large buttons, quick wins |
@@ -35,7 +37,7 @@ First module: **English at beginner level**. Further modules (e.g. German, maths
 
 ## 4. Design principles
 
-1. **Short and regular**: daily goal of about 10 minutes, not long sessions.
+1. **Regular daily practice**: the daily learning goal is at least 10 minutes. Children may continue learning for longer; reaching 10 minutes does not end or block a session (D-74).
 2. **No competition**: no leaderboards, no comparing siblings. Cooperation instead (shared goal from v1.1).
 3. **No penalties**: no "lost streaks". A weekly goal instead of an unbroken streak.
 4. **Listen before you read**: every word and instruction can be played aloud.
@@ -56,7 +58,7 @@ First module: **English at beginner level**. Further modules (e.g. German, maths
 | Exercise types | Flashcards with voice-over · Listen and tap · Picture → word · Context questions |
 | Review | Leitner system for vocabulary |
 | Gamification | Stars ⭐ · Sticker album · Weekly goal |
-| Time | Per-profile timer, gentle reminder after 30 min |
+| Time | Daily goal of at least 10 minutes · per-profile timer · gentle reminder after 30 min |
 | Parent panel | Profiles, summaries, difficult words, settings, PIN |
 | Themes | "Electric" and "Neon", switchable |
 | Data storage | Local in the browser (through a dedicated data layer) |
@@ -78,7 +80,8 @@ First module: **English at beginner level**. Further modules (e.g. German, maths
 
 ### Later (outside current scope)
 
-- Modules: German, maths (aligned with the national curriculum).
+- Broader coverage across all primary-school grades, beyond the initial grades 1–3 audience (D-73).
+- Modules: German, maths, natural science, geography and other primary-school subjects (aligned with the national curriculum); no release dates assigned (D-75).
 - AI conversation: requires a backend, an API key and a separate privacy assessment.
 
 ### Out of scope
@@ -102,7 +105,7 @@ First module: **English at beginner level**. Further modules (e.g. German, maths
 - **F-06** A wrong answer never removes stars. The app shows and reads out the correct answer. Retry the word after 2 other exercises if the retry fits within the session's planned length (F-04). Otherwise carry the word over for retry in the next session. Retries must not extend the current session beyond its planned exercise count (D-36, D-69).
 - **F-07** Every instruction (in Polish) and every word (in English) has a play-audio button. Words are read out automatically when they appear (can be turned off), subject to the exercise-specific rule for F-10: before the answer, only the Polish instruction can be played; English word audio, both automatic and on demand, is available only after the child answers (D-43).
 
-- **F-36** Save each completed exercise's result and the session position immediately. After closing or reloading the app, or switching profiles, the child can resume their own unfinished session from the last successfully saved exercise, retaining all saved results. Handle save failures as specified in F-43 (D-65). Resuming must not award the same exercise or session reward twice. Every entry into a session starts with a tap (the profile tile, or a large "Graj dalej" button when resuming) to initiate audio through user interaction (D-60). Playback may still be blocked or fail; handle unavailable required audio according to F-41 rather than assuming the tap guarantees playback. The session-completion bonus, session sticker and qualification as a learning day require completing the session (F-20, D-38). Bonuses and stickers remain subject to the daily reward limit (F-24); that limit does not prevent a completed session from counting as a learning day.
+- **F-36** Save each completed exercise's result and the session position immediately. After closing or reloading the app, or switching profiles, the child can resume their own unfinished session from the last successfully saved exercise, retaining all saved results. Handle save failures as specified in F-43 (D-65). Resuming must not award the same exercise or session reward twice. Every entry into a session starts with a tap (the profile tile, or a large "Graj dalej" button when resuming) to initiate audio through user interaction (D-60). Playback may still be blocked or fail; handle unavailable required audio according to F-41 rather than assuming the tap guarantees playback. The session-completion bonus and session sticker require completing the session (D-38). Learning-day credit requires both conditions in F-20 (D-76). Bonuses and stickers remain subject to the daily reward limit (F-24); that limit does not prevent learning-day credit when both F-20 conditions are met.
 
 - **F-41** If a bundled audio file cannot play and no eligible local speech-synthesis voice can play it, offer a retry. A listening-dependent exercise remains ungraded while its required audio is unavailable: playback failure is not a wrong answer and must not lower the Leitner box or add an error to the difficult-word history (D-62).
 
@@ -153,12 +156,13 @@ First module: **English at beginner level**. Further modules (e.g. German, maths
 
 - **F-18** Stars: for each completed exercise, a bonus for completing a session, a bonus for reaching the weekly goal.
 - **F-19** Sticker album: one page per level. After each session the child reveals a sticker related to the lesson topic and it goes on the level's page. Completing the level adds a special large level sticker marking completion. The page continues to accept stickers from review sessions for that level; the page layout must fit a varying number of stickers (D-24, D-41). Stickers follow the daily reward limit (F-24).
-- **F-20** Weekly goal: by default 4 learning days out of 7. A day counts after the child completes at least one learning session or review-only session; an unfinished session alone does not count. Days of the week are visualised, there is no "lost streak" (D-25).
+- **F-20** Weekly goal: by default 4 learning days out of 7. A day counts only when the same profile has both accumulated at least 10 minutes of learning time under F-22 that day and completed at least one learning or review-only session that day. Time may accumulate across multiple sessions; credit is awarded once both conditions are met. A completed session shorter than 10 minutes alone does not qualify, and 10 minutes with no completed session does not qualify. Days of the week are visualised, there is no "lost streak" (D-25, D-76).
 - **F-21** Short, calm reward animations are enabled by default, with praise messages in Polish (e.g. "Brawo, prawdziwy z Ciebie Kumacz!" — "Well done, you're a real Kumacz!"). When the device requests reduced motion, show the reward without animation (D-42).
 
 ### 6.7 Time limit
 
 - **F-22** The app tracks learning time per day, separately for each profile. Only time in exercises with the app visible counts; menus and background time do not. Tracking pauses after 60 seconds without interaction; playing instruction or pronunciation audio is not inactivity (D-26).
+- **F-44** The daily learning goal is reached after a profile accumulates at least 10 minutes of learning time counted under F-22. Time may accumulate across multiple sessions. The child may continue for longer; reaching the goal does not end or block learning. The existing 30-minute reminder and reward-limit rules still apply (F-23, F-24, D-74).
 - **F-23** After the limit is exceeded (30 min by default) it shows a gentle message encouraging a break.
 - **F-24** After the limit the child can keep playing but earns no new stars or stickers that day.
 
@@ -184,6 +188,8 @@ First module: **English at beginner level**. Further modules (e.g. German, maths
 - **F-33** An "About" screen credits third-party assets as their licences require (e.g. the open emoji set, D-18).
 
 ## 7. Content — English
+
+This section defines the initial beginner-English path. It is not the full English curriculum for all primary-school grades; broader coverage will be planned in later releases (D-73).
 
 **Reference:** Cambridge **Pre A1 Starters** vocabulary.
 **Language variant:** British English for learning vocabulary, spelling and example sentences (e.g. "colour"), matching the children's school textbooks. English words use bundled `en-GB` audio files (N-04, D-47), generated once with a local open-source speech generator (e.g. Piper), with an `en-GB` voice for English and a Polish voice for instructions (D-48); when speech synthesis is used as a fallback, request an `en-GB` voice from the available local voices only (D-62). Fallback behaviour must be verified in the planned audio prototype.
@@ -289,6 +295,8 @@ Test period: **3 weeks** of regular use by both children.
 4. ~~Who can change the theme~~: child on own profile screen and parent; stored per profile (D-19).
 5. ~~English variant for learning content~~: British English (D-20).
 
+6. ~~Relationship between the daily goal and weekly learning-day credit~~: both at least 10 minutes of counted learning and at least one completed session are required on the same day (F-20, D-76).
+
 ## 14. Decision log
 
 | # | Decision |
@@ -299,7 +307,7 @@ Test period: **3 weeks** of regular use by both children.
 | D-04 | Devices: computer and tablet |
 | D-05 | Option B: local storage in MVP, sync (Supabase) in v1.1 |
 | D-06 | Start at Pre A1; 5-level path; "skip level" test |
-| D-07 | Daily goal ~10 min; 30 min limit with a gentle reminder, no blocking |
+| D-07 | Daily goal at least 10 min, with longer learning allowed (clarified by D-74); 30 min limit with a gentle reminder, no blocking |
 | D-08 | Gamification without competition: stars, sticker album (v1.0), room building (v1.2) |
 | D-09 | Shared sibling goal ("family tree") in v1.1 |
 | D-10 | MVP exercise types: flashcards, listen and tap, picture → word, context questions |
@@ -317,7 +325,7 @@ Test period: **3 weeks** of regular use by both children.
 | D-22 | Only checked exercises (listen and tap, picture → word, context questions) count towards lesson completion; flashcard "I know it" does not (F-34) |
 | D-23 | Level completion: all lessons of the level completed (or skip-level test passed, F-16); no extra end-of-level test (F-15) |
 | D-24 | Sticker album: a sticker after every session; level completion adds a special large level sticker marking completion; the page continues to accept review stickers (F-19, clarified by D-41) |
-| D-25 | A learning day counts after at least one completed learning or review-only session; weekly goal stays 4 of 7 days (F-20) |
+| D-25 | A learning day requires at least 10 minutes of counted learning and at least one completed learning or review-only session on the same day, as revised by D-76; weekly goal stays 4 of 7 days (F-20). |
 | D-26 | Count visible exercise time only, excluding menus and background; pause after 60 s of inactivity, audio playback is not inactivity; 30-minute default limit and post-limit reward rules unchanged (F-22–F-24) |
 | D-27 | MVP backup: full export and replacing import of all profiles, progress and settings; validate before replacing; require overwrite confirmation; merging imports considered later (F-30) |
 | D-28 | Forgotten-PIN reset without deleting profiles or progress; the local PIN guards against accidental access, not strong authentication (F-25) |
@@ -330,7 +338,7 @@ Test period: **3 weeks** of regular use by both children.
 | D-35 | Introduce each new word with a picture, written English word and pronunciation before asking the child to answer a checked exercise. Due reviews start with a question; they do not repeat the introductory presentation (F-04). |
 | D-36 | After a wrong answer, show and read out the correct answer, then retry after other exercises rather than immediately; spacing and end-of-session handling are defined by D-69 (F-06). |
 | D-37 | Introduce written-word exercises gradually after listening and picture-based tasks, rather than mixing all exercise types from the start; the per-word trigger is defined by D-70 (F-35). |
-| D-38 | Save progress after every completed exercise and allow an interrupted session to be resumed without losing results or duplicating rewards. Session rewards and learning-day credit still require session completion; the daily reward limit still applies (F-36). |
+| D-38 | Save progress after every completed exercise and allow an interrupted session to be resumed without losing saved results or duplicating rewards. Session rewards require session completion; learning-day credit follows F-20 and D-76. The daily reward limit still applies to stars and stickers (F-36). |
 | D-39 | Base the difficult-word list on recent checked answers, not lifetime error totals; words leave the list as recent performance improves (F-28). |
 | D-40 | Evaluate MVP learning improvement by comparing answers to the same words in reviews after a time gap. The total number of difficult words is not the learning success metric, because newly introduced vocabulary can increase it (section 11). |
 | D-41 | Stickers earned from reviews of a completed level continue to go on that level's page. Its special large sticker marks completion rather than closing the page to further stickers; keep one page per level (F-19, clarification of D-24). |
@@ -365,3 +373,7 @@ Test period: **3 weeks** of regular use by both children.
 | D-70 | Introduce picture-to-word exercises (F-10) separately for each word, only after at least one correct listen-and-tap answer for that word (F-09). Flashcard self-assessment does not qualify; do not unlock written-word tasks simply because a lesson has reached its second session (F-35; clarification of D-37). |
 | D-71 | Measure learning through ordinary due-review history during the 3-week test, separately per child. Compare the first and last independent due-review answer for the same words, using words with at least two eligible answers. Exclude corrective retries, flashcard self-assessment and ungraded audio failures; do not add a separate examination. Sample size and success threshold are defined by D-72 (section 11, N-12; clarification of D-40). |
 | D-72 | For each child, measure first-versus-last independent due-review accuracy on the same set of at least 10 eligible words. Require at least +20 percentage points if initial accuracy is below 80%; at 80% or above, require maintaining at least the initial accuracy. Fewer than 10 eligible words means insufficient measurement, without concluding learning success or failure (section 11; completion of D-71). |
+| D-73 | The long-term audience covers all primary-school grades. Grades 1–3 and beginner English are the initial release focus, rather than a permanent limit on the product's audience (sections 1, 3, 5 and 7). |
+| D-74 | The daily learning goal is at least 10 minutes of counted learning time; the child may learn for longer. Reaching 10 minutes does not stop learning. Existing reminder and reward-limit rules remain; weekly learning-day qualification follows D-76 (F-44, section 4; clarification of D-07). |
+| D-75 | Future modules may include natural science, geography and other primary-school subjects alongside German and maths. This is the long-term product direction; the current MVP remains beginner English, levels 1–2 (sections 1 and 5). |
+| D-76 | A learning day counts only after the same profile both accumulates at least 10 minutes of counted learning and completes at least one learning or review-only session that day. Time may accumulate across sessions; award credit when both conditions are met. Either condition alone is insufficient; the weekly goal remains 4 of 7 days (F-20, F-36; revision of D-25). |
