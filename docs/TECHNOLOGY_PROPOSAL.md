@@ -1,7 +1,33 @@
 # Technology proposal — Kumacz MVP
 
-Status: **draft for a second opinion**, 2026-11-06.
-The product owner initially preferred option A and has requested a second opinion before introducing it. The technology choice and implementation sequence remain provisional. The approved product baseline is [PRD v0.10](PRD.md); this proposal does not change product requirements.
+Status: **decided** on 2026-11-06 after a second opinion (Claude); decisions D-78–D-82 in the [PRD](PRD.md).
+The original proposal (Codex) is kept below for context; the "Decision" section takes precedence where they differ.
+
+## Decision (after the second opinion)
+
+| Area | Decision | ID |
+|---|---|---|
+| UI and build | React + TypeScript + Vite; ordinary CSS with custom properties; Vitest + Playwright | D-78 |
+| Local data | IndexedDB via `idb` (instead of Dexie): one versioned document per profile plus a separate answer-history store; imports and migrations write the complete new state in one transaction | D-79 |
+| Audio | MP3 (Piper WAV converted with a free tool), loaded whole from the cache and played through the Web Audio API | D-80 |
+| Offline | vite-plugin-pwa / Workbox precache as proposed; readiness checks every file in the package list; a new app version activates only on the profile picker, never during a session | D-63, F-36 |
+| Pilot | Early test build after about ten stages (see [IMPLEMENTATION.md](IMPLEMENTATION.md)) | D-81 |
+| Pictures | Twemoji (jdecked/twemoji), graphics CC BY 4.0 | D-82 |
+
+**Future option (not planned):** if data grows substantially (many subjects, v1.1 sync), consider a multi-table model, e.g. with Dexie (D-79).
+
+## Second opinion summary
+
+1. React + TypeScript + Vite: retained. About 15 screens justify a component framework; agents know it well; bundle size does not threaten N-07.
+2. Dexie: replaced. The data set is small (a few profiles, tens of words, 90-day history). A per-profile document makes imports and migrations naturally all-or-nothing (N-11, N-13) with less code than multi-table transactions.
+3. Offline: retained with two additions. Safari requests media with byte ranges, which plain cached responses do not serve, so audio is decoded from whole cached files via Web Audio (D-80). Ogg is not reliably supported on iPad Safari, so audio is MP3. App updates wait for the profile picker.
+4. Pilot: moved from stage 22 to an early test build (D-81); the pilot checks pictures, instructions, difficulty and independent use and does not need PIN, parent panel, Leitner or offline.
+5. Stage sizes: the old P06, P18, P20 and P33 were split.
+6. Evidence still needed: Piper voice licences (huggingface.co was unreachable from the Claude session; check in P02); whether browsers reliably report local voices (`localService`) for D-62, on the tablet; real iPad tests in addition to Playwright WebKit. Emoji licences were checked in the source READMEs: Twemoji graphics CC BY 4.0, OpenMoji CC BY-SA 4.0.
+
+---
+
+## Original proposal (Codex, 2026-11-06)
 
 ## Proposed stack
 
@@ -52,13 +78,14 @@ Please prioritise concrete correctness, scope and maintenance issues, cite PRD I
 
 ## Decision and execution status
 
-The product owner will make the final technology/plan decision after the second opinion. Until then, keep the PR in draft, leave the approved PRD and agent stack configuration unchanged, and do not start P01 or merge this proposal as the implementation baseline.
+Superseded by the "Decision" section at the top of this file.
 
 ## Official references checked
 
 - [React from scratch, including framework tradeoffs and Vite](https://react.dev/learn/build-a-react-app-from-scratch)
 - [Vite static deployment / GitHub Pages](https://vite.dev/guide/static-deploy.html#github-pages)
-- [Dexie transactions](https://dexie.org/docs/Dexie/Dexie.transaction())
+- [Dexie transactions](https://dexie.org/docs/Dexie/Dexie.transaction()) (not adopted, D-79)
+- [Twemoji (jdecked/twemoji)](https://github.com/jdecked/twemoji) and [OpenMoji](https://github.com/hfg-gmuend/openmoji) licence sections
 - [Vite PWA](https://vite-pwa-org.netlify.app/guide/)
 - [Vitest](https://vitest.dev/guide/)
 - [Playwright](https://playwright.dev/docs/intro)

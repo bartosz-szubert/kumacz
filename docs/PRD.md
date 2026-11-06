@@ -4,10 +4,10 @@
 
 | | |
 |---|---|
-| Document version | 0.10 (approved) |
+| Document version | 0.11 (approved; technology decisions added) |
 | Date | 2026-11-06 |
 | Product owner | Bartek |
-| Status | Approved by the product owner on 2026-11-06; "PRD approved" gate passed. Next: technology selection. |
+| Status | Approved by the product owner on 2026-11-06; "PRD approved" gate passed. Technology decisions D-78–D-82 recorded on 2026-11-06. |
 | Repository | `kumacz` (public, GitHub) |
 | Hosting | GitHub Pages: `<login>.github.io/kumacz` |
 
@@ -193,7 +193,7 @@ This section defines the initial beginner-English path. It is not the full Engli
 
 **Reference:** Cambridge **Pre A1 Starters** vocabulary.
 **Language variant:** British English for learning vocabulary, spelling and example sentences (e.g. "colour"), matching the children's school textbooks. English words use bundled `en-GB` audio files (N-04, D-47), generated once with a local open-source speech generator (e.g. Piper), with an `en-GB` voice for English and a Polish voice for instructions (D-48); when speech synthesis is used as a fallback, request an `en-GB` voice from the available local voices only (D-62). Fallback behaviour must be verified in the planned audio prototype.
-**Illustrations:** an open-licence emoji set (e.g. OpenMoji or Twemoji) as SVG files bundled with the app, for exercise pictures, avatars and stickers. This gives consistent rendering across devices and offline use without drawing assets before the MVP; do not rely on platform emoji. Licence attribution in the app (F-33). Own SVG stickers and avatars are a v1.1 candidate.
+**Illustrations:** the Twemoji open-licence emoji set (jdecked/twemoji, graphics under CC BY 4.0) as SVG files (D-82) bundled with the app, for exercise pictures, avatars and stickers. This gives consistent rendering across devices and offline use without drawing assets before the MVP; do not rely on platform emoji. Licence attribution in the app (F-33). Own SVG stickers and avatars are a v1.1 candidate.
 **Picture rule:** a word enters the content only if it has an unambiguous picture in the chosen emoji set; otherwise it is replaced by another word from the Pre A1 Starters list (D-57).
 
 | Level | Topics | Release |
@@ -255,7 +255,9 @@ module (english) → level (1) → lesson (colours) → items (word, translation
 - The app runs entirely in the browser (static files on GitHub Pages).
 - **Data layer** separated from the rest of the app: in v1.0 it stores locally, in v1.1 the same layer uses Supabase. The rest of the app does not change.
 - **Content in data files** (JSON) following the structure in section 7.
-- The choice of specific technologies (framework, tooling) is a separate decision after PRD approval.
+- Technology (D-78): React + TypeScript built with Vite; ordinary CSS with custom properties; Vitest and Playwright for tests; static build on GitHub Pages.
+- Local data (D-79): IndexedDB through the small `idb` library; each profile's state is one versioned document and answer history is stored separately. Imports and migrations prepare the complete new state and write it in one transaction (N-11, N-13).
+- Audio (D-80): MP3 files, loaded whole from the offline cache and played through the Web Audio API.
 - Implementation is split into small stages, each fitting one agent session's token limit; the stage plan is prepared after the technology choice (D-56).
 
 ## 11. MVP success criteria
@@ -290,7 +292,7 @@ Test period: **3 weeks** of regular use by both children.
 ## 13. Open issues
 
 1. ~~Which tablet~~: resolved (D-14).
-2. Technology choice: decision after PRD approval.
+2. ~~Technology choice~~: resolved (D-78–D-82).
 3. ~~Avatars, stickers and exercise illustrations~~: bundled open-licence emoji set (D-18).
 4. ~~Who can change the theme~~: child on own profile screen and parent; stored per profile (D-19).
 5. ~~English variant for learning content~~: British English (D-20).
@@ -378,3 +380,8 @@ Test period: **3 weeks** of regular use by both children.
 | D-75 | Future modules may include natural science, geography and other primary-school subjects alongside German and maths. This is the long-term product direction; the current MVP remains beginner English, levels 1–2 (sections 1 and 5). |
 | D-76 | A learning day counts only after the same profile both accumulates at least 10 minutes of counted learning and completes at least one learning or review-only session that day. Time may accumulate across sessions; award credit when both conditions are met. Either condition alone is insufficient; the weekly goal remains 4 of 7 days (F-20, F-36; revision of D-25). |
 | D-77 | The product owner accepted the integrated PRD v0.10 after reviewing D-73–D-76, passing the "PRD approved" gate on 2026-11-06. Next choose the technology stack, then prepare implementation stages under D-56. |
+| D-78 | Technology after a second opinion: React + TypeScript + Vite, ordinary CSS with custom properties, Vitest and Playwright, static GitHub Pages build (section 10). |
+| D-79 | Local data: one versioned document per profile plus a separate answer-history store in IndexedDB, through the `idb` library; imports and migrations write the complete new state in one transaction (N-11, N-13). Future option if data grows substantially (e.g. many subjects or v1.1 sync): a multi-table model, e.g. with Dexie. |
+| D-80 | Audio files are MP3, loaded whole from the offline cache and played through the Web Audio API, so offline playback also works in Safari; verify on the target tablet in the audio-player stage (N-04). |
+| D-81 | The pilot lesson (D-44) runs early, on a test build after about ten implementation stages: one lesson, listen-and-tap, flashcards, a simplified session and simple saving, with a simple profile screen without a PIN. The test build may temporarily deviate from F-03 and other MVP requirements; it is not an MVP release. |
+| D-82 | Emoji set: Twemoji (jdecked/twemoji), graphics under CC BY 4.0, credited in the About screen (F-33); do not use the originating company's name or logo beyond the required attribution (D-18, section 7). |

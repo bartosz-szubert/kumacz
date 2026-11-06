@@ -61,7 +61,7 @@ Kumacz is built product-first. Before any code, the product was defined in a req
 - Bundled audio files for voice-over, with local browser speech synthesis as a fallback.
 - User interface in Polish; learning content in the module's language.
 
-The framework and tooling will be chosen in the next phase. A [technology proposal](docs/TECHNOLOGY_PROPOSAL.md) and [draft implementation sequence](docs/IMPLEMENTATION.md) are awaiting a second opinion and the product owner's final confirmation.
+Technology: React + TypeScript + Vite, local data in IndexedDB (D-78–D-82). See the [technology decision](docs/TECHNOLOGY_PROPOSAL.md) and the [implementation stages](docs/IMPLEMENTATION.md).
 
 ## Privacy
 

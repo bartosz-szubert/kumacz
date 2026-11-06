@@ -47,4 +47,7 @@ This file is read by every agent (Codex, Claude Code). Keep it short: every line
 
 ## Stack and structure
 
-Not chosen yet. This section will be filled in when the technology decision is made.
+- React + TypeScript + Vite; ordinary CSS with custom properties; Vitest and Playwright (D-78).
+- Data: IndexedDB via `idb`; one versioned document per profile plus a separate answer history (D-79).
+- Audio: MP3 played through the Web Audio API (D-80). Pictures: Twemoji, CC BY 4.0 (D-82).
+- Work through the stages in `docs/IMPLEMENTATION.md` in order; keep learning rules in `src/domain`, outside React and storage.
