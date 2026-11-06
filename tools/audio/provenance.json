@@ -1,0 +1,84 @@
+{
+  "reviewedOn": "2026-11-06",
+  "purpose": "P02 synthetic evaluation clips; proposed voices, not final content approval",
+  "generator": {
+    "name": "sherpa-onnx",
+    "version": "1.13.8",
+    "source": "https://github.com/k2-fsa/sherpa-onnx/tree/v1.13.8",
+    "license": "Apache-2.0"
+  },
+  "conversion": {
+    "tool": "FFmpeg",
+    "version": "7.1.5-0+deb13u1",
+    "codec": "libmp3lame",
+    "bitrateKbps": 64,
+    "sampleRate": 22050,
+    "channels": 1
+  },
+  "models": [
+    {
+      "id": "cori-medium",
+      "directory": "vits-piper-en_GB-cori-medium",
+      "download": "https://github.com/k2-fsa/sherpa-onnx/releases/download/tts-models/vits-piper-en_GB-cori-medium.tar.bz2",
+      "archiveSha256": "49c9a5361bbdd95d7ca9687c4de11e5908481f65e7c7c368960df79949fdac2b",
+      "license": "public-domain (author declaration)",
+      "licenseSource": "https://brycebeattie.com/files/tts/",
+      "files": {
+        "MODEL_CARD": "38d76dfde845837b184668f8bab1c6426ad740b1af0fcebc349037822739e536",
+        "en_GB-cori-medium.onnx": "8b0d3cdd77f2878e0aa2048103eabb4d01b334783f99629f042bcf703aeba487",
+        "en_GB-cori-medium.onnx.json": "e262c16d7f192f69d4edd6b4ef8a5915379e67495fcc402f1ab15eeb33da3d36",
+        "tokens.txt": "ef3a7e4a8d1af0c9d4dc45aaae1a6242ebe24a7ed6f3d025a49eb29682784c6d"
+      }
+    },
+    {
+      "id": "supertonic-3-int8",
+      "directory": "sherpa-onnx-supertonic-3-tts-int8-2026-05-11",
+      "download": "https://github.com/k2-fsa/sherpa-onnx/releases/download/tts-models/sherpa-onnx-supertonic-3-tts-int8-2026-05-11.tar.bz2",
+      "archiveSha256": "82fa96f91c4ef8abaae3a14a3f4153facf88bed821d1f7331cec2700f432c427",
+      "license": "BigScience Open RAIL-M (use restrictions, synthetic disclosure)",
+      "licenseSource": "https://huggingface.co/Supertone/supertonic-3/blob/main/LICENSE",
+      "files": {
+        "LICENSE": "0dfe0d0ba84416fe3879d9a34f4909d8d0137c78d1e95834177b0414ac096fa2",
+        "README.md": "a96c347945f7c8bc1673bea3525b1ac8d36fdde556e1e0a6a186052429caf863",
+        "duration_predictor.int8.onnx": "c3eb91414d5ff8a7a239b7fe9e34e7e2bf8a8140d8375ffb14718b1c639325db",
+        "text_encoder.int8.onnx": "c7befd5ea8c3119769e8a6c1486c4edc6a3bc8365c67621c881bbb774b9902ff",
+        "tts.json": "42078d3aef1cd43ab43021f3c54f47d2d75ceb4e75f627f118890128b06a0d09",
+        "unicode_indexer.bin": "8402ca48e5189a8950138580b0fff64db6f072f24ac07cd54ba8b2fbb9883b30",
+        "vector_estimator.int8.onnx": "20cd86fa5c6effedfda0e7cffe5b0569ca401c440a0c3a1d72bf39286c0db3fd",
+        "vocoder.int8.onnx": "e923d60f53f95eb1ce235f1dc33ec56d9c057823c96fa6f8acf98f32b0da6152",
+        "voice.bin": "67d5209b0ee8ce6c74105ffbe12fe6a7628aea3b4ba2fcb308a4a67938a93ce8"
+      }
+    }
+  ],
+  "fixtures": [
+    {
+      "id": "en-GB-red",
+      "text": "Red.",
+      "language": "en-GB",
+      "model": "cori-medium",
+      "speakerId": 0,
+      "speed": 1.0,
+      "path": "public/assets/audio/fixtures/en-GB-red.mp3",
+      "mp3Sha256": "e840a2c6ac467256f75a97817e2dde8ad5b094edd00328ed1085b81982801485",
+      "wavSha256": "5abb108b9340628e54e50cf79bf0a8116a6714b6fe2656bb79ce8189d9cef14d",
+      "wavSampleRate": 22050,
+      "mp3Bytes": 9906,
+      "mp3DurationSeconds": 1.201633
+    },
+    {
+      "id": "pl-PL-listen-and-choose",
+      "text": "Posłuchaj i wybierz obrazek.",
+      "language": "pl-PL",
+      "model": "supertonic-3-int8",
+      "speakerId": 0,
+      "speed": 1.0,
+      "steps": 8,
+      "path": "public/assets/audio/fixtures/pl-PL-listen-and-choose.mp3",
+      "mp3Sha256": "e2b34358adc436fe2c28e52eaa2309b51eb342c64518c8cc648b8eddc32dc174",
+      "wavSha256": "fb53ccb97a8ec2e385e8d2ce9f3da6238c738cf061833edb44f1d25b4bdb1599",
+      "wavSampleRate": 44100,
+      "mp3Bytes": 21190,
+      "mp3DurationSeconds": 2.612245
+    }
+  ]
+}
