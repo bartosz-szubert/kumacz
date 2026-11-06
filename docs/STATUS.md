@@ -9,9 +9,8 @@ _Nothing. The next agent may start._
 
 ## Next
 
-1. Review and merge the PRD approval record on `docs/prd-approval` after explicit product-owner merge approval. PRD v0.10 is accepted under D-77; no technology choice has been made.
-2. Present technology options with a recommendation, obtain the product owner's choice and fill in "Stack and structure" in `AGENTS.md`; then prepare a stage plan where each stage fits one agent session (D-56).
-3. Before generating audio, verify Piper voice licences (D-48); huggingface.co was not reachable from the earlier Claude session. Validate offline playback of bundled audio and the local speech-synthesis fallback on target devices (D-47, D-62).
+1. Present technology options with a recommendation, obtain the product owner's choice and fill in "Stack and structure" in `AGENTS.md`; then prepare a stage plan where each stage fits one agent session (D-56).
+2. Before generating audio, verify Piper voice licences (D-48); huggingface.co was not reachable from the earlier Claude session. Validate offline playback of bundled audio and the local speech-synthesis fallback on target devices (D-47, D-62).
 
 ## Done
 
@@ -59,6 +58,7 @@ _Nothing. The next agent may start._
 
 Newest first. One line per finished task: date · agent · what was done · anything the next agent must know.
 
+- 2026-11-06 · Codex · Finalized the approved PRD v0.10 record (D-77) in PR #10; product owner explicitly approved merging · Next present technology options with a recommendation, obtain the product owner's choice, then plan implementation stages (D-56).
 - 2026-11-06 · Codex · Recorded acceptance of integrated PRD v0.10 as D-77 on `docs/prd-approval`; merge pending explicit approval · Present stack options next; no technology decision or implementation has been authorized yet.
 - 2026-11-06 · Codex · Finalized product-owner review changes D-73–D-76 in PR #9; product owner explicitly approved merging · PRD v0.10 remains a draft pending whole-document approval; next choose the stack after approval and verify voice licences before audio generation.
 - 2026-11-06 · Codex · Recorded explicit learning-day clarification as D-76 in PR #9: at least 10 minutes AND at least one completed session on the same day; merge pending approval · Product-review changes D-73–D-76 are ready for merge review; whole-PRD approval remains pending.
