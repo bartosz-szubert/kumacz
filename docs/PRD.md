@@ -4,8 +4,8 @@
 
 | | |
 |---|---|
-| Document version | 0.9 (draft for approval) |
-| Date | 2026-11-04 |
+| Document version | 0.10 (draft for approval) |
+| Date | 2026-11-06 |
 | Product owner | Bartek |
 | Status | For review before development starts ("PRD approved" gate) |
 | Repository | `kumacz` (public, GitHub) |
@@ -15,9 +15,9 @@
 
 ## 1. Product goal
 
-Kumacz is an educational web app for children in grades 1–3 of primary school. It teaches through short daily sessions with gentle gamification that **rewards consistency, not competition**.
+Kumacz is an educational web app for primary-school pupils. Its long-term aim is to support learning across all primary-school grades. The initial release starts with children in grades 1–3 and beginner English (D-73). It supports regular daily practice with gentle gamification that **rewards consistency, not competition**.
 
-First module: **English at beginner level**. Further modules (e.g. German, maths, aligned with the Polish national curriculum) should be addable without rebuilding the app.
+First module: **English at beginner level**. Future modules may include German, maths, natural science, geography and other primary-school subjects, aligned with the Polish national curriculum. Content is separated from code to support this expansion; these subjects are a long-term direction, outside the current MVP (D-75).
 
 ## 2. Problem
 
@@ -27,6 +27,8 @@ First module: **English at beginner level**. Further modules (e.g. German, maths
 
 ## 3. Users
 
+The personas below describe the initial MVP users. Older primary-school pupils are part of the long-term audience; their content and needs will be specified in later releases (D-73).
+
 | Persona | Description | Key needs |
 |---|---|---|
 | **Child A**: 1st grader | reads with difficulty, knows single English words | voice-over, pictures instead of text, large buttons, quick wins |
@@ -35,7 +37,7 @@ First module: **English at beginner level**. Further modules (e.g. German, maths
 
 ## 4. Design principles
 
-1. **Short and regular**: daily goal of about 10 minutes, not long sessions.
+1. **Regular daily practice**: the daily learning goal is at least 10 minutes. Children may continue learning for longer; reaching 10 minutes does not end or block a session (D-74).
 2. **No competition**: no leaderboards, no comparing siblings. Cooperation instead (shared goal from v1.1).
 3. **No penalties**: no "lost streaks". A weekly goal instead of an unbroken streak.
 4. **Listen before you read**: every word and instruction can be played aloud.
@@ -56,7 +58,7 @@ First module: **English at beginner level**. Further modules (e.g. German, maths
 | Exercise types | Flashcards with voice-over · Listen and tap · Picture → word · Context questions |
 | Review | Leitner system for vocabulary |
 | Gamification | Stars ⭐ · Sticker album · Weekly goal |
-| Time | Per-profile timer, gentle reminder after 30 min |
+| Time | Daily goal of at least 10 minutes · per-profile timer · gentle reminder after 30 min |
 | Parent panel | Profiles, summaries, difficult words, settings, PIN |
 | Themes | "Electric" and "Neon", switchable |
 | Data storage | Local in the browser (through a dedicated data layer) |
@@ -78,7 +80,8 @@ First module: **English at beginner level**. Further modules (e.g. German, maths
 
 ### Later (outside current scope)
 
-- Modules: German, maths (aligned with the national curriculum).
+- Broader coverage across all primary-school grades, beyond the initial grades 1–3 audience (D-73).
+- Modules: German, maths, natural science, geography and other primary-school subjects (aligned with the national curriculum); no release dates assigned (D-75).
 - AI conversation: requires a backend, an API key and a separate privacy assessment.
 
 ### Out of scope
@@ -159,6 +162,7 @@ First module: **English at beginner level**. Further modules (e.g. German, maths
 ### 6.7 Time limit
 
 - **F-22** The app tracks learning time per day, separately for each profile. Only time in exercises with the app visible counts; menus and background time do not. Tracking pauses after 60 seconds without interaction; playing instruction or pronunciation audio is not inactivity (D-26).
+- **F-44** The daily learning goal is reached after a profile accumulates at least 10 minutes of learning time counted under F-22. Time may accumulate across multiple sessions. The child may continue for longer; reaching the goal does not end or block learning. The existing 30-minute reminder and reward-limit rules still apply (F-23, F-24, D-74).
 - **F-23** After the limit is exceeded (30 min by default) it shows a gentle message encouraging a break.
 - **F-24** After the limit the child can keep playing but earns no new stars or stickers that day.
 
@@ -184,6 +188,8 @@ First module: **English at beginner level**. Further modules (e.g. German, maths
 - **F-33** An "About" screen credits third-party assets as their licences require (e.g. the open emoji set, D-18).
 
 ## 7. Content — English
+
+This section defines the initial beginner-English path. It is not the full English curriculum for all primary-school grades; broader coverage will be planned in later releases (D-73).
 
 **Reference:** Cambridge **Pre A1 Starters** vocabulary.
 **Language variant:** British English for learning vocabulary, spelling and example sentences (e.g. "colour"), matching the children's school textbooks. English words use bundled `en-GB` audio files (N-04, D-47), generated once with a local open-source speech generator (e.g. Piper), with an `en-GB` voice for English and a Polish voice for instructions (D-48); when speech synthesis is used as a fallback, request an `en-GB` voice from the available local voices only (D-62). Fallback behaviour must be verified in the planned audio prototype.
@@ -289,6 +295,8 @@ Test period: **3 weeks** of regular use by both children.
 4. ~~Who can change the theme~~: child on own profile screen and parent; stored per profile (D-19).
 5. ~~English variant for learning content~~: British English (D-20).
 
+6. Clarify whether the minimum 10-minute daily goal (F-44) should also be required for a learning day in the weekly goal, or remain separate from the existing completed-session rule (F-20, D-25). Pending product-owner choice.
+
 ## 14. Decision log
 
 | # | Decision |
@@ -299,7 +307,7 @@ Test period: **3 weeks** of regular use by both children.
 | D-04 | Devices: computer and tablet |
 | D-05 | Option B: local storage in MVP, sync (Supabase) in v1.1 |
 | D-06 | Start at Pre A1; 5-level path; "skip level" test |
-| D-07 | Daily goal ~10 min; 30 min limit with a gentle reminder, no blocking |
+| D-07 | Daily goal at least 10 min, with longer learning allowed (clarified by D-74); 30 min limit with a gentle reminder, no blocking |
 | D-08 | Gamification without competition: stars, sticker album (v1.0), room building (v1.2) |
 | D-09 | Shared sibling goal ("family tree") in v1.1 |
 | D-10 | MVP exercise types: flashcards, listen and tap, picture → word, context questions |
@@ -365,3 +373,6 @@ Test period: **3 weeks** of regular use by both children.
 | D-70 | Introduce picture-to-word exercises (F-10) separately for each word, only after at least one correct listen-and-tap answer for that word (F-09). Flashcard self-assessment does not qualify; do not unlock written-word tasks simply because a lesson has reached its second session (F-35; clarification of D-37). |
 | D-71 | Measure learning through ordinary due-review history during the 3-week test, separately per child. Compare the first and last independent due-review answer for the same words, using words with at least two eligible answers. Exclude corrective retries, flashcard self-assessment and ungraded audio failures; do not add a separate examination. Sample size and success threshold are defined by D-72 (section 11, N-12; clarification of D-40). |
 | D-72 | For each child, measure first-versus-last independent due-review accuracy on the same set of at least 10 eligible words. Require at least +20 percentage points if initial accuracy is below 80%; at 80% or above, require maintaining at least the initial accuracy. Fewer than 10 eligible words means insufficient measurement, without concluding learning success or failure (section 11; completion of D-71). |
+| D-73 | The long-term audience covers all primary-school grades. Grades 1–3 and beginner English are the initial release focus, rather than a permanent limit on the product's audience (sections 1, 3, 5 and 7). |
+| D-74 | The daily learning goal is at least 10 minutes of counted learning time; the child may learn for longer. Reaching 10 minutes does not stop learning. Existing reminder and reward-limit rules remain; whether the weekly learning-day rule should also require 10 minutes is pending a separate clarification (F-44, section 4; clarification of D-07). |
+| D-75 | Future modules may include natural science, geography and other primary-school subjects alongside German and maths. This is the long-term product direction; the current MVP remains beginner English, levels 1–2 (sections 1 and 5). |
