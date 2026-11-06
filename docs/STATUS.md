@@ -1,6 +1,6 @@
 # Status
 
-**Phase:** PRD review (before development)
+**Phase:** Technology selection (before development)
 **Last updated:** 2026-11-06
 
 ## In progress
@@ -9,12 +9,12 @@ _Nothing. The next agent may start._
 
 ## Next
 
-1. Obtain explicit product-owner approval of the integrated PRD v0.10 (gate "PRD approved"). Before generating audio, verify Piper voice licences (D-48); huggingface.co was not reachable from the Claude session.
-2. Choose the tech stack after PRD approval and fill in "Stack and structure" in `AGENTS.md`; then prepare a stage plan where each stage fits one agent session (D-56).
-3. Validate offline playback of bundled audio files and the speech synthesis fallback on the target devices (D-47).
+1. Present technology options with a recommendation, obtain the product owner's choice and fill in "Stack and structure" in `AGENTS.md`; then prepare a stage plan where each stage fits one agent session (D-56).
+2. Before generating audio, verify Piper voice licences (D-48); huggingface.co was not reachable from the earlier Claude session. Validate offline playback of bundled audio and the local speech-synthesis fallback on target devices (D-47, D-62).
 
 ## Done
 
+- Product owner accepted integrated PRD v0.10; recorded the approval gate as passed (D-77). Next phase: technology selection.
 - Recorded learning-day credit only after both at least 10 minutes of counted learning and at least one completed session that day (D-76, F-20; revision of D-25). Updated README and related completion references.
 - Recorded product-owner review: initial grades 1–3 focus within a long-term all-primary-school audience, a daily goal of at least 10 minutes with longer learning allowed, and future natural-science/geography modules (D-73–D-75), draft PRD v0.10. Aligned README and agent context.
 - Recorded per-child learning target: at least 10 eligible words, +20 percentage points or maintenance of an initial score of at least 80%; smaller samples are insufficient (D-72, section 11).
@@ -58,6 +58,8 @@ _Nothing. The next agent may start._
 
 Newest first. One line per finished task: date · agent · what was done · anything the next agent must know.
 
+- 2026-11-06 · Codex · Finalized the approved PRD v0.10 record (D-77) in PR #10; product owner explicitly approved merging · Next present technology options with a recommendation, obtain the product owner's choice, then plan implementation stages (D-56).
+- 2026-11-06 · Codex · Recorded acceptance of integrated PRD v0.10 as D-77 on `docs/prd-approval`; merge pending explicit approval · Present stack options next; no technology decision or implementation has been authorized yet.
 - 2026-11-06 · Codex · Finalized product-owner review changes D-73–D-76 in PR #9; product owner explicitly approved merging · PRD v0.10 remains a draft pending whole-document approval; next choose the stack after approval and verify voice licences before audio generation.
 - 2026-11-06 · Codex · Recorded explicit learning-day clarification as D-76 in PR #9: at least 10 minutes AND at least one completed session on the same day; merge pending approval · Product-review changes D-73–D-76 are ready for merge review; whole-PRD approval remains pending.
 - 2026-11-06 · Codex · Recorded explicit product-owner review feedback as D-73–D-75 on `docs/product-owner-prd-review`; merge pending approval · Clarify how the 10-minute goal relates to weekly learning-day credit; F-20 and D-25 have not been changed, and whole-PRD approval remains pending.

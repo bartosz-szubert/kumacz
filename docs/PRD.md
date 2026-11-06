@@ -4,10 +4,10 @@
 
 | | |
 |---|---|
-| Document version | 0.10 (draft for approval) |
+| Document version | 0.10 (approved) |
 | Date | 2026-11-06 |
 | Product owner | Bartek |
-| Status | For review before development starts ("PRD approved" gate) |
+| Status | Approved by the product owner on 2026-11-06; "PRD approved" gate passed. Next: technology selection. |
 | Repository | `kumacz` (public, GitHub) |
 | Hosting | GitHub Pages: `<login>.github.io/kumacz` |
 
@@ -377,3 +377,4 @@ Test period: **3 weeks** of regular use by both children.
 | D-74 | The daily learning goal is at least 10 minutes of counted learning time; the child may learn for longer. Reaching 10 minutes does not stop learning. Existing reminder and reward-limit rules remain; weekly learning-day qualification follows D-76 (F-44, section 4; clarification of D-07). |
 | D-75 | Future modules may include natural science, geography and other primary-school subjects alongside German and maths. This is the long-term product direction; the current MVP remains beginner English, levels 1–2 (sections 1 and 5). |
 | D-76 | A learning day counts only after the same profile both accumulates at least 10 minutes of counted learning and completes at least one learning or review-only session that day. Time may accumulate across sessions; award credit when both conditions are met. Either condition alone is insufficient; the weekly goal remains 4 of 7 days (F-20, F-36; revision of D-25). |
+| D-77 | The product owner accepted the integrated PRD v0.10 after reviewing D-73–D-76, passing the "PRD approved" gate on 2026-11-06. Next choose the technology stack, then prepare implementation stages under D-56. |
