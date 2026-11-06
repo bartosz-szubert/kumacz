@@ -1,6 +1,6 @@
 # Status
 
-**Phase:** Technology selection (before development)
+**Phase:** Implementation (ready to start P01)
 **Last updated:** 2026-11-06
 
 ## In progress
@@ -9,11 +9,13 @@ _Nothing. The next agent may start._
 
 ## Next
 
-1. Present technology options with a recommendation, obtain the product owner's choice and fill in "Stack and structure" in `AGENTS.md`; then prepare a stage plan where each stage fits one agent session (D-56).
-2. Before generating audio, verify Piper voice licences (D-48); huggingface.co was not reachable from the earlier Claude session. Validate offline playback of bundled audio and the local speech-synthesis fallback on target devices (D-47, D-62).
+1. P01 Project foundation (`docs/IMPLEMENTATION.md`). Work through the stages in order, one per session; the pilot test build comes early (P09–P10, D-81).
+2. P02 must verify Piper voice licences before generating audio; huggingface.co was not reachable from the Claude session.
 
 ## Done
 
+- Second opinion on the technology proposal and stage plan; product owner chose React + TypeScript + Vite, `idb` with per-profile documents, MP3 via Web Audio, an early pilot test build and Twemoji (D-78–D-82). `docs/IMPLEMENTATION.md` reordered into P01–P40 with oversized stages split; `AGENTS.md` stack filled in.
+- Prepared a technology proposal and draft implementation sequence for second opinion in draft PR #11. Final stack/plan adoption is pending; approved PRD v0.10 remains the product baseline.
 - Product owner accepted integrated PRD v0.10; recorded the approval gate as passed (D-77). Next phase: technology selection.
 - Recorded learning-day credit only after both at least 10 minutes of counted learning and at least one completed session that day (D-76, F-20; revision of D-25). Updated README and related completion references.
 - Recorded product-owner review: initial grades 1–3 focus within a long-term all-primary-school audience, a daily goal of at least 10 minutes with longer learning allowed, and future natural-science/geography modules (D-73–D-75), draft PRD v0.10. Aligned README and agent context.
@@ -58,6 +60,8 @@ _Nothing. The next agent may start._
 
 Newest first. One line per finished task: date · agent · what was done · anything the next agent must know.
 
+- 2026-11-06 · Claude · Second opinion and technology decisions D-78–D-82 in PR #11 (product owner approved writing to Codex's branch) · Start P01; Dexie/multi-table is recorded only as a future option (D-79).
+- 2026-11-06 · Codex · At the product owner's request, kept PR #11 as a proposal for second opinion, converted it to draft and removed the premature final-stack decision/configuration from its diff · Do not merge or start P01 before review and the owner's final confirmation; PRD v0.10 stays approved.
 - 2026-11-06 · Codex · Finalized the approved PRD v0.10 record (D-77) in PR #10; product owner explicitly approved merging · Next present technology options with a recommendation, obtain the product owner's choice, then plan implementation stages (D-56).
 - 2026-11-06 · Codex · Recorded acceptance of integrated PRD v0.10 as D-77 on `docs/prd-approval`; merge pending explicit approval · Present stack options next; no technology decision or implementation has been authorized yet.
 - 2026-11-06 · Codex · Finalized product-owner review changes D-73–D-76 in PR #9; product owner explicitly approved merging · PRD v0.10 remains a draft pending whole-document approval; next choose the stack after approval and verify voice licences before audio generation.
