@@ -7,7 +7,7 @@
 | Document version | 0.10 (approved) |
 | Date | 2026-11-06 |
 | Product owner | Bartek |
-| Status | Approved by the product owner on 2026-11-06; "PRD approved" gate passed. Technology selected under D-78. |
+| Status | Approved by the product owner on 2026-11-06; "PRD approved" gate passed. Next: technology selection. |
 | Repository | `kumacz` (public, GitHub) |
 | Hosting | GitHub Pages: `<login>.github.io/kumacz` |
 
@@ -255,8 +255,8 @@ module (english) → level (1) → lesson (colours) → items (word, translation
 - The app runs entirely in the browser (static files on GitHub Pages).
 - **Data layer** separated from the rest of the app: in v1.0 it stores locally, in v1.1 the same layer uses Supabase. The rest of the app does not change.
 - **Content in data files** (JSON) following the structure in section 7.
-- **Approved technology stack (D-78):** React + TypeScript + Vite; IndexedDB through Dexie for the data layer; vite-plugin-pwa with Workbox for offline support; ordinary CSS with custom properties for themes; Vitest and Playwright for verification. Hosting remains static GitHub Pages.
-- Implementation is split into small stages, each fitting one agent session's token limit (D-56). The working stage plan is in [IMPLEMENTATION.md](IMPLEMENTATION.md). Resolve and pin compatible tool versions during the foundation stage.
+- The choice of specific technologies (framework, tooling) is a separate decision after PRD approval.
+- Implementation is split into small stages, each fitting one agent session's token limit; the stage plan is prepared after the technology choice (D-56).
 
 ## 11. MVP success criteria
 
@@ -290,7 +290,7 @@ Test period: **3 weeks** of regular use by both children.
 ## 13. Open issues
 
 1. ~~Which tablet~~: resolved (D-14).
-2. ~~Technology choice~~: React + TypeScript + Vite with the supporting tools recorded in D-78.
+2. Technology choice: decision after PRD approval.
 3. ~~Avatars, stickers and exercise illustrations~~: bundled open-licence emoji set (D-18).
 4. ~~Who can change the theme~~: child on own profile screen and parent; stored per profile (D-19).
 5. ~~English variant for learning content~~: British English (D-20).
@@ -378,4 +378,3 @@ Test period: **3 weeks** of regular use by both children.
 | D-75 | Future modules may include natural science, geography and other primary-school subjects alongside German and maths. This is the long-term product direction; the current MVP remains beginner English, levels 1–2 (sections 1 and 5). |
 | D-76 | A learning day counts only after the same profile both accumulates at least 10 minutes of counted learning and completes at least one learning or review-only session that day. Time may accumulate across sessions; award credit when both conditions are met. Either condition alone is insufficient; the weekly goal remains 4 of 7 days (F-20, F-36; revision of D-25). |
 | D-77 | The product owner accepted the integrated PRD v0.10 after reviewing D-73–D-76, passing the "PRD approved" gate on 2026-11-06. Next choose the technology stack, then prepare implementation stages under D-56. |
-| D-78 | The product owner chose option A: React + TypeScript + Vite, with IndexedDB via Dexie, vite-plugin-pwa/Workbox, ordinary CSS custom properties, Vitest and Playwright. Keep the dedicated data layer and static GitHub Pages hosting; prepare small implementation stages under D-56 (section 10). |
