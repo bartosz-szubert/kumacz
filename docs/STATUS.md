@@ -1,6 +1,6 @@
 # Status
 
-**Phase:** Implementation planning (before development)
+**Phase:** Technology selection (second opinion pending)
 **Last updated:** 2026-11-06
 
 ## In progress
@@ -9,13 +9,13 @@ _Nothing. The next agent may start._
 
 ## Next
 
-1. Review and merge the stack decision and implementation plan on `docs/technology-and-implementation-plan` after explicit product-owner approval. D-78 records the approved option A.
-2. Start P01 in `docs/IMPLEMENTATION.md`: pin compatible versions and scaffold React/TypeScript/Vite with verification tooling. Then continue one focused stage at a time (D-56).
-3. Before generating audio in P02, verify specific voice and asset licences. The earlier Claude session could not reach huggingface.co. Verify audio/local fallback and offline behaviour on target devices in the planned prototype and release checks.
+1. Obtain a second opinion on `docs/TECHNOLOGY_PROPOSAL.md` and the draft stages in `docs/IMPLEMENTATION.md`, preserved in draft PR #11. React/TypeScript/Vite and the supporting tools are a provisional preference, not a final technology decision.
+2. After the second opinion, obtain the product owner's final confirmation before recording a stack decision, changing the agent stack baseline, merging the proposal or starting implementation. P01 has not started.
+3. Before generating audio, verify specific voice and asset licences. The earlier Claude session could not reach huggingface.co. Validate offline audio/local fallback and target-device behaviour after the final implementation approach is agreed.
 
 ## Done
 
-- Product owner selected React/TypeScript/Vite and supporting data, offline, CSS and test tooling (D-78). Filled in AGENTS stack context, aligned README and prepared the staged implementation plan.
+- Prepared a technology proposal and draft implementation sequence for second opinion in draft PR #11. Final stack/plan adoption is pending; approved PRD v0.10 remains the product baseline.
 - Product owner accepted integrated PRD v0.10; recorded the approval gate as passed (D-77). Next phase: technology selection.
 - Recorded learning-day credit only after both at least 10 minutes of counted learning and at least one completed session that day (D-76, F-20; revision of D-25). Updated README and related completion references.
 - Recorded product-owner review: initial grades 1–3 focus within a long-term all-primary-school audience, a daily goal of at least 10 minutes with longer learning allowed, and future natural-science/geography modules (D-73–D-75), draft PRD v0.10. Aligned README and agent context.
@@ -60,7 +60,7 @@ _Nothing. The next agent may start._
 
 Newest first. One line per finished task: date · agent · what was done · anything the next agent must know.
 
-- 2026-11-06 · Codex · Recorded approved stack option A (D-78) and prepared `docs/IMPLEMENTATION.md` on `docs/technology-and-implementation-plan`; merge pending approval · Next is P01 scaffolding; app code has not been created, and P02 licence checks precede audio generation.
+- 2026-11-06 · Codex · At the product owner's request, kept PR #11 as a proposal for second opinion, converted it to draft and removed the premature final-stack decision/configuration from its diff · Do not merge or start P01 before review and the owner's final confirmation; PRD v0.10 stays approved.
 - 2026-11-06 · Codex · Finalized the approved PRD v0.10 record (D-77) in PR #10; product owner explicitly approved merging · Next present technology options with a recommendation, obtain the product owner's choice, then plan implementation stages (D-56).
 - 2026-11-06 · Codex · Recorded acceptance of integrated PRD v0.10 as D-77 on `docs/prd-approval`; merge pending explicit approval · Present stack options next; no technology decision or implementation has been authorized yet.
 - 2026-11-06 · Codex · Finalized product-owner review changes D-73–D-76 in PR #9; product owner explicitly approved merging · PRD v0.10 remains a draft pending whole-document approval; next choose the stack after approval and verify voice licences before audio generation.
