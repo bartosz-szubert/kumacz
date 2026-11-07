@@ -1,0 +1,17 @@
+Nagrania syntetyczne — próbki do oceny głosów, niezatwierdzony materiał lekcji.
+
+en-GB-red.mp3: „Red.”
+Cori medium (en_GB), głos opublikowany przez Bryce'a Beattiego jako public domain.
+Źródło modelu i warunków: https://brycebeattie.com/files/tts/
+
+pl-PL-listen-and-choose.mp3: „Posłuchaj i wybierz obrazek.”
+Supertonic 3 (Supertone), preset 0, język polski. Nagranie wygenerowane lokalnie.
+Model: BigScience Open RAIL-M; nie jest to model bez ograniczeń użycia.
+Źródło: https://huggingface.co/Supertone/supertonic-3
+Warunki: https://huggingface.co/Supertone/supertonic-3/blob/main/LICENSE
+
+Odtwarzając próbkę w interfejsie, pokaż czytelną informację „Nagranie syntetyczne”.
+Sama informacja w metadanych pliku nie zastępuje widocznego oznaczenia.
+
+Szczegóły pochodzenia, sumy kontrolne i przegląd licencji:
+tools/audio/provenance.json oraz docs/ASSET_LICENCES.md w repozytorium Kumacz.

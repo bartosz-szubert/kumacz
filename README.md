@@ -65,6 +65,8 @@ Technology: React + TypeScript + Vite, local data in IndexedDB (D-78–D-82). Se
 
 For the pinned toolchain, installation, commands and verification status, see [local development](docs/DEVELOPMENT.md).
 
+The [P02 asset and voice review](docs/ASSET_LICENCES.md) records licence sources and synthetic evaluation clips; the product owner approved the voices (D-83).
+
 ## Privacy
 
 - v1.0 keeps all data in the browser on the device; nothing is sent anywhere.
