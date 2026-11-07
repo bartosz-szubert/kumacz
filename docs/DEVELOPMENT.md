@@ -69,3 +69,9 @@ Real Android/iPad checks, application tests and audio/offline verification belon
 - [Vitest configuration](https://vitest.dev/config/)
 - [Playwright configuration](https://playwright.dev/docs/test-configuration)
 - [npm ignore-scripts](https://docs.npmjs.com/cli/v11/using-npm/config/#ignore-scripts)
+
+## Test builds on GitHub Pages (D-85)
+
+Every push to `main` runs `.github/workflows/pages.yml`: clean install, `npm run check`, unit tests, then publication to `https://bartosz-szubert.github.io/kumacz/` with a "Wersja testowa" banner. A failed check stops publication. The workflow uses no secrets; actions are pinned to commit SHAs. It can also be started manually (Actions → Pages test build → Run workflow).
+
+One-time repository setting: Settings → Pages → Build and deployment → Source: **GitHub Actions**.

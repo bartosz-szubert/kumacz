@@ -13,6 +13,7 @@ _Nothing. P02 is complete; P03 is next._
 
 ## Done
 
+- Added the GitHub Pages test-build workflow and "Wersja testowa" banner (D-85) so the product owner can check P03 audio on the tablet without USB debugging.
 - P02 accepted: product owner listened to the samples and chose Cori (en-GB) and Supertonic 3 preset 0 (pl) (D-83) and a permanent synthetic-audio label (D-84, F-45). Earlier technical preparation: reviewed pinned Twemoji attribution and model-specific voice terms; generated local English/Polish WAV → MP3 evaluation clips only after the corresponding checks. Added archive/input/output provenance, a hash-pinned optional generation environment and a repeatable recipe. Proposed voices await product-owner choice; P02 is not finally accepted and P03 has not started.
 - Fixed the npm engine requirement: exact npm 11.9.0 rejected the npm 11.17.0 bundled with Node 24.19.0 (`EBADENGINE` on `npm ci`); now `>=11.9.0 <12`. Clean install and `npm run check` verified with both versions.
 - P01 Project foundation (PR #12): pinned React/TypeScript/Vite, `idb`, Vitest/Playwright configuration, npm lockfile and disabled install scripts. Verified clean frozen install, type-check, static build, audit and production-preview smoke check in system Chromium. Test runners report zero tests by design; no application tests or learning features were added.
@@ -62,6 +63,7 @@ _Nothing. P02 is complete; P03 is next._
 
 Newest first. One line per finished task: date · agent · what was done · anything the next agent must know.
 
+- 2026-11-07 · Claude · Reviewed Codex's P03 branch (16 unit + 9 Chromium E2E tests pass; local fallback after a failed file may be blocked by iPad Safari's user-activation rule) and added the Pages test-build workflow (D-85) · P03 needs the Pages setting enabled and a tablet check; Codex's P03 STATUS edits will need a merge with this file.
 - 2026-11-07 · Claude · Reviewed P02, regenerated extra Cori samples for listening (not committed), recorded D-83/D-84 and F-45 in PR #14 with the product owner's approval · Slowing a single short word (e.g. "Red." at speed 0.85–0.9) produced a long garbled clip: listen to every generated clip; licence pages on huggingface.co and brycebeattie.com were unreachable from the Claude session.
 - 2026-11-06 · Codex · Prepared P02 licence review and synthetic evaluation clips on `feature/p02-asset-licences`; owner voice choice and merge pending · Recommend Cori + Supertonic 3 preset 0; Polish Piper lineage remains unresolved; before playback show synthetic disclosure, and do not claim pronunciation/device checks from decoding alone. See `docs/ASSET_LICENCES.md` and `tools/audio/`.
 - 2026-11-06 · Claude · Reviewed P01 (install, types, build, preview smoke check passed) and fixed the npm engine range · P02 remains next; consider a free GitHub Actions check later (product owner to decide).
