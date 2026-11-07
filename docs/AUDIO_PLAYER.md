@@ -51,6 +51,8 @@ The E2E runner builds a production preview at `http://127.0.0.1:4173/kumacz/`; k
 
 ## Required actual-device check
 
+**Simple route (D-85):** open `https://bartosz-szubert.github.io/kumacz/` in Chrome on the tablet. Play both clips, replay, stop during playback and alternate quickly; rotate the tablet. Then, with the page still open and both clips played once, switch on airplane mode and replay both. Check that "Nagranie syntetyczne" stays visible. The steps below (USB remote debugging) are for detailed diagnostics: blocked files and local-voice fallback.
+
 Record the device/browser versions, date, audible result for both clips and the observations below. Keep children's real profiles and recordings out of the repository.
 
 1. Run the production build on a computer and start its preview:

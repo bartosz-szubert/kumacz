@@ -74,7 +74,7 @@ Track completed and current stages in `STATUS.md`. Execute the remaining stages 
 | P36 | Offline package and readiness | Manifest and precache for all final content and assets; download, verification of every listed file, readiness display, retry of interrupted preparation, offline reopen. | all C stages, P03; N-03–N-04, F-42, D-63 |
 | P37 | App updates with existing data | New version activates only on the profile picker; existing progress survives; migrations run safely. | P36, P27, P25; N-11, F-36 |
 | P38 | Release verification | Tests and critical browser flows; themes, orientations, touch targets, audio and offline on real devices; first usable load against N-07. Record devices and conditions. | P28–P37; N-01–N-08 |
-| P39 | GitHub Pages release | Static build and Pages workflow for the repository base path; publish after the product owner's approval; verify live path, assets, offline reopen and preserved local data. | P38; N-05, D-02 |
+| P39 | GitHub Pages release | The test-build Pages workflow exists since D-85; remove the test banner and confirm the workflow for the repository base path; publish after the product owner's approval; verify live path, assets, offline reopen and preserved local data. | P38; N-05, D-02 |
 | P40 | Three-week MVP test | Observe both children against section 11; learning comparison from local review history (≥10 eligible words per child); keep family data out of the repo; evaluate the v1.1 gate. | P39; section 11, D-71–D-72 |
 
 ## Verification priorities
