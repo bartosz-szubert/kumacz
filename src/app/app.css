@@ -3,6 +3,7 @@
   color: #18243a;
   background: #fff;
   font-synthesis: none;
+  line-height: 1.5;
 }
 
 body {
@@ -10,5 +11,99 @@ body {
 }
 
 main {
-  padding: 2rem;
+  max-width: 60rem;
+  margin-inline: auto;
+  padding: clamp(1rem, 4vw, 3rem);
+}
+
+.app-name {
+  font-weight: 700;
+}
+
+h1 {
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+}
+
+h2 {
+  margin-top: 0;
+}
+
+.audio-samples {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
+  gap: 1.5rem;
+  margin-block: 2rem;
+}
+
+.audio-sample {
+  padding: 1.5rem;
+  border: 2px solid #d9dfe9;
+  border-radius: 1rem;
+}
+
+.sample-text {
+  min-height: 3em;
+  font-size: 1.25rem;
+}
+
+.audio-label {
+  font-size: 0.875rem;
+  color: #43516b;
+  margin-bottom: 0.5rem;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+button {
+  min-width: 48px;
+  min-height: 48px;
+  padding: 0.75rem 1.25rem;
+  border: 2px solid #224d9c;
+  border-radius: 0.65rem;
+  background: #224d9c;
+  color: #fff;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button.secondary {
+  color: #224d9c;
+  background: #fff;
+}
+
+button:disabled {
+  opacity: 0.55;
+  cursor: default;
+}
+
+:focus-visible {
+  outline: 3px solid #a94b00;
+  outline-offset: 4px;
+}
+
+.playback-status {
+  min-height: 3em;
+  margin-bottom: 0;
+}
+
+.credits {
+  border-top: 1px solid #d9dfe9;
+  padding-top: 1rem;
+}
+
+summary {
+  min-height: 48px;
+  display: list-item;
+  padding-block: 0.5rem;
+  cursor: pointer;
+}
+
+a {
+  color: #224d9c;
 }
