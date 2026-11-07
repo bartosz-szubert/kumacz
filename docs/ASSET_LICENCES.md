@@ -1,5 +1,7 @@
 # Asset and voice licence review — P02
 
+**Status (2026-11-07):** the product owner approved Cori and Supertonic 3 preset 0 (D-83) and a permanent "Nagranie syntetyczne" label on exercise screens (D-84, F-45). The text below is the original review.
+
 Reviewed on **2026-11-06** against D-48, D-49, D-57, D-80, D-82 and F-33. This is a proposal for the product owner's review. The two audio files are synthetic evaluation fixtures, not an approved lesson or a final voice choice. No PRD decision has been added.
 
 ## Recommendation
