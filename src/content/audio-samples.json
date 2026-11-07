@@ -1,0 +1,16 @@
+[
+  {
+    "id": "en-red",
+    "title": "Angielski",
+    "language": "en-GB",
+    "text": "Red.",
+    "path": "assets/audio/fixtures/en-GB-red.mp3"
+  },
+  {
+    "id": "pl-instruction",
+    "title": "Polski",
+    "language": "pl-PL",
+    "text": "Posłuchaj i wybierz obrazek.",
+    "path": "assets/audio/fixtures/pl-PL-listen-and-choose.mp3"
+  }
+]

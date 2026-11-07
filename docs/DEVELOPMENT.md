@@ -1,6 +1,6 @@
 # Local development
 
-P01 provides the application foundation. The current page only mounts the Kumacz heading; learning, profiles, audio and offline preparation follow in the approved implementation stages.
+P01 provides the application foundation and P02 the approved audio fixtures. The P03 branch adds an audio-check screen and the first behaviour tests; see [the player guide](AUDIO_PLAYER.md) for its remaining device checks. Learning, profiles and full offline preparation follow in later approved stages.
 
 ## Toolchain and installation
 
@@ -27,16 +27,9 @@ npm run preview
 - `npm test`: Vitest, discovering `src/**/*.test.{ts,tsx}` in the Node environment.
 - `npm run test:watch`: the same unit-test configuration in watch mode.
 - `npm run test:e2e`: Playwright, discovering `tests/e2e/`, with Chromium and WebKit projects. It builds the app and starts a production preview under `/kumacz/` on port 4173. Keep that port free.
-- When browser tests are added, install their matching browser binaries with `npm exec -- playwright install chromium webkit`.
+- Install the matching browser binaries with `npm exec -- playwright install chromium webkit`.
 
-There are **no committed unit or E2E tests in P01**. The scaffolding stage deliberately adds no placeholder tests. Default test commands report an empty suite as a failure; add meaningful tests with the behaviour in later stages. The following commands only verify configuration/discovery and explicitly permit an empty suite:
-
-```sh
-npm test -- --passWithNoTests
-npm run test:e2e -- --list --pass-with-no-tests
-```
-
-An empty discovery result is not evidence that application behaviour has passed tests. Playwright WebKit also does not replace testing on a real iPad.
+P03 adds actual unit and browser cases. Run the normal commands without allowing empty suites. The [P03 guide](AUDIO_PLAYER.md) records the system-Chromium override and the blocked WebKit download in the current environment. Playwright WebKit does not replace testing on a real iPad.
 
 ## Dependency installation policy
 
@@ -50,7 +43,7 @@ For dependency changes, inspect the manifest and lockfile together, verify a cle
 
 ## P01 verification record
 
-Verified on Linux with the pinned Node/npm versions:
+Historical foundation baseline, verified on Linux with the pinned Node/npm versions. Current behaviour checks are recorded in [AUDIO_PLAYER.md](AUDIO_PLAYER.md).
 
 - Clean `npm ci --offline --ignore-scripts --no-audit` using the populated package cache; lockfile SHA-256 unchanged. The initial registry installation also used scripts disabled.
 - Type-check and production build passed after that clean install.
@@ -58,7 +51,7 @@ Verified on Linux with the pinned Node/npm versions:
 - Vitest and Playwright configurations loaded, explicitly reporting zero tests.
 - An ad hoc check of the production preview with installed system Chromium 154.0.8037.57 mounted the React heading, confirmed Polish document metadata and `/kumacz/assets/` paths, and observed no page/console errors, failed responses or external requests. The check and screenshot are workspace artifacts, not placeholder tests committed to the project.
 
-Real Android/iPad checks, application tests and audio/offline verification belong to subsequent stages. Next: P02 asset and voice licence checks.
+At the time of P01, real Android/iPad checks, application tests and audio/offline verification were pending. P02's licence review is now approved; P03 device verification remains open.
 
 ## Sources for the foundation
 

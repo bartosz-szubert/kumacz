@@ -1,19 +1,22 @@
 # Status
 
-**Phase:** Implementation (P02 completed; P03 next)
-**Last updated:** 2026-11-06
+**Phase:** Implementation (P03 implementation prepared; device verification and merge pending)
+**Last updated:** 2026-11-07
 
 ## In progress
 
-_Nothing. P02 is complete; P03 is next._
+- P03 Audio player · Codex · `feature/p03-audio-player` (code and browser tests prepared; Android verification, WebKit check and merge approval pending).
 
 ## Next
 
-1. P03 Audio player (`docs/IMPLEMENTATION.md`): Web Audio playback of bundled MP3s with the approved voices (D-83), the permanent "Nagranie syntetyczne" label near audio controls (F-45, D-84), local-only fallback and failure handling; verify on the Android tablet.
+1. Complete P03 verification on the actual Android tablet, including cached MP3 replay and the browser's local-voice reporting. Follow `docs/AUDIO_PLAYER.md` and record the browser/device and observations; desktop tests are not a tablet pass.
+2. Run the configured WebKit project when its browser download is available. This environment rejected the official Playwright download hosts with HTTP 403 `Domain forbidden`; do not work around the proxy policy.
+3. Review and merge P03 only after the product owner's explicit approval. Keep the stage open until the required target-device evidence is recorded; P04 pilot lesson data follows accepted P03.
 
 ## Done
 
-- P02 accepted: product owner listened to the samples and chose Cori (en-GB) and Supertonic 3 preset 0 (pl) (D-83) and a permanent synthetic-audio label (D-84, F-45). Earlier technical preparation: reviewed pinned Twemoji attribution and model-specific voice terms; generated local English/Polish WAV → MP3 evaluation clips only after the corresponding checks. Added archive/input/output provenance, a hash-pinned optional generation environment and a repeatable recipe. Proposed voices await product-owner choice; P02 is not finally accepted and P03 has not started.
+- P03 implementation and desktop verification prepared: whole-file Web Audio, same-origin validated asset cache in the data layer, local-only fallback, interruption/retry outcomes, permanent disclosure and a two-clip screen. Unit and Chromium browser checks cover failures, cancellation, policy restrictions and cached offline replay. Actual Android and WebKit checks remain in progress; this does not complete P03 acceptance.
+- P02 accepted: product owner listened to the samples and chose Cori (en-GB) and Supertonic 3 preset 0 (pl) (D-83) and a permanent synthetic-audio label (D-84, F-45). Earlier technical preparation: reviewed pinned Twemoji attribution and model-specific voice terms; generated local English/Polish WAV → MP3 evaluation clips only after the corresponding checks. Added archive/input/output provenance, a hash-pinned optional generation environment and a repeatable recipe.
 - Fixed the npm engine requirement: exact npm 11.9.0 rejected the npm 11.17.0 bundled with Node 24.19.0 (`EBADENGINE` on `npm ci`); now `>=11.9.0 <12`. Clean install and `npm run check` verified with both versions.
 - P01 Project foundation (PR #12): pinned React/TypeScript/Vite, `idb`, Vitest/Playwright configuration, npm lockfile and disabled install scripts. Verified clean frozen install, type-check, static build, audit and production-preview smoke check in system Chromium. Test runners report zero tests by design; no application tests or learning features were added.
 - Second opinion on the technology proposal and stage plan; product owner chose React + TypeScript + Vite, `idb` with per-profile documents, MP3 via Web Audio, an early pilot test build and Twemoji (D-78–D-82). `docs/IMPLEMENTATION.md` reordered into P01–P40 with oversized stages split; `AGENTS.md` stack filled in.
@@ -62,6 +65,7 @@ _Nothing. P02 is complete; P03 is next._
 
 Newest first. One line per finished task: date · agent · what was done · anything the next agent must know.
 
+- 2026-11-07 · Codex · Prepared P03 implementation and desktop tests on `feature/p03-audio-player`; device verification and merge pending · Native file/cache playback checked in system Chromium; speech engine controlled in tests, real `localService` and Android audio still need checking; WebKit download blocked by HTTP policy. P04 has not started. See `docs/AUDIO_PLAYER.md`.
 - 2026-11-07 · Claude · Reviewed P02, regenerated extra Cori samples for listening (not committed), recorded D-83/D-84 and F-45 in PR #14 with the product owner's approval · Slowing a single short word (e.g. "Red." at speed 0.85–0.9) produced a long garbled clip: listen to every generated clip; licence pages on huggingface.co and brycebeattie.com were unreachable from the Claude session.
 - 2026-11-06 · Codex · Prepared P02 licence review and synthetic evaluation clips on `feature/p02-asset-licences`; owner voice choice and merge pending · Recommend Cori + Supertonic 3 preset 0; Polish Piper lineage remains unresolved; before playback show synthetic disclosure, and do not claim pronunciation/device checks from decoding alone. See `docs/ASSET_LICENCES.md` and `tools/audio/`.
 - 2026-11-06 · Claude · Reviewed P01 (install, types, build, preview smoke check passed) and fixed the npm engine range · P02 remains next; consider a free GitHub Actions check later (product owner to decide).
