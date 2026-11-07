@@ -4,7 +4,7 @@
 
 | | |
 |---|---|
-| Document version | 0.11 (approved; technology decisions added) |
+| Document version | 0.12 (approved; technology and voice decisions added) |
 | Date | 2026-11-06 |
 | Product owner | Bartek |
 | Status | Approved by the product owner on 2026-11-06; "PRD approved" gate passed. Technology decisions D-78–D-82 recorded on 2026-11-06. |
@@ -186,13 +186,14 @@ The personas below describe the initial MVP users. Older primary-school pupils a
 ### 6.10 About
 
 - **F-33** An "About" screen credits third-party assets as their licences require (e.g. the open emoji set, D-18).
+- **F-45** Exercise screens show a small, permanent "Nagranie syntetyczne" label near the audio controls, and the About screen states that all recordings are synthetic and names the voices (D-84).
 
 ## 7. Content — English
 
 This section defines the initial beginner-English path. It is not the full English curriculum for all primary-school grades; broader coverage will be planned in later releases (D-73).
 
 **Reference:** Cambridge **Pre A1 Starters** vocabulary.
-**Language variant:** British English for learning vocabulary, spelling and example sentences (e.g. "colour"), matching the children's school textbooks. English words use bundled `en-GB` audio files (N-04, D-47), generated once with a local open-source speech generator (e.g. Piper), with an `en-GB` voice for English and a Polish voice for instructions (D-48); when speech synthesis is used as a fallback, request an `en-GB` voice from the available local voices only (D-62). Fallback behaviour must be verified in the planned audio prototype.
+**Language variant:** British English for learning vocabulary, spelling and example sentences (e.g. "colour"), matching the children's school textbooks. English words use bundled `en-GB` audio files (N-04, D-47), generated once with a local open-source speech generator (e.g. Piper), with an `en-GB` voice for English and a Polish voice for instructions (D-48): Cori medium for English and Supertonic 3 preset 0 for Polish, generated with sherpa-onnx (D-83, `docs/ASSET_LICENCES.md`); when speech synthesis is used as a fallback, request an `en-GB` voice from the available local voices only (D-62). Fallback behaviour must be verified in the planned audio prototype.
 **Illustrations:** the Twemoji open-licence emoji set (jdecked/twemoji, graphics under CC BY 4.0) as SVG files (D-82) bundled with the app, for exercise pictures, avatars and stickers. This gives consistent rendering across devices and offline use without drawing assets before the MVP; do not rely on platform emoji. Licence attribution in the app (F-33). Own SVG stickers and avatars are a v1.1 candidate.
 **Picture rule:** a word enters the content only if it has an unambiguous picture in the chosen emoji set; otherwise it is replaced by another word from the Pre A1 Starters list (D-57).
 
@@ -385,3 +386,5 @@ Test period: **3 weeks** of regular use by both children.
 | D-80 | Audio files are MP3, loaded whole from the offline cache and played through the Web Audio API, so offline playback also works in Safari; verify on the target tablet in the audio-player stage (N-04). |
 | D-81 | The pilot lesson (D-44) runs early, on a test build after about ten implementation stages: one lesson, listen-and-tap, flashcards, a simplified session and simple saving, with a simple profile screen without a PIN. The test build may temporarily deviate from F-03 and other MVP requirements; it is not an MVP release. |
 | D-82 | Emoji set: Twemoji (jdecked/twemoji), graphics under CC BY 4.0, credited in the About screen (F-33); do not use the originating company's name or logo beyond the required attribution (D-18, section 7). |
+| D-83 | Voices: Cori medium (en-GB, author's public-domain declaration) and Supertonic 3 preset 0 (Polish, BigScience Open RAIL-M), generated locally with sherpa-onnx and converted to MP3. Polish Piper voices are not used because their training lineage leaves the licence unresolved. Every generated clip is listened to before use. Clarifies D-48; details in `docs/ASSET_LICENCES.md`. |
+| D-84 | Synthetic-audio disclosure: a small, permanent "Nagranie syntetyczne" label on exercise screens near the audio controls, for both languages, plus voice credits in About (F-45, F-33). Meets the Supertonic licence's machine-generated disclosure condition. |

@@ -1,20 +1,19 @@
 # Status
 
-**Phase:** Implementation (P02 prepared; voice choice and merge pending)
+**Phase:** Implementation (P02 completed; P03 next)
 **Last updated:** 2026-11-06
 
 ## In progress
 
-- P02 Asset and voice licences · Codex · `feature/p02-asset-licences` (technical preparation complete; awaiting the owner's voice choice and merge approval).
+_Nothing. P02 is complete; P03 is next._
 
 ## Next
 
-1. Review P02's proposed voice pair and synthetic recordings in `docs/ASSET_LICENCES.md`: Cori medium for British English, Supertonic 3 preset 0 for Polish. The reviewed Polish Piper candidates have unresolved licence lineage; do not replace them based only on a CC0 dataset label. No final voice decision is recorded yet.
-2. After the voice choice and P02 merge approval, proceed to P03 Audio player. Carry the Supertonic synthetic-content disclosure into the playback context before a pilot; verify the actual Android tablet and audio failures. P02 decoding checks are not a device/pilot pass.
+1. P03 Audio player (`docs/IMPLEMENTATION.md`): Web Audio playback of bundled MP3s with the approved voices (D-83), the permanent "Nagranie syntetyczne" label near audio controls (F-45, D-84), local-only fallback and failure handling; verify on the Android tablet.
 
 ## Done
 
-- P02 technical preparation: reviewed pinned Twemoji attribution and model-specific voice terms; generated local English/Polish WAV → MP3 evaluation clips only after the corresponding checks. Added archive/input/output provenance, a hash-pinned optional generation environment and a repeatable recipe. Proposed voices await product-owner choice; P02 is not finally accepted and P03 has not started.
+- P02 accepted: product owner listened to the samples and chose Cori (en-GB) and Supertonic 3 preset 0 (pl) (D-83) and a permanent synthetic-audio label (D-84, F-45). Earlier technical preparation: reviewed pinned Twemoji attribution and model-specific voice terms; generated local English/Polish WAV → MP3 evaluation clips only after the corresponding checks. Added archive/input/output provenance, a hash-pinned optional generation environment and a repeatable recipe. Proposed voices await product-owner choice; P02 is not finally accepted and P03 has not started.
 - Fixed the npm engine requirement: exact npm 11.9.0 rejected the npm 11.17.0 bundled with Node 24.19.0 (`EBADENGINE` on `npm ci`); now `>=11.9.0 <12`. Clean install and `npm run check` verified with both versions.
 - P01 Project foundation (PR #12): pinned React/TypeScript/Vite, `idb`, Vitest/Playwright configuration, npm lockfile and disabled install scripts. Verified clean frozen install, type-check, static build, audit and production-preview smoke check in system Chromium. Test runners report zero tests by design; no application tests or learning features were added.
 - Second opinion on the technology proposal and stage plan; product owner chose React + TypeScript + Vite, `idb` with per-profile documents, MP3 via Web Audio, an early pilot test build and Twemoji (D-78–D-82). `docs/IMPLEMENTATION.md` reordered into P01–P40 with oversized stages split; `AGENTS.md` stack filled in.
@@ -63,6 +62,7 @@
 
 Newest first. One line per finished task: date · agent · what was done · anything the next agent must know.
 
+- 2026-11-07 · Claude · Reviewed P02, regenerated extra Cori samples for listening (not committed), recorded D-83/D-84 and F-45 in PR #14 with the product owner's approval · Slowing a single short word (e.g. "Red." at speed 0.85–0.9) produced a long garbled clip: listen to every generated clip; licence pages on huggingface.co and brycebeattie.com were unreachable from the Claude session.
 - 2026-11-06 · Codex · Prepared P02 licence review and synthetic evaluation clips on `feature/p02-asset-licences`; owner voice choice and merge pending · Recommend Cori + Supertonic 3 preset 0; Polish Piper lineage remains unresolved; before playback show synthetic disclosure, and do not claim pronunciation/device checks from decoding alone. See `docs/ASSET_LICENCES.md` and `tools/audio/`.
 - 2026-11-06 · Claude · Reviewed P01 (install, types, build, preview smoke check passed) and fixed the npm engine range · P02 remains next; consider a free GitHub Actions check later (product owner to decide).
 - 2026-11-06 · Codex · Finalized P01 in PR #12; product owner explicitly approved merging · Node 24.19.0 / npm 11.9.0, `npm run check` passes, scripts disabled, no test cases yet; P02 licences next, commands/evidence in `docs/DEVELOPMENT.md`.
