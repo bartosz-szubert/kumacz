@@ -10,7 +10,9 @@ Run the language regression check in the optional pinned generation environment 
 .venv-audio/bin/python -m unittest discover -s tools/audio -p 'test_*.py'
 ```
 
-The test checks the real native configuration readback for Polish words/instructions and the unchanged English settings. It is separate from the app's npm tests, which do not install synthesis dependencies.
+The tests check the real native configuration readback for Polish words/instructions, the unchanged English settings and a real FFmpeg encoding/decoding comparison proving that a recorded 6 dB boost is applied without changing duration. It is separate from the app's npm tests, which do not install synthesis dependencies.
+
+P04 revision 3 also records optional per-clip `synthesisText` (e.g. `Dog.` while display/fallback text stays `dog`) and `gainDb`. The generator applies fixed gain with FFmpeg's `volume` filter before MP3 encoding. With either field absent, the corresponding input/encoding behaviour is unchanged. These are reviewed content-preparation settings, not runtime controls. The pilot provenance records the actual source/encoded levels and target; remeasure the final decoded MP3 after regeneration and listen, rather than assuming an old gain is suitable for new inference output. Keep sample peaks below −3 dBFS; do not slow or trim short words to hide unclear consonants.
 
 Optional preparation tooling, separate from the web app. The committed MP3s are synthetic evaluation clips; [the licence review](../../docs/ASSET_LICENCES.md) describes the proposed voices and disclosure requirements. No synthesis runs in the browser, no hosted generation service is used, and no models are committed.
 

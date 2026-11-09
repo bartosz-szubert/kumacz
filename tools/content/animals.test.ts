@@ -37,7 +37,7 @@ describe('the P04 animal lesson', () => {
       expect(item.audio.translation.text).toBe(item.translation)
       expect(item.audio.translation.language).toBe(lesson.translationLanguage)
     }
-    expect(lesson.instructions['listen-and-tap'].text).toBe('Posłuchaj i wybierz obrazek.')
+    expect(lesson.instructions['listen-and-tap'].text).toBe('Posłuchaj słowa i wybierz pasujący obrazek.')
     expect(lesson.instructions['listen-and-tap'].language).toBe('pl-PL')
   })
 
@@ -87,6 +87,12 @@ describe('the P04 animal lesson', () => {
       expect(clip.mp3DurationSeconds).toBeGreaterThan(0)
       expect(clip.mp3DurationSeconds).toBeLessThan(5)
       if (clip.language === 'pl-PL') expect(clip.generationExtra).toEqual({ lang: 'pl' })
+      if (clip.language === 'en-GB') {
+        expect(Number.isFinite(clip.gainDb)).toBe(true)
+        expect(clip.levelsAfterGain!.peakDbFS).toBeLessThanOrEqual(-3)
+        expect(Math.abs(clip.levelsAfterGain!.activeRmsDbFS - provenance.audioRefinement.targetActiveRmsDbFS)).toBeLessThan(1)
+      }
+      if (clip.synthesisText) expect(clip.synthesisText.toLowerCase().replace(/\.$/, '')).toBe(clip.text)
     }
     expect(hash(provenance.reviewAudio.path)).toBe(provenance.reviewAudio.mp3Sha256)
   })

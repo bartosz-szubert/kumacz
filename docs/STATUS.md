@@ -1,21 +1,21 @@
 # Status
 
-**Phase:** Implementation (P04 Polish audio corrected; repeat listening pending)
+**Phase:** Implementation (P04 revision 3 prepared; listening pending)
 **Last updated:** 2026-11-09
 
 ## In progress
 
-_No agent task running. P04 revision 2 is prepared on `feature/p04-pilot-animals` (draft PR #18); repeat human listening and merge approval are pending._
+_No agent task running. P04 revision 3 is prepared on `feature/p04-pilot-animals` (draft PR #18); human listening and merge approval are pending._
 
 ## Next
 
-1. Listen to P04 revision 2 in [`PILOT_LESSON.md`](PILOT_LESSON.md), including all eight regenerated Polish clips (seven translations and the instruction). The owner rejected revision 1 pronunciation; the native language configuration bug is fixed and repeat listening is pending. Record the result, then obtain explicit PR merge approval. After P04 acceptance, continue with P05 Shared UI and themes (`docs/IMPLEMENTATION.md`).
+1. Listen to P04 revision 3 in [`PILOT_LESSON.md`](PILOT_LESSON.md), especially dog/horse endings and English/Polish balance. The owner reported much better Polish in revision 2 and explicitly chose “Posłuchaj słowa i wybierz pasujący obrazek.” Revision 3 records that instruction and matches English levels, with dog/horse regenerated using sentence punctuation at the same voice/speed. Record listening results, then obtain explicit PR merge approval. After P04 acceptance, continue with P05 Shared UI and themes (`docs/IMPLEMENTATION.md`).
 2. In P09, run the P03 audio check on the Android tablet with Chrome, including offline replay (`docs/AUDIO_PLAYER.md`).
 3. Run the configured WebKit project when its browser download is available (HTTP 403 for the official Playwright hosts in agent environments).
 
 ## Done
 
-- P04 technical preparation: seven-word animal lesson JSON with stable IDs, Polish translations, P09 pilot exercise types, curated same-lesson distractors, seven pinned Twemoji SVGs and 15 MP3s including the shared instruction. After the owner rejected English-sounding Polish pronunciation (e.g. “ryba” as “rajba”), fixed `GenerationConfig.extra` assignment: item mutation changed a dict copy and silently left the native language at English. Regenerated all eight Polish clips with actual `lang=pl`, versioned their paths and replaced the playback-check prompt. Added a real-binding regression test, updated provenance and a revision-2 listening sequence. Types/build, 20 Vitest tests, 2 Python generator tests and 9 Chromium tests passed. Revision 2 listening is pending; this is not P04 acceptance.
+- P04 technical preparation: seven-word animal lesson JSON with stable IDs, Polish translations, pilot exercise types, curated distractors, seven pinned Twemoji SVGs and 15 MP3s. Fixed ignored native Polish language selection and regenerated eight Polish clips in revision 2; the owner reported much better pronunciation. Revision 3 records the approved clearer instruction, matches English levels to Polish and regenerates dog/horse with sentence punctuation at speed 1.0. Source/output levels, gains, hashes and feedback are in provenance; changed assets and the review sequence use new paths. Types/build, 20 Vitest tests, 3 Python generator tests and 9 Chromium tests passed. Revision 3 listening is pending; this is not P04 acceptance.
 - P03 accepted (product owner's choice C): both clips played online and offline (airplane mode, page open) on an iPhone with Safari and an Android phone with Dolphin; tablet + Chrome check moved to P09. Recorded in `docs/AUDIO_PLAYER.md`.
 - P03 implementation and desktop verification prepared: whole-file Web Audio, same-origin validated asset cache in the data layer, local-only fallback, interruption/retry outcomes, permanent disclosure and a two-clip screen. Unit and Chromium browser checks cover failures, cancellation, policy restrictions and cached offline replay. P03 was subsequently accepted on phones as recorded above; tablet + Chrome remains in P09, and WebKit is blocked by the official browser-download hosts.
 - Added the GitHub Pages test-build workflow and "Wersja testowa" banner (D-85) so the product owner can check P03 audio on the tablet without USB debugging.
@@ -65,6 +65,8 @@ _No agent task running. P04 revision 2 is prepared on `feature/p04-pilot-animals
 - Agent instructions (`AGENTS.md`, `CLAUDE.md`) and this status file.
 
 ## Handoff log
+
+- 2026-11-09 · Codex · Prepared P04 revision 3 in PR #18 after feedback: explicit approval of clearer Polish instruction, measured English gain, fresh dog/horse synthesis with sentence punctuation, versioned assets and `animals-review-v3.mp3` · Levels/decoding do not establish distinct final consonants; await owner listening and merge approval. Voice/preset/speed unchanged; gains are content preparation, not playback/session rules.
 
 - 2026-11-09 · Codex · Corrected P04 Polish generation on PR #18 after the owner's pronunciation rejection: assign the whole native `extra` map, regenerate all eight Polish clips, route the playback check to the new prompt and publish `animals-review-v2.mp3` · Real-binding regression reproduced the bug and now passes; repeat human listening is required. Original P02 fixture bytes are historical playback evidence, not suitable Polish learning content. No merge or voice change.
 

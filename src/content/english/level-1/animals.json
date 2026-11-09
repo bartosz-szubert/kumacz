@@ -10,9 +10,9 @@
   "instructions": {
     "listen-and-tap": {
       "id": "instruction.listen-and-tap.pl-PL",
-      "text": "Posłuchaj i wybierz obrazek.",
+      "text": "Posłuchaj słowa i wybierz pasujący obrazek.",
       "language": "pl-PL",
-      "path": "assets/audio/shared/pl-PL-listen-and-choose.f64ee7e8d99a.mp3"
+      "path": "assets/audio/shared/pl-PL-listen-and-choose.c21cb540133e.mp3"
     }
   },
   "confusablePairs": [
@@ -39,7 +39,7 @@
           "id": "english.animal.cat.en-GB",
           "text": "cat",
           "language": "en-GB",
-          "path": "assets/audio/animals/en-GB-cat.409aa7d78ce6.mp3"
+          "path": "assets/audio/animals/en-GB-cat.b57946182716.mp3"
         },
         "translation": {
           "id": "english.animal.cat.pl-PL",
@@ -70,7 +70,7 @@
           "id": "english.animal.dog.en-GB",
           "text": "dog",
           "language": "en-GB",
-          "path": "assets/audio/animals/en-GB-dog.6317eb438427.mp3"
+          "path": "assets/audio/animals/en-GB-dog.da36841efc9c.mp3"
         },
         "translation": {
           "id": "english.animal.dog.pl-PL",
@@ -101,7 +101,7 @@
           "id": "english.animal.fish.en-GB",
           "text": "fish",
           "language": "en-GB",
-          "path": "assets/audio/animals/en-GB-fish.dbba89e3d03d.mp3"
+          "path": "assets/audio/animals/en-GB-fish.f1ff40677adc.mp3"
         },
         "translation": {
           "id": "english.animal.fish.pl-PL",
@@ -132,7 +132,7 @@
           "id": "english.animal.frog.en-GB",
           "text": "frog",
           "language": "en-GB",
-          "path": "assets/audio/animals/en-GB-frog.a75ee7fa6d9e.mp3"
+          "path": "assets/audio/animals/en-GB-frog.d9f8d504a551.mp3"
         },
         "translation": {
           "id": "english.animal.frog.pl-PL",
@@ -163,7 +163,7 @@
           "id": "english.animal.horse.en-GB",
           "text": "horse",
           "language": "en-GB",
-          "path": "assets/audio/animals/en-GB-horse.cdfadb840a31.mp3"
+          "path": "assets/audio/animals/en-GB-horse.7e542dfd9d4a.mp3"
         },
         "translation": {
           "id": "english.animal.horse.pl-PL",
@@ -194,7 +194,7 @@
           "id": "english.animal.cow.en-GB",
           "text": "cow",
           "language": "en-GB",
-          "path": "assets/audio/animals/en-GB-cow.6a53bbc6cd47.mp3"
+          "path": "assets/audio/animals/en-GB-cow.ee42c186426f.mp3"
         },
         "translation": {
           "id": "english.animal.cow.pl-PL",
@@ -225,7 +225,7 @@
           "id": "english.animal.elephant.en-GB",
           "text": "elephant",
           "language": "en-GB",
-          "path": "assets/audio/animals/en-GB-elephant.f331b954ab25.mp3"
+          "path": "assets/audio/animals/en-GB-elephant.79226332db1e.mp3"
         },
         "translation": {
           "id": "english.animal.elephant.pl-PL",
