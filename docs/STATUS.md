@@ -1,11 +1,19 @@
 # Status
 
-**Phase:** Implementation (P04 horse/elephant comparison prepared; listening pending)
-**Last updated:** 2026-11-09
+**Phase:** Implementation (P04 paused; horse/elephant review pending)
+**Last updated:** 2026-11-10
 
 ## In progress
 
-_No agent task running. P04 pronunciation candidates are prepared on `feature/p04-pilot-animals` (draft PR #18); dog is accepted, horse/elephant replacement choice and merge approval are pending._
+_Paused at the owner's request on 2026-11-10. No agent task running. Resume on `feature/p04-pilot-animals` ([draft PR #18](https://github.com/bartosz-szubert/kumacz/pull/18)); no merge approval._
+
+## Resume point
+
+- P04's seven-word animal lesson, assets and provenance are prepared. Polish generation language is corrected; the owner reported much better Polish. Approved instruction: “Posłuchaj słowa i wybierz pasujący obrazek.” English levels were matched in revision 3.
+- **Accepted:** revision-3 dog. **Unresolved:** horse sounds like “płoz”; elephant's final t is not clear. Preserve the accepted dog recording.
+- **First action next session:** listen to the [11-second comparison](review/horse-elephant-comparison-1.wav) with [instructions and individual files](PRONUNCIATION_REVIEW.md). Order: horse 1/2/3, then elephant 1/2/3. Variant 1 is the existing individual MP3, 2 uses new punctuation at standard settings, 3 also changes noise settings. No replacement has been selected. If all variants fail, discuss the next English-voice approach before generating another full set.
+- After the owner selects or rejects variants, update only the selected lesson audio and its provenance/review material, repeat the necessary checks/listening, then obtain explicit P04 merge approval. P05 follows P04 acceptance.
+- All comparison media and provenance are saved in PR #18. Main still reflects accepted P03; start from the PR branch. Latest verification: build/types and 20 Vitest tests pass; revision-3 checks also passed 3 Python generator tests and 9 Chromium tests. Comparison hashes, decoding and headroom pass; pronunciation still requires listening.
 
 ## Next
 
@@ -65,6 +73,8 @@ _No agent task running. P04 pronunciation candidates are prepared on `feature/p0
 - Agent instructions (`AGENTS.md`, `CLAUDE.md`) and this status file.
 
 ## Handoff log
+
+- 2026-11-10 · Codex · Paused P04 at the owner's request; saved the resume point and review links in STATUS and draft PR #18 · Resume with the horse/elephant comparison and keep accepted dog. No candidate selection, P04 acceptance or merge approval; P05 has not started.
 
 - 2026-11-09 · Codex · Recorded accepted dog, rejected horse (“płoz”) and unclear elephant final t; prepared `docs/PRONUNCIATION_REVIEW.md` with reference + two Cori variants per word and a lossless comparison WAV in PR #18 · Await listening/selection before replacing lesson files. Same voice/speed; standard vs zero noise are review candidates only. Installed runtime already includes the known BOS/pad fix. No merge approval.
 
