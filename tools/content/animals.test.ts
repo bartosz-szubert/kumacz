@@ -4,6 +4,7 @@ import { resolve } from 'node:path'
 import { describe, expect, it } from 'vitest'
 import lesson from '../../src/content/english/level-1/animals.json' with { type: 'json' }
 import provenance from './pilot-animals-provenance.json' with { type: 'json' }
+import audioSamples from '../../src/content/audio-samples.json' with { type: 'json' }
 
 const root = resolve(import.meta.dirname, '../..')
 const hash = (path: string) => createHash('sha256').update(readFileSync(resolve(root, path))).digest('hex')
@@ -85,7 +86,15 @@ describe('the P04 animal lesson', () => {
       expect(clip.path).toContain(clip.mp3Sha256.slice(0, 12))
       expect(clip.mp3DurationSeconds).toBeGreaterThan(0)
       expect(clip.mp3DurationSeconds).toBeLessThan(5)
+      if (clip.language === 'pl-PL') expect(clip.generationExtra).toEqual({ lang: 'pl' })
     }
     expect(hash(provenance.reviewAudio.path)).toBe(provenance.reviewAudio.mp3Sha256)
+  })
+
+  it('uses the corrected Polish prompt in the playback check instead of the rejected legacy fixture', () => {
+    expect(audioSamples.find(clip => clip.language === 'pl-PL')).toMatchObject({
+      text: lesson.instructions['listen-and-tap'].text,
+      path: lesson.instructions['listen-and-tap'].path,
+    })
   })
 })

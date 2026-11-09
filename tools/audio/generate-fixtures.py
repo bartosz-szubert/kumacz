@@ -16,6 +16,17 @@ import numpy as np
 import sherpa_onnx
 
 
+def make_generation_config(fixture):
+    generation = sherpa_onnx.GenerationConfig()
+    generation.sid = fixture["speakerId"]
+    generation.speed = fixture["speed"]
+    if fixture["model"] == "supertonic-3-int8":
+        generation.num_steps = fixture["steps"]
+        # The pybind getter returns a dict copy; item mutation silently loses lang.
+        generation.extra = {"lang": "pl"}
+    return generation
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("models", type=Path, help="Directory of extracted model archives")
@@ -70,12 +81,7 @@ def main():
         if not config.validate():
             raise ValueError("Invalid generation configuration")
         tts = sherpa_onnx.OfflineTts(config)
-        generation = sherpa_onnx.GenerationConfig()
-        generation.sid = fixture["speakerId"]
-        generation.speed = fixture["speed"]
-        if model["id"] == "supertonic-3-int8":
-            generation.num_steps = fixture["steps"]
-            generation.extra["lang"] = "pl"
+        generation = make_generation_config(fixture)
         audio = tts.generate(fixture["text"], generation)
         if not len(audio.samples):
             raise ValueError("The generator returned empty audio")

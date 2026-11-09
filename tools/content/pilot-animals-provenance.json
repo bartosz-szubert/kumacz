@@ -49,7 +49,7 @@
     }
   ],
   "preparedOn": "2026-11-09",
-  "purpose": "P04 seven-word animal pilot; human listening review pending (D-83)",
+  "purpose": "P04 seven-word animal pilot, revision 2; Polish language corrected, repeat human listening pending (D-83)",
   "vocabularySource": "https://www.cambridgeenglish.org/images/149679-yle-starters-word-list.pdf",
   "vocabularyNote": "Pre A1 Starters thematic Animals list; own Polish translations. No source pictures or exercises copied.",
   "pictures": {
@@ -135,12 +135,15 @@
       "speakerId": 0,
       "speed": 1.0,
       "steps": 8,
-      "path": "public/assets/audio/animals/pl-PL-cat.9f173fd5f63b.mp3",
-      "mp3Sha256": "9f173fd5f63be37cce9ccf131d648feaf404aa5a317c1fcd7be0dff223b0b7c8",
-      "wavSha256": "5d0a36b7dd44f162f768091a6399efc82f746ea136b0688143d6fac76f31df25",
+      "path": "public/assets/audio/animals/pl-PL-cat.31c925fe2b2a.mp3",
+      "mp3Sha256": "31c925fe2b2a5a3a22b287f5a35487fecc0878fa94ece5b3ba425a897fc9cf43",
+      "wavSha256": "4ad3a93279f2a189c24fa649127fcfcde9a9f2fe3d5e8c594815dda7dc9e047a",
       "wavSampleRate": 44100,
       "mp3Bytes": 11577,
-      "mp3DurationSeconds": 1.410612
+      "mp3DurationSeconds": 1.410612,
+      "generationExtra": {
+        "lang": "pl"
+      }
     },
     {
       "id": "english.animal.dog.en-GB",
@@ -164,12 +167,15 @@
       "speakerId": 0,
       "speed": 1.0,
       "steps": 8,
-      "path": "public/assets/audio/animals/pl-PL-dog.158810efa74c.mp3",
-      "mp3Sha256": "158810efa74c1c895d5f74f1bb5d9fbb459875243167995127fa37f9fa1b4b27",
-      "wavSha256": "fdf39a56540dfc7db87b110c3afdfe2fc041239c2f580b5be7cc5fe165bc7e18",
+      "path": "public/assets/audio/animals/pl-PL-dog.e744714e2b60.mp3",
+      "mp3Sha256": "e744714e2b6035e26746c5c80b541640c42bae263580c22928d71376476b80c7",
+      "wavSha256": "50dca28a14cee20ac1b4c37463507cd0e7996801e5661b9561c877611cc2314b",
       "wavSampleRate": 44100,
       "mp3Bytes": 11577,
-      "mp3DurationSeconds": 1.410612
+      "mp3DurationSeconds": 1.410612,
+      "generationExtra": {
+        "lang": "pl"
+      }
     },
     {
       "id": "english.animal.fish.en-GB",
@@ -193,12 +199,15 @@
       "speakerId": 0,
       "speed": 1.0,
       "steps": 8,
-      "path": "public/assets/audio/animals/pl-PL-fish.d1d44c9899d0.mp3",
-      "mp3Sha256": "d1d44c9899d026f57b90aa57d16a04f29d17b41ac9b0ab7fea3d49d1137d394c",
-      "wavSha256": "692ff33756d54668a6e63294c9bc869a664908a355a2c6c812d8c5ce0e6e0a9b",
+      "path": "public/assets/audio/animals/pl-PL-fish.9cb72dc1f8fd.mp3",
+      "mp3Sha256": "9cb72dc1f8fd25517ee3c24a99c8b5565a42be5b623d364ea0d28700bae2a7ba",
+      "wavSha256": "60b84195ea3c11b22fce6abd401fdc300b42dd7c2af7c207169b3988770c8cb5",
       "wavSampleRate": 44100,
       "mp3Bytes": 11577,
-      "mp3DurationSeconds": 1.410612
+      "mp3DurationSeconds": 1.410612,
+      "generationExtra": {
+        "lang": "pl"
+      }
     },
     {
       "id": "english.animal.frog.en-GB",
@@ -222,12 +231,15 @@
       "speakerId": 0,
       "speed": 1.0,
       "steps": 8,
-      "path": "public/assets/audio/animals/pl-PL-frog.2263ebea0987.mp3",
-      "mp3Sha256": "2263ebea098795f6954bd43525e32893245c03f61c7e23dccd236973ab705dfb",
-      "wavSha256": "2f23823fde443f3c8a388611720aa91e6c18715aff6b95d37566951ab24acece",
+      "path": "public/assets/audio/animals/pl-PL-frog.c128ca269a06.mp3",
+      "mp3Sha256": "c128ca269a06fdbbbe9fb9a40c8dbf7d910aad77e62d32d1a7656ed1e4054d49",
+      "wavSha256": "66efd5dedf2b152d8401e7cb936c47d312c582b736a2b2c6c8058a30fea52b8e",
       "wavSampleRate": 44100,
       "mp3Bytes": 11786,
-      "mp3DurationSeconds": 1.436735
+      "mp3DurationSeconds": 1.436735,
+      "generationExtra": {
+        "lang": "pl"
+      }
     },
     {
       "id": "english.animal.horse.en-GB",
@@ -251,12 +263,15 @@
       "speakerId": 0,
       "speed": 1.0,
       "steps": 8,
-      "path": "public/assets/audio/animals/pl-PL-horse.19c3d8abd952.mp3",
-      "mp3Sha256": "19c3d8abd9522c31e3b4a782a72ac346af930535edc0501a00fc238fc32ee88b",
-      "wavSha256": "f2140713360daa86144bde4e67cdf93426367ebce7ca9db264f235290fb327a0",
+      "path": "public/assets/audio/animals/pl-PL-horse.8b740c4b9d23.mp3",
+      "mp3Sha256": "8b740c4b9d23029757cab07639d4d1c685935c761b136418e276dffb15004635",
+      "wavSha256": "8683dbe25d8009bfc4cccd3299c38805442758e2a8e2b993a37e0147489a04fe",
       "wavSampleRate": 44100,
       "mp3Bytes": 11577,
-      "mp3DurationSeconds": 1.410612
+      "mp3DurationSeconds": 1.410612,
+      "generationExtra": {
+        "lang": "pl"
+      }
     },
     {
       "id": "english.animal.cow.en-GB",
@@ -280,12 +295,15 @@
       "speakerId": 0,
       "speed": 1.0,
       "steps": 8,
-      "path": "public/assets/audio/animals/pl-PL-cow.21f9b7cbf512.mp3",
-      "mp3Sha256": "21f9b7cbf5122abafe69b019f8f3a796da968a6d3aff7e5c67e5494689a353b7",
-      "wavSha256": "3bebfd3a4d03355a32544d589ae3e2af76bf5e0cd24a54a27eede29496c3a3b2",
+      "path": "public/assets/audio/animals/pl-PL-cow.e153bae2b040.mp3",
+      "mp3Sha256": "e153bae2b040dfc5ce014e20fca3dc4636b8cfcd4a13c87c49dd0eee20bda3d3",
+      "wavSha256": "e06ab5e1adb9cbc19c146331277990b34045bd80beef2615fdf95f51f2f34d2c",
       "wavSampleRate": 44100,
       "mp3Bytes": 11577,
-      "mp3DurationSeconds": 1.410612
+      "mp3DurationSeconds": 1.410612,
+      "generationExtra": {
+        "lang": "pl"
+      }
     },
     {
       "id": "english.animal.elephant.en-GB",
@@ -309,15 +327,16 @@
       "speakerId": 0,
       "speed": 1.0,
       "steps": 8,
-      "path": "public/assets/audio/animals/pl-PL-elephant.cc26c9c0e207.mp3",
-      "mp3Sha256": "cc26c9c0e2072a427ac77329b05d77b5754012011ba593935db1a0a6098e50ab",
-      "wavSha256": "2e61420409bd2b7e0f88989e3f61e7e4af9dd03dde654fd247b607ddd348accf",
+      "path": "public/assets/audio/animals/pl-PL-elephant.e4484fc18209.mp3",
+      "mp3Sha256": "e4484fc182096bab4c32b154eed3310960af31ff7889f5c91d7ad965319a51c8",
+      "wavSha256": "5a8f1b99eb603398a129de2552ed9c93b4b6d368571eefff4d259143c0d44df3",
       "wavSampleRate": 44100,
       "mp3Bytes": 11577,
-      "mp3DurationSeconds": 1.410612
-    }
-  ],
-  "reusedFixtures": [
+      "mp3DurationSeconds": 1.410612,
+      "generationExtra": {
+        "lang": "pl"
+      }
+    },
     {
       "id": "instruction.listen-and-tap.pl-PL",
       "text": "Posłuchaj i wybierz obrazek.",
@@ -326,20 +345,24 @@
       "speakerId": 0,
       "speed": 1.0,
       "steps": 8,
-      "path": "public/assets/audio/shared/pl-PL-listen-and-choose.e2b34358adc4.mp3",
-      "mp3Sha256": "e2b34358adc436fe2c28e52eaa2309b51eb342c64518c8cc648b8eddc32dc174",
-      "wavSha256": "fb53ccb97a8ec2e385e8d2ce9f3da6238c738cf061833edb44f1d25b4bdb1599",
+      "path": "public/assets/audio/shared/pl-PL-listen-and-choose.f64ee7e8d99a.mp3",
+      "mp3Sha256": "f64ee7e8d99ab51d21c865072ca419eda7051dca5adc7f6b3fec8861e4c5c89a",
+      "wavSha256": "d61f5e8293992d6dc1acf26f398634bd739522696937275f6a85283714c0d23c",
       "wavSampleRate": 44100,
-      "mp3Bytes": 21190,
-      "mp3DurationSeconds": 2.612245,
-      "reusedFrom": "public/assets/audio/fixtures/pl-PL-listen-and-choose.mp3"
+      "mp3Bytes": 22026,
+      "mp3DurationSeconds": 2.716735,
+      "generationExtra": {
+        "lang": "pl"
+      }
     }
   ],
+  "reusedFixtures": [],
   "reviewAudio": {
-    "path": "docs/review/animals-review.mp3",
+    "path": "docs/review/animals-review-v2.mp3",
+    "revision": 2,
     "purpose": "Human listening review only; not part of the app package",
-    "mp3Sha256": "96020a124102cbabc18191d5240d7d874d86f41fb431f976d82f73d70ad99928",
-    "durationSeconds": 30.772245,
+    "mp3Sha256": "9e533dce193dd8db8dabf2daff427df41fe80b90f96cf863f831001f1007295f",
+    "durationSeconds": 30.850612,
     "sequence": [
       {
         "id": "instruction.listen-and-tap.pl-PL",
@@ -349,74 +372,118 @@
       {
         "id": "english.animal.cat.en-GB",
         "text": "cat",
-        "startsAtSeconds": 3.55
+        "startsAtSeconds": 3.66
       },
       {
         "id": "english.animal.cat.pl-PL",
         "text": "kot",
-        "startsAtSeconds": 5.0
+        "startsAtSeconds": 5.11
       },
       {
         "id": "english.animal.dog.en-GB",
         "text": "dog",
-        "startsAtSeconds": 7.35
+        "startsAtSeconds": 7.45
       },
       {
         "id": "english.animal.dog.pl-PL",
         "text": "pies",
-        "startsAtSeconds": 8.77
+        "startsAtSeconds": 8.87
       },
       {
         "id": "english.animal.fish.en-GB",
         "text": "fish",
-        "startsAtSeconds": 11.13
+        "startsAtSeconds": 11.22
       },
       {
         "id": "english.animal.fish.pl-PL",
         "text": "ryba",
-        "startsAtSeconds": 12.56
+        "startsAtSeconds": 12.65
       },
       {
         "id": "english.animal.frog.en-GB",
         "text": "frog",
-        "startsAtSeconds": 14.91
+        "startsAtSeconds": 14.99
       },
       {
         "id": "english.animal.frog.pl-PL",
         "text": "żaba",
-        "startsAtSeconds": 16.6
+        "startsAtSeconds": 16.68
       },
       {
         "id": "english.animal.horse.en-GB",
         "text": "horse",
-        "startsAtSeconds": 18.97
+        "startsAtSeconds": 19.06
       },
       {
         "id": "english.animal.horse.pl-PL",
         "text": "koń",
-        "startsAtSeconds": 20.61
+        "startsAtSeconds": 20.7
       },
       {
         "id": "english.animal.cow.en-GB",
         "text": "cow",
-        "startsAtSeconds": 22.96
+        "startsAtSeconds": 23.04
       },
       {
         "id": "english.animal.cow.pl-PL",
         "text": "krowa",
-        "startsAtSeconds": 24.47
+        "startsAtSeconds": 24.55
       },
       {
         "id": "english.animal.elephant.en-GB",
         "text": "elephant",
-        "startsAtSeconds": 26.82
+        "startsAtSeconds": 26.9
       },
       {
         "id": "english.animal.elephant.pl-PL",
         "text": "słoń",
-        "startsAtSeconds": 28.36
+        "startsAtSeconds": 28.44
       }
     ],
     "humanListening": "pending"
+  },
+  "polishCorrection": {
+    "date": "2026-11-09",
+    "ownerReview": "Rejected revision 1 Polish pronunciation; ryba sounded like rajba / an English speaker reading Polish.",
+    "cause": "GenerationConfig.extra item mutation changed a Python dict copy, leaving the native map empty; Supertonic defaulted to en.",
+    "fix": "Assign the complete property: generation.extra = {\"lang\": \"pl\"}. Verified by readback against sherpa-onnx 1.13.8.",
+    "source": "https://github.com/k2-fsa/sherpa-onnx/blob/v1.13.8/sherpa-onnx/csrc/offline-tts-supertonic-impl.cc",
+    "regressionTest": "tools/audio/test_generation_config.py",
+    "supersededCommit": "70036d578cd3ea7626368dff3bcba398ea361519",
+    "supersededPolishClips": [
+      {
+        "id": "english.animal.cat.pl-PL",
+        "mp3Sha256": "9f173fd5f63be37cce9ccf131d648feaf404aa5a317c1fcd7be0dff223b0b7c8"
+      },
+      {
+        "id": "english.animal.dog.pl-PL",
+        "mp3Sha256": "158810efa74c1c895d5f74f1bb5d9fbb459875243167995127fa37f9fa1b4b27"
+      },
+      {
+        "id": "english.animal.fish.pl-PL",
+        "mp3Sha256": "d1d44c9899d026f57b90aa57d16a04f29d17b41ac9b0ab7fea3d49d1137d394c"
+      },
+      {
+        "id": "english.animal.frog.pl-PL",
+        "mp3Sha256": "2263ebea098795f6954bd43525e32893245c03f61c7e23dccd236973ab705dfb"
+      },
+      {
+        "id": "english.animal.horse.pl-PL",
+        "mp3Sha256": "19c3d8abd9522c31e3b4a782a72ac346af930535edc0501a00fc238fc32ee88b"
+      },
+      {
+        "id": "english.animal.cow.pl-PL",
+        "mp3Sha256": "21f9b7cbf5122abafe69b019f8f3a796da968a6d3aff7e5c67e5494689a353b7"
+      },
+      {
+        "id": "english.animal.elephant.pl-PL",
+        "mp3Sha256": "cc26c9c0e2072a427ac77329b05d77b5754012011ba593935db1a0a6098e50ab"
+      },
+      {
+        "id": "instruction.listen-and-tap.pl-PL",
+        "mp3Sha256": "e2b34358adc436fe2c28e52eaa2309b51eb342c64518c8cc648b8eddc32dc174"
+      }
+    ],
+    "humanListening": "pending for revision 2"
   }
 }

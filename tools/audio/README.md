@@ -2,6 +2,16 @@
 
 P04 reuses this preparation pipeline with the optional `--manifest tools/content/pilot-animals-provenance.json` argument. The original command and fixtures remain unchanged. See [the pilot recipe and listening review](../../docs/PILOT_LESSON.md).
 
+**Language correction (2026-11-09):** the original Polish fixture and P04 revision 1 accidentally used Supertonic's default English language. In the pinned Python binding, changing `generation.extra["lang"]` modifies a dictionary copy. The fixed generator assigns the complete property, `generation.extra = {"lang": "pl"}`. All eight P04 Polish clips, including the instruction, were regenerated under fresh hashed paths for repeat listening. Original P02 bytes/hashes remain historical evidence, not approved Polish learning content; a current run of this corrected recipe intentionally will not reproduce that erroneous language setting. See the [correction record](../../docs/PILOT_LESSON.md#polish-pronunciation-correction--2026-11-09).
+
+Run the language regression check in the optional pinned generation environment (no models or network needed):
+
+```sh
+.venv-audio/bin/python -m unittest discover -s tools/audio -p 'test_*.py'
+```
+
+The test checks the real native configuration readback for Polish words/instructions and the unchanged English settings. It is separate from the app's npm tests, which do not install synthesis dependencies.
+
 Optional preparation tooling, separate from the web app. The committed MP3s are synthetic evaluation clips; [the licence review](../../docs/ASSET_LICENCES.md) describes the proposed voices and disclosure requirements. No synthesis runs in the browser, no hosted generation service is used, and no models are committed.
 
 ## Reproduce the generation recipe

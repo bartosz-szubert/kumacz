@@ -1,21 +1,21 @@
 # Status
 
-**Phase:** Implementation (P04 prepared; listening review pending)
+**Phase:** Implementation (P04 Polish audio corrected; repeat listening pending)
 **Last updated:** 2026-11-09
 
 ## In progress
 
-_No agent task running. P04 is prepared on `feature/p04-pilot-animals`; human listening and PR merge approval are pending._
+_No agent task running. P04 revision 2 is prepared on `feature/p04-pilot-animals` (draft PR #18); repeat human listening and merge approval are pending._
 
 ## Next
 
-1. Listen to all 14 new P04 word/translation clips and review the pilot material in [`PILOT_LESSON.md`](PILOT_LESSON.md); record the result, then obtain explicit PR merge approval. After P04 acceptance, continue with P05 Shared UI and themes (`docs/IMPLEMENTATION.md`).
+1. Listen to P04 revision 2 in [`PILOT_LESSON.md`](PILOT_LESSON.md), including all eight regenerated Polish clips (seven translations and the instruction). The owner rejected revision 1 pronunciation; the native language configuration bug is fixed and repeat listening is pending. Record the result, then obtain explicit PR merge approval. After P04 acceptance, continue with P05 Shared UI and themes (`docs/IMPLEMENTATION.md`).
 2. In P09, run the P03 audio check on the Android tablet with Chrome, including offline replay (`docs/AUDIO_PLAYER.md`).
 3. Run the configured WebKit project when its browser download is available (HTTP 403 for the official Playwright hosts in agent environments).
 
 ## Done
 
-- P04 technical preparation: seven-word animal lesson JSON with stable IDs, Polish translations, P09 pilot exercise types, curated same-lesson distractors, seven pinned Twemoji SVGs and 14 locally generated MP3s; approved P02 instruction reused unchanged. Added content/hash checks, provenance, attribution and a review-only listening sequence. Types/build, 19 Vitest tests and 9 Chromium tests passed. New-clip human listening is pending; this is not P04 acceptance.
+- P04 technical preparation: seven-word animal lesson JSON with stable IDs, Polish translations, P09 pilot exercise types, curated same-lesson distractors, seven pinned Twemoji SVGs and 15 MP3s including the shared instruction. After the owner rejected English-sounding Polish pronunciation (e.g. “ryba” as “rajba”), fixed `GenerationConfig.extra` assignment: item mutation changed a dict copy and silently left the native language at English. Regenerated all eight Polish clips with actual `lang=pl`, versioned their paths and replaced the playback-check prompt. Added a real-binding regression test, updated provenance and a revision-2 listening sequence. Types/build, 20 Vitest tests, 2 Python generator tests and 9 Chromium tests passed. Revision 2 listening is pending; this is not P04 acceptance.
 - P03 accepted (product owner's choice C): both clips played online and offline (airplane mode, page open) on an iPhone with Safari and an Android phone with Dolphin; tablet + Chrome check moved to P09. Recorded in `docs/AUDIO_PLAYER.md`.
 - P03 implementation and desktop verification prepared: whole-file Web Audio, same-origin validated asset cache in the data layer, local-only fallback, interruption/retry outcomes, permanent disclosure and a two-clip screen. Unit and Chromium browser checks cover failures, cancellation, policy restrictions and cached offline replay. P03 was subsequently accepted on phones as recorded above; tablet + Chrome remains in P09, and WebKit is blocked by the official browser-download hosts.
 - Added the GitHub Pages test-build workflow and "Wersja testowa" banner (D-85) so the product owner can check P03 audio on the tablet without USB debugging.
@@ -65,6 +65,8 @@ _No agent task running. P04 is prepared on `feature/p04-pilot-animals`; human li
 - Agent instructions (`AGENTS.md`, `CLAUDE.md`) and this status file.
 
 ## Handoff log
+
+- 2026-11-09 · Codex · Corrected P04 Polish generation on PR #18 after the owner's pronunciation rejection: assign the whole native `extra` map, regenerate all eight Polish clips, route the playback check to the new prompt and publish `animals-review-v2.mp3` · Real-binding regression reproduced the bug and now passes; repeat human listening is required. Original P02 fixture bytes are historical playback evidence, not suitable Polish learning content. No merge or voice change.
 
 - 2026-11-09 · Codex · Prepared P04 animals on `feature/p04-pilot-animals`: data, SVG/MP3 assets, integrity checks and `docs/PILOT_LESSON.md` with a 31-second listening review · Human listening (D-83) and explicit PR merge approval remain; next implementation stage after acceptance is P05. P09 tablet and P10 child checks remain scheduled.
 

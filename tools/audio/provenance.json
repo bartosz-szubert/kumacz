@@ -80,5 +80,14 @@
       "mp3Bytes": 21190,
       "mp3DurationSeconds": 2.612245
     }
-  ]
+  ],
+  "historicalPolishIssue": {
+    "identifiedOn": "2026-11-09",
+    "intendedLanguage": "pl-PL",
+    "effectiveGenerationExtra": {},
+    "effectiveLanguage": "en (native default)",
+    "cause": "GenerationConfig.extra item mutation modified a copy, not the native configuration.",
+    "status": "Original P02 Polish fixture kept as historical playback evidence; not suitable for Polish learning content.",
+    "replacement": "Corrected P04 shared prompt in tools/content/pilot-animals-provenance.json; human listening pending."
+  }
 }
