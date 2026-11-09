@@ -1,6 +1,6 @@
 # Audio player — P03
 
-The P03 branch provides a two-clip screen and a reusable audio player. Its implementation and desktop checks are prepared; **P03 acceptance still requires the actual Android tablet check**. WebKit execution is also pending because the environment rejected its official download hosts. P04 has not started.
+P03 provides a two-clip screen and a reusable audio player. **Accepted on 2026-11-09** after real-device checks on two phones (see below), by the product owner's choice; the Android tablet + Chrome check moves to P09. Playwright WebKit execution is still pending because agent environments reject its official download hosts.
 
 ## Behaviour and boundaries
 
@@ -49,7 +49,18 @@ The E2E runner builds a production preview at `http://127.0.0.1:4173/kumacz/`; k
 - `npm run check` passes. The public sample files remain identical to P02. No Android/iPad result is asserted.
 - WebKit 27.2 / Playwright build `v2388` could not download: the proxy returned HTTP 403 `Domain forbidden` for `cdn.playwright.dev` and `playwright.download.prss.microsoft.com`. The configured WebKit tests remain enabled; no proxy bypass or test skip was introduced. Once the environment permits the official downloads, install the browsers and run the WebKit project.
 
-## Required actual-device check
+## Real-device record — 2026-11-09
+
+Product owner, on the Pages test build (D-85), both clips:
+
+| Device | Browser | Online playback | Offline replay (airplane mode, page already open) |
+|---|---|---|---|
+| iPhone (model/version not recorded) | Safari | passed | passed |
+| Android smartphone (model/version not recorded) | Dolphin | passed | passed |
+
+Not covered: the primary target (Android tablet + Chrome, N-01), stop/rapid switching and rotation were not reported separately, and the local-voice fallback was not exercised. The tablet + Chrome check is part of P09.
+
+## Required actual-device check (tablet, P09)
 
 **Simple route (D-85):** open `https://bartosz-szubert.github.io/kumacz/` in Chrome on the tablet. Play both clips, replay, stop during playback and alternate quickly; rotate the tablet. Then, with the page still open and both clips played once, switch on airplane mode and replay both. Check that "Nagranie syntetyczne" stays visible. The steps below (USB remote debugging) are for detailed diagnostics: blocked files and local-voice fallback.
 

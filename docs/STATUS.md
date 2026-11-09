@@ -1,20 +1,21 @@
 # Status
 
-**Phase:** Implementation (P03 merged; tablet check pending)
-**Last updated:** 2026-11-07
+**Phase:** Implementation (P03 accepted; P04 next)
+**Last updated:** 2026-11-09
 
 ## In progress
 
-- P03 Audio player · awaiting the product owner's tablet check on the Pages test build (`https://bartosz-szubert.github.io/kumacz/`). Code, unit and Chromium E2E tests are merged; the stage is not accepted yet.
+_Nothing. P03 is accepted; P04 is next._
 
 ## Next
 
-1. Product owner checks both clips on the Android tablet (play, replay, stop, offline replay in airplane mode after playing once, portrait/landscape, "Nagranie syntetyczne" visible). Record device/browser and results in `docs/AUDIO_PLAYER.md`. Use the USB remote-debugging steps there only for detailed diagnostics (blocked files, local-voice fallback).
-2. Run the configured WebKit project when its browser download is available (HTTP 403 for the official Playwright hosts in agent environments).
-3. After the tablet check passes, mark P03 accepted; P04 Pilot lesson data follows.
+1. P04 Pilot lesson data (`docs/IMPLEMENTATION.md`).
+2. In P09, run the P03 audio check on the Android tablet with Chrome, including offline replay (`docs/AUDIO_PLAYER.md`).
+3. Run the configured WebKit project when its browser download is available (HTTP 403 for the official Playwright hosts in agent environments).
 
 ## Done
 
+- P03 accepted (product owner's choice C): both clips played online and offline (airplane mode, page open) on an iPhone with Safari and an Android phone with Dolphin; tablet + Chrome check moved to P09. Recorded in `docs/AUDIO_PLAYER.md`.
 - P03 implementation and desktop verification prepared: whole-file Web Audio, same-origin validated asset cache in the data layer, local-only fallback, interruption/retry outcomes, permanent disclosure and a two-clip screen. Unit and Chromium browser checks cover failures, cancellation, policy restrictions and cached offline replay. Actual Android and WebKit checks remain in progress; this does not complete P03 acceptance.
 - Added the GitHub Pages test-build workflow and "Wersja testowa" banner (D-85) so the product owner can check P03 audio on the tablet without USB debugging.
 - P02 accepted: product owner listened to the samples and chose Cori (en-GB) and Supertonic 3 preset 0 (pl) (D-83) and a permanent synthetic-audio label (D-84, F-45). Earlier technical preparation: reviewed pinned Twemoji attribution and model-specific voice terms; generated local English/Polish WAV → MP3 evaluation clips only after the corresponding checks. Added archive/input/output provenance, a hash-pinned optional generation environment and a repeatable recipe.
@@ -66,6 +67,7 @@
 
 Newest first. One line per finished task: date · agent · what was done · anything the next agent must know.
 
+- 2026-11-09 · Claude · Recorded the P03 phone checks and accepted P03 · Primary target (Android tablet + Chrome) still untested on a real device: do it in P09; local-voice fallback not exercised on devices.
 - 2026-11-07 · Claude · Merged P03 into `main` before the tablet check (product owner's choice A) so it appears on the Pages test build · P03 stays open until the tablet check passes; record results in `docs/AUDIO_PLAYER.md`.
 - 2026-11-07 · Claude · Reviewed Codex's P03 branch (16 unit + 9 Chromium E2E tests pass; local fallback after a failed file may be blocked by iPad Safari's user-activation rule) and added the Pages test-build workflow (D-85) · P03 needs the Pages setting enabled and a tablet check; Codex's P03 STATUS edits will need a merge with this file.
 - 2026-11-07 · Codex · Prepared P03 implementation and desktop tests on `feature/p03-audio-player`; device verification and merge pending · Native file/cache playback checked in system Chromium; speech engine controlled in tests, real `localService` and Android audio still need checking; WebKit download blocked by HTTP policy. P04 has not started. See `docs/AUDIO_PLAYER.md`.
