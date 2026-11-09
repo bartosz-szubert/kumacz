@@ -1,5 +1,7 @@
 # P02 audio fixtures
 
+P04 reuses this preparation pipeline with the optional `--manifest tools/content/pilot-animals-provenance.json` argument. The original command and fixtures remain unchanged. See [the pilot recipe and listening review](../../docs/PILOT_LESSON.md).
+
 Optional preparation tooling, separate from the web app. The committed MP3s are synthetic evaluation clips; [the licence review](../../docs/ASSET_LICENCES.md) describes the proposed voices and disclosure requirements. No synthesis runs in the browser, no hosted generation service is used, and no models are committed.
 
 ## Reproduce the generation recipe

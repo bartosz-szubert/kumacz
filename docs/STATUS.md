@@ -1,22 +1,23 @@
 # Status
 
-**Phase:** Implementation (P03 accepted; P04 next)
+**Phase:** Implementation (P04 prepared; listening review pending)
 **Last updated:** 2026-11-09
 
 ## In progress
 
-_Nothing. P03 is accepted; P04 is next._
+_No agent task running. P04 is prepared on `feature/p04-pilot-animals`; human listening and PR merge approval are pending._
 
 ## Next
 
-1. P04 Pilot lesson data (`docs/IMPLEMENTATION.md`).
+1. Listen to all 14 new P04 word/translation clips and review the pilot material in [`PILOT_LESSON.md`](PILOT_LESSON.md); record the result, then obtain explicit PR merge approval. After P04 acceptance, continue with P05 Shared UI and themes (`docs/IMPLEMENTATION.md`).
 2. In P09, run the P03 audio check on the Android tablet with Chrome, including offline replay (`docs/AUDIO_PLAYER.md`).
 3. Run the configured WebKit project when its browser download is available (HTTP 403 for the official Playwright hosts in agent environments).
 
 ## Done
 
+- P04 technical preparation: seven-word animal lesson JSON with stable IDs, Polish translations, P09 pilot exercise types, curated same-lesson distractors, seven pinned Twemoji SVGs and 14 locally generated MP3s; approved P02 instruction reused unchanged. Added content/hash checks, provenance, attribution and a review-only listening sequence. Types/build, 19 Vitest tests and 9 Chromium tests passed. New-clip human listening is pending; this is not P04 acceptance.
 - P03 accepted (product owner's choice C): both clips played online and offline (airplane mode, page open) on an iPhone with Safari and an Android phone with Dolphin; tablet + Chrome check moved to P09. Recorded in `docs/AUDIO_PLAYER.md`.
-- P03 implementation and desktop verification prepared: whole-file Web Audio, same-origin validated asset cache in the data layer, local-only fallback, interruption/retry outcomes, permanent disclosure and a two-clip screen. Unit and Chromium browser checks cover failures, cancellation, policy restrictions and cached offline replay. Actual Android and WebKit checks remain in progress; this does not complete P03 acceptance.
+- P03 implementation and desktop verification prepared: whole-file Web Audio, same-origin validated asset cache in the data layer, local-only fallback, interruption/retry outcomes, permanent disclosure and a two-clip screen. Unit and Chromium browser checks cover failures, cancellation, policy restrictions and cached offline replay. P03 was subsequently accepted on phones as recorded above; tablet + Chrome remains in P09, and WebKit is blocked by the official browser-download hosts.
 - Added the GitHub Pages test-build workflow and "Wersja testowa" banner (D-85) so the product owner can check P03 audio on the tablet without USB debugging.
 - P02 accepted: product owner listened to the samples and chose Cori (en-GB) and Supertonic 3 preset 0 (pl) (D-83) and a permanent synthetic-audio label (D-84, F-45). Earlier technical preparation: reviewed pinned Twemoji attribution and model-specific voice terms; generated local English/Polish WAV → MP3 evaluation clips only after the corresponding checks. Added archive/input/output provenance, a hash-pinned optional generation environment and a repeatable recipe.
 - Fixed the npm engine requirement: exact npm 11.9.0 rejected the npm 11.17.0 bundled with Node 24.19.0 (`EBADENGINE` on `npm ci`); now `>=11.9.0 <12`. Clean install and `npm run check` verified with both versions.
@@ -64,6 +65,8 @@ _Nothing. P03 is accepted; P04 is next._
 - Agent instructions (`AGENTS.md`, `CLAUDE.md`) and this status file.
 
 ## Handoff log
+
+- 2026-11-09 · Codex · Prepared P04 animals on `feature/p04-pilot-animals`: data, SVG/MP3 assets, integrity checks and `docs/PILOT_LESSON.md` with a 31-second listening review · Human listening (D-83) and explicit PR merge approval remain; next implementation stage after acceptance is P05. P09 tablet and P10 child checks remain scheduled.
 
 Newest first. One line per finished task: date · agent · what was done · anything the next agent must know.
 

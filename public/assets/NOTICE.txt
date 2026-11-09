@@ -1,0 +1,29 @@
+Kumacz P04 pilot lesson assets
+
+Pictures (assets/pictures/twemoji/*.svg):
+Twemoji graphics: Twitter, Inc. and other contributors;
+maintained by jdecked/twemoji. CC BY 4.0.
+Source: https://github.com/jdecked/twemoji
+Revision: b6b55fef1e8636b540a6d016a4729ca8cdf2e60b (v17.0.3)
+Licence: https://creativecommons.org/licenses/by/4.0/
+The selected SVG files are unchanged. Source paths and SHA-256 hashes:
+tools/content/pilot-animals-provenance.json in the Kumacz repository.
+Licence text: docs/licences/Twemoji-CC-BY-4.0.txt in the repository.
+
+Audio (assets/audio/animals/*.mp3 and assets/audio/shared/*.mp3):
+Nagranie syntetyczne.
+English: Cori medium by Bryce Beattie (public-domain model declaration).
+Source: https://brycebeattie.com/files/tts/
+Polish: Supertonic 3 by Supertone, preset 0, generated locally.
+Model licence: BigScience Open RAIL-M (with use restrictions).
+Source: https://huggingface.co/Supertone/supertonic-3
+Licence: https://huggingface.co/Supertone/supertonic-3/blob/main/LICENSE
+The model licensor does not claim rights in the generated output;
+this does not label the clips unrestricted or CC0.
+Generation tool: sherpa-onnx 1.13.8; MP3 conversion: FFmpeg/libmp3lame.
+No model weights or synthesis runtime are shipped in the app.
+
+Before exposing these clips in an exercise, show "Nagranie syntetyczne"
+in the audio context (F-45, D-84). Preserve the credits in About (F-33).
+New clips remain subject to human listening review (D-83).
+See docs/PILOT_LESSON.md and docs/ASSET_LICENCES.md in the repository.

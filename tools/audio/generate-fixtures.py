@@ -1,4 +1,4 @@
-"""Generate P02 evaluation clips locally; no downloads or app integration.
+"""Generate synthetic clips from a reviewed manifest locally; no downloads.
 
 API sources (sherpa-onnx v1.13.8):
 https://github.com/k2-fsa/sherpa-onnx/blob/v1.13.8/python-api-examples/offline-tts.py
@@ -20,10 +20,12 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("models", type=Path, help="Directory of extracted model archives")
     parser.add_argument("output", type=Path, help="Directory for generated WAV and MP3 clips")
-    args = parser.parse_args()
-    provenance = json.loads(
-        (Path(__file__).with_name("provenance.json")).read_text(encoding="utf-8")
+    parser.add_argument(
+        "--manifest", type=Path, default=Path(__file__).with_name("provenance.json"),
+        help="Reviewed generation manifest (defaults to the P02 fixtures)",
     )
+    args = parser.parse_args()
+    provenance = json.loads(args.manifest.read_text(encoding="utf-8"))
     if sherpa_onnx.__version__ != provenance["generator"]["version"]:
         raise ValueError("Use the pinned generation environment in requirements.txt")
 
