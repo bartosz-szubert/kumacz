@@ -530,7 +530,7 @@
         "startsAtSeconds": 30.04
       }
     ],
-    "humanListening": "pending"
+    "humanListening": "Owner accepts dog; rejects horse and requests a clearer final t in elephant. See followUpListening."
   },
   "polishCorrection": {
     "date": "2026-11-09",
@@ -663,5 +663,24 @@
       }
     ],
     "humanListening": "pending for revision 3"
+  },
+  "followUpListening": {
+    "date": "2026-11-09",
+    "revision": 3,
+    "dog": {
+      "status": "accepted by owner",
+      "mp3Sha256": "da36841efc9c15b64a56c90261a6ef77f6563e8ab3276c2779393121e64d2cd0"
+    },
+    "horse": {
+      "status": "rejected by owner",
+      "perception": "płoz"
+    },
+    "elephant": {
+      "status": "needs replacement",
+      "issue": "Final t not audible to owner"
+    },
+    "comparisonProvenance": "tools/content/pronunciation-comparison-provenance.json",
+    "comparisonAudio": "docs/review/horse-elephant-comparison-1.wav",
+    "lessonReplacements": "None selected; comparison only. Preserve accepted dog."
   }
 }

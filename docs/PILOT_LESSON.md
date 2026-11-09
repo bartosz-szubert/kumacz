@@ -1,10 +1,12 @@
 # P04 pilot lesson — animals
 
-**Prepared:** 2026-11-09. **Acceptance:** the owner reported revision 2 Polish much better; revision 3 refines English levels/word endings and the approved instruction wording, pending listening (D-83).
+**Prepared:** 2026-11-09. **Acceptance:** revision-3 dog accepted; horse rejected and elephant needs a clearer final t. [The short pronunciation comparison](PRONUNCIATION_REVIEW.md) is pending listening; no replacement is selected (D-83).
 
 One level-1 lesson, seven words. The recommended animal category was used after the product owner instructed Codex to proceed. This supplies the data for P07–P09; the child-facing app still shows the P03 audio check. The pilot with children remains P10 (D-44).
 
 ## Review the material
+
+**Current review gate:** use [the horse/elephant comparison](PRONUNCIATION_REVIEW.md) to select or reject proposed replacements. The full revision-3 review below remains a reference and contains the disputed words. Dog is accepted and is preserved. No merge approval has been given.
 
 **Nagranie syntetyczne.** [Play/download revision 3 of the complete listening review](review/animals-review-v3.mp3) (about 33 seconds). It starts with “Posłuchaj słowa i wybierz pasujący obrazek.”, then reads each English word and its Polish translation in the table order. Individual files are linked below. On GitHub, use the file's download/raw button if playback is unavailable.
 
