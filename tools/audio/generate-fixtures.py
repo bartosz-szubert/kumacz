@@ -1,4 +1,4 @@
-"""Generate P02 evaluation clips locally; no downloads or app integration.
+"""Generate synthetic clips from a reviewed manifest locally; no downloads.
 
 API sources (sherpa-onnx v1.13.8):
 https://github.com/k2-fsa/sherpa-onnx/blob/v1.13.8/python-api-examples/offline-tts.py
@@ -16,14 +16,40 @@ import numpy as np
 import sherpa_onnx
 
 
+def make_generation_config(fixture):
+    generation = sherpa_onnx.GenerationConfig()
+    generation.sid = fixture["speakerId"]
+    generation.speed = fixture["speed"]
+    if fixture["model"] == "supertonic-3-int8":
+        generation.num_steps = fixture["steps"]
+        # The pybind getter returns a dict copy; item mutation silently loses lang.
+        generation.extra = {"lang": "pl"}
+    return generation
+
+
+def encode_mp3(wav_path, mp3_path, gain_db=0):
+    # Fixed, measured content-preparation gain; never a runtime volume rule.
+    volume = ["-af", f"volume={gain_db}dB"] if gain_db else []
+    subprocess.run(
+        ["ffmpeg", "-nostdin", "-y", "-v", "error", "-i", str(wav_path),
+         *volume,
+         "-codec:a", "libmp3lame", "-b:a", "64k", "-ar", "22050", "-ac", "1",
+         "-map_metadata", "-1", "-metadata", "comment=Nagranie syntetyczne.",
+         str(mp3_path)],
+        check=True,
+    )
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("models", type=Path, help="Directory of extracted model archives")
     parser.add_argument("output", type=Path, help="Directory for generated WAV and MP3 clips")
-    args = parser.parse_args()
-    provenance = json.loads(
-        (Path(__file__).with_name("provenance.json")).read_text(encoding="utf-8")
+    parser.add_argument(
+        "--manifest", type=Path, default=Path(__file__).with_name("provenance.json"),
+        help="Reviewed generation manifest (defaults to the P02 fixtures)",
     )
+    args = parser.parse_args()
+    provenance = json.loads(args.manifest.read_text(encoding="utf-8"))
     if sherpa_onnx.__version__ != provenance["generator"]["version"]:
         raise ValueError("Use the pinned generation environment in requirements.txt")
 
@@ -68,13 +94,9 @@ def main():
         if not config.validate():
             raise ValueError("Invalid generation configuration")
         tts = sherpa_onnx.OfflineTts(config)
-        generation = sherpa_onnx.GenerationConfig()
-        generation.sid = fixture["speakerId"]
-        generation.speed = fixture["speed"]
-        if model["id"] == "supertonic-3-int8":
-            generation.num_steps = fixture["steps"]
-            generation.extra["lang"] = "pl"
-        audio = tts.generate(fixture["text"], generation)
+        generation = make_generation_config(fixture)
+        # Display/fallback text stays separate from reviewed synthesis punctuation.
+        audio = tts.generate(fixture.get("synthesisText", fixture["text"]), generation)
         if not len(audio.samples):
             raise ValueError("The generator returned empty audio")
         wav_path = args.output / (fixture["id"] + ".wav")
@@ -83,13 +105,7 @@ def main():
         with wave.open(str(wav_path), "wb") as wav:
             wav.setparams((1, 2, audio.sample_rate, 0, "NONE", "not compressed"))
             wav.writeframes(samples.tobytes())
-        subprocess.run(
-            ["ffmpeg", "-nostdin", "-y", "-v", "error", "-i", str(wav_path),
-             "-codec:a", "libmp3lame", "-b:a", "64k", "-ar", "22050", "-ac", "1",
-             "-map_metadata", "-1", "-metadata", "comment=Nagranie syntetyczne.",
-             str(mp3_path)],
-            check=True,
-        )
+        encode_mp3(wav_path, mp3_path, fixture.get("gainDb", 0))
         print(f"Generated synthetic evaluation clip: {mp3_path}")
         del tts
 

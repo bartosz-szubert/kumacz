@@ -5,7 +5,10 @@ Cori medium (en_GB), głos opublikowany przez Bryce'a Beattiego jako public doma
 Źródło modelu i warunków: https://brycebeattie.com/files/tts/
 
 pl-PL-listen-and-choose.mp3: „Posłuchaj i wybierz obrazek.”
-Supertonic 3 (Supertone), preset 0, język polski. Nagranie wygenerowane lokalnie.
+Supertonic 3 (Supertone), preset 0. Nagranie wygenerowane lokalnie.
+Korekta 2026-11-09: wskutek błędu konfiguracji ta historyczna próbka używała
+domyślnego języka angielskiego zamiast polskiego. Nie używać jej do nauki.
+Poprawione nagranie jest w assets/audio/shared/; szczegóły w docs/PILOT_LESSON.md.
 Model: BigScience Open RAIL-M; nie jest to model bez ograniczeń użycia.
 Źródło: https://huggingface.co/Supertone/supertonic-3
 Warunki: https://huggingface.co/Supertone/supertonic-3/blob/main/LICENSE

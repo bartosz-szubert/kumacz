@@ -1,22 +1,31 @@
 # Status
 
-**Phase:** Implementation (P03 accepted; P04 next)
-**Last updated:** 2026-11-09
+**Phase:** Implementation (P04 accepted; P05 next)
+**Last updated:** 2026-11-10
 
 ## In progress
 
-_Nothing. P03 is accepted; P04 is next._
+_Nothing. The owner accepted P04 and explicitly approved merging [PR #18](https://github.com/bartosz-szubert/kumacz/pull/18) on 2026-11-10. P05 is next._
+
+## Resume point
+
+- P04's seven-word animal lesson, assets and provenance are prepared. Polish generation language is corrected; the owner reported much better Polish. Approved instruction: “Posłuchaj słowa i wybierz pasujący obrazek.” English levels were matched in revision 3.
+- **Accepted selections:** revision-3 dog; elephant variants 2/3 are OK, with variant 2 selected. The owner clarified that absent r was the only remaining horse concern. Cambridge UK /hɔːs/ confirms that r is not pronounced in this standard British reference; horse variant 2 is selected. Both use standard Cori settings, preserving the earlier recommendation and accepted dog.
+- Current lesson JSON/asset paths and provenance contain the two selected MP3s copied byte for byte from the heard candidates. [Hear the selected words](review/horse-elephant-selected-2.wav) (about 4 seconds, synthetic audio). The [six-entry comparison](PRONUNCIATION_REVIEW.md) is a historical record; superseded files are archived there. The old full revision-3 review also contains superseded words and is labelled historical.
+- **Next:** P05 Shared UI and themes. P04 material/merge approval was explicitly given on 2026-11-10 after the change summary and merge question; no reported pronunciation issue remains unresolved.
+- All selected assets, historical comparisons and provenance are in PR #18. Continue from updated main after the merge. Build/types and 20 Vitest tests pass; runtime verification also passed 3 Python generator tests and 9 Chromium tests. Comparison hashes, decoding/headroom and the owner's listening review are recorded. Real-device and child-observation checks remain in P09/P10.
 
 ## Next
 
-1. P04 Pilot lesson data (`docs/IMPLEMENTATION.md`).
+1. P05 Shared UI and themes (`docs/IMPLEMENTATION.md`), using the accepted P04 content as the pilot material.
 2. In P09, run the P03 audio check on the Android tablet with Chrome, including offline replay (`docs/AUDIO_PLAYER.md`).
 3. Run the configured WebKit project when its browser download is available (HTTP 403 for the official Playwright hosts in agent environments).
 
 ## Done
 
+- P04 accepted on 2026-11-10; owner explicitly approved merging PR #18. Seven-word lesson JSON, stable IDs, Polish translations, pilot exercise types, curated distractors, seven pinned Twemoji SVGs and 15 MP3s. Fixed Polish language configuration, recorded the approved instruction and matched English levels. Preserved accepted dog and selected horse/elephant variant 2 after listening and the UK /hɔːs/ clarification; exact heard bytes, provenance and historical references are retained. Build/types, 20 Vitest tests, 3 Python generator tests and 9 Chromium tests passed. P09 target-device and P10 child checks remain scheduled.
 - P03 accepted (product owner's choice C): both clips played online and offline (airplane mode, page open) on an iPhone with Safari and an Android phone with Dolphin; tablet + Chrome check moved to P09. Recorded in `docs/AUDIO_PLAYER.md`.
-- P03 implementation and desktop verification prepared: whole-file Web Audio, same-origin validated asset cache in the data layer, local-only fallback, interruption/retry outcomes, permanent disclosure and a two-clip screen. Unit and Chromium browser checks cover failures, cancellation, policy restrictions and cached offline replay. Actual Android and WebKit checks remain in progress; this does not complete P03 acceptance.
+- P03 implementation and desktop verification prepared: whole-file Web Audio, same-origin validated asset cache in the data layer, local-only fallback, interruption/retry outcomes, permanent disclosure and a two-clip screen. Unit and Chromium browser checks cover failures, cancellation, policy restrictions and cached offline replay. P03 was subsequently accepted on phones as recorded above; tablet + Chrome remains in P09, and WebKit is blocked by the official browser-download hosts.
 - Added the GitHub Pages test-build workflow and "Wersja testowa" banner (D-85) so the product owner can check P03 audio on the tablet without USB debugging.
 - P02 accepted: product owner listened to the samples and chose Cori (en-GB) and Supertonic 3 preset 0 (pl) (D-83) and a permanent synthetic-audio label (D-84, F-45). Earlier technical preparation: reviewed pinned Twemoji attribution and model-specific voice terms; generated local English/Polish WAV → MP3 evaluation clips only after the corresponding checks. Added archive/input/output provenance, a hash-pinned optional generation environment and a repeatable recipe.
 - Fixed the npm engine requirement: exact npm 11.9.0 rejected the npm 11.17.0 bundled with Node 24.19.0 (`EBADENGINE` on `npm ci`); now `>=11.9.0 <12`. Clean install and `npm run check` verified with both versions.
@@ -64,6 +73,20 @@ _Nothing. P03 is accepted; P04 is next._
 - Agent instructions (`AGENTS.md`, `CLAUDE.md`) and this status file.
 
 ## Handoff log
+
+- 2026-11-10 · Codex · Recorded the owner's P04 acceptance and explicit PR #18 merge approval after the three-bullet summary and merge question; prepared acceptance metadata in the same PR · Next is P05 Shared UI and themes. Current selected clips are authoritative; old full audio reviews are historical. P09 tablet and P10 child checks remain; no P05 implementation yet.
+
+- 2026-11-10 · Codex · Selected horse/elephant variant 2 after owner feedback: elephant 2/3 OK; horse concern was only missing r, correct for Cambridge UK /hɔːs/ · Lesson paths/provenance now use heard candidate bytes; accepted dog preserved. Superseded references archived; current selections in `docs/PRONUNCIATION_REVIEW.md` and `horse-elephant-selected-2.wav`. Final PR #18 review/merge approval pending; P05 not started.
+
+- 2026-11-10 · Codex · Paused P04 at the owner's request; saved the resume point and review links in STATUS and draft PR #18 · Resume with the horse/elephant comparison and keep accepted dog. No candidate selection, P04 acceptance or merge approval; P05 has not started.
+
+- 2026-11-09 · Codex · Recorded accepted dog, rejected horse (“płoz”) and unclear elephant final t; prepared `docs/PRONUNCIATION_REVIEW.md` with reference + two Cori variants per word and a lossless comparison WAV in PR #18 · Await listening/selection before replacing lesson files. Same voice/speed; standard vs zero noise are review candidates only. Installed runtime already includes the known BOS/pad fix. No merge approval.
+
+- 2026-11-09 · Codex · Prepared P04 revision 3 in PR #18 after feedback: explicit approval of clearer Polish instruction, measured English gain, fresh dog/horse synthesis with sentence punctuation, versioned assets and `animals-review-v3.mp3` · Levels/decoding do not establish distinct final consonants; await owner listening and merge approval. Voice/preset/speed unchanged; gains are content preparation, not playback/session rules.
+
+- 2026-11-09 · Codex · Corrected P04 Polish generation on PR #18 after the owner's pronunciation rejection: assign the whole native `extra` map, regenerate all eight Polish clips, route the playback check to the new prompt and publish `animals-review-v2.mp3` · Real-binding regression reproduced the bug and now passes; repeat human listening is required. Original P02 fixture bytes are historical playback evidence, not suitable Polish learning content. No merge or voice change.
+
+- 2026-11-09 · Codex · Prepared P04 animals on `feature/p04-pilot-animals`: data, SVG/MP3 assets, integrity checks and `docs/PILOT_LESSON.md` with a 31-second listening review · Human listening (D-83) and explicit PR merge approval remain; next implementation stage after acceptance is P05. P09 tablet and P10 child checks remain scheduled.
 
 Newest first. One line per finished task: date · agent · what was done · anything the next agent must know.
 

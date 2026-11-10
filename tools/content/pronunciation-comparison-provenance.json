@@ -1,0 +1,259 @@
+{
+  "preparedOn": "2026-11-09",
+  "purpose": "Horse/elephant comparison only; no lesson replacements approved",
+  "generator": {
+    "name": "sherpa-onnx",
+    "version": "1.13.8",
+    "source": "https://github.com/k2-fsa/sherpa-onnx/tree/v1.13.8",
+    "license": "Apache-2.0"
+  },
+  "model": {
+    "id": "cori-medium",
+    "directory": "vits-piper-en_GB-cori-medium",
+    "download": "https://github.com/k2-fsa/sherpa-onnx/releases/download/tts-models/vits-piper-en_GB-cori-medium.tar.bz2",
+    "archiveSha256": "49c9a5361bbdd95d7ca9687c4de11e5908481f65e7c7c368960df79949fdac2b",
+    "license": "public-domain (author declaration)",
+    "licenseSource": "https://brycebeattie.com/files/tts/",
+    "files": {
+      "MODEL_CARD": "38d76dfde845837b184668f8bab1c6426ad740b1af0fcebc349037822739e536",
+      "en_GB-cori-medium.onnx": "8b0d3cdd77f2878e0aa2048103eabb4d01b334783f99629f042bcf703aeba487",
+      "en_GB-cori-medium.onnx.json": "e262c16d7f192f69d4edd6b4ef8a5915379e67495fcc402f1ab15eeb33da3d36",
+      "tokens.txt": "ef3a7e4a8d1af0c9d4dc45aaae1a6242ebe24a7ed6f3d025a49eb29682784c6d"
+    }
+  },
+  "language": "en-GB",
+  "speakerId": 0,
+  "speed": 1.0,
+  "targetActiveRmsDbFS": -20.5,
+  "notice": "Nagrania syntetyczne. Cori medium (Bryce Beattie); model declared public domain.",
+  "source": "https://github.com/k2-fsa/sherpa-onnx/blob/v1.13.8/sherpa-onnx/csrc/offline-tts-vits-model-config.h",
+  "reviewedDog": {
+    "id": "english.animal.dog.en-GB",
+    "text": "dog",
+    "language": "en-GB",
+    "model": "cori-medium",
+    "speakerId": 0,
+    "speed": 1.0,
+    "path": "public/assets/audio/animals/en-GB-dog.da36841efc9c.mp3",
+    "mp3Sha256": "da36841efc9c15b64a56c90261a6ef77f6563e8ab3276c2779393121e64d2cd0",
+    "wavSha256": "e448fb45a179a0431752bb41b07a421359a18bbf67e45eb8011b1e97adbd9464",
+    "wavSampleRate": 22050,
+    "mp3Bytes": 5308,
+    "mp3DurationSeconds": 0.626939,
+    "synthesisText": "Dog.",
+    "gainDb": 1.0,
+    "levelsBeforeGain": {
+      "peakDbFS": -9.921,
+      "activeRmsDbFS": -21.511,
+      "durationSeconds": 0.568889
+    },
+    "levelsAfterGain": {
+      "peakDbFS": -9.358,
+      "activeRmsDbFS": -20.948,
+      "durationSeconds": 0.568889
+    }
+  },
+  "ownerFeedback": {
+    "dog": "OK in revision 3",
+    "horse": "Worse in revision 3, sounds like płoz",
+    "elephant": "Final t not audible"
+  },
+  "candidates": [
+    {
+      "word": "horse",
+      "variant": 2,
+      "synthesisText": "horse!",
+      "noiseScale": 0.667,
+      "noiseScaleW": 0.8,
+      "gainDb": 8.7,
+      "before": {
+        "peakDbFS": -16.945,
+        "activeRmsDbFS": -29.235,
+        "durationSeconds": 0.801088
+      },
+      "after": {
+        "peakDbFS": -8.686,
+        "activeRmsDbFS": -20.985,
+        "durationSeconds": 0.801088
+      },
+      "wavSha256": "fa77575142ff02c1d01c0f108515bf7cd898e84ac592c1fbc22c068694b57318",
+      "mp3Sha256": "b8bc5e42ff36eae2a98b8cf0af0af87c7ddd78f19df014ba456bb2d40ec8970b",
+      "humanListening": "accepted by owner on 2026-11-10; selected for the lesson",
+      "path": "docs/review/pronunciation/horse-2.mp3",
+      "selectedLessonPath": "public/assets/audio/animals/en-GB-horse.b8bc5e42ff36.mp3"
+    },
+    {
+      "word": "elephant",
+      "variant": 2,
+      "synthesisText": "Elephant.",
+      "noiseScale": 0.667,
+      "noiseScaleW": 0.8,
+      "gainDb": 9.5,
+      "before": {
+        "peakDbFS": -16.34,
+        "activeRmsDbFS": -29.98,
+        "durationSeconds": 0.644626
+      },
+      "after": {
+        "peakDbFS": -7.249,
+        "activeRmsDbFS": -20.926,
+        "durationSeconds": 0.644626
+      },
+      "wavSha256": "3a2245a80c9b3e9762864526c5ca8403e6960a240cc092800fb2181601df1da5",
+      "mp3Sha256": "01b680cd02419072298b50d21c39f150571e75fe73765342385f29f87e817a45",
+      "humanListening": "accepted by owner on 2026-11-10; selected for the lesson",
+      "path": "docs/review/pronunciation/elephant-2.mp3",
+      "selectedLessonPath": "public/assets/audio/animals/en-GB-elephant.01b680cd0241.mp3"
+    },
+    {
+      "word": "horse",
+      "variant": 3,
+      "synthesisText": "horse!",
+      "noiseScale": 0.0,
+      "noiseScaleW": 0.0,
+      "gainDb": 10.3,
+      "before": {
+        "peakDbFS": -18.314,
+        "activeRmsDbFS": -30.826,
+        "durationSeconds": 0.696599
+      },
+      "after": {
+        "peakDbFS": -8.451,
+        "activeRmsDbFS": -20.979,
+        "durationSeconds": 0.696599
+      },
+      "wavSha256": "61d4ace33e29c4fc9cdadce045475840e6c4ed68ad978303743b5d72022d929a",
+      "mp3Sha256": "4bb5d3348134fdbca5af9d206de37973ffc6fa52bc5023c442f708ab8d37ee95",
+      "humanListening": "acceptable to owner; standard-parameter variant 2 selected",
+      "path": "docs/review/pronunciation/horse-3.mp3"
+    },
+    {
+      "word": "elephant",
+      "variant": 3,
+      "synthesisText": "Elephant.",
+      "noiseScale": 0.0,
+      "noiseScaleW": 0.0,
+      "gainDb": 9.3,
+      "before": {
+        "peakDbFS": -15.102,
+        "activeRmsDbFS": -29.752,
+        "durationSeconds": 0.673379
+      },
+      "after": {
+        "peakDbFS": -6.16,
+        "activeRmsDbFS": -20.897,
+        "durationSeconds": 0.673379
+      },
+      "wavSha256": "73c3177fc3c41e5a09e593cc1744456df20725b82205ba5b29dbdd1a3ab3e69e",
+      "mp3Sha256": "aa00b767ba3e22171cf3782f460cf9147c387d631845caa96a27b633c66e110e",
+      "humanListening": "acceptable to owner; standard-parameter variant 2 selected",
+      "path": "docs/review/pronunciation/elephant-3.mp3"
+    }
+  ],
+  "comparison": {
+    "path": "docs/review/horse-elephant-comparison-1.wav",
+    "sha256": "747cb165e7e73cf7c8db9af7d83498bb6bdde1e19cbf80e8f990e6a81ad06983",
+    "format": "WAV PCM16, mono 22050 Hz; actual individual MP3s decoded and concatenated without another lossy encode",
+    "durationSeconds": 10.574,
+    "sequence": [
+      {
+        "word": "horse",
+        "variant": 1,
+        "path": "docs/review/pronunciation/horse-1.mp3",
+        "mp3Sha256": "7e542dfd9d4a4dd9f60dcfef41b95bded9bcd26da9598550f6c1d629842ed4cf",
+        "description": "Revision 3 individual MP3, without the full review MP3 re-encoding",
+        "startsAtSeconds": 0.5
+      },
+      {
+        "word": "horse",
+        "variant": 2,
+        "path": "docs/review/pronunciation/horse-2.mp3",
+        "mp3Sha256": "b8bc5e42ff36eae2a98b8cf0af0af87c7ddd78f19df014ba456bb2d40ec8970b",
+        "description": "Standard Cori settings with punctuation",
+        "startsAtSeconds": 2.22
+      },
+      {
+        "word": "horse",
+        "variant": 3,
+        "path": "docs/review/pronunciation/horse-3.mp3",
+        "mp3Sha256": "4bb5d3348134fdbca5af9d206de37973ffc6fa52bc5023c442f708ab8d37ee95",
+        "description": "Cori with zero acoustic/duration noise and punctuation",
+        "startsAtSeconds": 4.021
+      },
+      {
+        "word": "elephant",
+        "variant": 1,
+        "path": "docs/review/pronunciation/elephant-1.mp3",
+        "mp3Sha256": "79226332db1e6684948564f46ec23682371de7f75f93a23ff67277b8507ae27d",
+        "description": "Revision 3 individual MP3, without the full review MP3 re-encoding",
+        "startsAtSeconds": 5.718
+      },
+      {
+        "word": "elephant",
+        "variant": 2,
+        "path": "docs/review/pronunciation/elephant-2.mp3",
+        "mp3Sha256": "01b680cd02419072298b50d21c39f150571e75fe73765342385f29f87e817a45",
+        "description": "Standard Cori settings with punctuation",
+        "startsAtSeconds": 7.256
+      },
+      {
+        "word": "elephant",
+        "variant": 3,
+        "path": "docs/review/pronunciation/elephant-3.mp3",
+        "mp3Sha256": "aa00b767ba3e22171cf3782f460cf9147c387d631845caa96a27b633c66e110e",
+        "description": "Cori with zero acoustic/duration noise and punctuation",
+        "startsAtSeconds": 8.9
+      }
+    ],
+    "notice": "Nagrania syntetyczne. Próbki do oceny wymowy.",
+    "humanListening": "Reviewed by owner; final selections recorded in selection. P04 accepted on 2026-11-10."
+  },
+  "diagnostics": {
+    "runtimeGitSha1": "11afbd00",
+    "matchingTagCommit": "11afbd009a7f8c08f4bcf2fc1b265d0df4670fbf",
+    "knownPaddingIssue": "https://github.com/k2-fsa/sherpa-onnx/issues/3721",
+    "finding": "The matching v1.13.8 source already contains the BOS/pad correction; no runtime upgrade or phonemizer modification was made.",
+    "referencePurpose": "Variant 1 also checks whether the extra 64-kbit/s encode in the full revision-3 review made the individual MP3 sound less distinct.",
+    "pronunciationConclusion": "Not established by technical checks; await human listening."
+  },
+  "recommendation": {
+    "tryFirst": 2,
+    "reason": "Smallest generation change: keep the approved Cori defaults and test punctuation. Variant 3 is a separate noise-control experiment; this recommendation does not assert better pronunciation without listening."
+  },
+  "selection": {
+    "date": "2026-11-10",
+    "clips": [
+      {
+        "word": "horse",
+        "variant": 2,
+        "path": "public/assets/audio/animals/en-GB-horse.b8bc5e42ff36.mp3",
+        "mp3Sha256": "b8bc5e42ff36eae2a98b8cf0af0af87c7ddd78f19df014ba456bb2d40ec8970b",
+        "superseded": {
+          "id": "english.animal.horse.en-GB",
+          "path": "docs/review/pronunciation/horse-1.mp3",
+          "mp3Sha256": "7e542dfd9d4a4dd9f60dcfef41b95bded9bcd26da9598550f6c1d629842ed4cf"
+        }
+      },
+      {
+        "word": "elephant",
+        "variant": 2,
+        "path": "public/assets/audio/animals/en-GB-elephant.01b680cd0241.mp3",
+        "mp3Sha256": "01b680cd02419072298b50d21c39f150571e75fe73765342385f29f87e817a45",
+        "superseded": {
+          "id": "english.animal.elephant.en-GB",
+          "path": "docs/review/pronunciation/elephant-1.mp3",
+          "mp3Sha256": "79226332db1e6684948564f46ec23682371de7f75f93a23ff67277b8507ae27d"
+        }
+      }
+    ],
+    "reason": "Choose variant 2 from acceptable variants: it retains standard Cori noise settings, matching the earlier recommendation.",
+    "horseReference": {
+      "source": "https://dictionary.cambridge.org/pl/pronunciation/english/horse",
+      "UK": "/hɔːs/",
+      "US": "/hɔːrs/",
+      "assessment": "Absence of r is expected in the standard non-rhotic UK reference; it alone is not a pronunciation failure."
+    },
+    "ownerClarification": "The only remaining horse concern was the absent r.",
+    "mergeApproval": "Owner explicitly approved PR #18 merge on 2026-11-10 after the change summary and merge question."
+  }
+}

@@ -10,3 +10,4 @@ blob-report/
 !.env.example
 *.local
 /.venv-audio/
+__pycache__/

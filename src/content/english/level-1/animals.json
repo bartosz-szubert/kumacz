@@ -1,0 +1,247 @@
+{
+  "schemaVersion": 1,
+  "id": "english.level-1.animals",
+  "moduleId": "english",
+  "levelId": "english.level-1",
+  "title": "Zwierzęta",
+  "category": "animals",
+  "language": "en-GB",
+  "translationLanguage": "pl-PL",
+  "instructions": {
+    "listen-and-tap": {
+      "id": "instruction.listen-and-tap.pl-PL",
+      "text": "Posłuchaj słowa i wybierz pasujący obrazek.",
+      "language": "pl-PL",
+      "path": "assets/audio/shared/pl-PL-listen-and-choose.c21cb540133e.mp3"
+    }
+  },
+  "confusablePairs": [
+    [
+      "english.animal.cat",
+      "english.animal.dog"
+    ],
+    [
+      "english.animal.cow",
+      "english.animal.horse"
+    ]
+  ],
+  "items": [
+    {
+      "id": "english.animal.cat",
+      "word": "cat",
+      "translation": "kot",
+      "picture": {
+        "id": "twemoji.1f431",
+        "path": "assets/pictures/twemoji/1f431.a7f61fb700b3.svg"
+      },
+      "audio": {
+        "word": {
+          "id": "english.animal.cat.en-GB",
+          "text": "cat",
+          "language": "en-GB",
+          "path": "assets/audio/animals/en-GB-cat.b57946182716.mp3"
+        },
+        "translation": {
+          "id": "english.animal.cat.pl-PL",
+          "text": "kot",
+          "language": "pl-PL",
+          "path": "assets/audio/animals/pl-PL-cat.31c925fe2b2a.mp3"
+        }
+      },
+      "exerciseTypes": [
+        "flashcard",
+        "listen-and-tap"
+      ],
+      "distractorIds": [
+        "english.animal.fish",
+        "english.animal.cow"
+      ]
+    },
+    {
+      "id": "english.animal.dog",
+      "word": "dog",
+      "translation": "pies",
+      "picture": {
+        "id": "twemoji.1f436",
+        "path": "assets/pictures/twemoji/1f436.52acbb8b0f2d.svg"
+      },
+      "audio": {
+        "word": {
+          "id": "english.animal.dog.en-GB",
+          "text": "dog",
+          "language": "en-GB",
+          "path": "assets/audio/animals/en-GB-dog.da36841efc9c.mp3"
+        },
+        "translation": {
+          "id": "english.animal.dog.pl-PL",
+          "text": "pies",
+          "language": "pl-PL",
+          "path": "assets/audio/animals/pl-PL-dog.e744714e2b60.mp3"
+        }
+      },
+      "exerciseTypes": [
+        "flashcard",
+        "listen-and-tap"
+      ],
+      "distractorIds": [
+        "english.animal.frog",
+        "english.animal.elephant"
+      ]
+    },
+    {
+      "id": "english.animal.fish",
+      "word": "fish",
+      "translation": "ryba",
+      "picture": {
+        "id": "twemoji.1f41f",
+        "path": "assets/pictures/twemoji/1f41f.caa8008ee6db.svg"
+      },
+      "audio": {
+        "word": {
+          "id": "english.animal.fish.en-GB",
+          "text": "fish",
+          "language": "en-GB",
+          "path": "assets/audio/animals/en-GB-fish.f1ff40677adc.mp3"
+        },
+        "translation": {
+          "id": "english.animal.fish.pl-PL",
+          "text": "ryba",
+          "language": "pl-PL",
+          "path": "assets/audio/animals/pl-PL-fish.9cb72dc1f8fd.mp3"
+        }
+      },
+      "exerciseTypes": [
+        "flashcard",
+        "listen-and-tap"
+      ],
+      "distractorIds": [
+        "english.animal.cat",
+        "english.animal.horse"
+      ]
+    },
+    {
+      "id": "english.animal.frog",
+      "word": "frog",
+      "translation": "żaba",
+      "picture": {
+        "id": "twemoji.1f438",
+        "path": "assets/pictures/twemoji/1f438.82f93e8eec26.svg"
+      },
+      "audio": {
+        "word": {
+          "id": "english.animal.frog.en-GB",
+          "text": "frog",
+          "language": "en-GB",
+          "path": "assets/audio/animals/en-GB-frog.d9f8d504a551.mp3"
+        },
+        "translation": {
+          "id": "english.animal.frog.pl-PL",
+          "text": "żaba",
+          "language": "pl-PL",
+          "path": "assets/audio/animals/pl-PL-frog.c128ca269a06.mp3"
+        }
+      },
+      "exerciseTypes": [
+        "flashcard",
+        "listen-and-tap"
+      ],
+      "distractorIds": [
+        "english.animal.dog",
+        "english.animal.cow"
+      ]
+    },
+    {
+      "id": "english.animal.horse",
+      "word": "horse",
+      "translation": "koń",
+      "picture": {
+        "id": "twemoji.1f40e",
+        "path": "assets/pictures/twemoji/1f40e.a61f892c6c36.svg"
+      },
+      "audio": {
+        "word": {
+          "id": "english.animal.horse.en-GB",
+          "text": "horse",
+          "language": "en-GB",
+          "path": "assets/audio/animals/en-GB-horse.b8bc5e42ff36.mp3"
+        },
+        "translation": {
+          "id": "english.animal.horse.pl-PL",
+          "text": "koń",
+          "language": "pl-PL",
+          "path": "assets/audio/animals/pl-PL-horse.8b740c4b9d23.mp3"
+        }
+      },
+      "exerciseTypes": [
+        "flashcard",
+        "listen-and-tap"
+      ],
+      "distractorIds": [
+        "english.animal.cat",
+        "english.animal.fish"
+      ]
+    },
+    {
+      "id": "english.animal.cow",
+      "word": "cow",
+      "translation": "krowa",
+      "picture": {
+        "id": "twemoji.1f404",
+        "path": "assets/pictures/twemoji/1f404.91749a903f15.svg"
+      },
+      "audio": {
+        "word": {
+          "id": "english.animal.cow.en-GB",
+          "text": "cow",
+          "language": "en-GB",
+          "path": "assets/audio/animals/en-GB-cow.ee42c186426f.mp3"
+        },
+        "translation": {
+          "id": "english.animal.cow.pl-PL",
+          "text": "krowa",
+          "language": "pl-PL",
+          "path": "assets/audio/animals/pl-PL-cow.e153bae2b040.mp3"
+        }
+      },
+      "exerciseTypes": [
+        "flashcard",
+        "listen-and-tap"
+      ],
+      "distractorIds": [
+        "english.animal.dog",
+        "english.animal.frog"
+      ]
+    },
+    {
+      "id": "english.animal.elephant",
+      "word": "elephant",
+      "translation": "słoń",
+      "picture": {
+        "id": "twemoji.1f418",
+        "path": "assets/pictures/twemoji/1f418.b23f4d2146dc.svg"
+      },
+      "audio": {
+        "word": {
+          "id": "english.animal.elephant.en-GB",
+          "text": "elephant",
+          "language": "en-GB",
+          "path": "assets/audio/animals/en-GB-elephant.01b680cd0241.mp3"
+        },
+        "translation": {
+          "id": "english.animal.elephant.pl-PL",
+          "text": "słoń",
+          "language": "pl-PL",
+          "path": "assets/audio/animals/pl-PL-elephant.e4484fc18209.mp3"
+        }
+      },
+      "exerciseTypes": [
+        "flashcard",
+        "listen-and-tap"
+      ],
+      "distractorIds": [
+        "english.animal.fish",
+        "english.animal.horse"
+      ]
+    }
+  ]
+}
