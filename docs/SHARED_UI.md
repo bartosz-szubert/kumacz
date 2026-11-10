@@ -1,6 +1,6 @@
 # Shared UI and themes — P05
 
-**Prepared:** 2026-11-10, for review in `feature/p05-shared-ui-themes`.
+**Accepted:** 2026-11-10, with the owner's explicit PR #19 merge approval after Claude's second review.
 
 P05 provides the responsive shell and common controls for the upcoming pilot screens. The existing audio check demonstrates both PRD palettes: Electric uses a light background with yellow/red/navy accents; Neon uses dark purple, pink and turquoise with static glow. Both preserve the same content, controls, layout and audio behaviour (F-32). The test-build banner remains visible (D-85).
 
@@ -41,7 +41,7 @@ The audio-check host uses temporary React state to preview the palettes, startin
 
 The product owner supplied Claude's review of P04/P05: types/build, 20 unit tests and 14 Chromium cases pass. Claude reports P05 consistent with F-31 and no blocking findings. This is the reviewer's reported result; the verification above records Codex's implementation checks. Per-profile persistence and profile/parent controls remain later stages as described above.
 
-The two non-blocking P04 observations are recorded in [the pilot lesson](PILOT_LESSON.md#second-review-and-pilot-observations--2026-11-10). Owner visual review and explicit PR #19 merge approval remain pending.
+The two non-blocking P04 observations are recorded in [the pilot lesson](PILOT_LESSON.md#second-review-and-pilot-observations--2026-11-10). The owner accepted P05 and explicitly instructed merging PR #19 on 2026-11-10. Next is P06 Data layer core.
 
 ## Sources
 
