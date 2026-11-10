@@ -1,27 +1,28 @@
 # Status
 
-**Phase:** Implementation (P04 accepted; P05 next)
+**Phase:** Implementation (P05 prepared; review pending)
 **Last updated:** 2026-11-10
 
 ## In progress
 
-_Nothing. The owner accepted P04 and explicitly approved merging [PR #18](https://github.com/bartosz-szubert/kumacz/pull/18) on 2026-11-10. P05 is next._
+_No agent task running. P05 is prepared on `feature/p05-shared-ui-themes`; visual review and explicit PR merge approval are pending._
 
 ## Resume point
 
-- P04's seven-word animal lesson, assets and provenance are prepared. Polish generation language is corrected; the owner reported much better Polish. Approved instruction: “Posłuchaj słowa i wybierz pasujący obrazek.” English levels were matched in revision 3.
-- **Accepted selections:** revision-3 dog; elephant variants 2/3 are OK, with variant 2 selected. The owner clarified that absent r was the only remaining horse concern. Cambridge UK /hɔːs/ confirms that r is not pronounced in this standard British reference; horse variant 2 is selected. Both use standard Cori settings, preserving the earlier recommendation and accepted dog.
-- Current lesson JSON/asset paths and provenance contain the two selected MP3s copied byte for byte from the heard candidates. [Hear the selected words](review/horse-elephant-selected-2.wav) (about 4 seconds, synthetic audio). The [six-entry comparison](PRONUNCIATION_REVIEW.md) is a historical record; superseded files are archived there. The old full revision-3 review also contains superseded words and is labelled historical.
-- **Next:** P05 Shared UI and themes. P04 material/merge approval was explicitly given on 2026-11-10 after the change summary and merge question; no reported pronunciation issue remains unresolved.
-- All selected assets, historical comparisons and provenance are in PR #18. Continue from updated main after the merge. Build/types and 20 Vitest tests pass; runtime verification also passed 3 Python generator tests and 9 Chromium tests. Comparison hashes, decoding/headroom and the owner's listening review are recorded. Real-device and child-observation checks remain in P09/P10.
+- P04's animal lesson and selected audio are accepted in main (PR #18). Preserve those recordings and content IDs; target-device/child checks remain P09/P10.
+- P05 provides controlled AppShell/ThemeSelector and a native Button, with Electric/Neon semantic CSS tokens. The audio-check screen is the preview host; [SHARED_UI.md](SHARED_UI.md) contains screenshots and reuse contracts.
+- Theme selection is temporary React state in this test screen. Per-profile persistence and actual profile/parent controls remain P06/P29/P33. Exercise screens can omit the theme selector; no learning/session policy is changed.
+- Build/types, 20 Vitest tests and 14 Chromium cases passed. The theme-switch test catches an intentionally broken change handler. Review the visual result and approve the P05 PR before moving to P06; WebKit and actual-device limitations are documented.
 
 ## Next
 
-1. P05 Shared UI and themes (`docs/IMPLEMENTATION.md`), using the accepted P04 content as the pilot material.
+1. Review P05 ([SHARED_UI.md](SHARED_UI.md)) and obtain explicit PR merge approval. After acceptance, continue with P06 Data layer core (`docs/IMPLEMENTATION.md`).
 2. In P09, run the P03 audio check on the Android tablet with Chrome, including offline replay (`docs/AUDIO_PLAYER.md`).
 3. Run the configured WebKit project when its browser download is available (HTTP 403 for the official Playwright hosts in agent environments).
 
 ## Done
+
+- P05 implementation prepared: controlled AppShell/ThemeSelector, native Button with primary/secondary tones, semantic Electric/Neon tokens, responsive audio-check layout, 48×48+ targets, 16 px+ text, keyboard skip/focus, contrast and reduced-motion styles. The test banner and synthetic-audio disclosure remain visible. Clean install, build/types, 20 Vitest tests and 14 Chromium cases passed; a forced-Electric mutation was caught by the theme-switch case. Real screenshots are in `docs/SHARED_UI.md`. WebKit binary is unavailable; actual target-device checks remain P09. Visual/merge approval pending; no profile storage or exercise implementation added.
 
 - P04 accepted on 2026-11-10; owner explicitly approved merging PR #18. Seven-word lesson JSON, stable IDs, Polish translations, pilot exercise types, curated distractors, seven pinned Twemoji SVGs and 15 MP3s. Fixed Polish language configuration, recorded the approved instruction and matched English levels. Preserved accepted dog and selected horse/elephant variant 2 after listening and the UK /hɔːs/ clarification; exact heard bytes, provenance and historical references are retained. Build/types, 20 Vitest tests, 3 Python generator tests and 9 Chromium tests passed. P09 target-device and P10 child checks remain scheduled.
 - P03 accepted (product owner's choice C): both clips played online and offline (airplane mode, page open) on an iPhone with Safari and an Android phone with Dolphin; tablet + Chrome check moved to P09. Recorded in `docs/AUDIO_PLAYER.md`.
@@ -73,6 +74,8 @@ _Nothing. The owner accepted P04 and explicitly approved merging [PR #18](https:
 - Agent instructions (`AGENTS.md`, `CLAUDE.md`) and this status file.
 
 ## Handoff log
+
+- 2026-11-10 · Codex · Prepared P05 on `feature/p05-shared-ui-themes`: shared controls/shell and both themes demonstrated by the audio check, with screenshots and 5 new browser cases · Await visual review/explicit merge approval. After acceptance start P06. Preview selection is React state only, not a default-profile or persistence decision. WebKit remains unexecuted; P09 tablet/P10 child checks still apply.
 
 - 2026-11-10 · Codex · Recorded the owner's P04 acceptance and explicit PR #18 merge approval after the three-bullet summary and merge question; prepared acceptance metadata in the same PR · Next is P05 Shared UI and themes. Current selected clips are authoritative; old full audio reviews are historical. P09 tablet and P10 child checks remain; no P05 implementation yet.
 

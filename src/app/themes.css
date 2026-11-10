@@ -1,0 +1,37 @@
+[data-theme='electric'] {
+  color-scheme: light;
+  --canvas: #fff9eb;
+  --surface: #ffffff;
+  --surface-soft: #fff0c2;
+  --ink: #18243a;
+  --muted: #43516b;
+  --primary: #ffd34e;
+  --on-primary: #18243a;
+  --control-border: #56647a;
+  --divider: #ddd9cb;
+  --accent: #b52c3e;
+  --focus: #a12633;
+  --link: #224d9c;
+  --card-shadow: 0 7px 0 #e9e2cf;
+  --button-shadow: 0 4px 0 #18243a;
+  --brand-shadow: 3px 3px 0 #18243a;
+}
+
+[data-theme='neon'] {
+  color-scheme: dark;
+  --canvas: #130f26;
+  --surface: #241c3e;
+  --surface-soft: #33274f;
+  --ink: #fff6ff;
+  --muted: #d3c7e6;
+  --primary: #73efd3;
+  --on-primary: #132638;
+  --control-border: #bea5e1;
+  --divider: #5b4979;
+  --accent: #ffa7d2;
+  --focus: #ffe69b;
+  --link: #8de8ff;
+  --card-shadow: 0 7px 25px #b27aff1f;
+  --button-shadow: 0 4px 0 #083b40;
+  --brand-shadow: 0 0 22px #73efd345;
+}
