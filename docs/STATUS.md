@@ -1,29 +1,29 @@
 # Status
 
-**Phase:** Implementation (P04 paused; horse/elephant review pending)
+**Phase:** Implementation (P04 pronunciation selections complete; final PR review pending)
 **Last updated:** 2026-11-10
 
 ## In progress
 
-_Paused at the owner's request on 2026-11-10. No agent task running. Resume on `feature/p04-pilot-animals` ([draft PR #18](https://github.com/bartosz-szubert/kumacz/pull/18)); no merge approval._
+_No agent task running. P04's selected lesson audio is updated on `feature/p04-pilot-animals` ([draft PR #18](https://github.com/bartosz-szubert/kumacz/pull/18)); final material/merge approval is pending._
 
 ## Resume point
 
 - P04's seven-word animal lesson, assets and provenance are prepared. Polish generation language is corrected; the owner reported much better Polish. Approved instruction: “Posłuchaj słowa i wybierz pasujący obrazek.” English levels were matched in revision 3.
-- **Accepted:** revision-3 dog. **Unresolved:** horse sounds like “płoz”; elephant's final t is not clear. Preserve the accepted dog recording.
-- **First action next session:** listen to the [11-second comparison](review/horse-elephant-comparison-1.wav) with [instructions and individual files](PRONUNCIATION_REVIEW.md). Order: horse 1/2/3, then elephant 1/2/3. Variant 1 is the existing individual MP3, 2 uses new punctuation at standard settings, 3 also changes noise settings. No replacement has been selected. If all variants fail, discuss the next English-voice approach before generating another full set.
-- After the owner selects or rejects variants, update only the selected lesson audio and its provenance/review material, repeat the necessary checks/listening, then obtain explicit P04 merge approval. P05 follows P04 acceptance.
+- **Accepted selections:** revision-3 dog; elephant variants 2/3 are OK, with variant 2 selected. The owner clarified that absent r was the only remaining horse concern. Cambridge UK /hɔːs/ confirms that r is not pronounced in this standard British reference; horse variant 2 is selected. Both use standard Cori settings, preserving the earlier recommendation and accepted dog.
+- Current lesson JSON/asset paths and provenance contain the two selected MP3s copied byte for byte from the heard candidates. [Hear the selected words](review/horse-elephant-selected-2.wav) (about 4 seconds, synthetic audio). The [six-entry comparison](PRONUNCIATION_REVIEW.md) is a historical record; superseded files are archived there. The old full revision-3 review also contains superseded words and is labelled historical.
+- **Next:** final material/PR review and explicit P04 merge approval. P05 follows P04 acceptance; no new pronunciation issue remains reported after the horse clarification.
 - All comparison media and provenance are saved in PR #18. Main still reflects accepted P03; start from the PR branch. Latest verification: build/types and 20 Vitest tests pass; revision-3 checks also passed 3 Python generator tests and 9 Chromium tests. Comparison hashes, decoding and headroom pass; pronunciation still requires listening.
 
 ## Next
 
-1. Listen to the 11-second [`horse/elephant comparison`](PRONUNCIATION_REVIEW.md): existing individual MP3, new punctuation with standard parameters, then zero-noise variant for each word. The comparison is a lossless WAV to avoid another MP3 encode. Dog is accepted; horse was heard as “płoz” and elephant's final t was unclear. Select/reject candidates before changing lesson assets. Then complete P04 listening/merge approval; after acceptance continue with P05 (`docs/IMPLEMENTATION.md`).
+1. Complete final P04 review/explicit merge approval using the [current lesson files](PILOT_LESSON.md) and [recorded selections](PRONUNCIATION_REVIEW.md). Then continue with P05 (`docs/IMPLEMENTATION.md`).
 2. In P09, run the P03 audio check on the Android tablet with Chrome, including offline replay (`docs/AUDIO_PLAYER.md`).
 3. Run the configured WebKit project when its browser download is available (HTTP 403 for the official Playwright hosts in agent environments).
 
 ## Done
 
-- P04 technical preparation: seven-word animal lesson JSON with stable IDs, Polish translations, pilot exercise types, curated distractors, seven pinned Twemoji SVGs and 15 MP3s. Fixed ignored native Polish language selection and regenerated eight Polish clips in revision 2; the owner reported much better pronunciation. Revision 3 records the approved clearer instruction, matches English levels to Polish and regenerates dog/horse with sentence punctuation at speed 1.0. Types/build, 20 Vitest tests, 3 Python generator tests and 9 Chromium tests passed. The owner accepts dog but rejects horse and requests a clearer final t in elephant. Added four review-only Cori candidates, provenance and a lossless 11-second comparison including the existing individual files; no replacement chosen. P04 remains unaccepted.
+- P04 technical preparation: seven-word lesson JSON, stable IDs, Polish translations, pilot exercise types, curated distractors, seven pinned Twemoji SVGs and 15 MP3s. Fixed Polish language configuration, recorded the approved clearer instruction and matched English levels. The owner accepts dog and elephant variants 2/3, and clarified that horse's sole remaining concern was absent r; Cambridge UK /hɔːs/ supports the intended British pronunciation. Selected variant 2 for both horse/elephant, copied the exact heard bytes to lesson paths and archived superseded references. Updated provenance, review documents and the selected-words WAV. Build/types and 20 Vitest tests pass; the latest runtime verification also passed 3 Python tests and 9 Chromium tests. Final P04/merge approval is pending.
 - P03 accepted (product owner's choice C): both clips played online and offline (airplane mode, page open) on an iPhone with Safari and an Android phone with Dolphin; tablet + Chrome check moved to P09. Recorded in `docs/AUDIO_PLAYER.md`.
 - P03 implementation and desktop verification prepared: whole-file Web Audio, same-origin validated asset cache in the data layer, local-only fallback, interruption/retry outcomes, permanent disclosure and a two-clip screen. Unit and Chromium browser checks cover failures, cancellation, policy restrictions and cached offline replay. P03 was subsequently accepted on phones as recorded above; tablet + Chrome remains in P09, and WebKit is blocked by the official browser-download hosts.
 - Added the GitHub Pages test-build workflow and "Wersja testowa" banner (D-85) so the product owner can check P03 audio on the tablet without USB debugging.
@@ -73,6 +73,8 @@ _Paused at the owner's request on 2026-11-10. No agent task running. Resume on `
 - Agent instructions (`AGENTS.md`, `CLAUDE.md`) and this status file.
 
 ## Handoff log
+
+- 2026-11-10 · Codex · Selected horse/elephant variant 2 after owner feedback: elephant 2/3 OK; horse concern was only missing r, correct for Cambridge UK /hɔːs/ · Lesson paths/provenance now use heard candidate bytes; accepted dog preserved. Superseded references archived; current selections in `docs/PRONUNCIATION_REVIEW.md` and `horse-elephant-selected-2.wav`. Final PR #18 review/merge approval pending; P05 not started.
 
 - 2026-11-10 · Codex · Paused P04 at the owner's request; saved the resume point and review links in STATUS and draft PR #18 · Resume with the horse/elephant comparison and keep accepted dog. No candidate selection, P04 acceptance or merge approval; P05 has not started.
 

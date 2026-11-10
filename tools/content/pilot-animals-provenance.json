@@ -293,23 +293,23 @@
       "model": "cori-medium",
       "speakerId": 0,
       "speed": 1.0,
-      "path": "public/assets/audio/animals/en-GB-horse.7e542dfd9d4a.mp3",
-      "mp3Sha256": "7e542dfd9d4a4dd9f60dcfef41b95bded9bcd26da9598550f6c1d629842ed4cf",
-      "wavSha256": "1e1f1b4cad053e1bd003a430aa8c6daef0e0e71e6626ad36b62a51c1b71c97be",
+      "path": "public/assets/audio/animals/en-GB-horse.b8bc5e42ff36.mp3",
+      "mp3Sha256": "b8bc5e42ff36eae2a98b8cf0af0af87c7ddd78f19df014ba456bb2d40ec8970b",
+      "wavSha256": "fa77575142ff02c1d01c0f108515bf7cd898e84ac592c1fbc22c068694b57318",
       "wavSampleRate": 22050,
-      "mp3Bytes": 6562,
-      "mp3DurationSeconds": 0.783673,
-      "synthesisText": "Horse.",
-      "gainDb": 10.8,
+      "mp3Bytes": 7213,
+      "mp3DurationSeconds": 0.862041,
+      "synthesisText": "horse!",
+      "gainDb": 8.7,
       "levelsBeforeGain": {
-        "peakDbFS": -19.226,
-        "activeRmsDbFS": -31.324,
-        "durationSeconds": 0.719819
+        "peakDbFS": -16.945,
+        "activeRmsDbFS": -29.235,
+        "durationSeconds": 0.801088
       },
       "levelsAfterGain": {
-        "peakDbFS": -8.732,
-        "activeRmsDbFS": -20.963,
-        "durationSeconds": 0.719819
+        "peakDbFS": -8.686,
+        "activeRmsDbFS": -20.985,
+        "durationSeconds": 0.801088
       }
     },
     {
@@ -380,23 +380,24 @@
       "model": "cori-medium",
       "speakerId": 0,
       "speed": 1.0,
-      "path": "public/assets/audio/animals/en-GB-elephant.79226332db1e.mp3",
-      "mp3Sha256": "79226332db1e6684948564f46ec23682371de7f75f93a23ff67277b8507ae27d",
-      "wavSha256": "f98cd18365e0eb79fb9802b76cd1151d530a21b62a7ea7350193b7f3174e58d1",
+      "path": "public/assets/audio/animals/en-GB-elephant.01b680cd0241.mp3",
+      "mp3Sha256": "01b680cd02419072298b50d21c39f150571e75fe73765342385f29f87e817a45",
+      "wavSha256": "3a2245a80c9b3e9762864526c5ca8403e6960a240cc092800fb2181601df1da5",
       "wavSampleRate": 22050,
-      "mp3Bytes": 5099,
-      "mp3DurationSeconds": 0.600816,
-      "gainDb": 7.6,
+      "mp3Bytes": 5959,
+      "mp3DurationSeconds": 0.705306,
+      "gainDb": 9.5,
       "levelsBeforeGain": {
-        "peakDbFS": -14.771,
-        "activeRmsDbFS": -28.071,
-        "durationSeconds": 0.538186
+        "peakDbFS": -16.34,
+        "activeRmsDbFS": -29.98,
+        "durationSeconds": 0.644626
       },
       "levelsAfterGain": {
-        "peakDbFS": -7.39,
-        "activeRmsDbFS": -20.889,
-        "durationSeconds": 0.538186
-      }
+        "peakDbFS": -7.249,
+        "activeRmsDbFS": -20.926,
+        "durationSeconds": 0.644626
+      },
+      "synthesisText": "Elephant."
     },
     {
       "id": "english.animal.elephant.pl-PL",
@@ -450,7 +451,7 @@
   "reviewAudio": {
     "path": "docs/review/animals-review-v3.mp3",
     "revision": 3,
-    "purpose": "Human listening review only; not part of the app package",
+    "purpose": "Historical revision-3 full review; contains superseded horse/elephant. Use current individual clips or selectedWordsReview for accepted replacements.",
     "mp3Sha256": "b6635b18124b4061d54d0649c8e4de8cca0d2d3d440076b76904ad5835ddc2ea",
     "durationSeconds": 32.470204,
     "sequence": [
@@ -530,7 +531,7 @@
         "startsAtSeconds": 30.04
       }
     ],
-    "humanListening": "Owner accepts dog; rejects horse and requests a clearer final t in elephant. See followUpListening."
+    "humanListening": "Superseded word selections are recorded in followUpListening; not the current consolidated lesson audio."
   },
   "polishCorrection": {
     "date": "2026-11-09",
@@ -665,22 +666,45 @@
     "humanListening": "pending for revision 3"
   },
   "followUpListening": {
-    "date": "2026-11-09",
+    "date": "2026-11-10",
     "revision": 3,
     "dog": {
       "status": "accepted by owner",
       "mp3Sha256": "da36841efc9c15b64a56c90261a6ef77f6563e8ab3276c2779393121e64d2cd0"
     },
     "horse": {
-      "status": "rejected by owner",
-      "perception": "płoz"
+      "status": "accepted",
+      "selectedVariant": 2,
+      "mp3Sha256": "b8bc5e42ff36eae2a98b8cf0af0af87c7ddd78f19df014ba456bb2d40ec8970b",
+      "ownerFeedback": "Only remaining concern was missing r; explained Cambridge UK /hɔːs/ and owner confirmed that was the sole issue"
     },
     "elephant": {
-      "status": "needs replacement",
-      "issue": "Final t not audible to owner"
+      "status": "accepted",
+      "selectedVariant": 2,
+      "mp3Sha256": "01b680cd02419072298b50d21c39f150571e75fe73765342385f29f87e817a45",
+      "ownerFeedback": "Variants 2 and 3 are OK"
     },
     "comparisonProvenance": "tools/content/pronunciation-comparison-provenance.json",
     "comparisonAudio": "docs/review/horse-elephant-comparison-1.wav",
-    "lessonReplacements": "None selected; comparison only. Preserve accepted dog."
+    "lessonReplacements": "Horse and elephant variant 2 selected and copied byte for byte; accepted dog preserved."
+  },
+  "selectedWordsReview": {
+    "path": "docs/review/horse-elephant-selected-2.wav",
+    "sha256": "08c78e88fce0b42048862858b01a931a42f757a8536282833775fa1c1aff2fdb",
+    "purpose": "Current accepted replacements only; lossless review of the selected individual MP3s",
+    "durationSeconds": 3.946,
+    "sequence": [
+      {
+        "word": "horse",
+        "startsAtSeconds": 0.5,
+        "mp3Sha256": "b8bc5e42ff36eae2a98b8cf0af0af87c7ddd78f19df014ba456bb2d40ec8970b"
+      },
+      {
+        "word": "elephant",
+        "startsAtSeconds": 2.301,
+        "mp3Sha256": "01b680cd02419072298b50d21c39f150571e75fe73765342385f29f87e817a45"
+      }
+    ],
+    "notice": "Nagrania syntetyczne."
   }
 }

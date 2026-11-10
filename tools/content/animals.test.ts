@@ -92,7 +92,7 @@ describe('the P04 animal lesson', () => {
         expect(clip.levelsAfterGain!.peakDbFS).toBeLessThanOrEqual(-3)
         expect(Math.abs(clip.levelsAfterGain!.activeRmsDbFS - provenance.audioRefinement.targetActiveRmsDbFS)).toBeLessThan(1)
       }
-      if (clip.synthesisText) expect(clip.synthesisText.toLowerCase().replace(/\.$/, '')).toBe(clip.text)
+      if (clip.synthesisText) expect(clip.synthesisText.toLowerCase().replace(/[.!]$/, '')).toBe(clip.text)
     }
     expect(hash(provenance.reviewAudio.path)).toBe(provenance.reviewAudio.mp3Sha256)
   })

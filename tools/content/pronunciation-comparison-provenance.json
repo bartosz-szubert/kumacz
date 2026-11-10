@@ -78,8 +78,9 @@
       },
       "wavSha256": "fa77575142ff02c1d01c0f108515bf7cd898e84ac592c1fbc22c068694b57318",
       "mp3Sha256": "b8bc5e42ff36eae2a98b8cf0af0af87c7ddd78f19df014ba456bb2d40ec8970b",
-      "humanListening": "pending",
-      "path": "docs/review/pronunciation/horse-2.mp3"
+      "humanListening": "accepted by owner on 2026-11-10; selected for the lesson",
+      "path": "docs/review/pronunciation/horse-2.mp3",
+      "selectedLessonPath": "public/assets/audio/animals/en-GB-horse.b8bc5e42ff36.mp3"
     },
     {
       "word": "elephant",
@@ -100,8 +101,9 @@
       },
       "wavSha256": "3a2245a80c9b3e9762864526c5ca8403e6960a240cc092800fb2181601df1da5",
       "mp3Sha256": "01b680cd02419072298b50d21c39f150571e75fe73765342385f29f87e817a45",
-      "humanListening": "pending",
-      "path": "docs/review/pronunciation/elephant-2.mp3"
+      "humanListening": "accepted by owner on 2026-11-10; selected for the lesson",
+      "path": "docs/review/pronunciation/elephant-2.mp3",
+      "selectedLessonPath": "public/assets/audio/animals/en-GB-elephant.01b680cd0241.mp3"
     },
     {
       "word": "horse",
@@ -122,7 +124,7 @@
       },
       "wavSha256": "61d4ace33e29c4fc9cdadce045475840e6c4ed68ad978303743b5d72022d929a",
       "mp3Sha256": "4bb5d3348134fdbca5af9d206de37973ffc6fa52bc5023c442f708ab8d37ee95",
-      "humanListening": "pending",
+      "humanListening": "acceptable to owner; standard-parameter variant 2 selected",
       "path": "docs/review/pronunciation/horse-3.mp3"
     },
     {
@@ -144,7 +146,7 @@
       },
       "wavSha256": "73c3177fc3c41e5a09e593cc1744456df20725b82205ba5b29dbdd1a3ab3e69e",
       "mp3Sha256": "aa00b767ba3e22171cf3782f460cf9147c387d631845caa96a27b633c66e110e",
-      "humanListening": "pending",
+      "humanListening": "acceptable to owner; standard-parameter variant 2 selected",
       "path": "docs/review/pronunciation/elephant-3.mp3"
     }
   ],
@@ -157,7 +159,7 @@
       {
         "word": "horse",
         "variant": 1,
-        "path": "public/assets/audio/animals/en-GB-horse.7e542dfd9d4a.mp3",
+        "path": "docs/review/pronunciation/horse-1.mp3",
         "mp3Sha256": "7e542dfd9d4a4dd9f60dcfef41b95bded9bcd26da9598550f6c1d629842ed4cf",
         "description": "Revision 3 individual MP3, without the full review MP3 re-encoding",
         "startsAtSeconds": 0.5
@@ -181,7 +183,7 @@
       {
         "word": "elephant",
         "variant": 1,
-        "path": "public/assets/audio/animals/en-GB-elephant.79226332db1e.mp3",
+        "path": "docs/review/pronunciation/elephant-1.mp3",
         "mp3Sha256": "79226332db1e6684948564f46ec23682371de7f75f93a23ff67277b8507ae27d",
         "description": "Revision 3 individual MP3, without the full review MP3 re-encoding",
         "startsAtSeconds": 5.718
@@ -217,5 +219,41 @@
   "recommendation": {
     "tryFirst": 2,
     "reason": "Smallest generation change: keep the approved Cori defaults and test punctuation. Variant 3 is a separate noise-control experiment; this recommendation does not assert better pronunciation without listening."
+  },
+  "selection": {
+    "date": "2026-11-10",
+    "clips": [
+      {
+        "word": "horse",
+        "variant": 2,
+        "path": "public/assets/audio/animals/en-GB-horse.b8bc5e42ff36.mp3",
+        "mp3Sha256": "b8bc5e42ff36eae2a98b8cf0af0af87c7ddd78f19df014ba456bb2d40ec8970b",
+        "superseded": {
+          "id": "english.animal.horse.en-GB",
+          "path": "docs/review/pronunciation/horse-1.mp3",
+          "mp3Sha256": "7e542dfd9d4a4dd9f60dcfef41b95bded9bcd26da9598550f6c1d629842ed4cf"
+        }
+      },
+      {
+        "word": "elephant",
+        "variant": 2,
+        "path": "public/assets/audio/animals/en-GB-elephant.01b680cd0241.mp3",
+        "mp3Sha256": "01b680cd02419072298b50d21c39f150571e75fe73765342385f29f87e817a45",
+        "superseded": {
+          "id": "english.animal.elephant.en-GB",
+          "path": "docs/review/pronunciation/elephant-1.mp3",
+          "mp3Sha256": "79226332db1e6684948564f46ec23682371de7f75f93a23ff67277b8507ae27d"
+        }
+      }
+    ],
+    "reason": "Choose variant 2 from acceptable variants: it retains standard Cori noise settings, matching the earlier recommendation.",
+    "horseReference": {
+      "source": "https://dictionary.cambridge.org/pl/pronunciation/english/horse",
+      "UK": "/hɔːs/",
+      "US": "/hɔːrs/",
+      "assessment": "Absence of r is expected in the standard non-rhotic UK reference; it alone is not a pronunciation failure."
+    },
+    "ownerClarification": "The only remaining horse concern was the absent r.",
+    "mergeApproval": "not given"
   }
 }

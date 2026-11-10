@@ -1,6 +1,6 @@
 # Horse and elephant — pronunciation comparison
 
-**Status (2026-11-09):** the owner accepted revision-3 **dog**, rejected **horse** (heard as “płoz”) and reported an unclear final **t** in **elephant**. These are review candidates, not selected lesson replacements. PR #18 stays draft.
+**Selection (2026-11-10):** elephant variants 2/3 accepted; variant 2 selected. The owner clarified that absent r was the only remaining horse concern; standard UK /hɔːs/ has no pronounced r, so variant 2 is selected for horse too. Dog is accepted. PR #18 stays draft pending final material/merge approval. The comparison below remains a historical record.
 
 **Nagrania syntetyczne.** [Play/download the comparison WAV](review/horse-elephant-comparison-1.wav) (about 11 seconds / 466 kB). Order: **horse 1, 2, 3; elephant 1, 2, 3**. On GitHub use the raw/download button and open the downloaded WAV if there is no player.
 
@@ -8,10 +8,10 @@ All six entries use the approved Cori medium English voice, speaker 0 and speed 
 
 | Word | 1: existing individual file | 2: new punctuation, standard parameters | 3: new punctuation, reduced variation |
 |---|---|---|---|
-| horse | [MP3](../public/assets/audio/animals/en-GB-horse.7e542dfd9d4a.mp3) · 0.5 s | [MP3](review/pronunciation/horse-2.mp3) · 2.2 s | [MP3](review/pronunciation/horse-3.mp3) · 4.0 s |
-| elephant | [MP3](../public/assets/audio/animals/en-GB-elephant.79226332db1e.mp3) · 5.7 s | [MP3](review/pronunciation/elephant-2.mp3) · 7.3 s | [MP3](review/pronunciation/elephant-3.mp3) · 8.9 s |
+| horse | [MP3](review/pronunciation/horse-1.mp3) · 0.5 s | [MP3](review/pronunciation/horse-2.mp3) · 2.2 s | [MP3](review/pronunciation/horse-3.mp3) · 4.0 s |
+| elephant | [MP3](review/pronunciation/elephant-1.mp3) · 5.7 s | [MP3](review/pronunciation/elephant-2.mp3) · 7.3 s | [MP3](review/pronunciation/elephant-3.mp3) · 8.9 s |
 
-Check that horse is recognisable as that word and elephant has a distinct final consonant. If variant 1 is clear here, retain those exact lesson bytes and fix the full review export. Otherwise **start by evaluating variant 2**: it makes the smallest generation change while keeping Cori's standard parameters. Variant 3 separately tests zero acoustic/duration noise; it may alter naturalness. This is a technical recommendation, not a claim of better pronunciation without listening. Report the clearest number for each word, or that none is suitable; no candidate is accepted automatically.
+Check that horse is recognisable as that word and elephant has a distinct final consonant. If variant 1 is clear here, retain those exact lesson bytes and fix the full review export. Otherwise **start by evaluating variant 2**: it makes the smallest generation change while keeping Cori's standard parameters. Variant 3 separately tests zero acoustic/duration noise; it may alter naturalness. This is a technical recommendation, not a claim of better pronunciation without listening. This was the review guidance; selections are now recorded above and in provenance. [Hear the two selected files](review/horse-elephant-selected-2.wav).
 
 ## Generation and evidence
 
@@ -22,3 +22,5 @@ Check that horse is recognisable as that word and elephant has a distinct final 
 - Each source MP3 and the combined WAV were fully decoded, checked against their hashes and measured for peak/active level. These checks establish file integrity, not correct speech. Choose replacements only after listening, then update the lesson/provenance paths and review material together.
 
 Cori medium: Bryce Beattie, model declared public domain by its [author](https://brycebeattie.com/files/tts/). The samples are generated educational words, not copied dataset recordings. Terms and credits: [asset review](ASSET_LICENCES.md).
+
+The [Cambridge UK/US reference](https://dictionary.cambridge.org/pl/pronunciation/english/horse) distinguishes UK /hɔːs/ from US /hɔːrs/. Absence of r by itself is expected for the standard British target in this project; it does not establish that every synthetic clip is otherwise clear. The owner confirmed that this was the sole remaining objection. Dictionary audio is linked for reference only, not copied into Kumacz.

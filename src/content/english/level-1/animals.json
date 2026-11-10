@@ -163,7 +163,7 @@
           "id": "english.animal.horse.en-GB",
           "text": "horse",
           "language": "en-GB",
-          "path": "assets/audio/animals/en-GB-horse.7e542dfd9d4a.mp3"
+          "path": "assets/audio/animals/en-GB-horse.b8bc5e42ff36.mp3"
         },
         "translation": {
           "id": "english.animal.horse.pl-PL",
@@ -225,7 +225,7 @@
           "id": "english.animal.elephant.en-GB",
           "text": "elephant",
           "language": "en-GB",
-          "path": "assets/audio/animals/en-GB-elephant.79226332db1e.mp3"
+          "path": "assets/audio/animals/en-GB-elephant.01b680cd0241.mp3"
         },
         "translation": {
           "id": "english.animal.elephant.pl-PL",
