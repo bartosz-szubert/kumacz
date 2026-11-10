@@ -1,12 +1,12 @@
 # P04 pilot lesson — animals
 
-**Prepared:** 2026-11-09; selections updated 2026-11-10. **Review:** dog accepted; elephant variants 2/3 accepted, variant 2 selected; horse variant 2 selected after the owner confirmed the only remaining concern was absent r, which matches standard UK /hɔːs/. Final P04/PR merge approval remains pending (D-83).
+**Accepted:** 2026-11-10, with the owner's explicit PR #18 merge approval. Dog is accepted; elephant variants 2/3 are accepted, with variant 2 selected; horse variant 2 is selected after the owner confirmed the only remaining concern was absent r, which matches standard UK /hɔːs/ (D-83).
 
 One level-1 lesson, seven words. The recommended animal category was used after the product owner instructed Codex to proceed. This supplies the data for P07–P09; the child-facing app still shows the P03 audio check. The pilot with children remains P10 (D-44).
 
 ## Review the material
 
-**Current selected audio:** the table links to the lesson files including the accepted horse/elephant variant 2. **Nagrania syntetyczne:** [hear those two selected files](review/horse-elephant-selected-2.wav) (about 4 seconds, lossless WAV). The [six-entry comparison](PRONUNCIATION_REVIEW.md) and full revision-3 sequence below are historical references; they include superseded clips. Final PR review/merge approval is pending.
+**Current selected audio:** the table links to the accepted lesson files including horse/elephant variant 2. **Nagrania syntetyczne:** [hear those two selected files](review/horse-elephant-selected-2.wav) (about 4 seconds, lossless WAV). The [six-entry comparison](PRONUNCIATION_REVIEW.md) and full revision-3 sequence below are historical references; they include superseded clips. The owner approved the final material and PR merge on 2026-11-10.
 
 **Nagranie syntetyczne.** [Historical revision-3 full review (contains superseded horse/elephant)](review/animals-review-v3.mp3) (about 33 seconds). It starts with “Posłuchaj słowa i wybierz pasujący obrazek.”, then reads each English word and its Polish translation in the table order. Individual files are linked below. On GitHub, use the file's download/raw button if playback is unavailable.
 
@@ -77,4 +77,4 @@ Technical preparation also checks all SVGs as XML (only passive shape elements i
 
 Verified after revision 3 on 2026-11-09: `npm run check`, 20 Vitest tests, 3 Python generator tests against sherpa-onnx 1.13.8, and 9 existing Chromium browser tests passed. The Python regression fails if the ignored item mutation is restored. System Chromium 154 decoded all 15 revision-3 lesson MP3 references under `/kumacz/`, and the playback screen completed the corrected Polish prompt. All seven SVGs were rendered and inspected during initial preparation. Changed clips pass full MP3 decoding and peak/active-level checks; source WAVs are non-silent without saturated 16-bit samples. Their format and synthetic metadata remain recorded. Initial negative checks also rejected an invalid cat/dog choice set and a changed model checksum. These are technical results, not a listening or real-device acceptance result.
 
-The pronunciation selections are recorded above and in provenance. Complete the final P04 material/PR review and obtain explicit owner merge approval before accepting the stage. The target-tablet Chrome check remains in P09, and children's content validation remains P10. No extra lessons are part of this PR.
+The pronunciation selections and P04 acceptance are recorded above and in provenance; explicit owner merge approval was given on 2026-11-10. The target-tablet Chrome check remains in P09, and children's content validation remains P10. No extra lessons are part of this PR.

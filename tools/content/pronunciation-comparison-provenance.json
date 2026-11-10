@@ -206,7 +206,7 @@
       }
     ],
     "notice": "Nagrania syntetyczne. Próbki do oceny wymowy.",
-    "humanListening": "pending"
+    "humanListening": "Reviewed by owner; final selections recorded in selection. P04 accepted on 2026-11-10."
   },
   "diagnostics": {
     "runtimeGitSha1": "11afbd00",
@@ -254,6 +254,6 @@
       "assessment": "Absence of r is expected in the standard non-rhotic UK reference; it alone is not a pronunciation failure."
     },
     "ownerClarification": "The only remaining horse concern was the absent r.",
-    "mergeApproval": "not given"
+    "mergeApproval": "Owner explicitly approved PR #18 merge on 2026-11-10 after the change summary and merge question."
   }
 }

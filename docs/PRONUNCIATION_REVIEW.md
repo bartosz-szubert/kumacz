@@ -1,6 +1,6 @@
 # Horse and elephant — pronunciation comparison
 
-**Selection (2026-11-10):** elephant variants 2/3 accepted; variant 2 selected. The owner clarified that absent r was the only remaining horse concern; standard UK /hɔːs/ has no pronounced r, so variant 2 is selected for horse too. Dog is accepted. PR #18 stays draft pending final material/merge approval. The comparison below remains a historical record.
+**Selection (2026-11-10):** elephant variants 2/3 accepted; variant 2 selected. The owner clarified that absent r was the only remaining horse concern; standard UK /hɔːs/ has no pronounced r, so variant 2 is selected for horse too. Dog is accepted. The owner subsequently accepted P04 and explicitly approved merging PR #18 on 2026-11-10. The comparison below remains a historical record.
 
 **Nagrania syntetyczne.** [Play/download the comparison WAV](review/horse-elephant-comparison-1.wav) (about 11 seconds / 466 kB). Order: **horse 1, 2, 3; elephant 1, 2, 3**. On GitHub use the raw/download button and open the downloaded WAV if there is no player.
 

@@ -25,5 +25,6 @@ No model weights or synthesis runtime are shipped in the app.
 
 Before exposing these clips in an exercise, show "Nagranie syntetyczne"
 in the audio context (F-45, D-84). Preserve the credits in About (F-33).
-New clips remain subject to human listening review (D-83).
+The owner accepted the selected P04 clips on 2026-11-10 (D-83).
+Any regenerated replacement requires its own listening review.
 See docs/PILOT_LESSON.md and docs/ASSET_LICENCES.md in the repository.

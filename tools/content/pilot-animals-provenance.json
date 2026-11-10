@@ -49,7 +49,7 @@
     }
   ],
   "preparedOn": "2026-11-09",
-  "purpose": "P04 animal pilot revision 3: English level matching and clearer Polish instruction; human listening pending",
+  "purpose": "Accepted P04 seven-word animal pilot; final pronunciation selections and merge approval recorded on 2026-11-10",
   "vocabularySource": "https://www.cambridgeenglish.org/images/149679-yle-starters-word-list.pdf",
   "vocabularyNote": "Pre A1 Starters thematic Animals list; own Polish translations. No source pictures or exercises copied.",
   "pictures": {
@@ -663,7 +663,7 @@
         }
       }
     ],
-    "humanListening": "pending for revision 3"
+    "humanListening": "Revision 3 led to the recorded final selections; owner accepted P04 and approved its merge on 2026-11-10."
   },
   "followUpListening": {
     "date": "2026-11-10",
@@ -706,5 +706,12 @@
       }
     ],
     "notice": "Nagrania syntetyczne."
+  },
+  "acceptance": {
+    "date": "2026-11-10",
+    "status": "accepted",
+    "pr": 18,
+    "mergeApproval": "Owner explicitly replied ok to the merge question after the three-bullet summary.",
+    "remainingValidation": "Target-tablet check P09; child pilot P10."
   }
 }
