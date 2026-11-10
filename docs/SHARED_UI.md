@@ -37,6 +37,12 @@ The audio-check host uses temporary React state to preview the palettes, startin
 - The browser test failed before the theme controls existed. Temporarily forcing every theme selection to Electric made the theme-switch regression fail; the source was restored and the production build regenerated.
 - Visual inspection covered both desktop palettes and a 360 px Neon render, with no page errors. Browser automation does not substitute for target-device validation. The configured WebKit executable is not installed in this environment, so WebKit remains unexecuted; the known official-download restriction is recorded in `AUDIO_PLAYER.md`. No test skip or browser-project removal is introduced.
 
+## Second review — 2026-11-10
+
+The product owner supplied Claude's review of P04/P05: types/build, 20 unit tests and 14 Chromium cases pass. Claude reports P05 consistent with F-31 and no blocking findings. This is the reviewer's reported result; the verification above records Codex's implementation checks. Per-profile persistence and profile/parent controls remain later stages as described above.
+
+The two non-blocking P04 observations are recorded in [the pilot lesson](PILOT_LESSON.md#second-review-and-pilot-observations--2026-11-10). Owner visual review and explicit PR #19 merge approval remain pending.
+
 ## Sources
 
 [React 19.3 controlled inputs](https://react.dev/reference/react-dom/components/input#controlling-an-input-with-a-state-variable), [React useId](https://react.dev/reference/react/useId), [reduced-motion media query](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion), [WCAG text contrast](https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html), [non-text contrast](https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html), and [Playwright assertions](https://playwright.dev/docs/test-assertions).

@@ -1,15 +1,16 @@
 # Status
 
-**Phase:** Implementation (P05 prepared; review pending)
+**Phase:** Implementation (P05 second review complete; owner review/merge pending)
 **Last updated:** 2026-11-10
 
 ## In progress
 
-_No agent task running. P05 is prepared on `feature/p05-shared-ui-themes`; visual review and explicit PR merge approval are pending._
+_No agent task running. P05 is prepared on `feature/p05-shared-ui-themes`; Claude's second review is recorded. Owner visual review and explicit PR #19 merge approval are pending._
 
 ## Resume point
 
 - P04's animal lesson and selected audio are accepted in main (PR #18). Preserve those recordings and content IDs; target-device/child checks remain P09/P10.
+- Claude's 2026-11-10 second review reports passing types/build, 20 unit tests and 14 Chromium cases for P04/P05, and no blocking findings for P05 (F-31). P04 picture framing and approximately 0.3 s of leading silence in Polish translations are recorded as non-blocking [pilot observations](PILOT_LESSON.md#second-review-and-pilot-observations--2026-11-10).
 - P05 provides controlled AppShell/ThemeSelector and a native Button, with Electric/Neon semantic CSS tokens. The audio-check screen is the preview host; [SHARED_UI.md](SHARED_UI.md) contains screenshots and reuse contracts.
 - Theme selection is temporary React state in this test screen. Per-profile persistence and actual profile/parent controls remain P06/P29/P33. Exercise screens can omit the theme selector; no learning/session policy is changed.
 - Build/types, 20 Vitest tests and 14 Chromium cases passed. The theme-switch test catches an intentionally broken change handler. Review the visual result and approve the P05 PR before moving to P06; WebKit and actual-device limitations are documented.
@@ -19,8 +20,11 @@ _No agent task running. P05 is prepared on `feature/p05-shared-ui-themes`; visua
 1. Review P05 ([SHARED_UI.md](SHARED_UI.md)) and obtain explicit PR merge approval. After acceptance, continue with P06 Data layer core (`docs/IMPLEMENTATION.md`).
 2. In P09, run the P03 audio check on the Android tablet with Chrome, including offline replay (`docs/AUDIO_PLAYER.md`).
 3. Run the configured WebKit project when its browser download is available (HTTP 403 for the official Playwright hosts in agent environments).
+4. In P10, observe recognition of head-only versus whole-animal pictures. Consider the reported Polish leading silence when preparing later lessons; accepted P04 assets are unchanged.
 
 ## Done
+
+- Recorded Claude's second review (2026-11-10): passing types/build, 20 unit tests and 14 Chromium cases; P05 consistent with F-31, no blocking findings. P04 picture-recognition and leading-silence observations are in `docs/PILOT_LESSON.md`. No content/audio changes or PR merge were made; owner review/merge approval remains pending.
 
 - P05 implementation prepared: controlled AppShell/ThemeSelector, native Button with primary/secondary tones, semantic Electric/Neon tokens, responsive audio-check layout, 48×48+ targets, 16 px+ text, keyboard skip/focus, contrast and reduced-motion styles. The test banner and synthetic-audio disclosure remain visible. Clean install, build/types, 20 Vitest tests and 14 Chromium cases passed; a forced-Electric mutation was caught by the theme-switch case. Real screenshots are in `docs/SHARED_UI.md`. WebKit binary is unavailable; actual target-device checks remain P09. Visual/merge approval pending; no profile storage or exercise implementation added.
 
@@ -74,6 +78,8 @@ _No agent task running. P05 is prepared on `feature/p05-shared-ui-themes`; visua
 - Agent instructions (`AGENTS.md`, `CLAUDE.md`) and this status file.
 
 ## Handoff log
+
+- 2026-11-10 · Codex · Recorded the owner-supplied Claude review of P04/P05 and the two non-blocking P04 pilot observations in PR #19 · Owner visual review and explicit merge approval remain pending. Preserve accepted assets; after P05 acceptance continue with P06, with P09/P10 device/child checks still scheduled.
 
 - 2026-11-10 · Codex · Prepared P05 on `feature/p05-shared-ui-themes`: shared controls/shell and both themes demonstrated by the audio check, with screenshots and 5 new browser cases · Await visual review/explicit merge approval. After acceptance start P06. Preview selection is React state only, not a default-profile or persistence decision. WebKit remains unexecuted; P09 tablet/P10 child checks still apply.
 

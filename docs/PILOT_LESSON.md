@@ -55,6 +55,13 @@ The owner accepted elephant variants 2 and 3. Variant 2 uses standard Cori param
 
 Both selected MP3s were copied byte for byte from the heard comparison candidates, with fresh content-hash lesson paths and updated source/output metadata. Dog remains the accepted revision-3 recording. Superseded horse/elephant reference files are archived under `docs/review/pronunciation` so the historical six-entry comparison remains reproducible. Its candidate and selection record is in the comparison provenance. The current table/lesson JSON are authoritative; the old full review is explicitly historical. The short selected-words WAV uses the actual new lesson MP3s without another lossy encode.
 
+## Second review and pilot observations — 2026-11-10
+
+The product owner supplied Claude's second review of P04/P05, reporting passing types/build, 20 unit tests and 14 Chromium cases. The following P04 observations are non-blocking and do not change its acceptance:
+
+- **Picture recognition (P10):** cat, dog and frog show heads, while horse, cow, elephant and fish show whole animals. Observe whether children independently recognise both framings during the pilot before proposing an illustration change.
+- **Polish audio pacing (later lessons):** the reviewer reports approximately 0.3 s of leading silence in the Polish translations. Consider trimming when preparing later lessons, with listening checks to preserve complete words. The accepted P04 recordings remain unchanged.
+
 ## Provenance and generation
 
 [pilot-animals-provenance.json](../tools/content/pilot-animals-provenance.json) records the vocabulary source, exact Twemoji revision/source paths/hashes, generation tool, model archives/input hashes, texts, voice settings, output hashes and the regenerated shared prompt. The model-specific licence review from P02 applies to these same fixed educational voices. Preserve the [public notice](../public/assets/NOTICE.txt) and show “Nagranie syntetyczne” wherever the app exposes playback (F-45); P35 must retain the credits in About.
