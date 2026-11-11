@@ -1,28 +1,33 @@
 # Status
 
-**Phase:** Implementation (P05 accepted; P06 next)
-**Last updated:** 2026-11-10
+**Phase:** Implementation (P06 accepted; P07 next)
+**Last updated:** 2026-11-11
 
 ## In progress
 
-_No agent task running. P05 is accepted; the owner explicitly approved merging PR #19 on 2026-11-10. Next is P06 Data layer core._
+_No agent task running. P06 is accepted; the owner explicitly approved merging PR #20 on 2026-11-11. Next is P07 Listen and tap._
 
 ## Resume point
 
-- P04's animal lesson and selected audio are accepted in main (PR #18). Preserve those recordings and content IDs; target-device/child checks remain P09/P10.
-- Claude's 2026-11-10 second review reports passing types/build, 20 unit tests and 14 Chromium cases for P04/P05, and no blocking findings for P05 (F-31). P04 picture framing and approximately 0.3 s of leading silence in Polish translations are recorded as non-blocking [pilot observations](PILOT_LESSON.md#second-review-and-pilot-observations--2026-11-10).
-- P05 is accepted with explicit PR #19 merge approval (2026-11-10). It provides controlled AppShell/ThemeSelector and a native Button, with Electric/Neon semantic CSS tokens. The audio-check screen is the preview host; [SHARED_UI.md](SHARED_UI.md) contains screenshots and reuse contracts.
-- Theme selection is temporary React state in this test screen. Per-profile persistence and actual profile/parent controls remain P06/P29/P33. Exercise screens can omit the theme selector; no learning/session policy is changed.
-- Build/types, 20 Vitest tests and 14 Chromium cases passed. The theme-switch test catches an intentionally broken change handler. Claude's second review found no blocking P05 issues; WebKit and actual-device limitations are documented.
+- P06 is accepted with explicit PR #20 merge approval (2026-11-11). It provides versioned profile/settings documents, separate checked-answer history, stable content references, atomic writes and 90-day retention through a storage-independent interface. [DATA_LAYER.md](DATA_LAYER.md) describes the API, revisions and verification.
+- Profile/history writes either commit together or preserve the previous state. Stale revisions and duplicate appends reject; unknown formats are refused before cleanup. P11/P12 still own session/reward idempotency and save-error UI; imports/migrations remain P26/P27.
+- Build/types, 34 Vitest tests and 24 Chromium cases passed. Ten new browser cases use native IndexedDB, including real abort/rollback and concurrent connections. A deliberately broken 90-day boundary was caught and restored. WebKit remains unavailable.
+- Claude's 2026-11-11 review reports the same passing checks and no blocking P06 findings. Follow-ups are recorded in [DATA_LAYER.md](DATA_LAYER.md#second-review--2026-11-11) and the stage plan: P12 upgrade-closed connection/refresh, P27 field-change migrations and P33 whole-minute input.
+- P05 is accepted in main (PR #19). Theme preview remains temporary React state; P06 supplies persistence capability, with profile/session UI integration still in later stages. No new default-profile theme decision was made.
+- P04's selected content/audio are accepted in main (PR #18). Preserve those assets and IDs. Picture framing and approximately 0.3 s of leading Polish silence remain non-blocking [pilot observations](PILOT_LESSON.md#second-review-and-pilot-observations--2026-11-10); device/child checks remain P09/P10.
 
 ## Next
 
-1. Continue with P06 Data layer core (`docs/IMPLEMENTATION.md`); P05 is accepted.
+1. Continue with P07 Listen and tap (`docs/IMPLEMENTATION.md`); P06 is accepted.
 2. In P09, run the P03 audio check on the Android tablet with Chrome, including offline replay (`docs/AUDIO_PLAYER.md`).
 3. Run the configured WebKit project when its browser download is available (HTTP 403 for the official Playwright hosts in agent environments).
 4. In P10, observe recognition of head-only versus whole-animal pictures. Consider the reported Polish leading silence when preparing later lessons; accepted P04 assets are unchanged.
 
 ## Done
+
+- Recorded the owner-supplied Claude P06 review (2026-11-11): passing types/build, 34 unit tests and 24 Chromium cases, with no blocking findings. Documented three non-blocking follow-ups under P12/P27/P33; these remain scheduled after P06 acceptance.
+
+- P06 accepted on 2026-11-11; the owner explicitly approved merging PR #20 after Claude's second review. Typed/versioned profiles, per-profile preferences, app metadata and separate contextual checked-answer history through `idb`; atomic profile/history writes, revision conflict detection, deletion and physical 90-day cleanup. Unknown formats are rejected before cleanup; no reset/fallback database is created on failure. Build/types, 34 Vitest tests and 24 Chromium cases passed, including 10 new native-storage cases; the retention mutation was caught. No profile/session UI, grading, migration or reward rules added.
 
 - Recorded Claude's second review (2026-11-10): passing types/build, 20 unit tests and 14 Chromium cases; P05 consistent with F-31, no blocking findings. P04 picture-recognition and leading-silence observations are in `docs/PILOT_LESSON.md`; accepted content/audio remain unchanged.
 
@@ -78,6 +83,12 @@ _No agent task running. P05 is accepted; the owner explicitly approved merging P
 - Agent instructions (`AGENTS.md`, `CLAUDE.md`) and this status file.
 
 ## Handoff log
+
+- 2026-11-11 · Codex · Recorded the owner's P06 acceptance and explicit PR #20 merge instruction after Claude's second review; prepared acceptance metadata in the same PR · Next is P07 Listen and tap. P12 refresh handling, P27 field-change compatibility and P33 whole-minute settings remain scheduled, along with P09/P10 device/child checks.
+
+- 2026-11-11 · Codex · Recorded Claude's non-blocking P06 review in PR #20 and assigned the three follow-ups to P12/P27/P33 · Await explicit owner merge approval; P07 follows acceptance. Any earlier stage adding persisted fields must address compatibility when it makes the change.
+
+- 2026-11-11 · Codex · Prepared P06 on `feature/p06-data-layer-core`, with the API/limits in `docs/DATA_LAYER.md`, 14 new boundary tests and 10 native IndexedDB cases · Await review and explicit merge approval; after acceptance start P07. P09 wires the pilot UI; P11/P12 own session/reward retries and failure UI; P26/P27 own imports/migrations. P04 observations and P09/P10 device/child checks remain scheduled.
 
 - 2026-11-10 · Codex · Recorded the owner's P05 acceptance and explicit PR #19 merge instruction after Claude's second review; prepared acceptance metadata in the same PR · Next is P06 Data layer core. Theme preview remains temporary React state; P04 observations and P09/P10 device/child checks remain scheduled.
 

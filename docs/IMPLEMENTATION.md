@@ -46,7 +46,7 @@ Track completed and current stages in `STATUS.md`. Execute the remaining stages 
 | P09 | Pilot test build | Simple profile screen without a PIN, a fixed simplified session for the pilot lesson (introduction, flashcards, listen and tap), a simple end screen and saving through the data layer. Deployable for the pilot device. Also run the P03 audio check on the Android tablet with Chrome (`docs/AUDIO_PLAYER.md`), moved here when P03 was accepted on phones. | P06–P08; D-35, D-60, D-81 |
 | P10 | Pilot with the children | On the target device, observe picture clarity, instruction comprehension, difficulty and independent use. Record findings without personal data; turn needed fixes into separate focused tasks before continuing. | P09; D-44, section 7 |
 | P11 | Progress commits | Commit exercise result, session position and earned progress together; no duplicate results or rewards on retry or resume. | P06, P10; F-36, D-38 |
-| P12 | Save failure handling | On write failure keep the last commit, pause progression, explain and allow retry; check real browser interruption at the storage boundary. | P11; F-43, D-65 |
+| P12 | Save failure handling | On write failure keep the last commit, pause progression, explain and allow retry; check real browser interruption at the storage boundary. Handle a connection closed by `blocking()` with a safe refresh prompt (P06 review). | P11; F-43, D-65 |
 | P13 | Leitner policy | Pure functions: initial box, due-review-only promotion, once-per-day cap, two-box demotion, local calendar intervals, unconfirmed skipped words, unchanged early-practice boxes. | P06; F-12–F-14, F-38, D-51–D-53, D-67 |
 | P14 | Session composition | Plan 8–12 exercises with up to 3 new words, about half due reviews and lesson fill-in; review-only sessions; introduction before first test. | P04, P13; F-04, F-05, D-30, D-34–D-35 |
 | P15 | Answers and lesson completion | Apply answers, lesson completion and per-word written-task eligibility. | P11, P14; F-34, F-35, D-70 |
@@ -61,13 +61,13 @@ Track completed and current stages in `STATUS.md`. Execute the remaining stages 
 | P24 | Parent profile management | Add/edit/delete profiles from the parent panel; replaces the pilot's PIN-less profile screen (F-03). | P23; F-02, F-03, F-26 |
 | P25 | Profile picker | Tap to select a profile; no-profile and returning states; entry tap for audio; app updates activate here. | P24; F-01, F-36, D-60 |
 | P26 | Backup data operations | Full export and replacing import, validation before writing, single-transaction commit, failure recovery and retry; test interrupted import. | P11; F-30, N-13, D-27, D-64 |
-| P27 | Data migration | Versioned migrations that keep old data on failure; realistic older fixtures, success/abort/interruption checks. | P26; N-11, N-13, D-55, D-64 |
+| P27 | Data migration | Versioned migrations that keep old data on failure; realistic older fixtures, success/abort/interruption checks. Strict field validation requires compatibility/version migration whenever persisted fields change, including changes made in earlier stages (P06 review). | P26; N-11, N-13, D-55, D-64 |
 | P28 | Sticker album | One page per level, variable sticker count, special completion sticker, later review stickers, reward limit. | P22; F-19, D-24, D-41 |
 | P29 | Lesson/level screen | Current, completed and unlocked lessons/levels, separate from mastery; child's theme switch outside exercises. | P15, P21; F-15, F-31, F-34 |
 | P30 | Skip-level test and starting level | 10 questions, pass at 8; complete/unlock without mastery; starting-level override; seed unintroduced words under F-38. | P13, P29; F-16, F-17, F-26, F-38, D-31, D-53 |
 | P31 | Parent summary | Learning days, daily time, completed lessons and levels; no comparison between children. | P19, P23, P29; F-27 |
 | P32 | Difficult words | Latest up to 5 checked answers; enter at 2 errors, leave below 2; translations and replay; exclude ungraded audio failures. | P06, P23; F-28, F-39, D-68 |
-| P33 | Parent settings | Time limit, automatic voice-over, per-profile themes, PIN change; changes apply to the intended profile. | P19, P23; F-29, F-31 |
+| P33 | Parent settings | Time limit, automatic voice-over, per-profile themes, PIN change; changes apply to the intended profile. Restrict `dailyLimitMinutes` entry to whole minutes and address existing fractional values when tightening validation (P06 review). | P19, P23; F-29, F-31 |
 | P34 | Backup and storage screen | Export/import confirmation and retry, persistence request/result, installation guidance, 7-day backup reminder. | P26, P27; F-30, F-37, D-66 |
 | P35 | About screen | Credit Twemoji and the voices as their licences require, from the provenance recorded in P02. | P02; F-33, D-82 |
 | C01… | Remaining lesson content | One task per remaining level-1 lesson and scoped level-2 lesson, with the same checks as P04. | P10 fixes; section 7, D-44, D-61 |
