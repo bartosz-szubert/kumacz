@@ -1,0 +1,17 @@
+.profile-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr)); gap: 1.5rem; margin-block: 2rem; }
+.profile-tile { display: flex; flex-direction: column; gap: .5rem; padding: 1.5rem; overflow-wrap: anywhere; }
+.profile-create { max-width: 42rem; margin-block: 2rem; }
+.profile-create summary { min-height: 48px; padding-block: .75rem; cursor: pointer; }
+.profile-create fieldset { border: 0; padding: 0; margin: 0; min-width: 0; }
+.profile-field { display: grid; gap: .5rem; margin-block: 1rem; }
+.profile-field input, .profile-field select { font: inherit; min-height: 48px; width: 100%; border: 2px solid var(--control-border); border-radius: .75rem; color: var(--ink); background: var(--surface); padding: .5rem .75rem; }
+.profile-create .avatar-options { display: flex; flex-wrap: wrap; gap: .75rem; margin-block: 1rem; }
+.avatar-option { display: flex; align-items: center; gap: .25rem; min-height: 64px; padding: .5rem; border: 2px solid var(--control-border); border-radius: .75rem; cursor: pointer; }
+.avatar-option:has(:checked) { background: var(--primary); color: var(--on-primary); }
+.pilot-step { border: 0; margin: 0; padding: 0; min-width: 0; }
+.pilot-navigation { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+.pilot-error { border: 2px solid var(--accent); padding: 1rem; border-radius: 1rem; margin-bottom: 1.5rem; }
+.pilot-note { color: var(--muted); }
+.introduction-card, .pilot-finished { text-align: center; background: var(--surface); padding: clamp(1rem, 4vw, 2rem); border: 2px solid var(--control-border); border-radius: 1.5rem; }
+.introduction-card .buttons, .pilot-finished .buttons { justify-content: center; }
+.introduction-card h2 { font-size: 2.5rem; margin-block: 1rem; }

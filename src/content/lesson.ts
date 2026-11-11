@@ -11,6 +11,8 @@ export interface LessonItem {
 
 export interface Lesson {
   id: string
+  moduleId: string
+  levelId: string
   title: string
   instructions: { 'listen-and-tap': AudioClip }
   items: readonly LessonItem[]

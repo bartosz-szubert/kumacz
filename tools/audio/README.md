@@ -18,6 +18,8 @@ P04 revision 3 also records optional per-clip `synthesisText` (e.g. `Dog.` while
 
 Optional preparation tooling, separate from the web app. The committed MP3s are synthetic evaluation clips; [the licence review](../../docs/ASSET_LICENCES.md) describes the proposed voices and disclosure requirements. No synthesis runs in the browser, no hosted generation service is used, and no models are committed.
 
+P09 uses `--manifest tools/content/introduction-audio-provenance.json` for the introduction instruction, with the same approved preset and `pl` configuration. It has separate hashes and measured preparation gain; the new recording awaits human listening review.
+
 ## Reproduce the generation recipe
 
 Verified environment: Linux x86_64, CPython 3.12.14, FFmpeg 7.1.5 with `libmp3lame`. `requirements.txt` pins binary wheels and SHA-256 hashes for this Python/platform combination. Other platforms need their own reviewed wheel hashes; do not disable hash checking or build arbitrary source packages to work around a mismatch.

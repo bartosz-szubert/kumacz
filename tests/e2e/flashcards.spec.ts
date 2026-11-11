@@ -36,7 +36,7 @@ for (const label of ['Umiem', 'Jeszcze nie']) {
   test(`${label} is self-assessment and leaves boxes, completion and checked history unchanged`, async ({ page }) => {
     const requests: string[] = []
     page.on('request', (r) => { if (r.url().endsWith('.mp3')) requests.push(r.url()) })
-    await page.goto('./')
+    await page.goto('./?preview=audio')
     const before = await seedProgress(page)
     await page.getByRole('button', { name: 'Wypróbuj fiszki' }).click()
     await expect(page.getByRole('heading', { name: 'Fiszki', exact: true })).toBeVisible()
@@ -73,7 +73,7 @@ for (const label of ['Umiem', 'Jeszcze nie']) {
 test('plays the new Polish instruction on the front and word/translation on the back', async ({ page }) => {
   const requests: string[] = []
   page.on('request', (r) => { if (r.url().endsWith('.mp3')) requests.push(r.url()) })
-  await page.goto('./')
+  await page.goto('./?preview=audio')
   await page.getByRole('button', { name: 'Wypróbuj fiszki' }).click()
   await expect(page.getByText('Nagranie syntetyczne', { exact: true })).toBeVisible()
   await page.getByRole('button', { name: 'Posłuchaj polecenia' }).click()
@@ -94,7 +94,7 @@ test('retries unavailable pronunciation without turning it into a checked answer
     Object.defineProperty(window, 'speechSynthesis', { value: { getVoices: () => [], cancel() {} } })
   })
   await page.route(`**/${cat.audio.word.path}`, (route) => route.fulfill({ status: 404, body: 'missing' }))
-  await page.goto('./')
+  await page.goto('./?preview=audio')
   await page.getByRole('button', { name: 'Wypróbuj fiszki' }).click()
   await page.getByRole('button', { name: 'Odwróć kartę', exact: true }).click()
   await expect(page.getByRole('status')).toContainText('Nie udało się odtworzyć słowa.')
@@ -107,7 +107,7 @@ test('retries unavailable pronunciation without turning it into a checked answer
 
 test('provides keyboard flip, phone-sized touch targets and the preselected Neon theme', async ({ page }) => {
   await page.setViewportSize({ width: 360, height: 800 })
-  await page.goto('./')
+  await page.goto('./?preview=audio')
   await page.getByRole('radio', { name: 'Neon' }).check()
   await page.getByRole('button', { name: 'Wypróbuj fiszki' }).click()
   await expect(page.getByRole('radio')).toHaveCount(0)
@@ -126,7 +126,7 @@ test('provides keyboard flip, phone-sized touch targets and the preselected Neon
 
 test('does not reveal a card before its picture loads and can retry a missing picture', async ({ page }) => {
   await page.route(`**/${cat.picture.path}`, (route) => route.fulfill({ status: 404, body: 'missing' }))
-  await page.goto('./')
+  await page.goto('./?preview=audio')
   await page.getByRole('button', { name: 'Wypróbuj fiszki' }).click()
   await expect(page.getByText('Nie udało się wczytać obrazka.')).toBeVisible()
   await expect(page.getByRole('button', { name: 'Odwróć kartę', exact: true })).toBeDisabled()

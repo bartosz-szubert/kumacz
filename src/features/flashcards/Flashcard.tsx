@@ -20,11 +20,12 @@ function statusText(state: State) {
 
 interface Props {
   controller: FlashcardController
+  canContinue?: boolean
   onNext(): void
   onAssessed?(result: FlashcardResult): void
 }
 
-export function Flashcard({ controller, onNext, onAssessed }: Props) {
+export function Flashcard({ controller, onNext, onAssessed, canContinue = true }: Props) {
   const state = useSyncExternalStore(controller.subscribe, controller.getSnapshot)
   const [picture, setPicture] = useState<'loading' | 'ready' | 'error'>('loading')
   const [attempt, setAttempt] = useState(0)
@@ -35,7 +36,7 @@ export function Flashcard({ controller, onNext, onAssessed }: Props) {
   const { item, instruction } = controller.view
   const back = state.side === 'back'
   const busy = state.playing !== null
-  let status = statusText(state)
+  let status = state.result && !canContinue && !busy ? 'Poczekaj na zapis postępów.' : statusText(state)
   if (!back && !busy && !state.audioError && picture !== 'ready') {
     status = picture === 'error' ? 'Obrazek jest niedostępny.' : 'Wczytuję obrazek…'
   }
@@ -86,7 +87,7 @@ export function Flashcard({ controller, onNext, onAssessed }: Props) {
       </div>
       {back && (state.result ? <div className="flashcard-result">
         <p>Wybrano: {state.result.value === 'know' ? 'Umiem' : 'Jeszcze nie'}.</p>
-        <Button disabled={busy} onClick={onNext}>Dalej</Button>
+        <Button disabled={busy || !canContinue} onClick={onNext}>Dalej</Button>
       </div> : <>
         <div className="flashcard-return"><Button tone="secondary" onClick={() => { void controller.flip() }}>Zobacz obrazek</Button></div>
         <div className="buttons flashcard-assessment" role="group" aria-label="Samoocena">

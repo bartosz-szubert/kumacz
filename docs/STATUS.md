@@ -1,28 +1,32 @@
 # Status
 
-**Phase:** Implementation (P07/P08 and P09a prepared; reviews pending)
+**Phase:** Implementation (P07/P08/P09 prepared; reviews and device acceptance pending)
 **Last updated:** 2026-11-11
 
 ## In progress
 
-_No active implementation in this snapshot. P09b session integration is prepared separately on `feature/p09-pilot-session`; this P09a PR contains only profile/checkpoint compatibility._
+_No active implementation. P07 PR #21, P08 draft PR #22 and the stacked P09a [PR #23](https://github.com/bartosz-szubert/kumacz/pull/23) and P09b draft await review; none was merged in P09._
 
 ## Resume point
 
-- P09a adds profile format 2 with a nullable, validated pilot checkpoint. The IndexedDB schema stays 1; answer/settings documents stay format 1. Opening migrates every valid legacy profile and performs cleanup in one atomic transaction. Unknown fields/formats or aborts preserve the original data. See [DATA_LAYER.md](DATA_LAYER.md).
-- Types/build, 62 Vitest cases and 38 Chromium cases passed in the isolated P09a snapshot, including native migration success, malformed legacy rejection and an abort after a real successful profile write, with no partial migration or cleanup.
-- The learning UI is still the P08 preview in this snapshot. P09b supplies the default profile screen and the owner-selected nine-exercise pilot. It is a separate PR based on `feature/p09-profile-migration`.
-- P07 PR #21 and P08 draft PR #22 are open and unchanged. P08 targets P07; P09a targets P08; P09b targets P09a. Review/approve each independently; after a parent merges, reconcile and retarget the child to `main`. Do not merge a child into a temporary feature base.
+- P09 connects a simple PIN-free profile picker to the pilot lesson. The owner selected A: 3 flashcards and 2 listening rounds for 3 words (9 exercises), with new-word introduction first (D-86). [PILOT_SESSION.md](PILOT_SESSION.md) covers use, persistence, failure behavior, the review order and device checks.
+- Each result/checkpoint saves through P06. A v1→v2 profile migration preserves earlier progress/revisions; answer/settings formats stay 1. Failed native migrations roll back together with cleanup. Failed result saves pause progression and retain the pending result for retry. No rewards, completion policy, full scheduler or learning-day/time counting was added.
+- P09a passed its own isolated types/build, 62 Vitest cases and 38 Chromium cases. The complete P09b build passed 74 Vitest cases, 3 generator regressions and 43 Chromium cases.
+- P09a profile migration branches from unmerged P08; P09b session integration branches from P09a; P08 branches from unmerged P07. Review and merge each separately in order, after explicit approval; retarget/reconcile each child to `main` after its parent lands. Do not merge children into temporary feature bases. The Pages build stays unchanged until `main` changes.
+- P08's flashcard instruction and P09's introduction instruction use the approved Polish voice; human listening review of these new recordings is pending. Accepted P04 word/translation recordings and pictures are unchanged.
+- P06 is accepted (PR #20). P09 implements the immediate field-change migration follow-up. General P12 upgrade/refresh/conflict guidance, P27 import/migration work and P33 whole-minute validation remain scheduled.
+- P04 picture framing and roughly 0.3 s Polish leading silence remain non-blocking [pilot observations](PILOT_LESSON.md#second-review-and-pilot-observations--2026-11-10). The target-device/child checks are still pending.
 
 ## Next
 
-1. Review P07, P08, P09a compatibility and P09b session integration separately. Merge only after explicit approval and in that order, retargeting each child to `main`.
-2. P09b includes the fixed pilot and its save/resume UI; actual Android tablet + Chrome audio/session checks and both new Polish-prompt listening approvals remain pending.
-3. P10 child observations follow device acceptance. General P12 upgrade/conflict recovery, P27 migration/import work and P33 whole-minute validation remain scheduled.
+1. Review P07 PR #21, P08 draft PR #22, then P09a and P09b drafts in order, including listening to both new Polish instructions. Merge only after each explicit approval and retarget/reconcile the children to `main`.
+2. Once published, finish P09 acceptance on the Android tablet with Chrome, including the P03 online/cached-offline audio check, a complete session and interrupted-session resume ([PILOT_SESSION.md](PILOT_SESSION.md)).
+3. Run P10 with the children and record observations without personal data. Then continue the planned P11/P12 saving/recovery stages; the P09 fixed pilot does not replace the full session engine.
+4. Run the configured WebKit project when its browser binary is available (official Playwright download hosts returned HTTP 403 in agent environments).
 
 ## Done
 
-- P09a prepared on 2026-11-11: atomic profile format 1→2 migration and strict pilot-checkpoint validation, preserving existing progress, revisions and per-profile settings. Native failure tests prove all-or-nothing migration together with history retention cleanup. No profile/session UI or learning policy is added in this PR. P09b follows as a separate dependent PR.
+- P09 implementation prepared on 2026-11-11 at the owner's request in two focused PRs (P09a migration, P09b session), stacked on P08 without merging P07/P08: explicit nickname/avatar/theme profile creation, new-word introduction, the approved nine-exercise pilot, simple ending, atomic per-result checkpoints and checked history, safe resume and pending-save retry. Profile format migration is atomic with cleanup and preserves legacy progress/revisions. Types/build, 74 Vitest cases, 3 Python generator regressions and 43 Chromium cases passed. Actual native migration/save aborts, profile isolation/resume, missing audio and a corrective-retry mutation were checked. Screenshots and contracts are in [PILOT_SESSION.md](PILOT_SESSION.md). Physical tablet/child checks and both new prompt listening approvals remain pending.
 
 - P08 implementation prepared on 2026-11-11 at the owner's request without merging P07: picture front, word/translation/audio back, one ungraded self-assessment, safe audio/image retry, manual/automatic voice preference and cancellation/disposal. Added one Polish instruction with separate hash-pinned provenance and public disclosure. Build/types, 59 Vitest cases, 3 Python generator regressions and 35 Chromium cases passed; native profile/history checks and the mutation guard passed. Draft review base is P07; both stages and the new prompt await review/acceptance.
 

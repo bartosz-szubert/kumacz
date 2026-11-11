@@ -5,7 +5,7 @@
 | | |
 |---|---|
 | Document version | 0.12 (approved; technology and voice decisions added) |
-| Date | 2026-11-06 |
+| Date | 2026-11-11 (pilot sequence D-86 added) |
 | Product owner | Bartek |
 | Status | Approved by the product owner on 2026-11-06; "PRD approved" gate passed. Technology decisions D-78–D-82 recorded on 2026-11-06. |
 | Repository | `kumacz` (public, GitHub) |
@@ -389,3 +389,4 @@ Test period: **3 weeks** of regular use by both children.
 | D-83 | Voices: Cori medium (en-GB, author's public-domain declaration) and Supertonic 3 preset 0 (Polish, BigScience Open RAIL-M), generated locally with sherpa-onnx and converted to MP3. Polish Piper voices are not used because their training lineage leaves the licence unresolved. Every generated clip is listened to before use. Clarifies D-48; details in `docs/ASSET_LICENCES.md`. |
 | D-84 | Synthetic-audio disclosure: a small, permanent "Nagranie syntetyczne" label on exercise screens near the audio controls, for both languages, plus voice credits in About (F-45, F-33). Meets the Supertonic licence's machine-generated disclosure condition. |
 | D-85 | Publish test builds of `main` to GitHub Pages now, through a free GitHub Actions workflow that first runs the checks, with a visible "Wersja testowa" banner. Used for tablet checks and the pilot; the MVP release (P39) keeps its own verification and approval. No personal data is published. Remote USB debugging stays available for detailed diagnostics. |
+| D-86 | P09 pilot uses variant A selected by the product owner: 3 words, 3 flashcards and 2 listen-and-tap rounds (9 exercises). Present each new word with its picture, written English form and pronunciation before those exercises. The fixed pilot sequence does not replace the full session composition planned in P14. |

@@ -40,7 +40,7 @@ test('plays and replays whole MP3s from the persistent cache with the network of
   page.on('request', (request) => {
     if (request.url().endsWith('.mp3')) requests.push(request.headers())
   })
-  await page.goto('./')
+  await page.goto('./?preview=audio')
   await expect(page.getByRole('heading', { name: 'Sprawdź dźwięk' })).toBeVisible()
   const section = page.getByRole('region', { name: 'Angielski' })
   await expect(section.getByText('Nagranie syntetyczne', { exact: true })).toBeVisible()
@@ -72,7 +72,7 @@ test('a missing file with only a remote voice stays unavailable and can be retri
     } })
   })
   await page.route('**/en-GB-red.mp3', (route) => route.fulfill({ status: 404, body: 'missing' }))
-  await page.goto('./')
+  await page.goto('./?preview=audio')
   const section = page.getByRole('region', { name: 'Angielski' })
   await section.getByRole('button', { name: 'Posłuchaj' }).click()
   await expect(section.getByRole('status')).toHaveText('Nie można odtworzyć nagrania. Spróbuj ponownie.')
@@ -85,7 +85,7 @@ test('a missing file with only a remote voice stays unavailable and can be retri
 test('uses an explicitly local British voice after corrupt audio, and reports speech errors safely', async ({ page }) => {
   await installLocalSpeech(page, 'error')
   await page.route('**/en-GB-red.mp3', (route) => route.fulfill({ contentType: 'audio/mpeg', body: 'corrupt MP3' }))
-  await page.goto('./')
+  await page.goto('./?preview=audio')
   const section = page.getByRole('region', { name: 'Angielski' })
   await section.getByRole('button', { name: 'Posłuchaj' }).click()
   await expect(section.getByRole('status')).toHaveText('Nie można odtworzyć nagrania. Spróbuj ponownie.')
@@ -98,7 +98,7 @@ test('uses an explicitly local British voice after corrupt audio, and reports sp
 test('completes a successful local fallback using the exact British voice', async ({ page }) => {
   await installLocalSpeech(page, 'end')
   await page.route('**/en-GB-red.mp3', (route) => route.fulfill({ status: 404, body: 'missing' }))
-  await page.goto('./')
+  await page.goto('./?preview=audio')
   const section = page.getByRole('region', { name: 'Angielski' })
   await section.getByRole('button', { name: 'Posłuchaj' }).click()
   await expect(section.getByRole('status')).toHaveText('Odtworzono głosem urządzenia.')
@@ -109,7 +109,7 @@ test('continues playing online when the browser refuses Cache Storage', async ({
   await page.addInitScript(() => {
     Object.defineProperty(window, 'caches', { get: () => { throw new Error('Cache storage denied') } })
   })
-  await page.goto('./')
+  await page.goto('./?preview=audio')
   const section = page.getByRole('region', { name: 'Angielski' })
   await section.getByRole('button', { name: 'Posłuchaj' }).click()
   await expect(section.getByRole('status')).toHaveText('Odtworzono nagranie.')
@@ -118,7 +118,7 @@ test('continues playing online when the browser refuses Cache Storage', async ({
 test('re-reads asynchronously available local voices on a fresh retry tap', async ({ page }) => {
   await installLocalSpeech(page, 'end')
   await page.route('**/en-GB-red.mp3', (route) => route.fulfill({ status: 404, body: 'missing' }))
-  await page.goto('./')
+  await page.goto('./?preview=audio')
   await page.evaluate(() => Reflect.set(window, '__audioLocalReady', false))
   const section = page.getByRole('region', { name: 'Angielski' })
   await section.getByRole('button', { name: 'Posłuchaj' }).click()
@@ -147,7 +147,7 @@ test('a blocked AudioContext remains retryable and resume is requested within th
     Object.defineProperty(window, 'AudioContext', { value: Context })
     Object.defineProperty(window, 'speechSynthesis', { value: { getVoices: () => [], cancel: () => {} } })
   })
-  await page.goto('./')
+  await page.goto('./?preview=audio')
   const section = page.getByRole('region', { name: 'Angielski' })
   await section.getByRole('button', { name: 'Posłuchaj' }).click()
   await expect(section.getByRole('status')).toHaveText('Nie można odtworzyć nagrania. Spróbuj ponownie.')
@@ -157,7 +157,7 @@ test('a blocked AudioContext remains retryable and resume is requested within th
 })
 
 test('stops playback and preserves the permanent disclosure', async ({ page }) => {
-  await page.goto('./')
+  await page.goto('./?preview=audio')
   const section = page.getByRole('region', { name: 'Polski' })
   await section.getByRole('button', { name: 'Posłuchaj' }).click()
   await expect(section.getByRole('status')).toHaveText('Słuchaj…')
@@ -168,7 +168,7 @@ test('stops playback and preserves the permanent disclosure', async ({ page }) =
 
 test('keeps all audio touch controls usable on a narrow portrait viewport', async ({ page }) => {
   await page.setViewportSize({ width: 360, height: 740 })
-  await page.goto('./')
+  await page.goto('./?preview=audio')
   for (const control of await page.getByRole('button').all()) {
     const box = await control.boundingBox()
     expect(box?.width).toBeGreaterThanOrEqual(48)

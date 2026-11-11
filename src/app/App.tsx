@@ -1,4 +1,5 @@
 import { useRef, useState } from 'react'
+import { Pilot } from '../features/pilot/Pilot.tsx'
 import samples from '../content/audio-samples.json'
 import lesson from '../content/english/level-1/animals.json'
 import { useAudioPlayer } from '../audio/useAudioPlayer'
@@ -32,8 +33,9 @@ function statusText(state: AudioState, id: string) {
 
 export function App() {
   const audio = useAudioPlayer()
-  // Test-screen preview; actual profile/session integration starts in P09.
+  // Profile choice sets the stored theme; the audio-only preview remains available.
   const [theme, setTheme] = useState<Theme>('electric')
+  const [pilot, setPilot] = useState(() => new URLSearchParams(location.search).get('preview') !== 'audio')
   const [exercise, setExercise] = useState<Preview | null>(null)
   const previewNumber = useRef(0)
   function launchExercise(index: number) {
@@ -54,7 +56,7 @@ export function App() {
     setExercise({ kind: 'flashcard', index, controller })
   }
   return (
-    <AppShell theme={theme} actions={exercise ? undefined : <ThemeSelector theme={theme} onChange={setTheme} />} footer={
+    <AppShell theme={theme} actions={pilot || exercise ? undefined : <ThemeSelector theme={theme} onChange={setTheme} />} footer={
       <details className="credits">
         <summary>O nagraniach</summary>
         <p>Wszystkie nagrania są syntetyczne i zostały przygotowane lokalnie.</p>
@@ -68,7 +70,7 @@ export function App() {
         <a href={import.meta.env.BASE_URL + 'assets/NOTICE.txt'}>Źródła i licencje obrazków</a>
       </details>
     }>
-      {exercise ? <>
+      {pilot ? <Pilot audio={audio} onTheme={setTheme} onAudioCheck={() => { audio.stop(); setPilot(false) }} /> : exercise ? <>
         <div className="exercise-navigation"><Button tone="secondary" onClick={() => {
           exercise.controller.dispose(); setExercise(null)
         }}>Wróć do dźwięku</Button></div>
@@ -79,6 +81,7 @@ export function App() {
             onNext={() => launchFlashcard((exercise.index + 1) % lesson.items.length)} />}
       </> : <>
       <header className="page-heading">
+        <Button tone="secondary" onClick={() => { audio.stop(); setPilot(true) }}>Wróć do profili</Button>
         <h1>Sprawdź dźwięk</h1>
         <p>Posłuchaj słowa i polecenia.</p>
       </header>

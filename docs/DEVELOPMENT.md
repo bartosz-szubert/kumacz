@@ -1,6 +1,6 @@
 # Local development
 
-P01 provides the application foundation and P02 the approved audio fixtures. The P03 branch adds an audio-check screen and the first behaviour tests; see [the player guide](AUDIO_PLAYER.md) for its remaining device checks. Learning, profiles and full offline preparation follow in later approved stages.
+The current review branch includes the P09 pilot profile/session screen ([PILOT_SESSION.md](PILOT_SESSION.md)). The earlier audio/exercise previews remain at `?preview=audio`. Full scheduling, rewards, parent access and offline preparation follow in later approved stages.
 
 ## Toolchain and installation
 
