@@ -46,6 +46,16 @@ P11 will add session-position/reward commits and idempotent result retry; P12 ow
 
 Codex's self-review used the repository's TDD, source-driven-development, code-review-and-quality and security-and-hardening skills. Boundaries were checked for version refusal, profile isolation, stale writes, unexpected personal fields, retention/deletion, error propagation and absence of new data transmission. Explicit owner merge approval is still required.
 
+## Second review — 2026-11-11
+
+The product owner supplied Claude's P06 review: types/build, 34 unit tests and 24 Chromium cases pass, with no blocking findings. These are the reviewer's reported results; the verification above records Codex's implementation checks. Three non-blocking follow-ups remain:
+
+1. **P12 — upgrade-closed connection:** after `blocking()` closes the connection, further writes reject. Explain that a refresh is required rather than repeatedly saving through the closed connection; handle any pending unsaved result according to F-43.
+2. **P27 — strict field validation:** adding or changing persisted fields requires an explicit compatible format/version migration. Apply this at the point a stage changes the shape, including stages before the general P27 migration work; do not defer compatibility until after incompatible data has been shipped.
+3. **P33 — whole-minute input:** `dailyLimitMinutes` currently accepts positive fractional values. Restrict entry to whole minutes in the parent-settings stage and address existing fractional values explicitly when tightening validation.
+
+The [stage plan](IMPLEMENTATION.md) records these follow-ups. Owner acceptance and explicit PR #20 merge approval remain pending.
+
 ## Sources
 
 - [idb API and typed schemas](https://github.com/jakearchibald/idb#typescript), checked against the installed 8.0.4 declarations.
