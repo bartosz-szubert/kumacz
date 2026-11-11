@@ -1,15 +1,15 @@
 # Status
 
-**Phase:** Implementation (P06 second review complete; owner merge approval pending)
+**Phase:** Implementation (P06 accepted; P07 next)
 **Last updated:** 2026-11-11
 
 ## In progress
 
-_No agent task running. P06 is prepared on `feature/p06-data-layer-core`; Claude's second review is recorded with no blocking findings. Explicit owner PR #20 merge approval is pending._
+_No agent task running. P06 is accepted; the owner explicitly approved merging PR #20 on 2026-11-11. Next is P07 Listen and tap._
 
 ## Resume point
 
-- P06 provides versioned profile/settings documents, separate checked-answer history, stable content references, atomic writes and 90-day retention through a storage-independent interface. [DATA_LAYER.md](DATA_LAYER.md) describes the API, revisions and verification.
+- P06 is accepted with explicit PR #20 merge approval (2026-11-11). It provides versioned profile/settings documents, separate checked-answer history, stable content references, atomic writes and 90-day retention through a storage-independent interface. [DATA_LAYER.md](DATA_LAYER.md) describes the API, revisions and verification.
 - Profile/history writes either commit together or preserve the previous state. Stale revisions and duplicate appends reject; unknown formats are refused before cleanup. P11/P12 still own session/reward idempotency and save-error UI; imports/migrations remain P26/P27.
 - Build/types, 34 Vitest tests and 24 Chromium cases passed. Ten new browser cases use native IndexedDB, including real abort/rollback and concurrent connections. A deliberately broken 90-day boundary was caught and restored. WebKit remains unavailable.
 - Claude's 2026-11-11 review reports the same passing checks and no blocking P06 findings. Follow-ups are recorded in [DATA_LAYER.md](DATA_LAYER.md#second-review--2026-11-11) and the stage plan: P12 upgrade-closed connection/refresh, P27 field-change migrations and P33 whole-minute input.
@@ -18,16 +18,16 @@ _No agent task running. P06 is prepared on `feature/p06-data-layer-core`; Claude
 
 ## Next
 
-1. Obtain explicit owner PR #20 merge approval; Claude's P06 review has no blocking findings ([DATA_LAYER.md](DATA_LAYER.md)). After acceptance, continue with P07 Listen and tap (`docs/IMPLEMENTATION.md`).
+1. Continue with P07 Listen and tap (`docs/IMPLEMENTATION.md`); P06 is accepted.
 2. In P09, run the P03 audio check on the Android tablet with Chrome, including offline replay (`docs/AUDIO_PLAYER.md`).
 3. Run the configured WebKit project when its browser download is available (HTTP 403 for the official Playwright hosts in agent environments).
 4. In P10, observe recognition of head-only versus whole-animal pictures. Consider the reported Polish leading silence when preparing later lessons; accepted P04 assets are unchanged.
 
 ## Done
 
-- Recorded the owner-supplied Claude P06 review (2026-11-11): passing types/build, 34 unit tests and 24 Chromium cases, with no blocking findings. Documented three non-blocking follow-ups under P12/P27/P33. Implementation is unchanged; owner merge approval remains pending.
+- Recorded the owner-supplied Claude P06 review (2026-11-11): passing types/build, 34 unit tests and 24 Chromium cases, with no blocking findings. Documented three non-blocking follow-ups under P12/P27/P33; these remain scheduled after P06 acceptance.
 
-- P06 implementation prepared on 2026-11-11: typed/versioned profiles, per-profile preferences, app metadata and separate contextual checked-answer history through `idb`; atomic profile/history writes, revision conflict detection, deletion and physical 90-day cleanup. Unknown formats are rejected before cleanup; no reset/fallback database is created on failure. Build/types, 34 Vitest tests and 24 Chromium cases passed, including 10 new native-storage cases; the retention mutation was caught. Review/merge approval pending. No profile/session UI, grading, migration or reward rules added.
+- P06 accepted on 2026-11-11; the owner explicitly approved merging PR #20 after Claude's second review. Typed/versioned profiles, per-profile preferences, app metadata and separate contextual checked-answer history through `idb`; atomic profile/history writes, revision conflict detection, deletion and physical 90-day cleanup. Unknown formats are rejected before cleanup; no reset/fallback database is created on failure. Build/types, 34 Vitest tests and 24 Chromium cases passed, including 10 new native-storage cases; the retention mutation was caught. No profile/session UI, grading, migration or reward rules added.
 
 - Recorded Claude's second review (2026-11-10): passing types/build, 20 unit tests and 14 Chromium cases; P05 consistent with F-31, no blocking findings. P04 picture-recognition and leading-silence observations are in `docs/PILOT_LESSON.md`; accepted content/audio remain unchanged.
 
@@ -83,6 +83,8 @@ _No agent task running. P06 is prepared on `feature/p06-data-layer-core`; Claude
 - Agent instructions (`AGENTS.md`, `CLAUDE.md`) and this status file.
 
 ## Handoff log
+
+- 2026-11-11 · Codex · Recorded the owner's P06 acceptance and explicit PR #20 merge instruction after Claude's second review; prepared acceptance metadata in the same PR · Next is P07 Listen and tap. P12 refresh handling, P27 field-change compatibility and P33 whole-minute settings remain scheduled, along with P09/P10 device/child checks.
 
 - 2026-11-11 · Codex · Recorded Claude's non-blocking P06 review in PR #20 and assigned the three follow-ups to P12/P27/P33 · Await explicit owner merge approval; P07 follows acceptance. Any earlier stage adding persisted fields must address compatibility when it makes the change.
 

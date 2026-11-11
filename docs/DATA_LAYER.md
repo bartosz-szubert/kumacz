@@ -1,6 +1,6 @@
 # Learning data layer — P06
 
-**Prepared:** 2026-11-11, for review on `feature/p06-data-layer-core`.
+**Accepted:** 2026-11-11, with the owner's explicit PR #20 merge approval after Claude's second review.
 
 P06 implements the local storage boundary from PRD section 10, N-10–N-12, D-55, D-71 and D-79. The existing audio-check UI remains the preview screen; P09 will connect the pilot's profile/session UI to this layer.
 
@@ -44,7 +44,7 @@ P11 will add session-position/reward commits and idempotent result retry; P12 ow
 - The browser test bundles the production data module with Vite's JavaScript API and serves it through a test-only route. It exercises real IndexedDB; no fake database package or production test screen is added. Tests assert state after native abort, not process termination or power loss. Interruption/import/migration coverage remains with P12/P26/P27.
 - The configured WebKit binary is unavailable in this environment; its project remains enabled. No new WebKit result is claimed. Real Android tablet checks remain P09 and child observation P10.
 
-Codex's self-review used the repository's TDD, source-driven-development, code-review-and-quality and security-and-hardening skills. Boundaries were checked for version refusal, profile isolation, stale writes, unexpected personal fields, retention/deletion, error propagation and absence of new data transmission. Explicit owner merge approval is still required.
+Codex's self-review used the repository's TDD, source-driven-development, code-review-and-quality and security-and-hardening skills. Boundaries were checked for version refusal, profile isolation, stale writes, unexpected personal fields, retention/deletion, error propagation and absence of new data transmission.
 
 ## Second review — 2026-11-11
 
@@ -54,7 +54,7 @@ The product owner supplied Claude's P06 review: types/build, 34 unit tests and 2
 2. **P27 — strict field validation:** adding or changing persisted fields requires an explicit compatible format/version migration. Apply this at the point a stage changes the shape, including stages before the general P27 migration work; do not defer compatibility until after incompatible data has been shipped.
 3. **P33 — whole-minute input:** `dailyLimitMinutes` currently accepts positive fractional values. Restrict entry to whole minutes in the parent-settings stage and address existing fractional values explicitly when tightening validation.
 
-The [stage plan](IMPLEMENTATION.md) records these follow-ups. Owner acceptance and explicit PR #20 merge approval remain pending.
+The [stage plan](IMPLEMENTATION.md) records these follow-ups. The owner accepted P06 and explicitly instructed merging PR #20 on 2026-11-11. Next is P07 Listen and tap.
 
 ## Sources
 
