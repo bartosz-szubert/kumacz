@@ -1,30 +1,28 @@
 # Status
 
-**Phase:** Implementation (P07/P08 prepared; reviews pending)
+**Phase:** Implementation (P07/P08 and P09a prepared; reviews pending)
 **Last updated:** 2026-11-11
 
 ## In progress
 
-_No agent task running. P08 is prepared on `feature/p08-flashcards`, using unmerged P07 as a temporary review base at the owner's request. P07 remains pending in PR #21; neither stage is accepted or merged._
+_No active implementation in this snapshot. P09b session integration is prepared separately on `feature/p09-pilot-session`; this P09a PR contains only profile/checkpoint compatibility._
 
 ## Resume point
 
-- P08 adds picture-front/word-back flashcards and distinct ungraded self-assessment, launched via **Wypróbuj fiszki**. [FLASHCARDS.md](FLASHCARDS.md) contains screenshots, API contracts, the new prompt and branch order. Both `know` and `not-yet` leave Leitner/completion and checked history unchanged.
-- A new Polish instruction uses the approved Supertonic 3 preset with actual `pl` configuration; technical/provenance checks passed and human listening review remains pending. Accepted P04 word/translation audio and pictures are reused unchanged.
-- Build/types, 59 Vitest cases, 3 Python generator regressions and 35 Chromium cases passed. Six new browser flows include both self-assessments against native seeded IndexedDB. A front-assessment mutation was caught and restored. WebKit remains unavailable; actual device/child checks remain P09/P10.
-- P07 remains unchanged/unmerged in PR #21. Its preview still launches via **Wypróbuj ćwiczenie** ([LISTEN_AND_TAP.md](LISTEN_AND_TAP.md)). P08's draft PR targets `feature/p07-listen-and-tap` for a focused diff; after P07 acceptance/merge, retarget P08 to `main` and reconcile any intervening changes. Do not merge P08 into its temporary feature base.
-- P06 is accepted (PR #20). P12 upgrade-closed connection/refresh, P27 field-change compatibility and P33 whole-minute follow-ups remain scheduled ([DATA_LAYER.md](DATA_LAYER.md#second-review--2026-11-11)). P08 changes no stored shape. P09 integrates the pilot flow; P11/P12 own saving and P14/P16 own session/retry policy.
-- P05 is accepted (PR #19). Theme preview still uses temporary React state; no new default-profile theme decision was made.
-- P04's selected content/audio are accepted in main (PR #18). Preserve those assets and IDs. Picture framing and approximately 0.3 s of leading Polish silence remain non-blocking [pilot observations](PILOT_LESSON.md#second-review-and-pilot-observations--2026-11-10); device/child checks remain P09/P10.
+- P09a adds profile format 2 with a nullable, validated pilot checkpoint. The IndexedDB schema stays 1; answer/settings documents stay format 1. Opening migrates every valid legacy profile and performs cleanup in one atomic transaction. Unknown fields/formats or aborts preserve the original data. See [DATA_LAYER.md](DATA_LAYER.md).
+- Types/build, 62 Vitest cases and 38 Chromium cases passed in the isolated P09a snapshot, including native migration success, malformed legacy rejection and an abort after a real successful profile write, with no partial migration or cleanup.
+- The learning UI is still the P08 preview in this snapshot. P09b supplies the default profile screen and the owner-selected nine-exercise pilot. It is a separate PR based on `feature/p09-profile-migration`.
+- P07 PR #21 and P08 draft PR #22 are open and unchanged. P08 targets P07; P09a targets P08; P09b targets P09a. Review/approve each independently; after a parent merges, reconcile and retarget the child to `main`. Do not merge a child into a temporary feature base.
 
 ## Next
 
-1. Review P07 PR #21 and the P08 draft ([FLASHCARDS.md](FLASHCARDS.md)), including the new Polish instruction. Merge P07 only after explicit approval, then retarget/update P08 to `main` before its separate approval/merge. P09 Pilot test build follows acceptance of both stages.
-2. In P09, run the P03 audio check on the Android tablet with Chrome, including offline replay (`docs/AUDIO_PLAYER.md`).
-3. Run the configured WebKit project when its browser download is available (HTTP 403 for the official Playwright hosts in agent environments).
-4. In P10, observe recognition of head-only versus whole-animal pictures. Consider the reported Polish leading silence when preparing later lessons; accepted P04 assets are unchanged.
+1. Review P07, P08, P09a compatibility and P09b session integration separately. Merge only after explicit approval and in that order, retargeting each child to `main`.
+2. P09b includes the fixed pilot and its save/resume UI; actual Android tablet + Chrome audio/session checks and both new Polish-prompt listening approvals remain pending.
+3. P10 child observations follow device acceptance. General P12 upgrade/conflict recovery, P27 migration/import work and P33 whole-minute validation remain scheduled.
 
 ## Done
+
+- P09a prepared on 2026-11-11: atomic profile format 1→2 migration and strict pilot-checkpoint validation, preserving existing progress, revisions and per-profile settings. Native failure tests prove all-or-nothing migration together with history retention cleanup. No profile/session UI or learning policy is added in this PR. P09b follows as a separate dependent PR.
 
 - P08 implementation prepared on 2026-11-11 at the owner's request without merging P07: picture front, word/translation/audio back, one ungraded self-assessment, safe audio/image retry, manual/automatic voice preference and cancellation/disposal. Added one Polish instruction with separate hash-pinned provenance and public disclosure. Build/types, 59 Vitest cases, 3 Python generator regressions and 35 Chromium cases passed; native profile/history checks and the mutation guard passed. Draft review base is P07; both stages and the new prompt await review/acceptance.
 

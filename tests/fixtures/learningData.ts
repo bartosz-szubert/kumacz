@@ -3,9 +3,10 @@ import type { AnswerRecord, ProfileDocument } from '../../src/domain/learningDat
 // Invented fixtures only; never copy a child's real profile or progress here.
 export function profile(id = 'test-a'): ProfileDocument {
   return {
-    formatVersion: 1, id, revision: 0, nickname: 'Profil testowy', avatarId: 'avatar.frog',
+    formatVersion: 2, id, revision: 0, nickname: 'Profil testowy', avatarId: 'avatar.frog',
     theme: 'electric', settings: { dailyLimitMinutes: 30, autoVoiceOver: true },
     progress: { words: [], completedLessonIds: [], completedLevelIds: [] },
+    pilotSession: null,
   }
 }
 

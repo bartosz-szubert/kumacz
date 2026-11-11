@@ -10,7 +10,7 @@ describe('stored learning data boundary', () => {
   })
 
   it.each([
-    ['newer format', { ...profile(), formatVersion: 2 }],
+    ['newer format', { ...profile(), formatVersion: 3 }],
     ['negative revision', { ...profile(), revision: -1 }],
     ['unknown theme', { ...profile(), theme: 'other' }],
     ['empty nickname', { ...profile(), nickname: ' ' }],

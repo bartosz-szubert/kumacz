@@ -1,9 +1,11 @@
 import { openDB } from 'idb'
 import type { DBSchema, IDBPTransaction } from 'idb'
 import type { AnswerRecord, AppSettings, LearningData, ProfileDocument } from '../domain/learningData.ts'
-import { integer, LearningDataError, text, validateAnswer, validateProfile, validateSettings } from './learningDataValidation.ts'
+import { validateAnswer, validateProfile, validateSettings } from './learningDataValidation.ts'
+import { integer, LearningDataError, text } from './validation.ts'
+import { migrateProfile } from './profileMigration.ts'
 
-export { LearningDataError } from './learningDataValidation.ts'
+export { LearningDataError } from './validation.ts'
 
 const HISTORY_AGE_MS = 90 * 24 * 60 * 60 * 1000
 interface LearningSchema extends DBSchema {
@@ -77,9 +79,13 @@ export async function openLearningData(options: { name?: string; now?: () => num
         tx.objectStore('answers').getAll(),
         tx.objectStore('settings').getAll(),
       ])
-      profiles.forEach(validateProfile)
+      const migrated = profiles.map(migrateProfile)
       answers.forEach(validateAnswer)
       settings.forEach(validateSettings)
+      // Prepare and validate every document before the first migration write.
+      for (let i = 0; i < migrated.length; i++) {
+        if (migrated[i] !== profiles[i]) await tx.objectStore('profiles').put(migrated[i]!)
+      }
       await prune(tx, before)
     })
   } catch (error) { db.close(); throw error }

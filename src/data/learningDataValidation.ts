@@ -1,55 +1,11 @@
-import { DATA_FORMAT_VERSION } from '../domain/learningData.ts'
+import { ANSWER_FORMAT_VERSION, PROFILE_FORMAT_VERSION, SETTINGS_FORMAT_VERSION } from '../domain/learningData.ts'
 import type { AnswerRecord, AppSettings, ProfileDocument } from '../domain/learningData.ts'
-
-export class LearningDataError extends Error {
-  readonly code: 'invalid-data' | 'unsupported-format' | 'conflict'
-  constructor(code: LearningDataError['code']) {
-    super(`Learning data: ${code}`)
-    this.name = 'LearningDataError'
-    this.code = code
-  }
-}
-
-function check(condition: unknown): asserts condition {
-  if (!condition) throw new LearningDataError('invalid-data')
-}
-
-function fields(value: unknown, names: string[]): Record<string, unknown> {
-  check(value !== null && typeof value === 'object' && !Array.isArray(value))
-  const record = value as Record<string, unknown>
-  check(Object.keys(record).length === names.length && names.every((name) => Object.hasOwn(record, name)))
-  return record
-}
-
-export function text(value: unknown): asserts value is string {
-  check(typeof value === 'string' && value.trim().length > 0)
-}
-
-export function integer(value: unknown, minimum = 0): asserts value is number {
-  check(typeof value === 'number' && Number.isSafeInteger(value) && value >= minimum)
-}
-
-function bool(value: unknown) { check(typeof value === 'boolean') }
-function date(value: unknown) {
-  check(typeof value === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(value))
-  const parsed = new Date(`${value}T00:00:00Z`)
-  check(Number.isFinite(parsed.getTime()) && parsed.toISOString().slice(0, 10) === value)
-}
-
-function version(value: unknown) {
-  integer(value, 1)
-  if (value !== DATA_FORMAT_VERSION) throw new LearningDataError('unsupported-format')
-}
-
-function ids(value: unknown) {
-  check(Array.isArray(value))
-  value.forEach(text)
-  check(new Set(value).size === value.length)
-}
+import { bool, check, date, fields, ids, integer, text, version } from './validation.ts'
+import { validatePilotSession } from './pilotValidation.ts'
 
 export function validateProfile(value: unknown): asserts value is ProfileDocument {
-  const p = fields(value, ['formatVersion', 'id', 'revision', 'nickname', 'avatarId', 'theme', 'settings', 'progress'])
-  version(p.formatVersion); integer(p.revision)
+  const p = fields(value, ['formatVersion', 'id', 'revision', 'nickname', 'avatarId', 'theme', 'settings', 'progress', 'pilotSession'])
+  version(p.formatVersion, PROFILE_FORMAT_VERSION); integer(p.revision)
   text(p.id); text(p.nickname); text(p.avatarId)
   check(p.theme === 'electric' || p.theme === 'neon')
   const settings = fields(p.settings, ['dailyLimitMinutes', 'autoVoiceOver'])
@@ -68,11 +24,12 @@ export function validateProfile(value: unknown): asserts value is ProfileDocumen
     wordIds.push(word.wordId)
   }
   check(new Set(wordIds).size === wordIds.length)
+  if (p.pilotSession !== null) validatePilotSession(p.pilotSession)
 }
 
 export function validateAnswer(value: unknown): asserts value is AnswerRecord {
   const a = fields(value, ['formatVersion', 'id', 'profileId', 'sessionId', 'exerciseId', 'moduleId', 'levelId', 'lessonId', 'wordId', 'answeredAt', 'exerciseType', 'correct', 'context'])
-  version(a.formatVersion); integer(a.answeredAt)
+  version(a.formatVersion, ANSWER_FORMAT_VERSION); integer(a.answeredAt)
   for (const key of ['id', 'profileId', 'sessionId', 'exerciseId', 'moduleId', 'levelId', 'lessonId', 'wordId']) text(a[key])
   check(typeof a.exerciseType === 'string' && ['listen-and-tap', 'picture-to-word', 'context'].includes(a.exerciseType))
   bool(a.correct)
@@ -85,6 +42,6 @@ export function validateAnswer(value: unknown): asserts value is AnswerRecord {
 
 export function validateSettings(value: unknown): asserts value is AppSettings {
   const settings = fields(value, ['formatVersion', 'revision', 'lastBackupAt'])
-  version(settings.formatVersion); integer(settings.revision)
+  version(settings.formatVersion, SETTINGS_FORMAT_VERSION); integer(settings.revision)
   if (settings.lastBackupAt !== null) integer(settings.lastBackupAt)
 }
