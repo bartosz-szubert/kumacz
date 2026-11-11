@@ -1,29 +1,32 @@
 # Status
 
-**Phase:** Implementation (P07 prepared; review pending)
+**Phase:** Implementation (P07/P08 prepared; reviews pending)
 **Last updated:** 2026-11-11
 
 ## In progress
 
-_No agent task running. P07 is prepared on `feature/p07-listen-and-tap`; review and explicit owner merge approval are pending._
+_No agent task running. P08 is prepared on `feature/p08-flashcards`, using unmerged P07 as a temporary review base at the owner's request. P07 remains pending in PR #21; neither stage is accepted or merged._
 
 ## Resume point
 
-- P07 adds the listen-and-tap controller/view, randomized curated choices, answer feedback and translation/audio controls. The audio check launches the review preview via **Wypróbuj ćwiczenie**. [LISTEN_AND_TAP.md](LISTEN_AND_TAP.md) contains screenshots and reuse contracts.
-- Choices require a fully played target and loaded pictures. Audio/image failures offer retry without grading; a question is checked once, and stale/disposed playback cannot affect a new one. Theme selection stays outside the exercise; the synthetic-audio label and asset credits remain visible/accessible.
-- Build/types, 48 Vitest cases and 29 Chromium cases passed, including 14 new domain/controller cases and 5 exercise browser flows. The inverted audio-readiness mutation was caught and restored. WebKit remains unavailable; target-device/child checks remain P09/P10.
-- P06 is accepted in main (PR #20). Its P12 upgrade-closed connection/refresh, P27 field-change compatibility and P33 whole-minute follow-ups remain scheduled ([DATA_LAYER.md](DATA_LAYER.md#second-review--2026-11-11)). P07 changes no stored shape. P09 integrates the pilot profile/session; P11/P12 own saving, P14/P16 own session/retry policy.
+- P08 adds picture-front/word-back flashcards and distinct ungraded self-assessment, launched via **Wypróbuj fiszki**. [FLASHCARDS.md](FLASHCARDS.md) contains screenshots, API contracts, the new prompt and branch order. Both `know` and `not-yet` leave Leitner/completion and checked history unchanged.
+- A new Polish instruction uses the approved Supertonic 3 preset with actual `pl` configuration; technical/provenance checks passed and human listening review remains pending. Accepted P04 word/translation audio and pictures are reused unchanged.
+- Build/types, 59 Vitest cases, 3 Python generator regressions and 35 Chromium cases passed. Six new browser flows include both self-assessments against native seeded IndexedDB. A front-assessment mutation was caught and restored. WebKit remains unavailable; actual device/child checks remain P09/P10.
+- P07 remains unchanged/unmerged in PR #21. Its preview still launches via **Wypróbuj ćwiczenie** ([LISTEN_AND_TAP.md](LISTEN_AND_TAP.md)). P08's draft PR targets `feature/p07-listen-and-tap` for a focused diff; after P07 acceptance/merge, retarget P08 to `main` and reconcile any intervening changes. Do not merge P08 into its temporary feature base.
+- P06 is accepted (PR #20). P12 upgrade-closed connection/refresh, P27 field-change compatibility and P33 whole-minute follow-ups remain scheduled ([DATA_LAYER.md](DATA_LAYER.md#second-review--2026-11-11)). P08 changes no stored shape. P09 integrates the pilot flow; P11/P12 own saving and P14/P16 own session/retry policy.
 - P05 is accepted (PR #19). Theme preview still uses temporary React state; no new default-profile theme decision was made.
 - P04's selected content/audio are accepted in main (PR #18). Preserve those assets and IDs. Picture framing and approximately 0.3 s of leading Polish silence remain non-blocking [pilot observations](PILOT_LESSON.md#second-review-and-pilot-observations--2026-11-10); device/child checks remain P09/P10.
 
 ## Next
 
-1. Review P07 ([LISTEN_AND_TAP.md](LISTEN_AND_TAP.md)) and obtain explicit PR merge approval. After acceptance, continue with P08 Flashcards (`docs/IMPLEMENTATION.md`).
+1. Review P07 PR #21 and the P08 draft ([FLASHCARDS.md](FLASHCARDS.md)), including the new Polish instruction. Merge P07 only after explicit approval, then retarget/update P08 to `main` before its separate approval/merge. P09 Pilot test build follows acceptance of both stages.
 2. In P09, run the P03 audio check on the Android tablet with Chrome, including offline replay (`docs/AUDIO_PLAYER.md`).
 3. Run the configured WebKit project when its browser download is available (HTTP 403 for the official Playwright hosts in agent environments).
 4. In P10, observe recognition of head-only versus whole-animal pictures. Consider the reported Polish leading silence when preparing later lessons; accepted P04 assets are unchanged.
 
 ## Done
+
+- P08 implementation prepared on 2026-11-11 at the owner's request without merging P07: picture front, word/translation/audio back, one ungraded self-assessment, safe audio/image retry, manual/automatic voice preference and cancellation/disposal. Added one Polish instruction with separate hash-pinned provenance and public disclosure. Build/types, 59 Vitest cases, 3 Python generator regressions and 35 Chromium cases passed; native profile/history checks and the mutation guard passed. Draft review base is P07; both stages and the new prompt await review/acceptance.
 
 - P07 implementation prepared on 2026-11-11: listen-and-tap domain/controller/view, shuffled curated P04 choices, one checked answer, automatic correct-word feedback, post-answer translation/audio, required-target and picture readiness, safe retry and cancellation/disposal. The test audio screen launches the seven-word preview; profile/session persistence and retry/reward policies stay in later stages. Build/types, 48 Vitest cases and 29 Chromium cases passed; the inverted audio guard was caught. Screenshots/contracts are in `docs/LISTEN_AND_TAP.md`. Review/merge approval pending.
 
@@ -85,6 +88,8 @@ _No agent task running. P07 is prepared on `feature/p07-listen-and-tap`; review 
 - Agent instructions (`AGENTS.md`, `CLAUDE.md`) and this status file.
 
 ## Handoff log
+
+- 2026-11-11 · Codex · Prepared P08 on `feature/p08-flashcards` from P07 `f96a4e4`, explicitly leaving PR #21 unmerged; details/screenshots and new prompt are in `docs/FLASHCARDS.md` · Review both stages independently. After owner-approved P07 merge, retarget/update P08 to `main`; never merge the draft into its temporary P07 base. P09 follows both acceptances. Self-assessment is not checked history/mastery.
 
 - 2026-11-11 · Codex · Prepared P07 on `feature/p07-listen-and-tap`, with screenshots/contracts in `docs/LISTEN_AND_TAP.md`, 14 new unit cases and 5 native-browser exercise flows · Await owner review/explicit merge approval; P08 follows acceptance. P09 supplies the pilot profile/session; P11/P12 and P14/P16 retain saving/retry policies. P04 assets/observations and P06 follow-ups are preserved.
 

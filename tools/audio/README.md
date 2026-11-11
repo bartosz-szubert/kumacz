@@ -2,6 +2,8 @@
 
 P04 reuses this preparation pipeline with the optional `--manifest tools/content/pilot-animals-provenance.json` argument. The original command and fixtures remain unchanged. See [the pilot recipe and listening review](../../docs/PILOT_LESSON.md).
 
+P08 uses `--manifest tools/content/flashcard-audio-provenance.json` for its new Polish flashcard instruction, with the same approved Supertonic 3 preset and corrected `pl` configuration. Its source/output hashes and measured constant gain are separate from the accepted P04 word recordings; no P04 clip is regenerated. Listening review remains part of P08 review.
+
 **Language correction (2026-11-09):** the original Polish fixture and P04 revision 1 accidentally used Supertonic's default English language. In the pinned Python binding, changing `generation.extra["lang"]` modifies a dictionary copy. The fixed generator assigns the complete property, `generation.extra = {"lang": "pl"}`. All eight P04 Polish clips, including the instruction, were regenerated under fresh hashed paths for repeat listening. Original P02 bytes/hashes remain historical evidence, not approved Polish learning content; a current run of this corrected recipe intentionally will not reproduce that erroneous language setting. See the [correction record](../../docs/PILOT_LESSON.md#polish-pronunciation-correction--2026-11-09).
 
 Run the language regression check in the optional pinned generation environment (no models or network needed):
