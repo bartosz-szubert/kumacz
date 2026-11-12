@@ -34,13 +34,12 @@
       }
     }
   ],
-  "preparedOn": "2026-11-11",
-  "purpose": "P08 flashcard instruction; pronunciation/listening review pending",
+  "preparedOn": "2026-11-12",
+  "purpose": "P08 flashcard instruction revised for D-87; text approved on 2026-11-12, listening review pending",
   "licenceReview": "docs/ASSET_LICENCES.md; approved Supertonic 3 preset 0 under D-83, disclosure D-84/F-45",
   "fixtures": [
     {
       "id": "instruction.flashcard.pl-PL",
-      "text": "Odwróć kartę i posłuchaj słowa. Potem wybierz: Umiem albo Jeszcze nie.",
       "language": "pl-PL",
       "model": "supertonic-3-int8",
       "speakerId": 0,
@@ -49,23 +48,34 @@
       "generationExtra": {
         "lang": "pl"
       },
-      "gainDb": 3.534,
-      "path": "public/assets/audio/shared/pl-PL-flashcard.d1b916e98e68.mp3",
-      "mp3Sha256": "d1b916e98e685db9a3025253be89f60a5ee44c645ee4ed77045f2203f2fa3863",
-      "wavSha256": "f647a4cfc1b6903eaae0de84094ca3ef13fd078c3a0650a3a74d01b6f6c6519e",
+      "text": "Odwróć kartę i posłuchaj słowa. Potem wybierz «Znam» albo «Jeszcze nie».",
+      "gainDb": 2.232,
+      "path": "public/assets/audio/shared/pl-PL-flashcard.f7f47e5403bd.mp3",
+      "mp3Sha256": "f7f47e5403bd2d09a15893fbc88d48367edbaea5c19681b83b3373dd09e0bd9e",
+      "wavSha256": "ac704ce6da61a5bad256352144f4f1c5dc1a1e50a4e9a5034f4302e4a56fafe0",
       "wavSampleRate": 44100,
-      "mp3Bytes": 51075,
+      "mp3Bytes": 48149,
       "levelsBeforeGain": {
-        "peakDbFS": -7.271,
-        "activeRmsDbFS": -23.6,
-        "durationSeconds": 6.276531
+        "peakDbFS": -5.143,
+        "activeRmsDbFS": -22.829,
+        "durationSeconds": 5.906417
       },
       "levelsAfterGain": {
-        "peakDbFS": -4.255,
-        "activeRmsDbFS": -20.493,
-        "durationSeconds": 6.276553
+        "peakDbFS": -3.581,
+        "activeRmsDbFS": -21.053,
+        "durationSeconds": 5.90644
       },
-      "mp3DurationSeconds": 6.347755
+      "mp3DurationSeconds": 5.982041
     }
-  ]
+  ],
+  "textApproval": {
+    "date": "2026-11-12",
+    "source": "Product owner conversation; D-87/D-88",
+    "status": "approved; recording listening review pending"
+  },
+  "supersededRecording": {
+    "mp3Sha256": "d1b916e98e685db9a3025253be89f60a5ee44c645ee4ed77045f2203f2fa3863",
+    "commit": "cf6cca53e4fd160f0ef477f15c2dbd4338720ee6",
+    "reason": "Replace Umiem with Znam under D-87; previous bytes remain in Git history"
+  }
 }

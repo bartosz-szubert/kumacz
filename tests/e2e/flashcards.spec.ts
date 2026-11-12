@@ -32,7 +32,7 @@ async function seedProgress(page: Page) {
   return fixture
 }
 
-for (const label of ['Umiem', 'Jeszcze nie']) {
+for (const label of ['Znam', 'Jeszcze nie']) {
   test(`${label} is self-assessment and leaves boxes, completion and checked history unchanged`, async ({ page }) => {
     const requests: string[] = []
     page.on('request', (r) => { if (r.url().endsWith('.mp3')) requests.push(r.url()) })
@@ -82,7 +82,7 @@ test('plays the new Polish instruction on the front and word/translation on the 
   expect(requests.some((url) => url.endsWith(instruction.path))).toBe(true)
   await page.getByRole('button', { name: 'Odwróć kartę', exact: true }).click()
   await page.getByRole('button', { name: 'Posłuchaj tłumaczenia' }).click()
-  await expect(page.getByRole('button', { name: 'Umiem', exact: true })).toBeEnabled()
+  await expect(page.getByRole('button', { name: 'Znam', exact: true })).toBeEnabled()
   expect(requests.some((url) => url.endsWith(cat.audio.translation.path))).toBe(true)
   await page.getByRole('button', { name: 'Zobacz obrazek' }).click()
   await expect(page.getByText('cat', { exact: true })).toHaveCount(0)
@@ -102,7 +102,7 @@ test('retries unavailable pronunciation without turning it into a checked answer
   await expect(page.getByRole('button', { name: 'Jeszcze nie', exact: true })).toBeEnabled()
   await page.unroute(`**/${cat.audio.word.path}`)
   await page.getByRole('button', { name: 'Spróbuj ponownie', exact: true }).click()
-  await expect(page.getByRole('button', { name: 'Umiem', exact: true })).toBeEnabled()
+  await expect(page.getByRole('button', { name: 'Znam', exact: true })).toBeEnabled()
 })
 
 test('provides keyboard flip, phone-sized touch targets and the preselected Neon theme', async ({ page }) => {
@@ -114,7 +114,7 @@ test('provides keyboard flip, phone-sized touch targets and the preselected Neon
   const flip = page.getByRole('button', { name: 'Odwróć kartę', exact: true })
   await expect(flip).toBeEnabled()
   await flip.focus(); await page.keyboard.press('Enter')
-  await expect(page.getByRole('button', { name: 'Umiem', exact: true })).toBeEnabled()
+  await expect(page.getByRole('button', { name: 'Znam', exact: true })).toBeEnabled()
   for (const button of await page.locator('button:visible').all()) {
     const box = await button.boundingBox()
     expect(box!.width).toBeGreaterThanOrEqual(48); expect(box!.height).toBeGreaterThanOrEqual(48)
