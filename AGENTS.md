@@ -44,6 +44,7 @@ This file is read by every agent (Codex, Claude Code). Keep it short: every line
 - Learning content lives in JSON data files, separate from code (PRD section 7).
 - Targets: Android tablet + Chrome first, desktop Chrome/Edge, iPad Safari compatible (N-01). Touch targets ≥ 48×48 px (N-02).
 - Languages: code, comments, docs and commits in English; UI strings in Polish; learning content in the module's language.
+- Polish texts must be correct and natural Polish (grammar, spelling, punctuation, style), simple for grades 1–3; show new Polish texts to the product owner before generating audio (D-88).
 
 ## Stack and structure
 
