@@ -35,7 +35,7 @@
     }
   ],
   "preparedOn": "2026-11-12",
-  "purpose": "P08 flashcard instruction revised for D-87; text approved on 2026-11-12, listening review pending",
+  "purpose": "P08 flashcard instruction revised for D-87; text and recording approved on 2026-11-12",
   "licenceReview": "docs/ASSET_LICENCES.md; approved Supertonic 3 preset 0 under D-83, disclosure D-84/F-45",
   "fixtures": [
     {
@@ -71,11 +71,18 @@
   "textApproval": {
     "date": "2026-11-12",
     "source": "Product owner conversation; D-87/D-88",
-    "status": "approved; recording listening review pending"
+    "status": "approved"
   },
   "supersededRecording": {
     "mp3Sha256": "d1b916e98e685db9a3025253be89f60a5ee44c645ee4ed77045f2203f2fa3863",
     "commit": "cf6cca53e4fd160f0ef477f15c2dbd4338720ee6",
     "reason": "Replace Umiem with Znam under D-87; previous bytes remain in Git history"
+  },
+  "listeningApproval": {
+    "date": "2026-11-12",
+    "source": "Product owner conversation; affirmative response to recording and PR #22 merge question",
+    "mp3Sha256": "f7f47e5403bd2d09a15893fbc88d48367edbaea5c19681b83b3373dd09e0bd9e",
+    "reviewCommit": "c55d0ea307e33888d99392d0bba333f417688463",
+    "status": "approved"
   }
 }
