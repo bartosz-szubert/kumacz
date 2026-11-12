@@ -4,7 +4,7 @@
 
 The first module starts with beginner English for children in grades 1–3. The long-term aim is to support all primary-school grades and subjects, including German, maths, natural science and geography. These future modules are outside the initial MVP.
 
-> **Status:** Development. PRD v0.12 and P01–P06 are accepted. P07–P09 are prepared for review: picture selection, flashcards and a saved pilot session. Target-device/child checks remain pending; this is a test build, not the MVP.
+> **Status:** Development. PRD v0.12, P01–P08 and P09a are accepted. P09b (profiles and the saved pilot session) is prepared for separate merge approval. Target-device/child checks remain pending; this is a test build, not the MVP.
 > **Live app:** coming with v1.0 on GitHub Pages.
 
 ## Why
@@ -67,7 +67,7 @@ For the pinned toolchain, installation, commands and verification status, see [l
 
 The [P02 asset and voice review](docs/ASSET_LICENCES.md) records licence sources and synthetic evaluation clips; the product owner approved the voices (D-83).
 
-The [P09 pilot-session guide](docs/PILOT_SESSION.md) covers the profile picker, nine-exercise sequence, safe saving/resume and stacked review order. The audio preview remains available at `?preview=audio`.
+The [P09 pilot-session guide](docs/PILOT_SESSION.md) covers the profile picker, nine-exercise sequence, safe saving/resume and the current review status. The audio preview remains available at `?preview=audio`.
 
 The [P03 audio-player guide](docs/AUDIO_PLAYER.md) covers playback, tests, failure handling and the remaining device checks.
 

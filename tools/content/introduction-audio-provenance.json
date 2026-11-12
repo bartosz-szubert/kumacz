@@ -35,7 +35,7 @@
     }
   ],
   "preparedOn": "2026-11-11",
-  "purpose": "P09 introduction instruction; pronunciation/listening review pending",
+  "purpose": "P09 introduction instruction; accepted unchanged by the product owner on 2026-11-12",
   "licenceReview": "docs/ASSET_LICENCES.md; approved Supertonic 3 preset 0 under D-83, disclosure D-84/F-45",
   "fixtures": [
     {
@@ -67,5 +67,12 @@
       },
       "mp3DurationSeconds": 3.63102
     }
-  ]
+  ],
+  "listeningApproval": {
+    "date": "2026-11-12",
+    "source": "Product owner explicitly accepted the introduction instruction unchanged",
+    "mp3Sha256": "da8b5719a05459568f8d4aaac7a58eeddaf77cade914e39a459ef63b2c1208b0",
+    "reviewCommit": "80284703749d8e6562701be506d076af924c69dc",
+    "status": "approved without changes"
+  }
 }

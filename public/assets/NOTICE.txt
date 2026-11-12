@@ -22,6 +22,7 @@ The model licensor does not claim rights in the generated output;
 this does not label the clips unrestricted or CC0.
 
 P08 flashcard instruction (assets/audio/shared/pl-PL-flashcard.*.mp3):
+Odwróć kartę i posłuchaj słowa. Potem wybierz «Znam» albo «Jeszcze nie».
 Synthetic Polish speech generated locally with the same approved Supertonic 3
 preset 0, steps 8, language pl, using sherpa-onnx 1.13.8. The model terms and
 synthetic disclosure requirements above apply. Exact text, model/input/output

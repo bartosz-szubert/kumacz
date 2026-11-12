@@ -5,7 +5,7 @@
 | | |
 |---|---|
 | Document version | 0.12 (approved; technology and voice decisions added) |
-| Date | 2026-11-11 (pilot sequence D-86 added) |
+| Date | 2026-11-12 (D-86–D-88 reconciled) |
 | Product owner | Bartek |
 | Status | Approved by the product owner on 2026-11-06; "PRD approved" gate passed. Technology decisions D-78–D-82 recorded on 2026-11-06. |
 | Repository | `kumacz` (public, GitHub) |
@@ -117,7 +117,7 @@ The personas below describe the initial MVP users. Older primary-school pupils a
 
 | ID | Type | Mechanics |
 |---|---|---|
-| **F-08** | Flashcards with voice-over | picture → flip → word + pronunciation; child marks "I know it" / "not yet"; neither self-assessment changes the Leitner box (D-33) |
+| **F-08** | Flashcards with voice-over | picture → flip → word + pronunciation; child marks "I know it" / "not yet" (Polish buttons: **„Znam” / „Jeszcze nie”**, D-87); neither self-assessment changes the Leitner box (D-33) |
 | **F-09** | Listen and tap | voice says a word, child picks 1 of 3–4 pictures |
 | **F-10** | Picture → word | picture shown, child picks the correct written word from 3–4; before answering, only the Polish instruction can be played; English pronunciation is available after answering (D-43) |
 | **F-11** | Context questions | e.g. "What colour is a banana?" → colour tiles |
@@ -234,7 +234,7 @@ module (english) → level (1) → lesson (colours) → items (word, translation
 | **N-03** | Can be added to the tablet home screen (PWA). Offline readiness is confirmed only after the app, content for both MVP levels, pictures and all bundled audio have been downloaded and verified as available locally. Opening the interface alone does not establish offline readiness (F-42, D-63) |
 | **N-04** | Voice-over from pre-prepared audio files bundled with the app and cached for offline use: English words (`en-GB`), Polish instructions and Polish word translations (F-39). Browser speech synthesis is only a fallback when a file is missing or fails to play, and may use local voices only; remote speech services are not allowed. If neither source can play, follow F-41 (D-47, D-62) |
 | **N-05** | Static hosting (GitHub Pages) in v1.0, no own server |
-| **N-06** | UI in Polish, learning content in the module's language |
+| **N-06** | UI in Polish, learning content in the module's language. Polish texts follow D-88: correct grammar, spelling, punctuation and natural style, simple enough for grades 1–3 |
 | **N-07** | First usable interface < 3 s on a typical home connection. Full offline preparation may finish later and is tracked separately (N-03, D-63) |
 | **N-08** | Readability: high contrast, large font, no small text |
 | **N-09** | Zero keys, passwords or personal data in the repository |
@@ -390,3 +390,5 @@ Test period: **3 weeks** of regular use by both children.
 | D-84 | Synthetic-audio disclosure: a small, permanent "Nagranie syntetyczne" label on exercise screens near the audio controls, for both languages, plus voice credits in About (F-45, F-33). Meets the Supertonic licence's machine-generated disclosure condition. |
 | D-85 | Publish test builds of `main` to GitHub Pages now, through a free GitHub Actions workflow that first runs the checks, with a visible "Wersja testowa" banner. Used for tablet checks and the pilot; the MVP release (P39) keeps its own verification and approval. No personal data is published. Remote USB debugging stays available for detailed diagnostics. |
 | D-86 | P09 pilot uses variant A selected by the product owner: 3 words, 3 flashcards and 2 listen-and-tap rounds (9 exercises). Present each new word with its picture, written English form and pronunciation before those exercises. The fixed pilot sequence does not replace the full session composition planned in P14. |
+| D-87 | Flashcard self-assessment buttons in Polish: „Znam” / „Jeszcze nie” (not „Umiem”, which means "I can do" rather than "I know [a word]"). The flashcard instruction and its recording use the same words (F-08). |
+| D-88 | All Polish texts shown or played to users (UI, instructions, recordings) must be correct Polish: grammar, spelling, punctuation and natural, consistent style; short, simple sentences addressed to the child in the second person, suitable for grades 1–3. New or changed Polish texts are shown to the product owner before audio is generated (N-06). |

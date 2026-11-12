@@ -31,7 +31,8 @@ test('switches themes with native keyboard controls while preserving content and
   await expect(neon).toBeFocused()
   await expect(page.locator('.app-shell')).toHaveAttribute('data-theme', 'neon')
   await expect(polish.locator('[lang="pl-PL"]')).toHaveText(instruction!)
-  await expect(polish.getByRole('status')).toHaveText('Odtworzono nagranie.')
+  // Native playback lasts about 4 s; allow scheduling headroom under tracing/CI load.
+  await expect(polish.getByRole('status')).toHaveText('Odtworzono nagranie.', { timeout: 15000 })
   expect(requests).toHaveLength(1)
   await expect(polish.getByText('Nagranie syntetyczne', { exact: true })).toBeVisible()
   await page.keyboard.press('ArrowLeft')

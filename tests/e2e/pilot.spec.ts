@@ -44,7 +44,7 @@ test('completes exactly nine exercises, keeps practice separate from self-assess
   await page.getByRole('button', { name: 'Robot Graj dalej', exact: true }).click()
   await expect(page.getByRole('heading', { name: 'dog', exact: true })).toBeVisible()
   await introduction(page); await introduction(page)
-  for (const value of ['Umiem', 'Jeszcze nie', 'Umiem']) {
+  for (const value of ['Znam', 'Jeszcze nie', 'Znam']) {
     await page.getByRole('button', { name: 'Odwróć kartę', exact: true }).click()
     await page.getByRole('button', { name: value, exact: true }).click()
     await page.getByRole('button', { name: 'Dalej', exact: true }).click()
@@ -77,7 +77,7 @@ test('keeps a failed checked answer pending and saves it once on retry', async (
   for (let i = 0; i < 3; i++) await introduction(page)
   for (let i = 0; i < 3; i++) {
     await page.getByRole('button', { name: 'Odwróć kartę', exact: true }).click()
-    await page.getByRole('button', { name: 'Umiem', exact: true }).click()
+    await page.getByRole('button', { name: 'Znam', exact: true }).click()
     await page.getByRole('button', { name: 'Dalej', exact: true }).click()
   }
   await page.evaluate(() => {

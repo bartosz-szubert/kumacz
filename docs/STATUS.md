@@ -1,37 +1,58 @@
 # Status
 
-**Phase:** Implementation (P07/P08/P09 prepared; reviews and device acceptance pending)
-**Last updated:** 2026-11-11
+**Phase:** Implementation (P09b ready for review; device acceptance pending)
+**Last updated:** 2026-11-12
 
 ## In progress
 
-_No active implementation. P07 PR #21, P08 draft PR #22 and the stacked P09a [PR #23](https://github.com/bartosz-szubert/kumacz/pull/23) and P09b draft await review; none was merged in P09._
+_No active coding after this handoff. P09a PR #23 is merged with explicit owner approval. P09b PR #24 is reconciled with main and awaits separate explicit merge approval. Both Polish recordings are accepted; actual Android tablet/child checks remain pending._
 
 ## Resume point
 
-- P09 connects a simple PIN-free profile picker to the pilot lesson. The owner selected A: 3 flashcards and 2 listening rounds for 3 words (9 exercises), with new-word introduction first (D-86). [PILOT_SESSION.md](PILOT_SESSION.md) covers use, persistence, failure behavior, the review order and device checks.
-- Each result/checkpoint saves through P06. A v1→v2 profile migration preserves earlier progress/revisions; answer/settings formats stay 1. Failed native migrations roll back together with cleanup. Failed result saves pause progression and retain the pending result for retry. No rewards, completion policy, full scheduler or learning-day/time counting was added.
-- P09a passed its own isolated types/build, 62 Vitest cases and 38 Chromium cases. The complete P09b build passed 74 Vitest cases, 3 generator regressions and 43 Chromium cases.
-- P09a profile migration branches from unmerged P08; P09b session integration branches from P09a; P08 branches from unmerged P07. Review and merge each separately in order, after explicit approval; retarget/reconcile each child to `main` after its parent lands. Do not merge children into temporary feature bases. The Pages build stays unchanged until `main` changes.
-- P08's flashcard instruction and P09's introduction instruction use the approved Polish voice; human listening review of these new recordings is pending. Accepted P04 word/translation recordings and pictures are unchanged.
-- P06 is accepted (PR #20). P09 implements the immediate field-change migration follow-up. General P12 upgrade/refresh/conflict guidance, P27 import/migration work and P33 whole-minute validation remain scheduled.
-- P04 picture framing and roughly 0.3 s Polish leading silence remain non-blocking [pilot observations](PILOT_LESSON.md#second-review-and-pilot-observations--2026-11-10). The target-device/child checks are still pending.
+- P09b PR #24 now targets main after P07/P08/P09a acceptance. The default route opens profiles and the fixed nine-exercise pilot (D-86); the existing audio/flashcard preview remains at ?preview=audio. [PILOT_SESSION.md](PILOT_SESSION.md) covers checkpoints, retry/resume, limitations and device checks.
+- Reconciliation retains the accepted Znam labels and exact flashcard/introduction recordings, preserves the canContinue save gate and updates pilot browser expectations. PRD rows remain ordered D-86, D-87, D-88 without renumbering. Session composition, retry policy and data-layer implementation remain unchanged from the reviewed pilot. Fresh types/build, 74 Vitest cases and 43 Chromium cases pass after reconciliation.
+- The owner accepted the introduction instruction unchanged on 2026-11-12. Its provenance now records that approval without regenerating or modifying the clip; the P08 flashcard approval is inherited unchanged.
+
+- P09a PR #23 is accepted on 2026-11-12 and contains profile/checkpoint compatibility beyond accepted P08. Profiles move atomically from format 1 to 2; IndexedDB schema, answer history and app settings stay at version 1. Existing progress, settings and revisions are preserved. [DATA_LAYER.md](DATA_LAYER.md) describes the migration and its failure boundary.
+- After reconciliation, types/build, 62 Vitest cases and 38 Chromium cases pass. Native migration commit, actual transaction abort/rollback, malformed legacy rejection and unchanged history on failure are verified. P09a adds neither the pilot profile/session UI nor scheduling/reward policy; PR #24 supplies the pilot UI only after #23 is accepted.
+- P07/P08 and both new Polish instructions are accepted. The corrected Znam labels and exact accepted f7f47e5403bd flashcard recording are inherited from main unchanged. PR #24's introduction recording must also remain unchanged.
+
+- P08 uses **Znam / Jeszcze nie** on its flashcards, matching the owner-approved instruction text and recording (D-87/D-88). [FLASHCARDS.md](FLASHCARDS.md) contains the listening link, updated screenshots, provenance and checks. The owner subsequently accepted the exact f7f47e5403bd recording and authorized merging #22 on 2026-11-12.
+- #25 (Polish-language rules) and #21 (P07) are merged. P08 is accepted and incorporates their current AGENTS/PRD/STATUS changes. Do not continue work on a new stacked stage without explaining the risks, advising against it and obtaining confirmation.
+- #23 is merged after explicit approval; #24 is reconciled and awaits its own explicit merge approval. The owner accepted the P09 introduction prompt unchanged and supplied Claude's passing 74-Vitest/43-Chromium combined review. Repeated first-three-word fill-in after all seven words are introduced is accepted for the pilot; the full selector remains P14.
+
+- P07 is accepted on 2026-11-12 with explicit PR #21 merge approval and no blocking findings in Claude’s review. It adds the listen-and-tap controller/view, randomized curated choices, answer feedback and translation/audio controls. The audio check launches the review preview via **Wypróbuj ćwiczenie**. [LISTEN_AND_TAP.md](LISTEN_AND_TAP.md) contains screenshots and reuse contracts.
+- Choices require a fully played target and loaded pictures. Audio/image failures offer retry without grading; a question is checked once, and stale/disposed playback cannot affect a new one. Theme selection stays outside the exercise; the synthetic-audio label and asset credits remain visible/accessible.
+- Build/types, 48 Vitest cases and 29 Chromium cases passed, including 14 new domain/controller cases and 5 exercise browser flows. The inverted audio-readiness mutation was caught and restored. WebKit remains unavailable; target-device/child checks remain P09/P10.
+- P06 is accepted in main (PR #20). Its P12 upgrade-closed connection/refresh, P27 field-change compatibility and P33 whole-minute follow-ups remain scheduled ([DATA_LAYER.md](DATA_LAYER.md#second-review--2026-11-11)). P07 changes no stored shape. P09 integrates the pilot profile/session; P11/P12 own saving, P14/P16 own session/retry policy.
+- P05 is accepted (PR #19). Theme preview still uses temporary React state; no new default-profile theme decision was made.
+- P04's selected content/audio are accepted in main (PR #18). Preserve those assets and IDs. Picture framing and approximately 0.3 s of leading Polish silence remain non-blocking [pilot observations](PILOT_LESSON.md#second-review-and-pilot-observations--2026-11-10); device/child checks remain P09/P10.
 
 ## Next
 
-1. Review P07 PR #21, P08 draft PR #22, then P09a and P09b drafts in order, including listening to both new Polish instructions. Merge only after each explicit approval and retarget/reconcile the children to `main`.
-2. Once published, finish P09 acceptance on the Android tablet with Chrome, including the P03 online/cached-offline audio check, a complete session and interrupted-session resume ([PILOT_SESSION.md](PILOT_SESSION.md)).
-3. Run P10 with the children and record observations without personal data. Then continue the planned P11/P12 saving/recovery stages; the P09 fixed pilot does not replace the full session engine.
-4. Run the configured WebKit project when its browser binary is available (official Playwright download hosts returned HTTP 403 in agent environments).
+1. Review P09b PR #24 and obtain the owner's separate explicit merge approval. Neither the existing Claude review nor prompt acceptance authorizes merging #24.
+2. After #24 is approved/merged and the Pages build succeeds, finish P09 acceptance on the Android tablet with Chrome: P03 online/cached-offline audio and P09 full-session/resume checks. Full offline app startup/readiness remains P30/P31.
+3. Run P10 with the children and record observations without personal data. Observe picture framing/recognition and existing Polish leading silence, then continue with P11/P12 saving/recovery stages.
+4. Run WebKit when its browser binary becomes available. Keep the accepted pilot fill-in limitation for P14, general migrations/imports for P27 and whole-minute validation for P33.
 
 ## Done
 
-- P09 implementation prepared on 2026-11-11 at the owner's request in two focused PRs (P09a migration, P09b session), stacked on P08 without merging P07/P08: explicit nickname/avatar/theme profile creation, new-word introduction, the approved nine-exercise pilot, simple ending, atomic per-result checkpoints and checked history, safe resume and pending-save retry. Profile format migration is atomic with cleanup and preserves legacy progress/revisions. Types/build, 74 Vitest cases, 3 Python generator regressions and 43 Chromium cases passed. Actual native migration/save aborts, profile isolation/resume, missing audio and a corrective-retry mutation were checked. Screenshots and contracts are in [PILOT_SESSION.md](PILOT_SESSION.md). Physical tablet/child checks and both new prompt listening approvals remain pending.
+- P09b reconciled on 2026-11-12 after the approved #23 merge: PR #24 targets main, the Znam labels and accepted P08 assets are carried forward, the flashcard canContinue save gate is preserved, pilot tests use the current label and PRD decisions remain D-86/D-87/D-88. Introduction approval is recorded with unchanged audio bytes. Fresh types/build, 74 Vitest cases and 43 Chromium cases passed, including a complete nine-exercise flow, native pending-save retry without duplicates and interrupted-session resume. P09b merge approval and physical device/child checks remain pending.
 
-- P08 implementation prepared on 2026-11-11 at the owner's request without merging P07: picture front, word/translation/audio back, one ungraded self-assessment, safe audio/image retry, manual/automatic voice preference and cancellation/disposal. Added one Polish instruction with separate hash-pinned provenance and public disclosure. Build/types, 59 Vitest cases, 3 Python generator regressions and 35 Chromium cases passed; native profile/history checks and the mutation guard passed. Draft review base is P07; both stages and the new prompt await review/acceptance.
+- P09a accepted on 2026-11-12: the owner explicitly authorized merging PR #23 after the three-point summary and passing types/build, 62 Vitest cases and 38 Chromium cases. Approval changes documentation only; migration, validation and accepted asset bytes are unchanged.
 
-- P07 implementation prepared on 2026-11-11: listen-and-tap domain/controller/view, shuffled curated P04 choices, one checked answer, automatic correct-word feedback, post-answer translation/audio, required-target and picture readiness, safe retry and cancellation/disposal. The test audio screen launches the seven-word preview; profile/session persistence and retry/reward policies stay in later stages. Build/types, 48 Vitest cases and 29 Chromium cases passed; the inverted audio guard was caught. Screenshots/contracts are in `docs/LISTEN_AND_TAP.md`. Review/merge approval pending.
+- P09a reconciled on 2026-11-12 after the owner's approved P08 merge: PR #23 targets main; the STATUS-only conflict preserves accepted P07/P08, both prompt approvals, D-87/D-88 and Claude's review. Migration and validation implementation bytes remain unchanged from the reviewed P09a head. Types/build, 62 Vitest cases and 38 Chromium cases passed after reconciliation. The owner subsequently approved merging P09a on 2026-11-12.
 
+- P08 accepted on 2026-11-12: the owner's affirmative response approved the revised synthetic instruction and merging PR #22. The exact reviewed clip has SHA-256 f7f47e5403bd2d09a15893fbc88d48367edbaea5c19681b83b3373dd09e0bd9e; no recording or application behavior changed for this acceptance. Prior types/build, 59 Vitest, 3 generator and 35 Chromium results remain applicable.
+
+- P08 revised on 2026-11-12 for D-87/D-88 after #25/#21 were merged and #22 was retargeted to main: Znam / Jeszcze nie labels throughout the view, owner-approved instruction text, regenerated Polish clip with immutable hash/provenance, technical audio checks and refreshed screenshots. Existing flashcard grading/storage behavior and accepted P04 assets are unchanged. Types/build, 59 Vitest cases, 3 generator regressions and 35 Chromium cases passed on this revised P08 branch. The real-audio theme test reproduced a 5 s completion timeout; a separate native probe completed normally and its bounded assertion now allows 15 s of scheduling headroom. The recording and PR #22 merge were subsequently approved by the owner on 2026-11-12.
+
+- P07 accepted on 2026-11-12; the owner explicitly approved PR #21 after Claude's non-blocking review. Reconciled the STATUS-only conflict with the merged PR #25, preserving D-87/D-88 and Claude's review. P07 application/content/test bytes remain unchanged from the reviewed head.
+- Owner-supplied Claude review (2026-11-12): combined P07–P09 types/build, 74 Vitest cases and 43 Chromium cases pass, with no blocking findings. After all seven words are introduced without errors, the fixed pilot repeats its first three words; accepted for the pilot, full selection stays in P14. The owner approved the introduction instruction unchanged. P08's revised text was subsequently approved; the new recording and PR #22 merge were subsequently approved on 2026-11-12.
+
+- P07 implementation prepared on 2026-11-11: listen-and-tap domain/controller/view, shuffled curated P04 choices, one checked answer, automatic correct-word feedback, post-answer translation/audio, required-target and picture readiness, safe retry and cancellation/disposal. The test audio screen launches the seven-word preview; profile/session persistence and retry/reward policies stay in later stages. Build/types, 48 Vitest cases and 29 Chromium cases passed; the inverted audio guard was caught. Screenshots/contracts are in `docs/LISTEN_AND_TAP.md`. Subsequently accepted on 2026-11-12.
+
+- Recorded D-87 (flashcard buttons „Znam” / „Jeszcze nie”) and D-88 (Polish language quality rule, also in `AGENTS.md`). D-87 is now applied in PR #22; its revised recording was accepted on 2026-11-12.
 - Recorded the owner-supplied Claude P06 review (2026-11-11): passing types/build, 34 unit tests and 24 Chromium cases, with no blocking findings. Documented three non-blocking follow-ups under P12/P27/P33; these remain scheduled after P06 acceptance.
 
 - P06 accepted on 2026-11-11; the owner explicitly approved merging PR #20 after Claude's second review. Typed/versioned profiles, per-profile preferences, app metadata and separate contextual checked-answer history through `idb`; atomic profile/history writes, revision conflict detection, deletion and physical 90-day cleanup. Unknown formats are rejected before cleanup; no reset/fallback database is created on failure. Build/types, 34 Vitest tests and 24 Chromium cases passed, including 10 new native-storage cases; the retention mutation was caught. No profile/session UI, grading, migration or reward rules added.
@@ -91,7 +112,17 @@ _No active implementation. P07 PR #21, P08 draft PR #22 and the stacked P09a [PR
 
 ## Handoff log
 
-- 2026-11-11 · Codex · Prepared P08 on `feature/p08-flashcards` from P07 `f96a4e4`, explicitly leaving PR #21 unmerged; details/screenshots and new prompt are in `docs/FLASHCARDS.md` · Review both stages independently. After owner-approved P07 merge, retarget/update P08 to `main`; never merge the draft into its temporary P07 base. P09 follows both acceptances. Self-assessment is not checked history/mastery.
+- 2026-11-12 · Codex · Merged approved P09a #23 and reconciled P09b #24 onto main, retaining accepted recordings/Znam, the pending-save continuation guard and ordered D-86/D-87/D-88 · Await separate #24 merge approval, then Pages/device acceptance and P10. No pilot learning-policy changes; full word selection remains P14.
+
+- 2026-11-12 · Codex · Recorded explicit owner P09a #23 merge approval without changing its reviewed implementation · Next reconcile #24 onto main, carry accepted prompts/Znam forward and preserve D-86/D-87/D-88 order. #24 still needs its own merge approval and P09/P10 device/child checks remain pending.
+
+- 2026-11-12 · Codex · Merged owner-approved P08 PR #22 with exact recording approval metadata; reconciled P09a #23 onto main and retained its unchanged migration behavior · Await separate #23 merge approval. Only afterward reconcile #24, carry accepted recordings/Znam forward and preserve D-86/D-87/D-88 order; no #24 merge approval yet.
+
+- 2026-11-12 · Codex · Recorded owner approval of the exact revised P08 recording and PR #22 merge, preserving accepted asset bytes and prior checks · Next reconcile #23 with main, verify and obtain separate merge approval. #24 stays pending until #23 lands; preserve D-86/D-87/D-88 order and both accepted Polish prompts.
+
+- 2026-11-12 · Codex · Merged authorized #25/#21, retargeted #22 to main, applied D-87 and generated the text-approved revised Polish prompt · Await listening and separate #22 merge approval; do not retarget #23/#24 ahead of predecessor acceptance. Keep D-86/D-87/D-88 ordered when P09 is reconciled; introduction audio approved unchanged and pilot selection limitation accepted until P14.
+
+- 2026-11-12 · Codex · Recorded explicit merge authorization for #25/#21, preserved the Polish-language decisions and Claude's review while reconciling P07 with main · Next retarget #22, apply D-87 after text approval and obtain separate listening/merge approval; #23/#24 stay pending and are handled sequentially after their predecessors land. Preserve D-86 before D-87/D-88 when reconciling P09. Introduction prompt approved unchanged; repeated pilot fill-in words remain P14.
 
 - 2026-11-11 · Codex · Prepared P07 on `feature/p07-listen-and-tap`, with screenshots/contracts in `docs/LISTEN_AND_TAP.md`, 14 new unit cases and 5 native-browser exercise flows · Await owner review/explicit merge approval; P08 follows acceptance. P09 supplies the pilot profile/session; P11/P12 and P14/P16 retain saving/retry policies. P04 assets/observations and P06 follow-ups are preserved.
 
@@ -123,6 +154,7 @@ _No active implementation. P07 PR #21, P08 draft PR #22 and the stacked P09a [PR
 
 Newest first. One line per finished task: date · agent · what was done · anything the next agent must know.
 
+- 2026-11-12 · Claude · Reviewed stacked P07–P09 PRs #21–#24 (types/build, 74 Vitest and 43 Chromium tests pass; no blocking findings) and recorded D-87/D-88 · Before merging P08: change „Umiem” to „Znam” in the buttons and flashcard instruction, regenerate and get the recording approved; the introduction prompt was approved as is. When retargeting the stack, keep D-86 before D-87 in the PRD table.
 - 2026-11-09 · Claude · Recorded the P03 phone checks and accepted P03 · Primary target (Android tablet + Chrome) still untested on a real device: do it in P09; local-voice fallback not exercised on devices.
 - 2026-11-07 · Claude · Merged P03 into `main` before the tablet check (product owner's choice A) so it appears on the Pages test build · P03 stays open until the tablet check passes; record results in `docs/AUDIO_PLAYER.md`.
 - 2026-11-07 · Claude · Reviewed Codex's P03 branch (16 unit + 9 Chromium E2E tests pass; local fallback after a failed file may be blocked by iPad Safari's user-activation rule) and added the Pages test-build workflow (D-85) · P03 needs the Pages setting enabled and a tablet check; Codex's P03 STATUS edits will need a merge with this file.
