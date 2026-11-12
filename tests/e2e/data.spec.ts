@@ -25,7 +25,7 @@ test.beforeAll(async () => {
 
 test.beforeEach(async ({ page }) => {
   await page.route('**/__data-test.js', (route) => route.fulfill({ contentType: 'text/javascript', body: source }))
-  await page.goto('./')
+  await page.goto('./?preview=audio')
   await page.evaluate(async () => {
     window.learningDataTest = await import(new URL('__data-test.js', location.href).href)
   })
@@ -259,7 +259,7 @@ test('refuses newer document formats before cleanup can alter committed data', a
       request.onsuccess = () => resolve(request.result)
     })
     const tx = db.transaction('profiles', 'readwrite')
-    tx.objectStore('profiles').put({ ...saved, formatVersion: 2 })
+    tx.objectStore('profiles').put({ ...saved, formatVersion: 3 })
     await new Promise<void>((resolve) => { tx.oncomplete = () => resolve() })
     let rejected = false
     try {
@@ -275,3 +275,77 @@ test('refuses newer document formats before cleanup can alter committed data', a
   }, { p: profile(), a: answer(), now, day })
   expect(result).toEqual({ rejected: true, count: 1 })
 })
+
+for (const mode of ['commit', 'abort', 'invalid'] as const) {
+  test(`migrates legacy profiles atomically with history cleanup: ${mode}`, async ({ page }) => {
+    const result = await page.evaluate(async ({ a, b, old, now, mode }) => {
+      function legacy(p: typeof a) {
+        const { pilotSession: _pilot, ...rest } = p
+        return { ...rest, formatVersion: 1, revision: 7 }
+      }
+      const originals = [legacy(a), { ...legacy(b), ...(mode === 'invalid' ? { unknownField: true } : {}) }]
+      const db = await new Promise<IDBDatabase>((resolve, reject) => {
+        const request = indexedDB.open('migration-test', 1)
+        request.onupgradeneeded = () => {
+          const db = request.result
+          db.createObjectStore('profiles', { keyPath: 'id' })
+          const answers = db.createObjectStore('answers', { keyPath: ['profileId', 'id'] })
+          answers.createIndex('byProfile', 'profileId'); answers.createIndex('byAnsweredAt', 'answeredAt')
+          db.createObjectStore('settings')
+        }
+        request.onsuccess = () => resolve(request.result); request.onerror = () => reject(request.error)
+      })
+      await new Promise<void>((resolve, reject) => {
+        const tx = db.transaction(['profiles', 'answers', 'settings'], 'readwrite')
+        originals.forEach((p) => tx.objectStore('profiles').put(p))
+        tx.objectStore('answers').put(old)
+        tx.objectStore('settings').put({ formatVersion: 1, revision: 3, lastBackupAt: now }, 'app')
+        tx.oncomplete = () => resolve(); tx.onabort = () => reject(tx.error)
+      })
+      db.close()
+      const nativePut = IDBObjectStore.prototype.put
+      let aborted = false
+      if (mode === 'abort') IDBObjectStore.prototype.put = function (...args) {
+        const request = nativePut.apply(this, args)
+        if (this.name === 'profiles' && !aborted) request.addEventListener('success', () => {
+          aborted = true; this.transaction.abort()
+        }, { once: true })
+        return request
+      }
+      let error: string | null = null
+      try { const store = await window.learningDataTest.openLearningData({ name: 'migration-test', now: () => now }); store.close() }
+      catch (e) { error = (e as Error).name }
+      finally { IDBObjectStore.prototype.put = nativePut }
+      const raw = await new Promise<IDBDatabase>((resolve) => {
+        const request = indexedDB.open('migration-test', 1); request.onsuccess = () => resolve(request.result)
+      })
+      const tx = raw.transaction(['profiles', 'answers', 'settings'])
+      const read = <T,>(request: IDBRequest<T>) => new Promise<T>((resolve) => { request.onsuccess = () => resolve(request.result) })
+      const [profiles, answers, settings] = await Promise.all([
+        read(tx.objectStore('profiles').getAll()), read(tx.objectStore('answers').getAll()), read(tx.objectStore('settings').get('app')),
+      ])
+      raw.close()
+      let retried = null
+      if (mode === 'abort') {
+        const store = await window.learningDataTest.openLearningData({ name: 'migration-test', now: () => now })
+        retried = { profiles: await store.listProfiles(), answers: await store.getAnswers(a.id) }; store.close()
+      }
+      return { originals, profiles, answers, settings, error, aborted, retried }
+    }, { a: profile(), b: { ...profile('test-b'), theme: 'neon' as const }, old: { ...answer(), answeredAt: now - 91 * day }, now, mode })
+    expect(result.settings).toEqual({ formatVersion: 1, revision: 3, lastBackupAt: now })
+    if (mode === 'commit') {
+      expect(result.error).toBeNull()
+      expect(result.profiles).toEqual(result.originals.map((p) => ({ ...p, formatVersion: 2, pilotSession: null })))
+      expect(result.answers).toEqual([])
+    } else {
+      expect(result.error).not.toBeNull()
+      expect(result.profiles).toEqual(result.originals)
+      expect(result.answers).toHaveLength(1)
+      if (mode === 'abort') {
+        expect(result.aborted).toBe(true)
+        expect(result.retried?.profiles.every((p) => p.formatVersion === 2 && p.pilotSession === null)).toBe(true)
+        expect(result.retried?.answers).toEqual([])
+      }
+    }
+  })
+}

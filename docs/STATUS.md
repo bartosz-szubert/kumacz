@@ -1,17 +1,21 @@
 # Status
 
-**Phase:** Implementation (P08 accepted; P09a reconciliation next)
+**Phase:** Implementation (P09a accepted; P09b reconciliation next)
 **Last updated:** 2026-11-12
 
 ## In progress
 
-_No agent task running in this snapshot. The owner approved P08's revised recording and PR #22 merge on 2026-11-12. Next reconcile PR #23 with main and obtain its separate explicit merge approval; PR #24 waits until #23 lands._
+_No agent task running in this snapshot. The owner explicitly approved merging P09a PR #23 on 2026-11-12. Next reconcile PR #24 with main and obtain its separate explicit merge approval._
 
 ## Resume point
 
+- P09a PR #23 is accepted on 2026-11-12 and contains profile/checkpoint compatibility beyond accepted P08. Profiles move atomically from format 1 to 2; IndexedDB schema, answer history and app settings stay at version 1. Existing progress, settings and revisions are preserved. [DATA_LAYER.md](DATA_LAYER.md) describes the migration and its failure boundary.
+- After reconciliation, types/build, 62 Vitest cases and 38 Chromium cases pass. Native migration commit, actual transaction abort/rollback, malformed legacy rejection and unchanged history on failure are verified. P09a adds neither the pilot profile/session UI nor scheduling/reward policy; PR #24 supplies the pilot UI only after #23 is accepted.
+- P07/P08 and both new Polish instructions are accepted. The corrected Znam labels and exact accepted f7f47e5403bd flashcard recording are inherited from main unchanged. PR #24's introduction recording must also remain unchanged.
+
 - P08 uses **Znam / Jeszcze nie** on its flashcards, matching the owner-approved instruction text and recording (D-87/D-88). [FLASHCARDS.md](FLASHCARDS.md) contains the listening link, updated screenshots, provenance and checks. The owner subsequently accepted the exact f7f47e5403bd recording and authorized merging #22 on 2026-11-12.
 - #25 (Polish-language rules) and #21 (P07) are merged. P08 is accepted and incorporates their current AGENTS/PRD/STATUS changes. Do not continue work on a new stacked stage without explaining the risks, advising against it and obtaining confirmation.
-- #23 and #24 are still prepared for later sequential reconciliation. The owner accepted the P09 introduction prompt unchanged and supplied Claude's passing 74-Vitest/43-Chromium combined review. Repeated first-three-word fill-in after all seven words are introduced is accepted for the pilot; the full selector remains P14.
+- #23 is accepted with explicit merge approval; #24 is prepared for sequential reconciliation. The owner accepted the P09 introduction prompt unchanged and supplied Claude's passing 74-Vitest/43-Chromium combined review. Repeated first-three-word fill-in after all seven words are introduced is accepted for the pilot; the full selector remains P14.
 
 - P07 is accepted on 2026-11-12 with explicit PR #21 merge approval and no blocking findings in Claude’s review. It adds the listen-and-tap controller/view, randomized curated choices, answer feedback and translation/audio controls. The audio check launches the review preview via **Wypróbuj ćwiczenie**. [LISTEN_AND_TAP.md](LISTEN_AND_TAP.md) contains screenshots and reuse contracts.
 - Choices require a fully played target and loaded pictures. Audio/image failures offer retry without grading; a question is checked once, and stale/disposed playback cannot affect a new one. Theme selection stays outside the exercise; the synthetic-audio label and asset credits remain visible/accessible.
@@ -22,12 +26,16 @@ _No agent task running in this snapshot. The owner approved P08's revised record
 
 ## Next
 
-1. After the approved #22 merge, reconcile/retarget #23 to main, verify the migration snapshot and obtain separate explicit merge approval. Only after #23 lands, do the same for #24.
-2. Preserve the PRD decision order D-86, D-87, D-88 without renumbering when reconciling P09. Retain both accepted Polish instructions and the accepted P04 assets unchanged.
-3. After publication, complete the Android tablet + Chrome P03 online/cached-offline audio check and P09 session/resume check, then P10 child observations. These device/child checks remain pending.
-4. Run the configured WebKit project when its browser binary becomes available. P12 upgrade/refresh/conflict guidance, P14 full word selection, P27 general migrations and P33 whole-minute validation remain scheduled.
+1. After the approved #23 merge, reconcile/retarget #24 to main, preserve both accepted Polish recordings and Znam labels, keep PRD order D-86, D-87, D-88 without renumbering, and rerun the combined pilot checks.
+2. Obtain separate explicit owner merge approval for #24. Its implementation acceptance does not substitute for the physical-device or child checks.
+3. After publication, complete Android tablet + Chrome P03 online/cached-offline audio and P09 session/resume checks, then P10 child observations. These device/child checks remain pending.
+4. Run WebKit when its browser binary becomes available. P12 recovery guidance, P14 full word selection, P27 general migrations/imports and P33 whole-minute validation remain scheduled.
 
 ## Done
+
+- P09a accepted on 2026-11-12: the owner explicitly authorized merging PR #23 after the three-point summary and passing types/build, 62 Vitest cases and 38 Chromium cases. Approval changes documentation only; migration, validation and accepted asset bytes are unchanged.
+
+- P09a reconciled on 2026-11-12 after the owner's approved P08 merge: PR #23 targets main; the STATUS-only conflict preserves accepted P07/P08, both prompt approvals, D-87/D-88 and Claude's review. Migration and validation implementation bytes remain unchanged from the reviewed P09a head. Types/build, 62 Vitest cases and 38 Chromium cases passed after reconciliation. The owner subsequently approved merging P09a on 2026-11-12.
 
 - P08 accepted on 2026-11-12: the owner's affirmative response approved the revised synthetic instruction and merging PR #22. The exact reviewed clip has SHA-256 f7f47e5403bd2d09a15893fbc88d48367edbaea5c19681b83b3373dd09e0bd9e; no recording or application behavior changed for this acceptance. Prior types/build, 59 Vitest, 3 generator and 35 Chromium results remain applicable.
 
@@ -97,6 +105,10 @@ _No agent task running in this snapshot. The owner approved P08's revised record
 - Agent instructions (`AGENTS.md`, `CLAUDE.md`) and this status file.
 
 ## Handoff log
+
+- 2026-11-12 · Codex · Recorded explicit owner P09a #23 merge approval without changing its reviewed implementation · Next reconcile #24 onto main, carry accepted prompts/Znam forward and preserve D-86/D-87/D-88 order. #24 still needs its own merge approval and P09/P10 device/child checks remain pending.
+
+- 2026-11-12 · Codex · Merged owner-approved P08 PR #22 with exact recording approval metadata; reconciled P09a #23 onto main and retained its unchanged migration behavior · Await separate #23 merge approval. Only afterward reconcile #24, carry accepted recordings/Znam forward and preserve D-86/D-87/D-88 order; no #24 merge approval yet.
 
 - 2026-11-12 · Codex · Recorded owner approval of the exact revised P08 recording and PR #22 merge, preserving accepted asset bytes and prior checks · Next reconcile #23 with main, verify and obtain separate merge approval. #24 stays pending until #23 lands; preserve D-86/D-87/D-88 order and both accepted Polish prompts.
 

@@ -1,6 +1,9 @@
 import type { Theme } from './theme.ts'
+import type { PilotSession } from './pilotTypes.ts'
 
-export const DATA_FORMAT_VERSION = 1
+export const PROFILE_FORMAT_VERSION = 2
+export const ANSWER_FORMAT_VERSION = 1
+export const SETTINGS_FORMAT_VERSION = 1
 
 export interface WordProgress {
   wordId: string
@@ -14,7 +17,7 @@ export interface WordProgress {
 }
 
 export interface ProfileDocument {
-  formatVersion: typeof DATA_FORMAT_VERSION
+  formatVersion: typeof PROFILE_FORMAT_VERSION
   id: string
   revision: number // 0 for a new document; successful writes return the next revision.
   nickname: string
@@ -26,10 +29,11 @@ export interface ProfileDocument {
     completedLessonIds: string[]
     completedLevelIds: string[]
   }
+  pilotSession: PilotSession | null
 }
 
 export interface AnswerRecord {
-  formatVersion: typeof DATA_FORMAT_VERSION
+  formatVersion: typeof ANSWER_FORMAT_VERSION
   id: string
   profileId: string
   sessionId: string
@@ -49,7 +53,7 @@ export interface AnswerRecord {
 }
 
 export interface AppSettings {
-  formatVersion: typeof DATA_FORMAT_VERSION
+  formatVersion: typeof SETTINGS_FORMAT_VERSION
   revision: number
   lastBackupAt: number | null
 }
