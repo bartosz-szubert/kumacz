@@ -35,7 +35,7 @@ P11 will add session-position/reward commits and idempotent result retry; P12 ow
 
 ## P09a checkpoint compatibility — 2026-11-12
 
-PR #23 is reconciled with accepted P08 on main. Its migration/validation behavior is unchanged from the reviewed P09a snapshot; the accepted Znam labels and flashcard recording are inherited unchanged. Fresh frozen install, types/build, 62 Vitest cases and 38 Chromium cases pass. Native tests cover a complete migration, abort after a successful migration write, malformed legacy refusal and retry, including the history-cleanup rollback boundary.
+The owner accepted P09a and explicitly approved merging PR #23 on 2026-11-12 after reconciliation with accepted P08 on main. Its migration/validation behavior is unchanged from the reviewed P09a snapshot; the accepted Znam labels and flashcard recording are inherited unchanged. Fresh frozen install, types/build, 62 Vitest cases and 38 Chromium cases pass. Native tests cover a complete migration, abort after a successful migration write, malformed legacy refusal and retry, including the history-cleanup rollback boundary.
 
 - Opening prepares and validates every legacy v1 profile before writing any replacement, adds `pilotSession: null` and changes only its profile format to 2. Existing revisions, progress, themes and preferences are preserved. Unknown fields/formats are refused instead of being silently stripped.
 - All migrated profiles and normal 90-day history cleanup share one native transaction. Invalid data or an abort rolls back both operations. Retry reopens the original committed data; no reset or fallback database is created.
