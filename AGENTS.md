@@ -25,6 +25,7 @@ This file is read by every agent (Codex, Claude Code). Keep it short: every line
 - If `docs/STATUS.md` shows a task "In progress" by another agent, stop and ask the product owner.
 - One task = one branch (`feature/<name>`, `fix/<name>`, `docs/<name>`) = one pull request to `main`.
 - Merge only after the product owner's explicit "ok" in the conversation. Before asking, summarise the changes in 3–5 bullets.
+- If asked to start a stage before the previous one is merged (stacked PRs), first explain the risks (conflicts, retargeting, fixes carried across stages) and advise against it; proceed only if the product owner confirms.
 - Keep tasks small: one screen, one exercise type, one data change. Each task must fit one session's token limit; split larger work into stages (D-56).
 - Before finishing, update `docs/STATUS.md` in the same PR: move the task to Done, set Next, add a one-line handoff note.
 - Commit messages: English, imperative mood, short (`Add profile picker screen`).
