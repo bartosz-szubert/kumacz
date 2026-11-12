@@ -4,7 +4,7 @@
 
 The first module starts with beginner English for children in grades 1–3. The long-term aim is to support all primary-school grades and subjects, including German, maths, natural science and geography. These future modules are outside the initial MVP.
 
-> **Status:** Development. PRD v0.12 and P02's voices are approved. The P03 audio-player prototype is prepared for review; target-device verification is pending. The learning app is not ready yet.
+> **Status:** Development. PRD v0.12 and the pilot implementation through P09 are accepted. GitHub Pages publishes the main branch for device testing. Target-device/child checks remain pending; this is a test build, not the MVP.
 > **Live app:** coming with v1.0 on GitHub Pages.
 
 ## Why
@@ -66,6 +66,8 @@ Technology: React + TypeScript + Vite, local data in IndexedDB (D-78–D-82). Se
 For the pinned toolchain, installation, commands and verification status, see [local development](docs/DEVELOPMENT.md).
 
 The [P02 asset and voice review](docs/ASSET_LICENCES.md) records licence sources and synthetic evaluation clips; the product owner approved the voices (D-83).
+
+The [P09 pilot-session guide](docs/PILOT_SESSION.md) covers the profile picker, nine-exercise sequence, safe saving/resume and the current review status. The audio preview remains available at `?preview=audio`.
 
 The [P03 audio-player guide](docs/AUDIO_PLAYER.md) covers playback, tests, failure handling and the remaining device checks.
 

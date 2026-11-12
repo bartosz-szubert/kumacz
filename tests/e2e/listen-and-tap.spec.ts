@@ -5,7 +5,7 @@ const cat = lesson.items[0]!
 const choices = '[data-choice-id]'
 
 test('plays the target, checks a picture once and shows the translation only after answering', async ({ page }) => {
-  await page.goto('./')
+  await page.goto('./?preview=audio')
   await page.getByRole('button', { name: 'Wypróbuj ćwiczenie' }).click()
   await expect(page.getByRole('heading', { name: 'Posłuchaj i wybierz' })).toBeVisible()
   await expect(page.getByRole('radio')).toHaveCount(0)
@@ -32,7 +32,7 @@ test('plays the target, checks a picture once and shows the translation only aft
 test('shows and reads the correct answer after a wrong picture without offering an immediate correction', async ({ page }) => {
   const audio: string[] = []
   page.on('request', (request) => { if (request.url().endsWith('.mp3')) audio.push(request.url()) })
-  await page.goto('./')
+  await page.goto('./?preview=audio')
   await page.getByRole('button', { name: 'Wypróbuj ćwiczenie' }).click()
   await expect(page.locator(choices).first()).toBeEnabled()
   await page.locator(`[data-choice-id]:not([data-choice-id="${cat.id}"])`).first().click()
@@ -49,7 +49,7 @@ test('keeps missing target audio ungraded and allows retry before selecting a pi
     Object.defineProperty(window, 'speechSynthesis', { value: { getVoices: () => [], cancel() {} } })
   })
   await page.route(`**/${cat.audio.word.path}`, (route) => route.fulfill({ status: 404, body: 'missing' }))
-  await page.goto('./')
+  await page.goto('./?preview=audio')
   await page.getByRole('button', { name: 'Wypróbuj ćwiczenie' }).click()
   await expect(page.getByRole('status')).toContainText('Nie udało się odtworzyć słowa.')
   for (const button of await page.locator(choices).all()) await expect(button).toBeDisabled()
@@ -63,7 +63,7 @@ test('keeps missing target audio ungraded and allows retry before selecting a pi
 
 test('keeps Neon choices large and keyboard-operable without horizontal overflow on a phone', async ({ page }) => {
   await page.setViewportSize({ width: 360, height: 800 })
-  await page.goto('./')
+  await page.goto('./?preview=audio')
   await page.getByRole('radio', { name: 'Neon' }).check()
   await page.getByRole('button', { name: 'Wypróbuj ćwiczenie' }).click()
   await expect(page.locator(choices).first()).toBeEnabled()
@@ -82,7 +82,7 @@ test('keeps Neon choices large and keyboard-operable without horizontal overflow
 
 test('keeps a question ungraded when a picture is missing and retries the picture set', async ({ page }) => {
   await page.route(`**/${cat.picture.path}`, (route) => route.fulfill({ status: 404, body: 'missing' }))
-  await page.goto('./')
+  await page.goto('./?preview=audio')
   await page.getByRole('button', { name: 'Wypróbuj ćwiczenie' }).click()
   await expect(page.getByText('Nie udało się wczytać obrazków.')).toBeVisible()
   for (const button of await page.locator(choices).all()) await expect(button).toBeDisabled()

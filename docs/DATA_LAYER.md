@@ -2,11 +2,11 @@
 
 **Accepted:** 2026-11-11, with the owner's explicit PR #20 merge approval after Claude's second review.
 
-P06 implements the local storage boundary from PRD section 10, N-10–N-12, D-55, D-71 and D-79. P09a adds checkpoint format compatibility; P09b supplies the pilot profile/session UI separately.
+P06 implements the local storage boundary from PRD section 10, N-10–N-12, D-55, D-71 and D-79. P09 now connects the pilot's profile/session UI to this layer; the earlier audio-check preview remains separately accessible.
 
 ## Model and stores
 
-The domain interfaces in [learningData.ts](../src/domain/learningData.ts) have no React or IndexedDB dependency. [The implementation](../src/data/learningData.ts) uses the existing pinned `idb` 8.0.4. Database name: `kumacz-learning`; IndexedDB schema version: 1. Profiles now carry `formatVersion: 2` (P09 checkpoint); answer history and app settings remain at `formatVersion: 1`. P09a migrates all valid legacy v1 profiles in the opening transaction, alongside history cleanup; failure rolls the whole transaction back. Revisions and existing progress/settings are preserved.
+The domain interfaces in [learningData.ts](../src/domain/learningData.ts) have no React or IndexedDB dependency. [The implementation](../src/data/learningData.ts) uses the existing pinned `idb` 8.0.4. Database name: `kumacz-learning`; IndexedDB schema version: 1. Profiles now carry `formatVersion: 2` (P09 checkpoint); answer history and app settings remain at `formatVersion: 1`. P09a migrates all valid legacy v1 profiles in the opening transaction, alongside history cleanup; failure rolls the whole transaction back. Revisions and existing progress/settings are preserved. See [PILOT_SESSION.md](PILOT_SESSION.md).
 
 | Store | Key | Contents |
 |---|---|---|

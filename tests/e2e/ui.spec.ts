@@ -16,7 +16,7 @@ function contrast(first: string, second: string) {
 test('switches themes with native keyboard controls while preserving content and active audio', async ({ page }) => {
   const requests: string[] = []
   page.on('request', request => { if (request.url().endsWith('.mp3')) requests.push(request.url()) })
-  await page.goto('./')
+  await page.goto('./?preview=audio')
   const electric = page.getByRole('radio', { name: 'Electric', exact: true })
   const neon = page.getByRole('radio', { name: 'Neon', exact: true })
   await expect(electric).toBeChecked()
@@ -40,7 +40,7 @@ test('switches themes with native keyboard controls while preserving content and
 })
 
 test('provides a visible keyboard skip link and focus indicator in both themes', async ({ page }) => {
-  await page.goto('./')
+  await page.goto('./?preview=audio')
   await page.keyboard.press('Tab')
   const skip = page.getByRole('link', { name: 'Przejdź do treści' })
   await expect(skip).toBeFocused()
@@ -50,6 +50,8 @@ test('provides a visible keyboard skip link and focus indicator in both themes',
   for (const theme of ['Electric', 'Neon']) {
     await page.getByRole('radio', { name: theme, exact: true }).check()
     const play = page.getByRole('region', { name: 'Angielski' }).getByRole('button', { name: 'Posłuchaj' })
+    await page.keyboard.press('Tab')
+    await expect(page.getByRole('button', { name: 'Wróć do profili', exact: true })).toBeFocused()
     await page.keyboard.press('Tab')
     await expect(play).toBeFocused()
     const focus = await play.evaluate(element => {
@@ -64,7 +66,7 @@ test('provides a visible keyboard skip link and focus indicator in both themes',
 test('keeps touch targets and readable text without overflow in both themes, orientations and enlarged text', async ({ page }) => {
   for (const viewport of [{ width: 360, height: 740 }, { width: 768, height: 1024 }, { width: 1024, height: 768 }]) {
     await page.setViewportSize(viewport)
-    await page.goto('./')
+    await page.goto('./?preview=audio')
     for (const theme of ['Electric', 'Neon']) {
       await page.getByRole('radio', { name: theme, exact: true }).check()
       await page.getByText('O nagraniach', { exact: true }).click()
@@ -89,7 +91,7 @@ test('keeps touch targets and readable text without overflow in both themes, ori
 })
 
 test('provides sufficient text and control contrast in both themes', async ({ page }) => {
-  await page.goto('./')
+  await page.goto('./?preview=audio')
   for (const theme of ['Electric', 'Neon']) {
     await page.getByRole('radio', { name: theme, exact: true }).check()
     await page.getByText('O nagraniach', { exact: true }).click()
@@ -117,7 +119,7 @@ test('provides sufficient text and control contrast in both themes', async ({ pa
 
 test('removes movement when the device requests reduced motion', async ({ page }) => {
   await page.emulateMedia({ reducedMotion: 'reduce' })
-  await page.goto('./')
+  await page.goto('./?preview=audio')
   for (const theme of ['Electric', 'Neon']) {
     await page.getByRole('radio', { name: theme, exact: true }).check()
     const play = page.getByRole('region', { name: 'Angielski' }).getByRole('button', { name: 'Posłuchaj' })

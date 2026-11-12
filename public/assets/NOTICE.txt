@@ -1,4 +1,4 @@
-Kumacz P04 pilot and P08 flashcard assets
+Kumacz P04 pilot, P08 flashcard and P09 introduction assets
 
 Pictures (assets/pictures/twemoji/*.svg):
 Twemoji graphics: Twitter, Inc. and other contributors;
@@ -35,3 +35,10 @@ in the audio context (F-45, D-84). Preserve the credits in About (F-33).
 The owner accepted the selected P04 clips on 2026-11-10 (D-83).
 Any regenerated replacement requires its own listening review.
 See docs/PILOT_LESSON.md and docs/ASSET_LICENCES.md in the repository.
+
+P09 introduction instruction (assets/audio/shared/pl-PL-introduction.*.mp3):
+Spójrz na obrazek i posłuchaj słowa.
+Supertonic 3 preset 0, Polish; generated locally with sherpa-onnx 1.13.8.
+Same model licence and synthetic disclosure as above.
+Exact model/input/output hashes, configuration and fixed preparation gain:
+tools/content/introduction-audio-provenance.json in the Kumacz repository.

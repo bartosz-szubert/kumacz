@@ -22,11 +22,12 @@ function statusText(state: State) {
 
 interface Props {
   controller: ListenAndTapController
+  canContinue?: boolean
   onNext(): void
   onChecked?(answer: CheckedChoice): void
 }
 
-export function ListenAndTap({ controller, onNext, onChecked }: Props) {
+export function ListenAndTap({ controller, onNext, onChecked, canContinue = true }: Props) {
   // Same immutable snapshot/subscription bridge as the existing P03 audio player.
   // https://react.dev/reference/react/useSyncExternalStore
   const state = useSyncExternalStore(controller.subscribe, controller.getSnapshot)
@@ -60,7 +61,7 @@ export function ListenAndTap({ controller, onNext, onChecked }: Props) {
           </Button>
           <Button tone="secondary" disabled={busy} onClick={() => { void controller.playInstruction() }}>Posłuchaj polecenia</Button>
         </div>
-        <p id="listen-status" role="status" className="playback-status">{statusText(state)}</p>
+        <p id="listen-status" role="status" className="playback-status">{state.answer && !canContinue && !busy ? 'Poczekaj na zapis postępów.' : statusText(state)}</p>
       </div>
       <div id="picture-status" aria-live="polite">
         {pictureError ? <>
@@ -92,7 +93,7 @@ export function ListenAndTap({ controller, onNext, onChecked }: Props) {
         <p className="answer-word"><strong lang="en-GB">{view.target.word}</strong><span aria-hidden="true"> — </span><span lang="pl-PL">{view.target.translation}</span></p>
         <div className="buttons">
           <Button tone="secondary" disabled={busy} onClick={() => { void controller.playTranslation() }}>Posłuchaj tłumaczenia</Button>
-          <Button disabled={busy} onClick={onNext}>Dalej</Button>
+          <Button disabled={busy || !canContinue} onClick={onNext}>Dalej</Button>
         </div>
       </div>}
     </section>

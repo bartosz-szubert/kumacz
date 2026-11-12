@@ -2,7 +2,7 @@
 
 P04 reuses this preparation pipeline with the optional `--manifest tools/content/pilot-animals-provenance.json` argument. The original command and fixtures remain unchanged. See [the pilot recipe and listening review](../../docs/PILOT_LESSON.md).
 
-P08 uses `--manifest tools/content/flashcard-audio-provenance.json` for its new Polish flashcard instruction, with the same approved Supertonic 3 preset and corrected `pl` configuration. Its source/output hashes and measured constant gain are separate from the accepted P04 word recordings; no P04 clip is regenerated. Listening review remains part of P08 review.
+P08 uses `--manifest tools/content/flashcard-audio-provenance.json` for its new Polish flashcard instruction, with the same approved Supertonic 3 preset and corrected `pl` configuration. Its source/output hashes and measured constant gain are separate from the accepted P04 word recordings; no P04 clip is regenerated. The revised D-87 recording was accepted by the owner on 2026-11-12; retain its exact hash-named bytes.
 
 **Language correction (2026-11-09):** the original Polish fixture and P04 revision 1 accidentally used Supertonic's default English language. In the pinned Python binding, changing `generation.extra["lang"]` modifies a dictionary copy. The fixed generator assigns the complete property, `generation.extra = {"lang": "pl"}`. All eight P04 Polish clips, including the instruction, were regenerated under fresh hashed paths for repeat listening. Original P02 bytes/hashes remain historical evidence, not approved Polish learning content; a current run of this corrected recipe intentionally will not reproduce that erroneous language setting. See the [correction record](../../docs/PILOT_LESSON.md#polish-pronunciation-correction--2026-11-09).
 
@@ -17,6 +17,8 @@ The tests check the real native configuration readback for Polish words/instruct
 P04 revision 3 also records optional per-clip `synthesisText` (e.g. `Dog.` while display/fallback text stays `dog`) and `gainDb`. The generator applies fixed gain with FFmpeg's `volume` filter before MP3 encoding. With either field absent, the corresponding input/encoding behaviour is unchanged. These are reviewed content-preparation settings, not runtime controls. The pilot provenance records the actual source/encoded levels and target; remeasure the final decoded MP3 after regeneration and listen, rather than assuming an old gain is suitable for new inference output. Keep sample peaks below −3 dBFS; do not slow or trim short words to hide unclear consonants.
 
 Optional preparation tooling, separate from the web app. The committed MP3s are synthetic evaluation clips; [the licence review](../../docs/ASSET_LICENCES.md) describes the proposed voices and disclosure requirements. No synthesis runs in the browser, no hosted generation service is used, and no models are committed.
+
+P09 uses `--manifest tools/content/introduction-audio-provenance.json` for the introduction instruction, with the same approved preset and `pl` configuration. It has separate hashes and measured preparation gain; the owner accepted the recording unchanged on 2026-11-12.
 
 ## Reproduce the generation recipe
 
