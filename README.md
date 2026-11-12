@@ -4,7 +4,7 @@
 
 The first module starts with beginner English for children in grades 1–3. The long-term aim is to support all primary-school grades and subjects, including German, maths, natural science and geography. These future modules are outside the initial MVP.
 
-> **Status:** Development. PRD v0.12, P01–P08 and P09a are accepted. P09b (profiles and the saved pilot session) is prepared for separate merge approval. Target-device/child checks remain pending; this is a test build, not the MVP.
+> **Status:** Development. PRD v0.12 and the pilot implementation through P09 are accepted. GitHub Pages publishes the main branch for device testing. Target-device/child checks remain pending; this is a test build, not the MVP.
 > **Live app:** coming with v1.0 on GitHub Pages.
 
 ## Why

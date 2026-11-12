@@ -4,7 +4,7 @@ Prepared on 2026-11-11; reconciled with accepted P07/P08/P09a on 2026-11-12. Thi
 
 ## Review and branch order
 
-P09a compatibility is accepted and merged in [PR #23](https://github.com/bartosz-szubert/kumacz/pull/23), after P07 #21, language decisions #25 and P08 #22. P09b [PR #24](https://github.com/bartosz-szubert/kumacz/pull/24) now targets main and incorporates those accepted changes. It is ready for separate review/merge approval. The original stack has been reconciled sequentially; no new stacked stage is started. The existing Pages workflow publishes main only, so this draft does not yet change the public pilot build.
+P09a compatibility is accepted and merged in [PR #23](https://github.com/bartosz-szubert/kumacz/pull/23), after P07 #21, language decisions #25 and P08 #22. P09b [PR #24](https://github.com/bartosz-szubert/kumacz/pull/24) now targets main and incorporates those accepted changes. The owner explicitly accepted the implementation and approved merging #24 on 2026-11-12. The original stack has been reconciled sequentially; no new stacked stage is started. The existing Pages workflow publishes main after the approved merge. Verify the corresponding workflow succeeds before testing the published pilot; the public URL is https://bartosz-szubert.github.io/kumacz/.
 
 ## Run and try it
 
@@ -44,7 +44,7 @@ Fresh verification after main reconciliation on 2026-11-12: types/build, 74 Vite
 
 Types/build, 74 Vitest cases, 3 Python generator regressions and 43 Chromium cases passed for the combined implementation. The independent P09a snapshot also passed types/build, 62 Vitest cases and 38 Chromium cases. A corrective-retry classification mutation was caught; the domain source was restored byte for byte and its focused tests passed. Production-preview capture had no console/page errors, external requests or horizontal overflow. Screenshots (invented profiles): [Electric profiles](review/p09-electric-profiles.png), [Neon introduction at 360 px](review/p09-neon-introduction-phone.png). The images were visually inspected. More handoff context is in [STATUS.md](STATUS.md). Coverage includes the complete nine-exercise flow, native checkpoint/history atomicity, refresh resumption without duplicate answers, profile isolation, local date placement across the Warsaw DST boundary, missing introduction audio/replay, narrow-screen controls, migration success, invalid legacy rejection and an actual transaction abort after a successful migration write request. Existing audio/P07/P08 preview flows remain covered.
 
-On the actual Android tablet with Chrome, after P09b is separately approved/merged and the build is published:
+On the actual Android tablet with Chrome, after the approved P09b merge and successful Pages publication:
 
 1. Run [AUDIO_PLAYER.md](AUDIO_PLAYER.md)'s P03 check: both clips online, then replay with airplane mode while the page stays open. This checks cached audio; it does not claim offline app startup, which is P30/P31.
 2. Create a test profile, complete a session, reload and resume an interrupted session. Check word clarity and volume, both instruction recordings, touch controls and both themes.
