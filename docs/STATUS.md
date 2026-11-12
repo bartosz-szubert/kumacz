@@ -1,15 +1,15 @@
 # Status
 
-**Phase:** Implementation (P07 prepared; review pending)
-**Last updated:** 2026-11-11
+**Phase:** Implementation (P07 accepted; P08 language/audio follow-up next)
+**Last updated:** 2026-11-12
 
 ## In progress
 
-_No agent task running. P07 is prepared on `feature/p07-listen-and-tap`; review and explicit owner merge approval are pending._
+_Codex is reconciling the approved P07 merge with main, then retargeting P08 PR #22 to main for D-87. The revised flashcard instruction awaits the owner's text approval before audio generation. No merge approval for #22, #23 or #24._
 
 ## Resume point
 
-- P07 adds the listen-and-tap controller/view, randomized curated choices, answer feedback and translation/audio controls. The audio check launches the review preview via **Wypróbuj ćwiczenie**. [LISTEN_AND_TAP.md](LISTEN_AND_TAP.md) contains screenshots and reuse contracts.
+- P07 is accepted on 2026-11-12 with explicit PR #21 merge approval and no blocking findings in Claude’s review. It adds the listen-and-tap controller/view, randomized curated choices, answer feedback and translation/audio controls. The audio check launches the review preview via **Wypróbuj ćwiczenie**. [LISTEN_AND_TAP.md](LISTEN_AND_TAP.md) contains screenshots and reuse contracts.
 - Choices require a fully played target and loaded pictures. Audio/image failures offer retry without grading; a question is checked once, and stale/disposed playback cannot affect a new one. Theme selection stays outside the exercise; the synthetic-audio label and asset credits remain visible/accessible.
 - Build/types, 48 Vitest cases and 29 Chromium cases passed, including 14 new domain/controller cases and 5 exercise browser flows. The inverted audio-readiness mutation was caught and restored. WebKit remains unavailable; target-device/child checks remain P09/P10.
 - P06 is accepted in main (PR #20). Its P12 upgrade-closed connection/refresh, P27 field-change compatibility and P33 whole-minute follow-ups remain scheduled ([DATA_LAYER.md](DATA_LAYER.md#second-review--2026-11-11)). P07 changes no stored shape. P09 integrates the pilot profile/session; P11/P12 own saving, P14/P16 own session/retry policy.
@@ -18,15 +18,19 @@ _No agent task running. P07 is prepared on `feature/p07-listen-and-tap`; review 
 
 ## Next
 
-1. Review P07 ([LISTEN_AND_TAP.md](LISTEN_AND_TAP.md)) and obtain explicit PR merge approval. After acceptance, continue with P08 Flashcards (`docs/IMPLEMENTATION.md`).
+1. Retarget P08 PR #22 to main after P07 lands. Apply D-87 (Znam / Jeszcze nie); show the revised instruction under D-88 before generating its audio, then obtain listening approval and a separate explicit merge approval.
 2. In P09, run the P03 audio check on the Android tablet with Chrome, including offline replay (`docs/AUDIO_PLAYER.md`).
 3. Run the configured WebKit project when its browser download is available (HTTP 403 for the official Playwright hosts in agent environments).
 4. In P10, observe recognition of head-only versus whole-animal pictures. Consider the reported Polish leading silence when preparing later lessons; accepted P04 assets are unchanged.
 
 ## Done
 
-- P07 implementation prepared on 2026-11-11: listen-and-tap domain/controller/view, shuffled curated P04 choices, one checked answer, automatic correct-word feedback, post-answer translation/audio, required-target and picture readiness, safe retry and cancellation/disposal. The test audio screen launches the seven-word preview; profile/session persistence and retry/reward policies stay in later stages. Build/types, 48 Vitest cases and 29 Chromium cases passed; the inverted audio guard was caught. Screenshots/contracts are in `docs/LISTEN_AND_TAP.md`. Review/merge approval pending.
+- P07 accepted on 2026-11-12; the owner explicitly approved PR #21 after Claude's non-blocking review. Reconciled the STATUS-only conflict with the merged PR #25, preserving D-87/D-88 and Claude's review. P07 application/content/test bytes remain unchanged from the reviewed head.
+- Owner-supplied Claude review (2026-11-12): combined P07–P09 types/build, 74 Vitest cases and 43 Chromium cases pass, with no blocking findings. After all seven words are introduced without errors, the fixed pilot repeats its first three words; accepted for the pilot, full selection stays in P14. The owner approved the introduction instruction unchanged. P08's revised prompt still needs text/listening approval.
 
+- P07 implementation prepared on 2026-11-11: listen-and-tap domain/controller/view, shuffled curated P04 choices, one checked answer, automatic correct-word feedback, post-answer translation/audio, required-target and picture readiness, safe retry and cancellation/disposal. The test audio screen launches the seven-word preview; profile/session persistence and retry/reward policies stay in later stages. Build/types, 48 Vitest cases and 29 Chromium cases passed; the inverted audio guard was caught. Screenshots/contracts are in `docs/LISTEN_AND_TAP.md`. Subsequently accepted on 2026-11-12.
+
+- Recorded D-87 (flashcard buttons „Znam” / „Jeszcze nie”) and D-88 (Polish language quality rule, also in `AGENTS.md`). P08 must apply D-87: button labels and a regenerated, owner-approved flashcard instruction.
 - Recorded the owner-supplied Claude P06 review (2026-11-11): passing types/build, 34 unit tests and 24 Chromium cases, with no blocking findings. Documented three non-blocking follow-ups under P12/P27/P33; these remain scheduled after P06 acceptance.
 
 - P06 accepted on 2026-11-11; the owner explicitly approved merging PR #20 after Claude's second review. Typed/versioned profiles, per-profile preferences, app metadata and separate contextual checked-answer history through `idb`; atomic profile/history writes, revision conflict detection, deletion and physical 90-day cleanup. Unknown formats are rejected before cleanup; no reset/fallback database is created on failure. Build/types, 34 Vitest tests and 24 Chromium cases passed, including 10 new native-storage cases; the retention mutation was caught. No profile/session UI, grading, migration or reward rules added.
@@ -86,6 +90,8 @@ _No agent task running. P07 is prepared on `feature/p07-listen-and-tap`; review 
 
 ## Handoff log
 
+- 2026-11-12 · Codex · Recorded explicit merge authorization for #25/#21, preserved the Polish-language decisions and Claude's review while reconciling P07 with main · Next retarget #22, apply D-87 after text approval and obtain separate listening/merge approval; #23/#24 stay pending and are handled sequentially after their predecessors land. Preserve D-86 before D-87/D-88 when reconciling P09. Introduction prompt approved unchanged; repeated pilot fill-in words remain P14.
+
 - 2026-11-11 · Codex · Prepared P07 on `feature/p07-listen-and-tap`, with screenshots/contracts in `docs/LISTEN_AND_TAP.md`, 14 new unit cases and 5 native-browser exercise flows · Await owner review/explicit merge approval; P08 follows acceptance. P09 supplies the pilot profile/session; P11/P12 and P14/P16 retain saving/retry policies. P04 assets/observations and P06 follow-ups are preserved.
 
 - 2026-11-11 · Codex · Recorded the owner's P06 acceptance and explicit PR #20 merge instruction after Claude's second review; prepared acceptance metadata in the same PR · Next is P07 Listen and tap. P12 refresh handling, P27 field-change compatibility and P33 whole-minute settings remain scheduled, along with P09/P10 device/child checks.
@@ -116,6 +122,7 @@ _No agent task running. P07 is prepared on `feature/p07-listen-and-tap`; review 
 
 Newest first. One line per finished task: date · agent · what was done · anything the next agent must know.
 
+- 2026-11-12 · Claude · Reviewed stacked P07–P09 PRs #21–#24 (types/build, 74 Vitest and 43 Chromium tests pass; no blocking findings) and recorded D-87/D-88 · Before merging P08: change „Umiem” to „Znam” in the buttons and flashcard instruction, regenerate and get the recording approved; the introduction prompt was approved as is. When retargeting the stack, keep D-86 before D-87 in the PRD table.
 - 2026-11-09 · Claude · Recorded the P03 phone checks and accepted P03 · Primary target (Android tablet + Chrome) still untested on a real device: do it in P09; local-voice fallback not exercised on devices.
 - 2026-11-07 · Claude · Merged P03 into `main` before the tablet check (product owner's choice A) so it appears on the Pages test build · P03 stays open until the tablet check passes; record results in `docs/AUDIO_PLAYER.md`.
 - 2026-11-07 · Claude · Reviewed Codex's P03 branch (16 unit + 9 Chromium E2E tests pass; local fallback after a failed file may be blocked by iPad Safari's user-activation rule) and added the Pages test-build workflow (D-85) · P03 needs the Pages setting enabled and a tablet check; Codex's P03 STATUS edits will need a merge with this file.
