@@ -6,7 +6,7 @@ P06 implements the local storage boundary from PRD section 10, N-10–N-12, D-55
 
 ## Model and stores
 
-The domain interfaces in [learningData.ts](../src/domain/learningData.ts) have no React or IndexedDB dependency. [The implementation](../src/data/learningData.ts) uses the existing pinned `idb` 8.0.4. Database name: `kumacz-learning`; IndexedDB schema version: 1. Profiles now carry `formatVersion: 2` (P09 checkpoint); answer history and app settings remain at `formatVersion: 1`. IndexedDB schema version remains 1. P09 migrates all valid legacy v1 profiles in the opening transaction, alongside history cleanup; failure rolls the whole transaction back. Revisions and existing progress/settings are preserved.
+The domain interfaces in [learningData.ts](../src/domain/learningData.ts) have no React or IndexedDB dependency. [The implementation](../src/data/learningData.ts) uses the existing pinned `idb` 8.0.4. Database name: `kumacz-learning`; IndexedDB schema version: 1. Profiles now carry `formatVersion: 2` (P09 checkpoint); answer history and app settings remain at `formatVersion: 1`. P09a migrates all valid legacy v1 profiles in the opening transaction, alongside history cleanup; failure rolls the whole transaction back. Revisions and existing progress/settings are preserved.
 
 | Store | Key | Contents |
 |---|---|---|
@@ -31,9 +31,18 @@ Call `openLearningData()` from feature orchestration. Its returned `LearningData
 
 Read/write transactions request standard `durability: 'strict'`. This is a browser durability hint, not a guarantee against eviction or hardware failure. Awaiting `tx.done` is the logical commit boundary. Persistence requests and backup reminders remain P34.
 
-P11 will add session-position/reward commits and idempotent result retry; P12 owns the pending-result/save-error UI. The core deliberately rejects duplicate appends rather than silently treating them as a repeated reward. Backup import/export and actual format migrations remain P26/P27; a later stage that changes the stored shape must address compatibility explicitly. No reset, migration, import UI or policy is invented here.
+P11 will add session-position/reward commits and idempotent result retry; P12 owns the pending-result/save-error UI. The core deliberately rejects duplicate appends rather than silently treating them as a repeated reward. P09a adds the format 1→2 opening migration described below. General backup import/export and further migrations remain P26/P27; a later stage that changes the stored shape must address compatibility explicitly. No reset or migration/import UI is added here.
 
-## Verification
+## P09a checkpoint compatibility — 2026-11-12
+
+PR #23 is reconciled with accepted P08 on main. Its migration/validation behavior is unchanged from the reviewed P09a snapshot; the accepted Znam labels and flashcard recording are inherited unchanged. Fresh frozen install, types/build, 62 Vitest cases and 38 Chromium cases pass. Native tests cover a complete migration, abort after a successful migration write, malformed legacy refusal and retry, including the history-cleanup rollback boundary.
+
+- Opening prepares and validates every legacy v1 profile before writing any replacement, adds `pilotSession: null` and changes only its profile format to 2. Existing revisions, progress, themes and preferences are preserved. Unknown fields/formats are refused instead of being silently stripped.
+- All migrated profiles and normal 90-day history cleanup share one native transaction. Invalid data or an abort rolls back both operations. Retry reopens the original committed data; no reset or fallback database is created.
+- The optional checkpoint has a versioned, three-word fixed pilot plan, introduction IDs, attempt offsets, cursor and ordered result prefix. Validation rejects mismatched steps/results or unknown fields. The feature controller and actual session UI remain in PR #24.
+- Answer/settings document formats and IndexedDB schema remain 1. General migration/import work is still P27; this immediate shape compatibility cannot wait until that stage.
+
+## P06 verification (accepted snapshot)
 
 - Clean lockfile install with dependency scripts disabled; no package or lockfile changes.
 - `npm run check`: TypeScript and production build.

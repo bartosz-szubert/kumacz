@@ -15,7 +15,7 @@ function statusText(state: State) {
     instruction: 'Nie udało się odtworzyć polecenia. Spróbuj ponownie.',
   }[state.audioError]
   if (state.result) return 'Możesz przejść dalej.'
-  return state.side === 'front' ? 'Możesz odwrócić kartę.' : 'Wybierz: Umiem albo Jeszcze nie.'
+  return state.side === 'front' ? 'Możesz odwrócić kartę.' : 'Wybierz: Znam albo Jeszcze nie.'
 }
 
 interface Props {
@@ -85,12 +85,12 @@ export function Flashcard({ controller, onNext, onAssessed }: Props) {
         <p role="status" className="playback-status">{status}</p>
       </div>
       {back && (state.result ? <div className="flashcard-result">
-        <p>Wybrano: {state.result.value === 'know' ? 'Umiem' : 'Jeszcze nie'}.</p>
+        <p>Wybrano: {state.result.value === 'know' ? 'Znam' : 'Jeszcze nie'}.</p>
         <Button disabled={busy} onClick={onNext}>Dalej</Button>
       </div> : <>
         <div className="flashcard-return"><Button tone="secondary" onClick={() => { void controller.flip() }}>Zobacz obrazek</Button></div>
         <div className="buttons flashcard-assessment" role="group" aria-label="Samoocena">
-          <Button disabled={busy} onClick={() => assess('know')}>Umiem</Button>
+          <Button disabled={busy} onClick={() => assess('know')}>Znam</Button>
           <Button tone="secondary" disabled={busy} onClick={() => assess('not-yet')}>Jeszcze nie</Button>
         </div>
       </>)}
