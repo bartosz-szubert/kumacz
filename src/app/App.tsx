@@ -11,6 +11,14 @@ import { ListenAndTap } from '../features/listenAndTap/ListenAndTap'
 import { createListenAndTap } from '../features/listenAndTap/controller'
 import type { ListenAndTapController } from '../features/listenAndTap/controller'
 import { buildListenAndTap } from '../features/listenAndTap/question'
+import flashcardInstruction from '../content/flashcard-instruction.json'
+import { Flashcard } from '../features/flashcards/Flashcard'
+import { createFlashcard } from '../features/flashcards/controller'
+import type { FlashcardController } from '../features/flashcards/controller'
+
+type Preview =
+  | { kind: 'listen-and-tap'; index: number; controller: ListenAndTapController }
+  | { kind: 'flashcard'; index: number; controller: FlashcardController }
 
 function statusText(state: AudioState, id: string) {
   if (state.status === 'idle' || state.clipId !== id) return 'Naciśnij, aby posłuchać.'
@@ -26,7 +34,7 @@ export function App() {
   const audio = useAudioPlayer()
   // Test-screen preview; actual profile/session integration starts in P09.
   const [theme, setTheme] = useState<Theme>('electric')
-  const [exercise, setExercise] = useState<{ index: number; controller: ListenAndTapController } | null>(null)
+  const [exercise, setExercise] = useState<Preview | null>(null)
   const previewNumber = useRef(0)
   function launchExercise(index: number) {
     if (exercise) exercise.controller.dispose()
@@ -34,9 +42,16 @@ export function App() {
     const item = lesson.items[index]!
     const view = buildListenAndTap(lesson, item.id, `preview.${++previewNumber.current}`)
     const controller = createListenAndTap(view, audio)
-    setExercise({ index, controller })
+    setExercise({ kind: 'listen-and-tap', index, controller })
     // Begin playback in the entry/continue tap, before any await (P03/D-60).
     void controller.start()
+  }
+  function launchFlashcard(index: number) {
+    if (exercise) exercise.controller.dispose()
+    else audio.stop()
+    const controller = createFlashcard({ id: `flashcard-preview.${++previewNumber.current}`,
+      item: lesson.items[index]!, instruction: flashcardInstruction }, audio)
+    setExercise({ kind: 'flashcard', index, controller })
   }
   return (
     <AppShell theme={theme} actions={exercise ? undefined : <ThemeSelector theme={theme} onChange={setTheme} />} footer={
@@ -57,8 +72,11 @@ export function App() {
         <div className="exercise-navigation"><Button tone="secondary" onClick={() => {
           exercise.controller.dispose(); setExercise(null)
         }}>Wróć do dźwięku</Button></div>
-        <ListenAndTap key={exercise.controller.view.question.id} controller={exercise.controller}
-          onNext={() => launchExercise((exercise.index + 1) % lesson.items.length)} />
+        {exercise.kind === 'listen-and-tap'
+          ? <ListenAndTap key={exercise.controller.view.question.id} controller={exercise.controller}
+            onNext={() => launchExercise((exercise.index + 1) % lesson.items.length)} />
+          : <Flashcard key={exercise.controller.view.id} controller={exercise.controller}
+            onNext={() => launchFlashcard((exercise.index + 1) % lesson.items.length)} />}
       </> : <>
       <header className="page-heading">
         <h1>Sprawdź dźwięk</h1>
@@ -90,7 +108,10 @@ export function App() {
           )
         })}
       </div>
-      <div className="exercise-navigation"><Button onClick={() => launchExercise(0)}>Wypróbuj ćwiczenie</Button></div>
+      <div className="buttons exercise-navigation">
+        <Button onClick={() => launchExercise(0)}>Wypróbuj ćwiczenie</Button>
+        <Button tone="secondary" onClick={() => launchFlashcard(0)}>Wypróbuj fiszki</Button>
+      </div>
       </>}
     </AppShell>
   )

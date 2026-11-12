@@ -1,13 +1,17 @@
 # Status
 
-**Phase:** Implementation (P07 accepted; P08 language/audio follow-up next)
+**Phase:** Implementation (P08 accepted; P09a reconciliation next)
 **Last updated:** 2026-11-12
 
 ## In progress
 
-_Codex is reconciling the approved P07 merge with main, then retargeting P08 PR #22 to main for D-87. The revised flashcard instruction awaits the owner's text approval before audio generation. No merge approval for #22, #23 or #24._
+_No agent task running in this snapshot. The owner approved P08's revised recording and PR #22 merge on 2026-11-12. Next reconcile PR #23 with main and obtain its separate explicit merge approval; PR #24 waits until #23 lands._
 
 ## Resume point
+
+- P08 uses **Znam / Jeszcze nie** on its flashcards, matching the owner-approved instruction text and recording (D-87/D-88). [FLASHCARDS.md](FLASHCARDS.md) contains the listening link, updated screenshots, provenance and checks. The owner subsequently accepted the exact f7f47e5403bd recording and authorized merging #22 on 2026-11-12.
+- #25 (Polish-language rules) and #21 (P07) are merged. P08 is accepted and incorporates their current AGENTS/PRD/STATUS changes. Do not continue work on a new stacked stage without explaining the risks, advising against it and obtaining confirmation.
+- #23 and #24 are still prepared for later sequential reconciliation. The owner accepted the P09 introduction prompt unchanged and supplied Claude's passing 74-Vitest/43-Chromium combined review. Repeated first-three-word fill-in after all seven words are introduced is accepted for the pilot; the full selector remains P14.
 
 - P07 is accepted on 2026-11-12 with explicit PR #21 merge approval and no blocking findings in Claude’s review. It adds the listen-and-tap controller/view, randomized curated choices, answer feedback and translation/audio controls. The audio check launches the review preview via **Wypróbuj ćwiczenie**. [LISTEN_AND_TAP.md](LISTEN_AND_TAP.md) contains screenshots and reuse contracts.
 - Choices require a fully played target and loaded pictures. Audio/image failures offer retry without grading; a question is checked once, and stale/disposed playback cannot affect a new one. Theme selection stays outside the exercise; the synthetic-audio label and asset credits remain visible/accessible.
@@ -18,19 +22,23 @@ _Codex is reconciling the approved P07 merge with main, then retargeting P08 PR 
 
 ## Next
 
-1. Retarget P08 PR #22 to main after P07 lands. Apply D-87 (Znam / Jeszcze nie); show the revised instruction under D-88 before generating its audio, then obtain listening approval and a separate explicit merge approval.
-2. In P09, run the P03 audio check on the Android tablet with Chrome, including offline replay (`docs/AUDIO_PLAYER.md`).
-3. Run the configured WebKit project when its browser download is available (HTTP 403 for the official Playwright hosts in agent environments).
-4. In P10, observe recognition of head-only versus whole-animal pictures. Consider the reported Polish leading silence when preparing later lessons; accepted P04 assets are unchanged.
+1. After the approved #22 merge, reconcile/retarget #23 to main, verify the migration snapshot and obtain separate explicit merge approval. Only after #23 lands, do the same for #24.
+2. Preserve the PRD decision order D-86, D-87, D-88 without renumbering when reconciling P09. Retain both accepted Polish instructions and the accepted P04 assets unchanged.
+3. After publication, complete the Android tablet + Chrome P03 online/cached-offline audio check and P09 session/resume check, then P10 child observations. These device/child checks remain pending.
+4. Run the configured WebKit project when its browser binary becomes available. P12 upgrade/refresh/conflict guidance, P14 full word selection, P27 general migrations and P33 whole-minute validation remain scheduled.
 
 ## Done
 
+- P08 accepted on 2026-11-12: the owner's affirmative response approved the revised synthetic instruction and merging PR #22. The exact reviewed clip has SHA-256 f7f47e5403bd2d09a15893fbc88d48367edbaea5c19681b83b3373dd09e0bd9e; no recording or application behavior changed for this acceptance. Prior types/build, 59 Vitest, 3 generator and 35 Chromium results remain applicable.
+
+- P08 revised on 2026-11-12 for D-87/D-88 after #25/#21 were merged and #22 was retargeted to main: Znam / Jeszcze nie labels throughout the view, owner-approved instruction text, regenerated Polish clip with immutable hash/provenance, technical audio checks and refreshed screenshots. Existing flashcard grading/storage behavior and accepted P04 assets are unchanged. Types/build, 59 Vitest cases, 3 generator regressions and 35 Chromium cases passed on this revised P08 branch. The real-audio theme test reproduced a 5 s completion timeout; a separate native probe completed normally and its bounded assertion now allows 15 s of scheduling headroom. The recording and PR #22 merge were subsequently approved by the owner on 2026-11-12.
+
 - P07 accepted on 2026-11-12; the owner explicitly approved PR #21 after Claude's non-blocking review. Reconciled the STATUS-only conflict with the merged PR #25, preserving D-87/D-88 and Claude's review. P07 application/content/test bytes remain unchanged from the reviewed head.
-- Owner-supplied Claude review (2026-11-12): combined P07–P09 types/build, 74 Vitest cases and 43 Chromium cases pass, with no blocking findings. After all seven words are introduced without errors, the fixed pilot repeats its first three words; accepted for the pilot, full selection stays in P14. The owner approved the introduction instruction unchanged. P08's revised prompt still needs text/listening approval.
+- Owner-supplied Claude review (2026-11-12): combined P07–P09 types/build, 74 Vitest cases and 43 Chromium cases pass, with no blocking findings. After all seven words are introduced without errors, the fixed pilot repeats its first three words; accepted for the pilot, full selection stays in P14. The owner approved the introduction instruction unchanged. P08's revised text was subsequently approved; the new recording and PR #22 merge were subsequently approved on 2026-11-12.
 
 - P07 implementation prepared on 2026-11-11: listen-and-tap domain/controller/view, shuffled curated P04 choices, one checked answer, automatic correct-word feedback, post-answer translation/audio, required-target and picture readiness, safe retry and cancellation/disposal. The test audio screen launches the seven-word preview; profile/session persistence and retry/reward policies stay in later stages. Build/types, 48 Vitest cases and 29 Chromium cases passed; the inverted audio guard was caught. Screenshots/contracts are in `docs/LISTEN_AND_TAP.md`. Subsequently accepted on 2026-11-12.
 
-- Recorded D-87 (flashcard buttons „Znam” / „Jeszcze nie”) and D-88 (Polish language quality rule, also in `AGENTS.md`). P08 must apply D-87: button labels and a regenerated, owner-approved flashcard instruction.
+- Recorded D-87 (flashcard buttons „Znam” / „Jeszcze nie”) and D-88 (Polish language quality rule, also in `AGENTS.md`). D-87 is now applied in PR #22; its revised recording was accepted on 2026-11-12.
 - Recorded the owner-supplied Claude P06 review (2026-11-11): passing types/build, 34 unit tests and 24 Chromium cases, with no blocking findings. Documented three non-blocking follow-ups under P12/P27/P33; these remain scheduled after P06 acceptance.
 
 - P06 accepted on 2026-11-11; the owner explicitly approved merging PR #20 after Claude's second review. Typed/versioned profiles, per-profile preferences, app metadata and separate contextual checked-answer history through `idb`; atomic profile/history writes, revision conflict detection, deletion and physical 90-day cleanup. Unknown formats are rejected before cleanup; no reset/fallback database is created on failure. Build/types, 34 Vitest tests and 24 Chromium cases passed, including 10 new native-storage cases; the retention mutation was caught. No profile/session UI, grading, migration or reward rules added.
@@ -89,6 +97,10 @@ _Codex is reconciling the approved P07 merge with main, then retargeting P08 PR 
 - Agent instructions (`AGENTS.md`, `CLAUDE.md`) and this status file.
 
 ## Handoff log
+
+- 2026-11-12 · Codex · Recorded owner approval of the exact revised P08 recording and PR #22 merge, preserving accepted asset bytes and prior checks · Next reconcile #23 with main, verify and obtain separate merge approval. #24 stays pending until #23 lands; preserve D-86/D-87/D-88 order and both accepted Polish prompts.
+
+- 2026-11-12 · Codex · Merged authorized #25/#21, retargeted #22 to main, applied D-87 and generated the text-approved revised Polish prompt · Await listening and separate #22 merge approval; do not retarget #23/#24 ahead of predecessor acceptance. Keep D-86/D-87/D-88 ordered when P09 is reconciled; introduction audio approved unchanged and pilot selection limitation accepted until P14.
 
 - 2026-11-12 · Codex · Recorded explicit merge authorization for #25/#21, preserved the Polish-language decisions and Claude's review while reconciling P07 with main · Next retarget #22, apply D-87 after text approval and obtain separate listening/merge approval; #23/#24 stay pending and are handled sequentially after their predecessors land. Preserve D-86 before D-87/D-88 when reconciling P09. Introduction prompt approved unchanged; repeated pilot fill-in words remain P14.
 

@@ -1,4 +1,4 @@
-Kumacz P04 pilot lesson assets
+Kumacz P04 pilot and P08 flashcard assets
 
 Pictures (assets/pictures/twemoji/*.svg):
 Twemoji graphics: Twitter, Inc. and other contributors;
@@ -20,6 +20,13 @@ Source: https://huggingface.co/Supertone/supertonic-3
 Licence: https://huggingface.co/Supertone/supertonic-3/blob/main/LICENSE
 The model licensor does not claim rights in the generated output;
 this does not label the clips unrestricted or CC0.
+
+P08 flashcard instruction (assets/audio/shared/pl-PL-flashcard.*.mp3):
+Odwróć kartę i posłuchaj słowa. Potem wybierz «Znam» albo «Jeszcze nie».
+Synthetic Polish speech generated locally with the same approved Supertonic 3
+preset 0, steps 8, language pl, using sherpa-onnx 1.13.8. The model terms and
+synthetic disclosure requirements above apply. Exact text, model/input/output
+hashes, conversion and measured gain: tools/content/flashcard-audio-provenance.json.
 Generation tool: sherpa-onnx 1.13.8; MP3 conversion: FFmpeg/libmp3lame.
 No model weights or synthesis runtime are shipped in the app.
 
