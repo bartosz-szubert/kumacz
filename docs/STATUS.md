@@ -1,41 +1,31 @@
 # Status
 
 **Phase:** Pilot test build (implementation accepted; device/child checks pending)
-**Last updated:** 2026-11-12
+
+Older Done and Handoff entries: [STATUS_ARCHIVE.md](STATUS_ARCHIVE.md).
 
 ## In progress
 
-_No agent task running after this handoff. The owner explicitly approved merging P09b PR #24 on 2026-11-12. The implementation is accepted; complete the Pages publication check, then actual Android tablet + Chrome acceptance and P10 child observations. No new implementation stage is started._
+_No agent task running. This documentation cleanup awaits the owner's merge approval._
 
 ## Resume point
 
-- P09b PR #24 has explicit owner implementation/merge approval dated 2026-11-12, after P07/P08/P09a acceptance. The default route opens profiles and the fixed nine-exercise pilot (D-86); the existing audio/flashcard preview remains at ?preview=audio. [PILOT_SESSION.md](PILOT_SESSION.md) covers checkpoints, retry/resume, limitations and device checks.
-- Reconciliation retains the accepted Znam labels and exact flashcard/introduction recordings, preserves the canContinue save gate and updates pilot browser expectations. PRD rows remain ordered D-86, D-87, D-88 without renumbering. Session composition, retry policy and data-layer implementation remain unchanged from the reviewed pilot. Fresh types/build, 74 Vitest cases and 43 Chromium cases pass after reconciliation.
-- The owner accepted the introduction instruction unchanged on 2026-11-12. Its provenance now records that approval without regenerating or modifying the clip; the P08 flashcard approval is inherited unchanged.
-
-- P09a PR #23 is accepted on 2026-11-12 and contains profile/checkpoint compatibility beyond accepted P08. Profiles move atomically from format 1 to 2; IndexedDB schema, answer history and app settings stay at version 1. Existing progress, settings and revisions are preserved. [DATA_LAYER.md](DATA_LAYER.md) describes the migration and its failure boundary.
-- After reconciliation, types/build, 62 Vitest cases and 38 Chromium cases pass. Native migration commit, actual transaction abort/rollback, malformed legacy rejection and unchanged history on failure are verified. P09a adds neither the pilot profile/session UI nor scheduling/reward policy; PR #24 supplies the pilot UI only after #23 is accepted.
-- P07/P08 and both new Polish instructions are accepted. The corrected Znam labels and exact accepted f7f47e5403bd flashcard recording are inherited from main unchanged. PR #24's introduction recording must also remain unchanged.
-
-- P08 uses **Znam / Jeszcze nie** on its flashcards, matching the owner-approved instruction text and recording (D-87/D-88). [FLASHCARDS.md](FLASHCARDS.md) contains the listening link, updated screenshots, provenance and checks. The owner subsequently accepted the exact f7f47e5403bd recording and authorized merging #22 on 2026-11-12.
-- #25 (Polish-language rules) and #21 (P07) are merged. P08 is accepted and incorporates their current AGENTS/PRD/STATUS changes. Do not continue work on a new stacked stage without explaining the risks, advising against it and obtaining confirmation.
-- #23 is merged after explicit approval; #24 is accepted with explicit merge approval. The owner accepted the P09 introduction prompt unchanged and supplied Claude's passing 74-Vitest/43-Chromium combined review. Repeated first-three-word fill-in after all seven words are introduced is accepted for the pilot; the full selector remains P14.
-
-- P07 is accepted on 2026-11-12 with explicit PR #21 merge approval and no blocking findings in Claude’s review. It adds the listen-and-tap controller/view, randomized curated choices, answer feedback and translation/audio controls. The audio check launches the review preview via **Wypróbuj ćwiczenie**. [LISTEN_AND_TAP.md](LISTEN_AND_TAP.md) contains screenshots and reuse contracts.
-- Choices require a fully played target and loaded pictures. Audio/image failures offer retry without grading; a question is checked once, and stale/disposed playback cannot affect a new one. Theme selection stays outside the exercise; the synthetic-audio label and asset credits remain visible/accessible.
-- Build/types, 48 Vitest cases and 29 Chromium cases passed, including 14 new domain/controller cases and 5 exercise browser flows. The inverted audio-readiness mutation was caught and restored. WebKit remains unavailable; target-device/child checks remain P09/P10.
-- P06 is accepted in main (PR #20). Its P12 upgrade-closed connection/refresh, P27 field-change compatibility and P33 whole-minute follow-ups remain scheduled ([DATA_LAYER.md](DATA_LAYER.md#second-review--2026-11-11)). P07 changes no stored shape. P09 integrates the pilot profile/session; P11/P12 own saving, P14/P16 own session/retry policy.
-- P05 is accepted (PR #19). Theme preview still uses temporary React state; no new default-profile theme decision was made.
-- P04's selected content/audio are accepted in main (PR #18). Preserve those assets and IDs. Picture framing and approximately 0.3 s of leading Polish silence remain non-blocking [pilot observations](PILOT_LESSON.md#second-review-and-pilot-observations--2026-11-10); device/child checks remain P09/P10.
+- The published [pilot](https://bartosz-szubert.github.io/kumacz/) opens profiles and runs nine exercises with per-step saving/resume; audio preview is at `?preview=audio`. See [PILOT_SESSION.md](PILOT_SESSION.md).
+- **Znam / Jeszcze nie** and both Polish prompts are accepted; retain the exact approved recordings and pictures. PRD decisions remain ordered D-86, D-87, D-88.
+- Owner-supplied Claude review (2026-11-13): main types/build OK, 74 Vitest and 43 Chromium cases pass, all Pages publications successful; no blocking findings.
+- Profiles use format 2; answer history, app settings and IndexedDB schema remain 1. Atomic migrations/writes preserve progress on failure. See [DATA_LAYER.md](DATA_LAYER.md).
+- Accepted pilot limitation: after all seven words are introduced without errors, the first three repeat. Full word selection remains P14.
 
 ## Next
 
-1. After the approved #24 merge, verify the Pages test-build workflow publishes the accepted main commit. Pilot URL: https://bartosz-szubert.github.io/kumacz/ (default profile screen; ?preview=audio opens the audio check).
-2. On the actual Android tablet with Chrome, finish P09 acceptance: both P03 audio samples online and cached replay in airplane mode while the page stays open; a complete nine-exercise session; interrupted-session resume; both themes and instructions. Full offline app startup/readiness remains P30/P31.
-3. Run P10 with the children and record observations without personal data. Observe picture framing/recognition and existing Polish leading silence, then continue with the planned P11/P12 saving/recovery stages.
-4. Run WebKit when its browser binary becomes available. Keep the accepted pilot fill-in limitation for P14, general migrations/imports for P27 and whole-minute validation for P33.
+1. Complete P09 on the actual Android tablet with Chrome: online audio, cached replay in airplane mode while the page stays open, a complete session, resume, both themes and instructions.
+2. Run P10 with the children; record picture/instruction clarity and independent use without personal data. Address pilot findings before continuing from P11.
+3. Keep P12 upgrade/refresh/conflict guidance, P27 general migrations/imports and P33 whole-minute validation in their planned stages.
+4. Verify WebKit when its binary is available. Full offline preparation and reopening belong to P36; see [IMPLEMENTATION.md](IMPLEMENTATION.md).
 
 ## Done
+
+- 2026-11-13 · Prepared the documentation cleanup: compact status, verbatim history archive and corrected P36 offline-reopen reference; no code or PRD changes.
 
 - P09b implementation accepted on 2026-11-12: the owner explicitly approved merging PR #24 after the three-point summary and passing types/build, 74 Vitest cases and 43 Chromium cases. Acceptance changes documentation only; application behavior, data and accepted recordings are unchanged. Real-device P09 acceptance and P10 child checks remain pending.
 
@@ -45,74 +35,9 @@ _No agent task running after this handoff. The owner explicitly approved merging
 
 - P09a reconciled on 2026-11-12 after the owner's approved P08 merge: PR #23 targets main; the STATUS-only conflict preserves accepted P07/P08, both prompt approvals, D-87/D-88 and Claude's review. Migration and validation implementation bytes remain unchanged from the reviewed P09a head. Types/build, 62 Vitest cases and 38 Chromium cases passed after reconciliation. The owner subsequently approved merging P09a on 2026-11-12.
 
-- P08 accepted on 2026-11-12: the owner's affirmative response approved the revised synthetic instruction and merging PR #22. The exact reviewed clip has SHA-256 f7f47e5403bd2d09a15893fbc88d48367edbaea5c19681b83b3373dd09e0bd9e; no recording or application behavior changed for this acceptance. Prior types/build, 59 Vitest, 3 generator and 35 Chromium results remain applicable.
-
-- P08 revised on 2026-11-12 for D-87/D-88 after #25/#21 were merged and #22 was retargeted to main: Znam / Jeszcze nie labels throughout the view, owner-approved instruction text, regenerated Polish clip with immutable hash/provenance, technical audio checks and refreshed screenshots. Existing flashcard grading/storage behavior and accepted P04 assets are unchanged. Types/build, 59 Vitest cases, 3 generator regressions and 35 Chromium cases passed on this revised P08 branch. The real-audio theme test reproduced a 5 s completion timeout; a separate native probe completed normally and its bounded assertion now allows 15 s of scheduling headroom. The recording and PR #22 merge were subsequently approved by the owner on 2026-11-12.
-
-- P07 accepted on 2026-11-12; the owner explicitly approved PR #21 after Claude's non-blocking review. Reconciled the STATUS-only conflict with the merged PR #25, preserving D-87/D-88 and Claude's review. P07 application/content/test bytes remain unchanged from the reviewed head.
-- Owner-supplied Claude review (2026-11-12): combined P07–P09 types/build, 74 Vitest cases and 43 Chromium cases pass, with no blocking findings. After all seven words are introduced without errors, the fixed pilot repeats its first three words; accepted for the pilot, full selection stays in P14. The owner approved the introduction instruction unchanged. P08's revised text was subsequently approved; the new recording and PR #22 merge were subsequently approved on 2026-11-12.
-
-- P07 implementation prepared on 2026-11-11: listen-and-tap domain/controller/view, shuffled curated P04 choices, one checked answer, automatic correct-word feedback, post-answer translation/audio, required-target and picture readiness, safe retry and cancellation/disposal. The test audio screen launches the seven-word preview; profile/session persistence and retry/reward policies stay in later stages. Build/types, 48 Vitest cases and 29 Chromium cases passed; the inverted audio guard was caught. Screenshots/contracts are in `docs/LISTEN_AND_TAP.md`. Subsequently accepted on 2026-11-12.
-
-- Recorded D-87 (flashcard buttons „Znam” / „Jeszcze nie”) and D-88 (Polish language quality rule, also in `AGENTS.md`). D-87 is now applied in PR #22; its revised recording was accepted on 2026-11-12.
-- Recorded the owner-supplied Claude P06 review (2026-11-11): passing types/build, 34 unit tests and 24 Chromium cases, with no blocking findings. Documented three non-blocking follow-ups under P12/P27/P33; these remain scheduled after P06 acceptance.
-
-- P06 accepted on 2026-11-11; the owner explicitly approved merging PR #20 after Claude's second review. Typed/versioned profiles, per-profile preferences, app metadata and separate contextual checked-answer history through `idb`; atomic profile/history writes, revision conflict detection, deletion and physical 90-day cleanup. Unknown formats are rejected before cleanup; no reset/fallback database is created on failure. Build/types, 34 Vitest tests and 24 Chromium cases passed, including 10 new native-storage cases; the retention mutation was caught. No profile/session UI, grading, migration or reward rules added.
-
-- Recorded Claude's second review (2026-11-10): passing types/build, 20 unit tests and 14 Chromium cases; P05 consistent with F-31, no blocking findings. P04 picture-recognition and leading-silence observations are in `docs/PILOT_LESSON.md`; accepted content/audio remain unchanged.
-
-- P05 accepted on 2026-11-10; the owner explicitly approved merging PR #19 after Claude's second review. Controlled AppShell/ThemeSelector, native Button with primary/secondary tones, semantic Electric/Neon tokens, responsive audio-check layout, 48×48+ targets, 16 px+ text, keyboard skip/focus, contrast and reduced-motion styles. The test banner and synthetic-audio disclosure remain visible. Clean install, build/types, 20 Vitest tests and 14 Chromium cases passed; a forced-Electric mutation was caught by the theme-switch case. Real screenshots are in `docs/SHARED_UI.md`. WebKit binary is unavailable; actual target-device checks remain P09. No profile storage or exercise implementation added.
-
-- P04 accepted on 2026-11-10; owner explicitly approved merging PR #18. Seven-word lesson JSON, stable IDs, Polish translations, pilot exercise types, curated distractors, seven pinned Twemoji SVGs and 15 MP3s. Fixed Polish language configuration, recorded the approved instruction and matched English levels. Preserved accepted dog and selected horse/elephant variant 2 after listening and the UK /hɔːs/ clarification; exact heard bytes, provenance and historical references are retained. Build/types, 20 Vitest tests, 3 Python generator tests and 9 Chromium tests passed. P09 target-device and P10 child checks remain scheduled.
-- P03 accepted (product owner's choice C): both clips played online and offline (airplane mode, page open) on an iPhone with Safari and an Android phone with Dolphin; tablet + Chrome check moved to P09. Recorded in `docs/AUDIO_PLAYER.md`.
-- P03 implementation and desktop verification prepared: whole-file Web Audio, same-origin validated asset cache in the data layer, local-only fallback, interruption/retry outcomes, permanent disclosure and a two-clip screen. Unit and Chromium browser checks cover failures, cancellation, policy restrictions and cached offline replay. P03 was subsequently accepted on phones as recorded above; tablet + Chrome remains in P09, and WebKit is blocked by the official browser-download hosts.
-- Added the GitHub Pages test-build workflow and "Wersja testowa" banner (D-85) so the product owner can check P03 audio on the tablet without USB debugging.
-- P02 accepted: product owner listened to the samples and chose Cori (en-GB) and Supertonic 3 preset 0 (pl) (D-83) and a permanent synthetic-audio label (D-84, F-45). Earlier technical preparation: reviewed pinned Twemoji attribution and model-specific voice terms; generated local English/Polish WAV → MP3 evaluation clips only after the corresponding checks. Added archive/input/output provenance, a hash-pinned optional generation environment and a repeatable recipe.
-- Fixed the npm engine requirement: exact npm 11.9.0 rejected the npm 11.17.0 bundled with Node 24.19.0 (`EBADENGINE` on `npm ci`); now `>=11.9.0 <12`. Clean install and `npm run check` verified with both versions.
-- P01 Project foundation (PR #12): pinned React/TypeScript/Vite, `idb`, Vitest/Playwright configuration, npm lockfile and disabled install scripts. Verified clean frozen install, type-check, static build, audit and production-preview smoke check in system Chromium. Test runners report zero tests by design; no application tests or learning features were added.
-- Second opinion on the technology proposal and stage plan; product owner chose React + TypeScript + Vite, `idb` with per-profile documents, MP3 via Web Audio, an early pilot test build and Twemoji (D-78–D-82). `docs/IMPLEMENTATION.md` reordered into P01–P40 with oversized stages split; `AGENTS.md` stack filled in.
-- Prepared a technology proposal and draft implementation sequence for second opinion in draft PR #11. Final stack/plan adoption is pending; approved PRD v0.10 remains the product baseline.
-- Product owner accepted integrated PRD v0.10; recorded the approval gate as passed (D-77). Next phase: technology selection.
-- Recorded learning-day credit only after both at least 10 minutes of counted learning and at least one completed session that day (D-76, F-20; revision of D-25). Updated README and related completion references.
-- Recorded product-owner review: initial grades 1–3 focus within a long-term all-primary-school audience, a daily goal of at least 10 minutes with longer learning allowed, and future natural-science/geography modules (D-73–D-75), draft PRD v0.10. Aligned README and agent context.
-- Recorded per-child learning target: at least 10 eligible words, +20 percentage points or maintenance of an initial score of at least 80%; smaller samples are insufficient (D-72, section 11).
-- Recorded learning measurement from first and last independent due-review answers for the same words, per child, without a separate examination (D-71, section 11, N-12).
-- Recorded written-word exercises becoming available per word after its first correct listen-and-tap answer (D-70, F-35, clarification of D-37).
-- Recorded retry after 2 intervening exercises when it fits, otherwise next-session carryover without extending the session (D-69, F-06, clarification of D-36/D-51).
-- Recorded difficult words as at least 2 errors in the latest up to 5 checked answers, with removal below that threshold (D-68, F-28).
-- Recorded review intervals in the device's local calendar days, with reviews due from the start of the target date (D-67, F-12, F-13).
-- Recorded continued learning after persistent-storage refusal when ordinary saving works, with parent information and backup reminders; corrected overstrong storage guarantees (D-66, F-37).
-- Recorded paused session progression on failed progress saving, preservation of the last successful save and safe retry before continuing (D-65, F-36, F-43).
-- Recorded all-or-nothing backup imports and migrations, preserving existing data on failure and allowing retry (D-64, F-30, N-11, N-13).
-- Recorded offline readiness only after the full MVP package is locally available, separate from initial interface load; incomplete preparation can be retried (D-63, N-03, N-07, F-42).
-- Recorded local-only speech-synthesis fallback and retry without grading when required audio is unavailable (D-62, N-04, F-41), PRD v0.9 draft.
-- Recorded approved level 1 lesson sizes: 8 colours, 10 numbers, 7 animals and 7 fruit, keeping 32 words (D-61, clarification of D-46), PRD v0.9 draft.
-- Coding skills for Codex and Claude Code (test-driven-development, code-review-and-quality, source-driven-development, debugging-and-error-recovery, security-and-hardening) from bartosz-szubert/agent-skills.
-- Agent skills for Codex and Claude Code (diagram-design, humanizer, interview-me) from the reviewed copies in bartosz-szubert/agent-skills; `AGENTS.md` clarifies that the no-trademarks rule covers the app, not agent tooling.
-- Expert PRD review with the product owner: D-46–D-60 (level 1 size, bundled generated audio, minimum cost, data durability, gentler Leitner demotion, initial and skipped-word boxes, PIN reset check, data rules, staged implementation, picture rule, translations, distractors, tap before audio), PRD v0.8.
-- Recorded Leitner promotion only in due reviews; correct earlier practice leaves the box and scheduled review date unchanged (D-45, F-12, F-13).
-- Recorded validation of one pilot lesson with the children during implementation before preparing the full MVP content (D-44, section 7).
-- Recorded English pronunciation only after answering picture-to-word exercises, with Polish instruction playback available before answering (D-43, F-07, F-10).
-- Recorded short, calm reward animations enabled by default, with static rewards when the device requests reduced motion (D-42, F-21).
-- Recorded review stickers continuing on the completed level's page; its special sticker marks completion without blocking additions (D-41, F-19, clarification of D-24).
-- Recorded learning improvement measured on the same words across reviews after a time gap, replacing the difficult-word-count metric (D-40, section 11).
-- Recorded a difficult-word list based on recent checked answers rather than lifetime error totals (D-39, F-28).
-- Recorded per-exercise saving and interrupted-session resumption, with no duplicate rewards and completion-based session rewards and learning-day credit (D-38, F-36).
-- Recorded gradual introduction of written-word exercises after listening and picture-based tasks (D-37, F-35).
-- Recorded retry after several intervening exercises rather than immediately after error feedback (D-36, F-06).
-- Recorded picture, written word and pronunciation before first testing a new word; due reviews start with a question (D-35, F-04).
-- Recorded at most 3 new words per learning session (D-34, F-04).
-- Recorded checked-answer-only Leitner promotion; flashcard self-assessment does not change the box (D-33, F-08, F-12).
-- Recorded the product owner's choice A: at most one Leitner promotion per word per profile per day (D-32, F-12), PRD v0.7.
-
-- Public repository created.
-- Reviews, learning-day and time counting, backup restore, PIN recovery and skip-level test: D-25–D-31, PRD v0.6.
-- Lesson and level completion rules and sticker album: D-21–D-24 (F-34, F-15, F-19), PRD v0.5.
-- PRD v0.4 (`docs/PRD.md`); D-18–D-20 reviewed with the product owner: bundled open emoji set, per-profile themes, British English.
-- README.
-- Agent instructions (`AGENTS.md`, `CLAUDE.md`) and this status file.
-
 ## Handoff log
+
+- 2026-11-13 · Codex · Prepared docs/status-cleanup, preserved historical entries and recorded the owner-supplied Claude review · Await owner merge approval; next are P09 device checks and P10.
 
 - 2026-11-12 · Codex · Recorded explicit owner #24 merge approval after all stages were reconciled/approved sequentially; retained exact accepted prompt bytes, Znam labels and ordered D-86/D-87/D-88 · Verify Pages publication, then owner Android tablet + Chrome checks and P10 observations. Implementation acceptance does not claim physical-device or child validation; no P11 start yet.
 
@@ -121,99 +46,3 @@ _No agent task running after this handoff. The owner explicitly approved merging
 - 2026-11-12 · Codex · Recorded explicit owner P09a #23 merge approval without changing its reviewed implementation · Next reconcile #24 onto main, carry accepted prompts/Znam forward and preserve D-86/D-87/D-88 order. #24 still needs its own merge approval and P09/P10 device/child checks remain pending.
 
 - 2026-11-12 · Codex · Merged owner-approved P08 PR #22 with exact recording approval metadata; reconciled P09a #23 onto main and retained its unchanged migration behavior · Await separate #23 merge approval. Only afterward reconcile #24, carry accepted recordings/Znam forward and preserve D-86/D-87/D-88 order; no #24 merge approval yet.
-
-- 2026-11-12 · Codex · Recorded owner approval of the exact revised P08 recording and PR #22 merge, preserving accepted asset bytes and prior checks · Next reconcile #23 with main, verify and obtain separate merge approval. #24 stays pending until #23 lands; preserve D-86/D-87/D-88 order and both accepted Polish prompts.
-
-- 2026-11-12 · Codex · Merged authorized #25/#21, retargeted #22 to main, applied D-87 and generated the text-approved revised Polish prompt · Await listening and separate #22 merge approval; do not retarget #23/#24 ahead of predecessor acceptance. Keep D-86/D-87/D-88 ordered when P09 is reconciled; introduction audio approved unchanged and pilot selection limitation accepted until P14.
-
-- 2026-11-12 · Codex · Recorded explicit merge authorization for #25/#21, preserved the Polish-language decisions and Claude's review while reconciling P07 with main · Next retarget #22, apply D-87 after text approval and obtain separate listening/merge approval; #23/#24 stay pending and are handled sequentially after their predecessors land. Preserve D-86 before D-87/D-88 when reconciling P09. Introduction prompt approved unchanged; repeated pilot fill-in words remain P14.
-
-- 2026-11-11 · Codex · Prepared P07 on `feature/p07-listen-and-tap`, with screenshots/contracts in `docs/LISTEN_AND_TAP.md`, 14 new unit cases and 5 native-browser exercise flows · Await owner review/explicit merge approval; P08 follows acceptance. P09 supplies the pilot profile/session; P11/P12 and P14/P16 retain saving/retry policies. P04 assets/observations and P06 follow-ups are preserved.
-
-- 2026-11-11 · Codex · Recorded the owner's P06 acceptance and explicit PR #20 merge instruction after Claude's second review; prepared acceptance metadata in the same PR · Next is P07 Listen and tap. P12 refresh handling, P27 field-change compatibility and P33 whole-minute settings remain scheduled, along with P09/P10 device/child checks.
-
-- 2026-11-11 · Codex · Recorded Claude's non-blocking P06 review in PR #20 and assigned the three follow-ups to P12/P27/P33 · Await explicit owner merge approval; P07 follows acceptance. Any earlier stage adding persisted fields must address compatibility when it makes the change.
-
-- 2026-11-11 · Codex · Prepared P06 on `feature/p06-data-layer-core`, with the API/limits in `docs/DATA_LAYER.md`, 14 new boundary tests and 10 native IndexedDB cases · Await review and explicit merge approval; after acceptance start P07. P09 wires the pilot UI; P11/P12 own session/reward retries and failure UI; P26/P27 own imports/migrations. P04 observations and P09/P10 device/child checks remain scheduled.
-
-- 2026-11-10 · Codex · Recorded the owner's P05 acceptance and explicit PR #19 merge instruction after Claude's second review; prepared acceptance metadata in the same PR · Next is P06 Data layer core. Theme preview remains temporary React state; P04 observations and P09/P10 device/child checks remain scheduled.
-
-- 2026-11-10 · Codex · Recorded the owner-supplied Claude review of P04/P05 and the two non-blocking P04 pilot observations in PR #19 · Owner visual review and explicit merge approval remain pending. Preserve accepted assets; after P05 acceptance continue with P06, with P09/P10 device/child checks still scheduled.
-
-- 2026-11-10 · Codex · Prepared P05 on `feature/p05-shared-ui-themes`: shared controls/shell and both themes demonstrated by the audio check, with screenshots and 5 new browser cases · Await visual review/explicit merge approval. After acceptance start P06. Preview selection is React state only, not a default-profile or persistence decision. WebKit remains unexecuted; P09 tablet/P10 child checks still apply.
-
-- 2026-11-10 · Codex · Recorded the owner's P04 acceptance and explicit PR #18 merge approval after the three-bullet summary and merge question; prepared acceptance metadata in the same PR · Next is P05 Shared UI and themes. Current selected clips are authoritative; old full audio reviews are historical. P09 tablet and P10 child checks remain; no P05 implementation yet.
-
-- 2026-11-10 · Codex · Selected horse/elephant variant 2 after owner feedback: elephant 2/3 OK; horse concern was only missing r, correct for Cambridge UK /hɔːs/ · Lesson paths/provenance now use heard candidate bytes; accepted dog preserved. Superseded references archived; current selections in `docs/PRONUNCIATION_REVIEW.md` and `horse-elephant-selected-2.wav`. Final PR #18 review/merge approval pending; P05 not started.
-
-- 2026-11-10 · Codex · Paused P04 at the owner's request; saved the resume point and review links in STATUS and draft PR #18 · Resume with the horse/elephant comparison and keep accepted dog. No candidate selection, P04 acceptance or merge approval; P05 has not started.
-
-- 2026-11-09 · Codex · Recorded accepted dog, rejected horse (“płoz”) and unclear elephant final t; prepared `docs/PRONUNCIATION_REVIEW.md` with reference + two Cori variants per word and a lossless comparison WAV in PR #18 · Await listening/selection before replacing lesson files. Same voice/speed; standard vs zero noise are review candidates only. Installed runtime already includes the known BOS/pad fix. No merge approval.
-
-- 2026-11-09 · Codex · Prepared P04 revision 3 in PR #18 after feedback: explicit approval of clearer Polish instruction, measured English gain, fresh dog/horse synthesis with sentence punctuation, versioned assets and `animals-review-v3.mp3` · Levels/decoding do not establish distinct final consonants; await owner listening and merge approval. Voice/preset/speed unchanged; gains are content preparation, not playback/session rules.
-
-- 2026-11-09 · Codex · Corrected P04 Polish generation on PR #18 after the owner's pronunciation rejection: assign the whole native `extra` map, regenerate all eight Polish clips, route the playback check to the new prompt and publish `animals-review-v2.mp3` · Real-binding regression reproduced the bug and now passes; repeat human listening is required. Original P02 fixture bytes are historical playback evidence, not suitable Polish learning content. No merge or voice change.
-
-- 2026-11-09 · Codex · Prepared P04 animals on `feature/p04-pilot-animals`: data, SVG/MP3 assets, integrity checks and `docs/PILOT_LESSON.md` with a 31-second listening review · Human listening (D-83) and explicit PR merge approval remain; next implementation stage after acceptance is P05. P09 tablet and P10 child checks remain scheduled.
-
-Newest first. One line per finished task: date · agent · what was done · anything the next agent must know.
-
-- 2026-11-12 · Claude · Reviewed stacked P07–P09 PRs #21–#24 (types/build, 74 Vitest and 43 Chromium tests pass; no blocking findings) and recorded D-87/D-88 · Before merging P08: change „Umiem” to „Znam” in the buttons and flashcard instruction, regenerate and get the recording approved; the introduction prompt was approved as is. When retargeting the stack, keep D-86 before D-87 in the PRD table.
-- 2026-11-09 · Claude · Recorded the P03 phone checks and accepted P03 · Primary target (Android tablet + Chrome) still untested on a real device: do it in P09; local-voice fallback not exercised on devices.
-- 2026-11-07 · Claude · Merged P03 into `main` before the tablet check (product owner's choice A) so it appears on the Pages test build · P03 stays open until the tablet check passes; record results in `docs/AUDIO_PLAYER.md`.
-- 2026-11-07 · Claude · Reviewed Codex's P03 branch (16 unit + 9 Chromium E2E tests pass; local fallback after a failed file may be blocked by iPad Safari's user-activation rule) and added the Pages test-build workflow (D-85) · P03 needs the Pages setting enabled and a tablet check; Codex's P03 STATUS edits will need a merge with this file.
-- 2026-11-07 · Codex · Prepared P03 implementation and desktop tests on `feature/p03-audio-player`; device verification and merge pending · Native file/cache playback checked in system Chromium; speech engine controlled in tests, real `localService` and Android audio still need checking; WebKit download blocked by HTTP policy. P04 has not started. See `docs/AUDIO_PLAYER.md`.
-- 2026-11-07 · Claude · Reviewed P02, regenerated extra Cori samples for listening (not committed), recorded D-83/D-84 and F-45 in PR #14 with the product owner's approval · Slowing a single short word (e.g. "Red." at speed 0.85–0.9) produced a long garbled clip: listen to every generated clip; licence pages on huggingface.co and brycebeattie.com were unreachable from the Claude session.
-- 2026-11-06 · Codex · Prepared P02 licence review and synthetic evaluation clips on `feature/p02-asset-licences`; owner voice choice and merge pending · Recommend Cori + Supertonic 3 preset 0; Polish Piper lineage remains unresolved; before playback show synthetic disclosure, and do not claim pronunciation/device checks from decoding alone. See `docs/ASSET_LICENCES.md` and `tools/audio/`.
-- 2026-11-06 · Claude · Reviewed P01 (install, types, build, preview smoke check passed) and fixed the npm engine range · P02 remains next; consider a free GitHub Actions check later (product owner to decide).
-- 2026-11-06 · Codex · Finalized P01 in PR #12; product owner explicitly approved merging · Node 24.19.0 / npm 11.9.0, `npm run check` passes, scripts disabled, no test cases yet; P02 licences next, commands/evidence in `docs/DEVELOPMENT.md`.
-- 2026-11-06 · Claude · Second opinion and technology decisions D-78–D-82 in PR #11 (product owner approved writing to Codex's branch) · Start P01; Dexie/multi-table is recorded only as a future option (D-79).
-- 2026-11-06 · Codex · At the product owner's request, kept PR #11 as a proposal for second opinion, converted it to draft and removed the premature final-stack decision/configuration from its diff · Do not merge or start P01 before review and the owner's final confirmation; PRD v0.10 stays approved.
-- 2026-11-06 · Codex · Finalized the approved PRD v0.10 record (D-77) in PR #10; product owner explicitly approved merging · Next present technology options with a recommendation, obtain the product owner's choice, then plan implementation stages (D-56).
-- 2026-11-06 · Codex · Recorded acceptance of integrated PRD v0.10 as D-77 on `docs/prd-approval`; merge pending explicit approval · Present stack options next; no technology decision or implementation has been authorized yet.
-- 2026-11-06 · Codex · Finalized product-owner review changes D-73–D-76 in PR #9; product owner explicitly approved merging · PRD v0.10 remains a draft pending whole-document approval; next choose the stack after approval and verify voice licences before audio generation.
-- 2026-11-06 · Codex · Recorded explicit learning-day clarification as D-76 in PR #9: at least 10 minutes AND at least one completed session on the same day; merge pending approval · Product-review changes D-73–D-76 are ready for merge review; whole-PRD approval remains pending.
-- 2026-11-06 · Codex · Recorded explicit product-owner review feedback as D-73–D-75 on `docs/product-owner-prd-review`; merge pending approval · Clarify how the 10-minute goal relates to weekly learning-day credit; F-20 and D-25 have not been changed, and whole-PRD approval remains pending.
-- 2026-11-04 · Codex · Finalized skill-informed PRD v0.9 review decisions D-61–D-72 in PR #8; product owner explicitly approved merging · Next is the product owner's final PRD reading; whole-PRD approval, technology choice and voice-licence verification remain pending.
-- 2026-11-04 · Codex · Recorded approved minimum learning sample and success threshold (D-72); D-61–D-72 ready for PR #8 review, merge pending explicit approval · PRD v0.9 remains a draft; final product-owner reading, whole-PRD approval and voice-licence verification are still pending.
-- 2026-11-04 · Codex · Recorded approved ordinary-review learning measurement (D-71) in PR #8; merge pending explicit approval · Next agree the minimum sample and numerical success threshold; whole-PRD approval remains pending.
-- 2026-11-04 · Codex · Recorded approved per-word listening-success trigger for written-word tasks (D-70) in PR #8; merge pending explicit approval · Next define the learning success measurement and target; other review proposals and whole-PRD approval remain pending.
-- 2026-11-04 · Codex · Recorded approved retry spacing and next-session carryover (D-69) in PR #8; merge pending explicit approval · Next define the written-word exercise introduction trigger; other review proposals and whole-PRD approval remain pending.
-- 2026-11-04 · Codex · Recorded approved 2-errors-in-5 difficult-word rule (D-68) in PR #8; merge pending explicit approval · Next clarify delayed retries near session end; other review proposals and whole-PRD approval remain pending.
-- 2026-11-04 · Codex · Recorded approved local-calendar review intervals (D-67) in PR #8; merge pending explicit approval · Next define the difficult-word window and threshold; other review proposals and whole-PRD approval remain pending.
-- 2026-11-04 · Codex · Recorded approved graceful handling of persistent-storage refusal (D-66) in PR #8 and corrected F-37's unconditional Safari-retention claim; merge pending explicit approval · Next discuss review-day calculation; other review proposals and whole-PRD approval remain pending.
-- 2026-11-04 · Codex · Recorded approved pause-and-retry behaviour for failed progress saving (D-65) in PR #8; merge pending explicit approval · Next distinguish refusal of persistent-storage protection from actual write failure; other review proposals and whole-PRD approval remain pending.
-- 2026-11-04 · Codex · Recorded approved all-or-nothing import and migration behaviour (D-64) in PR #8; merge pending explicit approval · Next discuss failed progress saving during learning; other review proposals and whole-PRD approval remain pending.
-- 2026-11-04 · Codex · Recorded approved full-MVP offline-readiness criteria (D-63) in PR #8; merge pending explicit approval · Next discuss failed imports and migrations; other review proposals and whole-PRD approval remain pending.
-- 2026-11-04 · Codex · Recorded approved local-only speech fallback and ungraded listening exercises on audio failure (D-62) in PR #8; merge pending explicit approval · Next decide offline-readiness criteria; other review proposals and whole-PRD approval remain pending.
-- 2026-11-04 · Codex · Recorded product-owner choice A for level 1 lesson sizes (D-61) on `docs/prd-review-clarifications`; merge pending explicit approval · Next discuss local-only speech fallback; other skill-informed review proposals and whole-PRD approval remain pending.
-- 2026-11-04 · Claude · Added coding skills in `.agents/skills/` with symlinks in `.claude/skills/` · Tooling only; `AGENTS.md` rules take precedence over skills. `frontend-ui-engineering` is available in agent-skills once the stack is chosen.
-- 2026-11-04 · Claude · Added agent skills in `.agents/skills/` with symlinks in `.claude/skills/`; trademark rule clarified (product owner's choice B) · Tooling only; product next steps unchanged. Never copy icons from `diagram-design` into the app.
-- 2026-11-02 · Claude · Expert PRD review, D-46–D-60, PRD v0.8 · All review points closed; next is PRD approval, then tech stack and a stage plan sized to one session each (D-56).
-- 2026-11-02 · Codex · Finalized PRD v0.7 decisions D-32–D-45 and handoff in PR #4; product owner explicitly approved merging · Resume the integrated draft review; whole-PRD approval and technology selection are still pending.
-- 2026-11-02 · Codex · Recorded approved due-review-only Leitner promotion (D-45) in PR #4; D-32–D-45 ready for merge review, explicit merge approval pending · The PRD remains a draft; remaining detailed rules and device-audio validation still need review.
-- 2026-11-02 · Codex · Recorded approved pilot-lesson validation before content expansion (D-44) in PR #4; merge pending product-owner approval · Next clarify Leitner promotion eligibility before the due date; PRD approval and technology selection still precede implementation.
-- 2026-11-02 · Codex · Recorded approved picture-to-word audio timing (D-43) in PR #4; merge pending product-owner approval · Next discuss pilot content validation; speech synthesis and offline audio still need device testing after PRD approval.
-- 2026-11-02 · Codex · Recorded approved default calm reward animations and reduced-motion behaviour (D-42) in PR #4; merge pending product-owner approval · Next clarify task-specific audio without revealing answers; remaining review suggestions are proposals.
-- 2026-11-02 · Codex · Recorded approved review-sticker placement on completed level pages (D-41) in PR #4; merge pending product-owner approval · Next discuss reward animations and reduced motion; remaining review suggestions are proposals.
-- 2026-11-02 · Codex · Recorded approved same-word delayed-review learning metric (D-40, section 11) in PR #4; merge pending product-owner approval · Next clarify stickers after level completion; the measurement sample and numerical target remain unspecified.
-- 2026-11-02 · Codex · Recorded approved recent-answer difficult-word list (D-39, F-28) in PR #4; merge pending product-owner approval · Next discuss the learning success metric; recent-answer window and classification threshold remain unspecified.
-- 2026-11-02 · Codex · Recorded approved per-exercise saving and interrupted-session resumption (D-38, F-36) in PR #4; merge pending product-owner approval · Next discuss difficult-word metrics; remaining review suggestions are proposals.
-- 2026-11-02 · Codex · Recorded approved gradual written-word exercise introduction (D-37, F-35) in PR #4; merge pending product-owner approval · Next discuss interrupted sessions; the precise progression trigger remains unspecified.
-- 2026-11-02 · Codex · Recorded approved delayed retry after error feedback (D-36) in PR #4; merge pending product-owner approval · Next discuss reading demands; exact retry spacing and end-of-session handling remain unspecified.
-- 2026-11-02 · Codex · Recorded approved introduction before testing (D-35) in PR #4; merge pending product-owner approval · Next decide when to retry a wrong answer; remaining review suggestions are proposals.
-- 2026-11-02 · Codex · Recorded approved maximum of 3 new words per session (D-34) in PR #4; merge pending product-owner approval · Next decide how to present new words before testing; remaining review suggestions are proposals.
-- 2026-11-02 · Codex · Recorded approved checked-answer-only Leitner promotion (D-33) in the same PR as D-32; merge pending product-owner approval · Continue with new-word introduction; other review suggestions remain proposals.
-- 2026-11-02 · Codex · Recorded approved daily Leitner promotion cap (D-32) on `docs/leitner-daily-promotion`; merge pending product-owner approval · D-32 and D-33 are approved; other review suggestions remain proposals.
-- 2026-11-02 · Claude · Integrated Codex's product-owner-approved amendments as D-25–D-31 (renumbered from Codex's D-22–D-28; committed by Claude because Codex had no repo access) · Codex's proposed level-unlock rule (80% of words in box 4+, lesson completed by any finished session) was rejected by the product owner in favour of existing D-21–D-24.
-- 2026-10-31 · Claude · Recorded sticker album rule (D-24); session paused · Work is on branch `claude/kumacz-zaliczanie-lekcji-0hs0ku` (D-21–D-24, not merged yet); resume with the Leitner scheduling question.
-- 2026-10-31 · Claude · Recorded level completion rule (D-23) · Ask next how F-19 album pages relate to level completion.
-- 2026-10-31 · Claude · Recorded which answers count towards lesson completion (D-22) · Ask next about level completion.
-- 2026-10-31 · Claude · Recorded lesson completion rule (D-21, F-34) · Ask next whether flashcard "I know it" counts towards F-34.
-
-- 2026-10-31 · Claude · Added collaboration rules and merge rule to `AGENTS.md` · Work continues in a new Claude Code session; start from the pending lesson-completion question above.
-
-- 2026-10-31 · Claude · Revised D-18 (open emoji set instead of own SVG), D-19 (per-profile theme), confirmed D-20; added F-33 (About/attribution) · Only record decisions the product owner explicitly chose.
-
-- 2026-10-31 · Codex · Recorded product decisions D-18–D-20 in PRD v0.3 · PRD remains a draft; clarify learning and recovery rules before approval and technology selection.
-- 2026-10-31 · Claude · Added agent instructions and status file · Agents work in turns; check "In progress" before starting.

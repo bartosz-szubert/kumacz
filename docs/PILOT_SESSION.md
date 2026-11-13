@@ -46,7 +46,7 @@ Types/build, 74 Vitest cases, 3 Python generator regressions and 43 Chromium cas
 
 On the actual Android tablet with Chrome, after the approved P09b merge and successful Pages publication:
 
-1. Run [AUDIO_PLAYER.md](AUDIO_PLAYER.md)'s P03 check: both clips online, then replay with airplane mode while the page stays open. This checks cached audio; it does not claim offline app startup, which is P30/P31.
+1. Run [AUDIO_PLAYER.md](AUDIO_PLAYER.md)'s P03 check: both clips online, then replay with airplane mode while the page stays open. This checks cached audio; it does not claim offline app startup, which belongs to P36 (offline package and readiness).
 2. Create a test profile, complete a session, reload and resume an interrupted session. Check word clarity and volume, both instruction recordings, touch controls and both themes.
 3. Before P10, record device/browser and pass/fail without a child's personal information. Observe head-only versus whole-animal picture recognition and Polish leading silence as already noted in [PILOT_LESSON.md](PILOT_LESSON.md).
 
