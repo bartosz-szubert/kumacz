@@ -6,7 +6,7 @@ Older Done and Handoff entries: [STATUS_ARCHIVE.md](STATUS_ARCHIVE.md).
 
 ## In progress
 
-_No agent task running. This documentation cleanup awaits the owner's merge approval._
+_No agent task running. Next are P09 device checks and P10 observations._
 
 ## Resume point
 
@@ -25,7 +25,7 @@ _No agent task running. This documentation cleanup awaits the owner's merge appr
 
 ## Done
 
-- 2026-11-13 · Prepared the documentation cleanup: compact status, verbatim history archive and corrected P36 offline-reopen reference; no code or PRD changes.
+- 2026-11-13 · Accepted the documentation cleanup: compact status, verbatim history archive and corrected P36 offline-reopen reference; no code or PRD changes.
 
 - P09b implementation accepted on 2026-11-12: the owner explicitly approved merging PR #24 after the three-point summary and passing types/build, 74 Vitest cases and 43 Chromium cases. Acceptance changes documentation only; application behavior, data and accepted recordings are unchanged. Real-device P09 acceptance and P10 child checks remain pending.
 
@@ -37,7 +37,7 @@ _No agent task running. This documentation cleanup awaits the owner's merge appr
 
 ## Handoff log
 
-- 2026-11-13 · Codex · Prepared docs/status-cleanup, preserved historical entries and recorded the owner-supplied Claude review · Await owner merge approval; next are P09 device checks and P10.
+- 2026-11-13 · Codex · Recorded owner approval of docs/status-cleanup; historical entries and the supplied Claude review are preserved · The owner explicitly approved merging PR #26; next are P09 device checks and P10.
 
 - 2026-11-12 · Codex · Recorded explicit owner #24 merge approval after all stages were reconciled/approved sequentially; retained exact accepted prompt bytes, Znam labels and ordered D-86/D-87/D-88 · Verify Pages publication, then owner Android tablet + Chrome checks and P10 observations. Implementation acceptance does not claim physical-device or child validation; no P11 start yet.
 
