@@ -18,7 +18,8 @@ _No agent task running. Next are P09 device checks and P10 observations._
 
 ## Next
 
-0. Owner reads [CONCEPT_REVIEW.md](CONCEPT_REVIEW.md) (independent opinion, 2026-11-14) and decides which proposals to adopt. Nothing in it is a decision; the pilot-protocol proposal (U-08) is the only one aimed at P10.
+**First:** owner reads [CONCEPT_REVIEW.md](CONCEPT_REVIEW.md) (independent opinion, 2026-11-14) and decides which proposals to adopt. Nothing in it is a decision; the pilot-protocol proposal (U-08) is the only one aimed at P10.
+
 1. Complete P09 on the actual Android tablet with Chrome: online audio, cached replay in airplane mode while the page stays open, a complete session, resume, both themes and instructions.
 2. Run P10 with the children; record picture/instruction clarity and independent use without personal data. Address pilot findings before continuing from P11.
 3. Keep P12 upgrade/refresh/conflict guidance, P27 general migrations/imports and P33 whole-minute validation in their planned stages.
