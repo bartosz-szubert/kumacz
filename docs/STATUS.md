@@ -18,12 +18,16 @@ _No agent task running. Next are P09 device checks and P10 observations._
 
 ## Next
 
+**First:** owner reads [CONCEPT_REVIEW.md](CONCEPT_REVIEW.md) (independent opinion, 2026-11-14) and decides which proposals to adopt. Nothing in it is a decision; the pilot-protocol proposal (U-08) is the only one aimed at P10.
+
 1. Complete P09 on the actual Android tablet with Chrome: online audio, cached replay in airplane mode while the page stays open, a complete session, resume, both themes and instructions.
 2. Run P10 with the children; record picture/instruction clarity and independent use without personal data. Address pilot findings before continuing from P11.
 3. Keep P12 upgrade/refresh/conflict guidance, P27 general migrations/imports and P33 whole-minute validation in their planned stages.
 4. Verify WebKit when its binary is available. Full offline preparation and reopening belong to P36; see [IMPLEMENTATION.md](IMPLEMENTATION.md).
 
 ## Done
+
+- 2026-11-14 · Added an independent concept/PRD review in `docs/CONCEPT_REVIEW.md` (Polish; proposals only). No PRD, code or asset changes.
 
 - 2026-11-13 · Accepted the documentation cleanup: compact status, verbatim history archive and corrected P36 offline-reopen reference; no code or PRD changes.
 
@@ -36,6 +40,8 @@ _No agent task running. Next are P09 device checks and P10 observations._
 - P09a reconciled on 2026-11-12 after the owner's approved P08 merge: PR #23 targets main; the STATUS-only conflict preserves accepted P07/P08, both prompt approvals, D-87/D-88 and Claude's review. Migration and validation implementation bytes remain unchanged from the reviewed P09a head. Types/build, 62 Vitest cases and 38 Chromium cases passed after reconciliation. The owner subsequently approved merging P09a on 2026-11-12.
 
 ## Handoff log
+
+- 2026-11-14 · Claude · Wrote `docs/CONCEPT_REVIEW.md` on `docs/concept-review` at the owner's request · Proposals need owner decisions before any PRD change; main themes: 10-minute goal vs session length and content pace, recognition-only exercises, learning metric, pilot protocol, stage order.
 
 - 2026-11-13 · Codex · Recorded owner approval of docs/status-cleanup; historical entries and the supplied Claude review are preserved · The owner explicitly approved merging PR #26; next are P09 device checks and P10.
 
