@@ -53,7 +53,7 @@ Track completed and current stages in `STATUS.md`. Execute the remaining stages 
 | P16 | Retries and carryover | Retry after 2 intervening exercises or carry over; never extend the planned session; persist pending retries. | P15; F-06, D-69 |
 | P17 | Picture to word | Written choices, pronunciation only after answering, translation after feedback, eligibility from P15. | P07, P15; F-10, F-35, F-39, D-43, D-70 |
 | P18 | Context questions | Data-driven prompts with one unambiguous answer; audio/translation timing and same-category distractors. | P04, P07; F-11, F-39, F-40 |
-| P19 | Learning time and day credit | Visible active exercise time, inactivity/audio rules, ≥10 minutes AND ≥1 completed session, reminder and reward limit. | P11, P15; F-20, F-22–F-24, F-44, D-76 |
+| P19 | Learning time and day credit | Visible active exercise time, inactivity/audio rules, day credit after a completed session, a suggested 10-minute daily target, break reminder and reward limit. | P11, P15; F-20, F-22–F-24, F-44, D-90 |
 | P20 | Session screen: integration | Replace the pilot session with the full session: all exercise types, planned composition, replay and progress display. | P12, P14–P18; F-04–F-11 |
 | P21 | Session screen: resume and pauses | Resume the last saved position without repeated awards, save-error pause, time accrual only during exercises. | P19, P20; F-36, F-43, F-22 |
 | P22 | Session reward screen | Stars, praise, reduced motion and sticker reveal; per-profile persistence and daily reward limits. Ask for unspecified reward amounts first. | P21; F-18, F-19, F-21, F-24 |
@@ -79,7 +79,7 @@ Track completed and current stages in `STATUS.md`. Execute the remaining stages 
 
 ## Verification priorities
 
-- Scheduling and counting: boundary dates, local calendar transitions, per-profile isolation, retry carryover, one promotion/day and the 10-minutes-plus-session condition.
+- Scheduling and counting: boundary dates, local calendar transitions, per-profile isolation, retry carryover, one promotion/day and one credited learning day per profile after a completed session.
 - Storage: actual transaction abort/interruption, import/migration preservation, resume and idempotent awards. Passing mock-only tests is not evidence of real storage recovery.
 - Audio/offline: blocked playback, missing files, unavailable local voices, interrupted preparation and offline restart. A child is never penalised for missing required audio.
 - Pilot: validate the one-lesson pattern before producing the rest of the material. Add only changes supported by observations and approved requirements.
