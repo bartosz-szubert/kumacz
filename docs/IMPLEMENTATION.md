@@ -48,13 +48,13 @@ Track completed and current stages in `STATUS.md`. Execute the remaining stages 
 | P11 | Progress commits | Commit exercise result, session position and earned progress together; no duplicate results or rewards on retry or resume. | P06, P10; F-36, D-38 |
 | P12 | Save failure handling | On write failure keep the last commit, pause progression, explain and allow retry; check real browser interruption at the storage boundary. Handle a connection closed by `blocking()` with a safe refresh prompt (P06 review). | P11; F-43, D-65 |
 | P13 | Leitner policy | Pure functions: initial box, due-review-only promotion, once-per-day cap, two-box demotion, local calendar intervals, unconfirmed skipped words, unchanged early-practice boxes. | P06; F-12–F-14, F-38, D-51–D-53, D-67 |
-| P14 | Session composition | Plan 8–12 exercises with up to 3 new words, about half due reviews and lesson fill-in; review-only sessions; introduction before first test. | P04, P13; F-04, F-05, D-30, D-34–D-35 |
+| P14 | Session composition | Plan about 8–12 exercises with up to 3 new words, due reviews and current-lesson work. Allow shorter or empty plans and optional practice of weaker words. Plan review-only sessions and introduce new words before testing. | P04, P13; F-04, F-05, D-30, D-34–D-35, D-91 |
 | P15 | Answers and lesson completion | Apply answers, lesson completion and per-word written-task eligibility. | P11, P14; F-34, F-35, D-70 |
 | P16 | Retries and carryover | Retry after 2 intervening exercises or carry over; never extend the planned session; persist pending retries. | P15; F-06, D-69 |
 | P17 | Picture to word | Written choices, pronunciation only after answering, translation after feedback, eligibility from P15. | P07, P15; F-10, F-35, F-39, D-43, D-70 |
 | P18 | Context questions | Data-driven prompts with one unambiguous answer; audio/translation timing and same-category distractors. | P04, P07; F-11, F-39, F-40 |
 | P19 | Learning time and day credit | Visible active exercise time, inactivity/audio rules, day credit after a completed session, a suggested 10-minute daily target, break reminder and reward limit. | P11, P15; F-20, F-22–F-24, F-44, D-90 |
-| P20 | Session screen: integration | Replace the pilot session with the full session: all exercise types, planned composition, replay and progress display. | P12, P14–P18; F-04–F-11 |
+| P20 | Session screen: integration | Replace the pilot session with the full session, including exercise types, planned composition, replay, progress display and the empty-plan messages with optional practice. | P12, P14–P18; F-04–F-11, D-91 |
 | P21 | Session screen: resume and pauses | Resume the last saved position without repeated awards, save-error pause, time accrual only during exercises. | P19, P20; F-36, F-43, F-22 |
 | P22 | Session reward screen | Stars, praise, reduced motion and sticker reveal; per-profile persistence and daily reward limits. Ask for unspecified reward amounts first. | P21; F-18, F-19, F-21, F-24 |
 | P23 | Parent access | First-launch PIN, access, PIN change and forgotten-PIN multiplication check; reset keeps profiles and progress. | P06, P05; F-25, D-28, D-54 |
