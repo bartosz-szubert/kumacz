@@ -37,7 +37,7 @@ The personas below describe the initial MVP users. Older primary-school pupils a
 
 ## 4. Design principles
 
-1. **Regular daily practice**: the daily learning goal is at least 10 minutes. Children may continue learning for longer; reaching 10 minutes does not end or block a session (D-74).
+1. **Regular daily practice**: completing a session earns learning-day credit. Ten minutes of counted learning time is a suggested daily target, and children may continue learning for longer (D-90).
 2. **No competition**: no leaderboards, no comparing siblings. Cooperation instead (shared goal from v1.1).
 3. **No penalties**: no "lost streaks". A weekly goal instead of an unbroken streak.
 4. **Listen before you read**: every word and instruction can be played aloud.
@@ -58,7 +58,7 @@ The personas below describe the initial MVP users. Older primary-school pupils a
 | Exercise types | Flashcards with voice-over · Listen and tap · Picture → word · Context questions |
 | Review | Leitner system for vocabulary |
 | Gamification | Stars ⭐ · Sticker album · Weekly goal |
-| Time | Daily goal of at least 10 minutes · per-profile timer · gentle reminder after 30 min |
+| Time | Suggested daily target of 10 minutes · per-profile timer · gentle reminder after 30 min |
 | Parent panel | Profiles, summaries, difficult words, settings, PIN |
 | Themes | "Electric" and "Neon", switchable |
 | Data storage | Local in the browser (through a dedicated data layer) |
@@ -105,7 +105,7 @@ The personas below describe the initial MVP users. Older primary-school pupils a
 - **F-06** A wrong answer never removes stars. The app shows and reads out the correct answer. Retry the word after 2 other exercises if the retry fits within the session's planned length (F-04). Otherwise carry the word over for retry in the next session. Retries must not extend the current session beyond its planned exercise count (D-36, D-69).
 - **F-07** Every instruction (in Polish) and every word (in English) has a play-audio button. Words are read out automatically when they appear (can be turned off), subject to the exercise-specific rule for F-10: before the answer, only the Polish instruction can be played; English word audio, both automatic and on demand, is available only after the child answers (D-43).
 
-- **F-36** Save each completed exercise's result and the session position immediately. After closing or reloading the app, or switching profiles, the child can resume their own unfinished session from the last successfully saved exercise, retaining all saved results. Handle save failures as specified in F-43 (D-65). Resuming must not award the same exercise or session reward twice. Every entry into a session starts with a tap (the profile tile, or a large "Graj dalej" button when resuming) to initiate audio through user interaction (D-60). Playback may still be blocked or fail; handle unavailable required audio according to F-41 rather than assuming the tap guarantees playback. The session-completion bonus and session sticker require completing the session (D-38). Learning-day credit requires both conditions in F-20 (D-76). Bonuses and stickers remain subject to the daily reward limit (F-24); that limit does not prevent learning-day credit when both F-20 conditions are met.
+- **F-36** Save each completed exercise's result and the session position immediately. After closing or reloading the app, or switching profiles, the child can resume their own unfinished session from the last successfully saved exercise, retaining all saved results. Handle save failures as specified in F-43 (D-65). Resuming must not award the same exercise or session reward twice. Every entry into a session starts with a tap (the profile tile, or a large "Graj dalej" button when resuming) to initiate audio through user interaction (D-60). Playback may still be blocked or fail; handle unavailable required audio according to F-41 rather than assuming the tap guarantees playback. The session-completion bonus and session sticker require completing the session (D-38). Award learning-day credit for a completed session under F-20 (D-90), including after the daily reward limit. Bonuses and stickers follow F-24.
 
 - **F-41** If a bundled audio file cannot play and no eligible local speech-synthesis voice can play it, offer a retry. A listening-dependent exercise remains ungraded while its required audio is unavailable: playback failure is not a wrong answer and must not lower the Leitner box or add an error to the difficult-word history (D-62).
 
@@ -156,13 +156,13 @@ The personas below describe the initial MVP users. Older primary-school pupils a
 
 - **F-18** Stars: for each completed exercise, a bonus for completing a session, a bonus for reaching the weekly goal.
 - **F-19** Sticker album: one page per level. After each session the child reveals a sticker related to the lesson topic and it goes on the level's page. Completing the level adds a special large level sticker marking completion. The page continues to accept stickers from review sessions for that level; the page layout must fit a varying number of stickers (D-24, D-41). Stickers follow the daily reward limit (F-24).
-- **F-20** Weekly goal: by default 4 learning days out of 7. A day counts only when the same profile has both accumulated at least 10 minutes of learning time under F-22 that day and completed at least one learning or review-only session that day. Time may accumulate across multiple sessions; credit is awarded once both conditions are met. A completed session shorter than 10 minutes alone does not qualify, and 10 minutes with no completed session does not qualify. Days of the week are visualised, there is no "lost streak" (D-25, D-76).
+- **F-20** Weekly goal: by default 4 learning days out of 7. A profile earns credit for a day by completing at least one learning or review-only session that day, regardless of its duration. Count each day once per profile. Show the days of the week and keep the goal free of streaks (D-25, D-90).
 - **F-21** Short, calm reward animations are enabled by default, with praise messages in Polish (e.g. "Brawo, prawdziwy z Ciebie Kumacz!" — "Well done, you're a real Kumacz!"). When the device requests reduced motion, show the reward without animation (D-42).
 
 ### 6.7 Time limit
 
 - **F-22** The app tracks learning time per day, separately for each profile. Only time in exercises with the app visible counts; menus and background time do not. Tracking pauses after 60 seconds without interaction; playing instruction or pronunciation audio is not inactivity (D-26).
-- **F-44** The daily learning goal is reached after a profile accumulates at least 10 minutes of learning time counted under F-22. Time may accumulate across multiple sessions. The child may continue for longer; reaching the goal does not end or block learning. The existing 30-minute reminder and reward-limit rules still apply (F-23, F-24, D-74).
+- **F-44** Use 10 minutes of counted learning time per profile as a suggested daily target (F-22, D-90). Time can accumulate across sessions. Children may continue learning after reaching the target. Learning-day credit follows F-20. The reminder and reward-limit rules follow F-23 and F-24.
 - **F-23** After the limit is exceeded (30 min by default) it shows a gentle message encouraging a break.
 - **F-24** After the limit the child can keep playing but earns no new stars or stickers that day.
 
@@ -298,7 +298,7 @@ Test period: **3 weeks** of regular use by both children.
 4. ~~Who can change the theme~~: child on own profile screen and parent; stored per profile (D-19).
 5. ~~English variant for learning content~~: British English (D-20).
 
-6. ~~Relationship between the daily goal and weekly learning-day credit~~: both at least 10 minutes of counted learning and at least one completed session are required on the same day (F-20, D-76).
+6. ~~Relationship between the daily goal and weekly learning-day credit~~: one completed learning or review-only session earns learning-day credit. Ten minutes remains a suggested daily target (F-20, F-44, D-90).
 
 ## 14. Decision log
 
@@ -377,9 +377,9 @@ Test period: **3 weeks** of regular use by both children.
 | D-71 | Measure learning through ordinary due-review history during the 3-week test, separately per child. Compare the first and last independent due-review answer for the same words, using words with at least two eligible answers. Exclude corrective retries, flashcard self-assessment and ungraded audio failures; do not add a separate examination. Sample size and success threshold are defined by D-72 (section 11, N-12; clarification of D-40). |
 | D-72 | For each child, measure first-versus-last independent due-review accuracy on the same set of at least 10 eligible words. Require at least +20 percentage points if initial accuracy is below 80%; at 80% or above, require maintaining at least the initial accuracy. Fewer than 10 eligible words means insufficient measurement, without concluding learning success or failure (section 11; completion of D-71). |
 | D-73 | The long-term audience covers all primary-school grades. Grades 1–3 and beginner English are the initial release focus, rather than a permanent limit on the product's audience (sections 1, 3, 5 and 7). |
-| D-74 | The daily learning goal is at least 10 minutes of counted learning time; the child may learn for longer. Reaching 10 minutes does not stop learning. Existing reminder and reward-limit rules remain; weekly learning-day qualification follows D-76 (F-44, section 4; clarification of D-07). |
+| D-74 | The daily learning goal is at least 10 minutes of counted learning time; the child may learn for longer. Reaching 10 minutes does not stop learning. Existing reminder and reward-limit rules remain; weekly learning-day qualification follows D-76 (F-44, section 4; clarification of D-07). D-90 makes the time target advisory. |
 | D-75 | Future modules may include natural science, geography and other primary-school subjects alongside German and maths. This is the long-term product direction; the current MVP remains beginner English, levels 1–2 (sections 1 and 5). |
-| D-76 | A learning day counts only after the same profile both accumulates at least 10 minutes of counted learning and completes at least one learning or review-only session that day. Time may accumulate across sessions; award credit when both conditions are met. Either condition alone is insufficient; the weekly goal remains 4 of 7 days (F-20, F-36; revision of D-25). |
+| D-76 | A learning day counts only after the same profile both accumulates at least 10 minutes of counted learning and completes at least one learning or review-only session that day. Time may accumulate across sessions; award credit when both conditions are met. Either condition alone is insufficient; the weekly goal remains 4 of 7 days (F-20, F-36; revision of D-25). Superseded by D-90. |
 | D-77 | The product owner accepted the integrated PRD v0.10 after reviewing D-73–D-76, passing the "PRD approved" gate on 2026-11-06. Next choose the technology stack, then prepare implementation stages under D-56. |
 | D-78 | Technology after a second opinion: React + TypeScript + Vite, ordinary CSS with custom properties, Vitest and Playwright, static GitHub Pages build (section 10). |
 | D-79 | Local data: one versioned document per profile plus a separate answer-history store in IndexedDB, through the `idb` library; imports and migrations write the complete new state in one transaction (N-11, N-13). Future option if data grows substantially (e.g. many subjects or v1.1 sync): a multi-table model, e.g. with Dexie. |
@@ -393,3 +393,4 @@ Test period: **3 weeks** of regular use by both children.
 | D-87 | Flashcard self-assessment buttons in Polish: „Znam” / „Jeszcze nie” (not „Umiem”, which means "I can do" rather than "I know [a word]"). The flashcard instruction and its recording use the same words (F-08). |
 | D-88 | All Polish texts shown or played to users (UI, instructions, recordings) must be correct Polish: grammar, spelling, punctuation and natural, consistent style; short, simple sentences addressed to the child in the second person, suitable for grades 1–3. New or changed Polish texts are shown to the product owner before audio is generated (N-06). |
 | D-89 | P10 follows variant A of the [pilot observation protocol](PILOT_PROTOCOL.md) (U-08, approved 2026-11-17): observe each child separately in one nine-exercise session on each of three different days after P09 device checks. Use a stopwatch and record help, picture and instruction clarity, self-assessment understanding, reactions to mistakes and a separate optional speaking attempt. Apply the protocol's stop, fix-and-recheck and close criteria to each child. Keep raw notes local and record only combined, non-identifying findings in the repository (D-44, N-09). |
+| D-90 | U-01, variant A, selected on 2026-11-17. One completed learning or review-only session earns one learning day for that profile on the day of completion. Ten minutes of counted learning time is a suggested daily target. The default weekly goal is 4 of 7 days. Time tracking, the break reminder and reward limits follow F-22–F-24. This supersedes D-76 and revises the time target in D-74 (F-20, F-36, F-44). |

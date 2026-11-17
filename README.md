@@ -11,11 +11,11 @@ The first module starts with beginner English for children in grades 1–3. The 
 
 Kids pick up the basics of English at school, but there is little at home for short, regular practice that suits a child who is still learning to read. Many apps are paid, overloaded, or built around leaderboards and streaks that punish a missed day. Parents rarely get a clear view of what their child actually practised.
 
-Kumacz aims to make daily learning approachable, starting with a 7-year-old who can use it alone and a parent who can follow progress at a glance. The daily goal is at least 10 minutes; children can continue for longer.
+Kumacz aims to make daily learning approachable, starting with a 7-year-old who can use it alone and a parent who can follow progress at a glance. The suggested daily target is 10 minutes, and children can continue for longer.
 
 ## Principles
 
-- **Short and regular:** a daily goal of at least 10 minutes, with longer learning allowed, and a weekly goal (4 of 7 days) instead of streaks that can be lost. A learning day requires both at least 10 minutes of learning and at least one completed session.
+- **Short and regular:** a suggested daily target of 10 minutes and a weekly goal of 4 learning days out of 7, without streaks. Completing a learning or review-only session earns credit for the day.
 - **Listen before you read:** every word and instruction can be played aloud.
 - **No competition, no penalties:** stars and a sticker album, never leaderboards; a wrong answer never takes anything away.
 - **Built for parents too:** a PIN-protected panel with learning time, progress and the words a child struggles with.

@@ -4,6 +4,8 @@ Older Done and Handoff entries moved from [STATUS.md](STATUS.md) since 2026-11-1
 
 ## Done
 
+- P09b reconciled on 2026-11-12 after the approved #23 merge: PR #24 targets main, the Znam labels and accepted P08 assets are carried forward, the flashcard canContinue save gate is preserved, pilot tests use the current label and PRD decisions remain D-86/D-87/D-88. Introduction approval is recorded with unchanged audio bytes. Fresh types/build, 74 Vitest cases and 43 Chromium cases passed, including a complete nine-exercise flow, native pending-save retry without duplicates and interrupted-session resume. The owner subsequently approved the P09b merge on 2026-11-12; physical device/child checks remain pending.
+
 - P09a accepted on 2026-11-12: the owner explicitly authorized merging PR #23 after the three-point summary and passing types/build, 62 Vitest cases and 38 Chromium cases. Approval changes documentation only; migration, validation and accepted asset bytes are unchanged.
 
 - P09a reconciled on 2026-11-12 after the owner's approved P08 merge: PR #23 targets main; the STATUS-only conflict preserves accepted P07/P08, both prompt approvals, D-87/D-88 and Claude's review. Migration and validation implementation bytes remain unchanged from the reviewed P09a head. Types/build, 62 Vitest cases and 38 Chromium cases passed after reconciliation. The owner subsequently approved merging P09a on 2026-11-12.
@@ -125,6 +127,8 @@ Older Done and Handoff entries moved from [STATUS.md](STATUS.md) since 2026-11-1
 ## Handoff log
 
 Newest first. One line per finished task: date · agent · what was done · anything the next agent must know.
+
+- 2026-11-12 · Codex · Merged approved P09a #23 and reconciled P09b #24 onto main, retaining accepted recordings/Znam, the pending-save continuation guard and ordered D-86/D-87/D-88 · Await separate #24 merge approval, then Pages/device acceptance and P10. No pilot learning-policy changes; full word selection remains P14.
 
 - 2026-11-12 · Codex · Recorded explicit owner P09a #23 merge approval without changing its reviewed implementation · Next reconcile #24 onto main, carry accepted prompts/Znam forward and preserve D-86/D-87/D-88 order. #24 still needs its own merge approval and P09/P10 device/child checks remain pending.
 
