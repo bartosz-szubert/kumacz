@@ -4,6 +4,8 @@ Older Done and Handoff entries moved from [STATUS.md](STATUS.md) since 2026-11-1
 
 ## Done
 
+- 2026-11-17 · Recorded the owner's U-08 variant A as D-89 and prepared the P10 observation protocol with decision thresholds and a summary without personal data.
+
 - 2026-11-14 · Added an independent concept/PRD review in `docs/CONCEPT_REVIEW.md` (Polish; proposals only). No PRD, code or asset changes.
 
 - 2026-11-13 · Accepted the documentation cleanup: compact status, verbatim history archive and corrected P36 offline-reopen reference; no code or PRD changes.
@@ -133,6 +135,8 @@ Older Done and Handoff entries moved from [STATUS.md](STATUS.md) since 2026-11-1
 ## Handoff log
 
 Newest first. One line per finished task: date · agent · what was done · anything the next agent must know.
+
+- 2026-11-17 · Codex · Prepared the P10 protocol for merge review after the owner chose variant A · Next are the section 5 questions and the pilot. P11 waits for P10 and the required decisions.
 
 - 2026-11-14 · Claude · Wrote `docs/CONCEPT_REVIEW.md` on `docs/concept-review` at the owner's request · Proposals need owner decisions before any PRD change; main themes: 10-minute goal vs session length and content pace, recognition-only exercises, learning metric, pilot protocol, stage order.
 
