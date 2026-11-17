@@ -53,7 +53,7 @@ The personas below describe the initial MVP users. Older primary-school pupils a
 
 | Area | Scope |
 |---|---|
-| Module | English, levels 1–2 (see section 7) |
+| Module | English, levels 1–2, with a focus on understanding spoken vocabulary (D-93, section 7) |
 | Profiles | Child profile picker (nickname + avatar), no passwords |
 | Exercise types | Flashcards with voice-over · Listen and tap · Picture → word · Context questions |
 | Review | Leitner system for vocabulary |
@@ -117,7 +117,7 @@ The personas below describe the initial MVP users. Older primary-school pupils a
 
 | ID | Type | Mechanics |
 |---|---|---|
-| **F-08** | Flashcards with voice-over | picture → flip → word + pronunciation; child marks "I know it" / "not yet" (Polish buttons: **„Znam” / „Jeszcze nie”**, D-87); neither self-assessment changes the Leitner box (D-33) |
+| **F-08** | Flashcards with voice-over | picture → flip → word + pronunciation; child marks "I know it" / "not yet" (Polish buttons: **„Znam” / „Jeszcze nie”**, D-87); neither self-assessment changes the Leitner box (D-33). The child can flip directly from the picture (D-93). |
 | **F-09** | Listen and tap | voice says a word, child picks 1 of 3–4 pictures |
 | **F-10** | Picture → word | picture shown, child picks the correct written word from 3–4; before answering, only the Polish instruction can be played; English pronunciation is available after answering (D-43) |
 | **F-11** | Context questions | e.g. "What colour is a banana?" → colour tiles |
@@ -396,3 +396,4 @@ Test period: **3 weeks** of regular use by both children.
 | D-90 | U-01, variant A, selected on 2026-11-17. One completed learning or review-only session earns one learning day for that profile on the day of completion. Ten minutes of counted learning time is a suggested daily target. The default weekly goal is 4 of 7 days. Time tracking, the break reminder and reward limits follow F-22–F-24. This supersedes D-76 and revises the time target in D-74 (F-20, F-36, F-44). |
 | D-91 | U-02, variant A, selected on 2026-11-17. When the planned material supports fewer than eight exercises, shorten the session. When a daily plan is empty or exhausted, show „Na dziś wszystko!” and offer optional practice if there are previously introduced words. Prioritise weaker words. An empty review-only plan explains that no reviews are due. Extra practice does not promote words or move their scheduled review dates. The empty screen does not complete a session or earn learning-day credit. Actual session completion follows D-90 (F-04, F-05, F-13, F-20). |
 | D-92 | U-03, variant A, selected on 2026-11-17. The MVP uses the same suggested daily target of 10 minutes for all profiles. Each child works at their own pace. Parents can change the break reminder limit per profile (F-23, F-29). Record session duration and signs of waning attention in P10. Use the observations to consider a per-profile daily target later (F-44, D-89, D-90). |
+| D-93 | U-04, variant A for the MVP, selected on 2026-11-17. The vocabulary goal is listening comprehension. Keep the direct picture-to-word flip in F-08. In P10, the optional speaking attempt stays outside the app session (D-89). After the MVP, the owner's preferred option for further consideration is variant B: a short invitation to recall the word silently or aloud before flipping, with no recording or scoring. Revisit it using the P10 observations. |
