@@ -4,6 +4,8 @@ Older Done and Handoff entries moved from [STATUS.md](STATUS.md) since 2026-11-1
 
 ## Done
 
+- 2026-11-14 · Added an independent concept/PRD review in `docs/CONCEPT_REVIEW.md` (Polish; proposals only). No PRD, code or asset changes.
+
 - 2026-11-13 · Accepted the documentation cleanup: compact status, verbatim history archive and corrected P36 offline-reopen reference; no code or PRD changes.
 
 - P09b implementation accepted on 2026-11-12: the owner explicitly approved merging PR #24 after the three-point summary and passing types/build, 74 Vitest cases and 43 Chromium cases. Acceptance changes documentation only; application behavior, data and accepted recordings are unchanged. Real-device P09 acceptance and P10 child checks remain pending.
@@ -131,6 +133,8 @@ Older Done and Handoff entries moved from [STATUS.md](STATUS.md) since 2026-11-1
 ## Handoff log
 
 Newest first. One line per finished task: date · agent · what was done · anything the next agent must know.
+
+- 2026-11-14 · Claude · Wrote `docs/CONCEPT_REVIEW.md` on `docs/concept-review` at the owner's request · Proposals need owner decisions before any PRD change; main themes: 10-minute goal vs session length and content pace, recognition-only exercises, learning metric, pilot protocol, stage order.
 
 - 2026-11-13 · Codex · Recorded owner approval of docs/status-cleanup; historical entries and the supplied Claude review are preserved · The owner explicitly approved merging PR #26; next are P09 device checks and P10.
 
