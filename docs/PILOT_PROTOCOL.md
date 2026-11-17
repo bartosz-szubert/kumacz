@@ -12,7 +12,7 @@ Variant A, approved on 2026-11-17 (U-08, D-89). Observe picture and instruction 
 
 | Observe | What to write down |
 | --- | --- |
-| Time | Use a stopwatch from selecting the profile to the end of the session or early stop. Note introduction, break and help time separately. F-22 defines the app's own learning-time measure. |
+| Time | Use a stopwatch from selecting the profile to the end of the session or early stop. Note introduction, break and help time separately. If attention wanes, note roughly when and what you observed, such as tapping before the audio finishes (D-92). F-22 defines the app's own learning-time measure. |
 | Help | Count requests and interventions. Mark the reason: controls, instructions or vocabulary. |
 | Pictures | Note which picture was unclear and what the child thought it showed. Count only confirmed picture misunderstandings. |
 | Instructions and self-assessment | Note hesitation, replay of spoken instructions and how the child uses **Znam** / **Jeszcze nie**. After the session, ask what each button means and what the child expects from **Jeszcze nie**. Record the expectation for U-05. |
