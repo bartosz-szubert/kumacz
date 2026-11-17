@@ -6,7 +6,7 @@ Older Done and Handoff entries: [STATUS_ARCHIVE.md](STATUS_ARCHIVE.md).
 
 ## In progress
 
-_No agent task running. Next are P09 device checks and P10 observations._
+_No agent task running. The approved U-08 protocol is ready for merge review._
 
 ## Resume point
 
@@ -18,14 +18,15 @@ _No agent task running. Next are P09 device checks and P10 observations._
 
 ## Next
 
-**First:** owner reads [CONCEPT_REVIEW.md](CONCEPT_REVIEW.md) (independent opinion, 2026-11-14) and decides which proposals to adopt. Nothing in it is a decision; the pilot-protocol proposal (U-08) is the only one aimed at P10.
-
-1. Complete P09 on the actual Android tablet with Chrome: online audio, cached replay in airplane mode while the page stays open, a complete session, resume, both themes and instructions.
-2. Run P10 with the children; record picture/instruction clarity and independent use without personal data. Address pilot findings before continuing from P11.
-3. Keep P12 upgrade/refresh/conflict guidance, P27 general migrations/imports and P33 whole-minute validation in their planned stages.
-4. Verify WebKit when its binary is available. Full offline preparation and reopening belong to P36; see [IMPLEMENTATION.md](IMPLEMENTATION.md).
+1. Merge the U-08 documentation after owner approval. Complete P09 on the Android tablet with Chrome, including online audio, cached replay in airplane mode while the page stays open, a complete session, resume, both themes and instructions.
+2. Run P10 using the [pilot observation protocol](PILOT_PROTOCOL.md). Keep raw observations local and record combined findings without personal data.
+3. Discuss the five questions from section 5 of the [concept review](CONCEPT_REVIEW.md) one at a time. Then discuss U-01–U-03, U-04–U-05, U-06–U-07 and U-09–U-10 in order. Start P11 after the pilot and these decisions are complete.
+4. Discuss later: U-11 rewards, U-12 child instructions and error messages, U-13 reading, U-14 pronunciation, U-15 devices and backups, U-16 short phrases and U-17 PRD consistency. These remain proposals.
+5. Verify WebKit when its binary is available. P12 upgrade recovery, P27 general migrations and imports, P33 whole-minute validation and P36 offline preparation remain in the [implementation plan](IMPLEMENTATION.md).
 
 ## Done
+
+- 2026-11-17 · Recorded the owner's U-08 variant A as D-89 and prepared the P10 observation protocol with decision thresholds and a summary without personal data.
 
 - 2026-11-14 · Added an independent concept/PRD review in `docs/CONCEPT_REVIEW.md` (Polish; proposals only). No PRD, code or asset changes.
 
@@ -35,11 +36,9 @@ _No agent task running. Next are P09 device checks and P10 observations._
 
 - P09b reconciled on 2026-11-12 after the approved #23 merge: PR #24 targets main, the Znam labels and accepted P08 assets are carried forward, the flashcard canContinue save gate is preserved, pilot tests use the current label and PRD decisions remain D-86/D-87/D-88. Introduction approval is recorded with unchanged audio bytes. Fresh types/build, 74 Vitest cases and 43 Chromium cases passed, including a complete nine-exercise flow, native pending-save retry without duplicates and interrupted-session resume. The owner subsequently approved the P09b merge on 2026-11-12; physical device/child checks remain pending.
 
-- P09a accepted on 2026-11-12: the owner explicitly authorized merging PR #23 after the three-point summary and passing types/build, 62 Vitest cases and 38 Chromium cases. Approval changes documentation only; migration, validation and accepted asset bytes are unchanged.
-
-- P09a reconciled on 2026-11-12 after the owner's approved P08 merge: PR #23 targets main; the STATUS-only conflict preserves accepted P07/P08, both prompt approvals, D-87/D-88 and Claude's review. Migration and validation implementation bytes remain unchanged from the reviewed P09a head. Types/build, 62 Vitest cases and 38 Chromium cases passed after reconciliation. The owner subsequently approved merging P09a on 2026-11-12.
-
 ## Handoff log
+
+- 2026-11-17 · Codex · Prepared the P10 protocol for merge review after the owner chose variant A · Next are the section 5 questions and the pilot. P11 waits for P10 and the required decisions.
 
 - 2026-11-14 · Claude · Wrote `docs/CONCEPT_REVIEW.md` on `docs/concept-review` at the owner's request · Proposals need owner decisions before any PRD change; main themes: 10-minute goal vs session length and content pace, recognition-only exercises, learning metric, pilot protocol, stage order.
 
@@ -48,7 +47,3 @@ _No agent task running. Next are P09 device checks and P10 observations._
 - 2026-11-12 · Codex · Recorded explicit owner #24 merge approval after all stages were reconciled/approved sequentially; retained exact accepted prompt bytes, Znam labels and ordered D-86/D-87/D-88 · Verify Pages publication, then owner Android tablet + Chrome checks and P10 observations. Implementation acceptance does not claim physical-device or child validation; no P11 start yet.
 
 - 2026-11-12 · Codex · Merged approved P09a #23 and reconciled P09b #24 onto main, retaining accepted recordings/Znam, the pending-save continuation guard and ordered D-86/D-87/D-88 · Await separate #24 merge approval, then Pages/device acceptance and P10. No pilot learning-policy changes; full word selection remains P14.
-
-- 2026-11-12 · Codex · Recorded explicit owner P09a #23 merge approval without changing its reviewed implementation · Next reconcile #24 onto main, carry accepted prompts/Znam forward and preserve D-86/D-87/D-88 order. #24 still needs its own merge approval and P09/P10 device/child checks remain pending.
-
-- 2026-11-12 · Codex · Merged owner-approved P08 PR #22 with exact recording approval metadata; reconciled P09a #23 onto main and retained its unchanged migration behavior · Await separate #23 merge approval. Only afterward reconcile #24, carry accepted recordings/Znam forward and preserve D-86/D-87/D-88 order; no #24 merge approval yet.
