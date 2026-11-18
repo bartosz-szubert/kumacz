@@ -40,7 +40,7 @@ Kumacz aims to make daily learning approachable, starting with a 7-year-old who 
 | **v1.1** | Sync across devices · shared sibling goal ("family tree") · memory and spelling exercises · level 3 |
 | **v1.2** | Decorating "my place" with earned stars · levels 4–5 · pronunciation practice |
 
-Moving from v1.0 to v1.1 is gated: the MVP is tested by real users for 3 weeks against defined success criteria before new features are added.
+A three-week family test of the learning flow and Level 1 comes before the parent panel, backups and offline packaging. The full MVP evaluation guides the decision to start v1.1. See the [implementation plan](docs/IMPLEMENTATION.md) and [PRD success criteria](docs/PRD.md#11-mvp-success-criteria).
 
 ## How this project is run
 

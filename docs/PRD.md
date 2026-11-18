@@ -215,7 +215,7 @@ General estimate for other levels: 4–6 lessons per level, 8–12 words per les
 | Fruit | 7 |
 | **Total** | **32** |
 
-At most 3 new words are introduced per session (D-34). Introducing 32 words requires at least 11 sessions by word count alone; this is a lower bound, not a guarantee of level completion. Actual session count also depends on lesson boundaries, reviews and correct answers (F-34). The 3-week test still targets completing at least one level (section 11).
+At most 3 new words are introduced per session (D-34). Introducing 32 words takes at least 11 sessions by word count. Actual session count also depends on lesson boundaries, reviews and correct answers (F-34). The three-week family test uses the complete Level 1 content, and completing Level 1 remains a test target (section 11, D-97).
 
 **Content validation:** after PRD approval and once implementation begins, prepare one pilot lesson and try it with the children before preparing the full content for levels 1–2. Check whether they understand the pictures and instructions, whether the difficulty is appropriate, and whether they can complete the tasks independently. Use the findings to refine the lesson pattern before expanding the content (D-44). Follow the P10 protocol in D-89.
 
@@ -263,7 +263,9 @@ module (english) → level (1) → lesson (colours) → items (word, translation
 
 ## 11. MVP success criteria
 
-Test period: **3 weeks** of regular use by both children.
+Start with **three weeks** of regular use by both children in the early family test (P29A, D-97). Run it after P10, once progress saving, reviews, full learning sessions, rewards, a simple sticker album and all Level 1 lessons are ready. Use the GitHub Pages test build on the shared device and keep both profiles in the same browser. The test requires internet access and takes place before parent access, backups and offline packaging. Progress is local to the test browser.
+
+Use the criteria below to assess return use, progress and listening comprehension. Apply the parent-led listening check from D-95, and use review history as supplementary evidence when available. Review the findings before continuing with the remaining MVP stages. P38 verifies the complete MVP before release, and P40 retains the full MVP evaluation for the v1.1 decision. See the [implementation plan](IMPLEMENTATION.md).
 
 | Metric | Target |
 |---|---|
@@ -279,7 +281,7 @@ Test period: **3 weeks** of regular use by both children.
 
 **Supplementary retention measure:** From the app's normal due-review history, compare the first and last independent answers for the same words, separately per child. Include words with at least two eligible answers and report the number of words used. Eligible answers are the initial independent attempt in a due review, before feedback or the solution is shown. Corrective retries, flashcard self-assessment and ungraded audio failures are excluded. Use this comparison to assess what the child retains between reviews (D-71, D-95).
 
-**v1.1 gate:** meeting the criteria starts work on sync. If they are not met, the core gets fixed first.
+**v1.1 gate:** use the full MVP evaluation (P40) to decide when to start work on sync. If the criteria are unmet, fix the core first. Findings from P29A guide improvements to the MVP.
 
 ## 12. Risks
 
@@ -402,3 +404,4 @@ Test period: **3 weeks** of regular use by both children.
 | D-94 | U-05, variant A, selected on 2026-11-17. After P10, in the full MVP session, „Jeszcze nie” can bring back the word as a flashcard once later in the same session if the planned exercise count allows it. Allow at most one self-assessment replay per word per session. „Znam” continues without scheduling a replay. If there is no room, continue the session. Self-assessment changes neither the word's grade, Leitner box nor review date. P10 observes how children understand both buttons in the existing pilot (F-08, D-33, D-87, D-89). |
 | D-95 | U-06, variant A, selected on 2026-11-18. The primary learning measure in the three-week MVP test is a parent-led listening-and-picture check before and after the test, with at least 10 matched Level 1 words per child. Change the order and picture positions between checks. Require a gain of at least 20 percentage points below an 80% baseline, or maintenance of the baseline at 80% or above. Fewer than 10 matched results means insufficient measurement. The first and last eligible due reviews supplement the check with a measure of retention. Keep raw results local and report combined findings without personal data (section 11, D-93, N-09). |
 | D-96 | U-07, variant A, selected on 2026-11-18. In the parent summary, show „Opanowane w powtórkach” for words that meet F-14 and „W trakcie nauki” for introduced words that do not currently meet F-14, separately per profile. Explain both labels briefly. Add a short suggestion to the difficult-word list for the parent to play a word and ask the child to point to its picture. The parent-led listening check remains part of the MVP test under D-95 (F-14, F-27, F-28). |
+| D-97 | U-09, variant A, selected on 2026-11-18. After P10 and the pre-P11 decisions, prepare progress saving, reviews, full learning sessions, rewards, a simple sticker album and all Level 1 lessons. Then run a three-week family test on the GitHub Pages test build (P29A), online in the same browser on one shared device, before the parent panel, backups and offline packaging. Use the D-95 listening check and observations of return use to review the learning flow before resuming the MVP plan. U-10 determines exercise scope. Keep verification of the full MVP before release and the P40 evaluation for the v1.1 decision (section 11, D-85). |

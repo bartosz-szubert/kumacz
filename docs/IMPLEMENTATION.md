@@ -1,6 +1,6 @@
 # Implementation proposal — Kumacz MVP
 
-Status: **approved plan**, 2026-11-06, after a second opinion (D-78–D-82). Stage order puts the pilot early (D-81).
+Status: **approved plan**, 2026-11-06, after a second opinion (D-78–D-82). The plan includes the P10 pilot and the early P29A family test (D-81, D-97).
 Product baseline: approved PRD. Product behaviour comes from [PRD.md](PRD.md); current work and handoff belong in [STATUS.md](STATUS.md).
 
 ## Execution rules after approval
@@ -31,7 +31,7 @@ Keep scheduling, answer evaluation and session policies in the domain layer, sep
 
 ## Stages
 
-Track completed and current stages in `STATUS.md`. Execute the remaining stages in order, never in parallel. "Test build" stages (up to P10) serve the pilot (D-81) and are not an MVP release.
+Track completed and current stages in `STATUS.md`. Execute the remaining stages in order, never in parallel. The P09–P10 pilot and the P29A family test use the Pages test build (D-81, D-85, D-97). After P29A, review the findings before starting P23. Stage IDs remain stable and execution follows the table order.
 
 | ID | Focus | Deliverable and acceptance | PRD / prerequisites |
 |---|---|---|---|
@@ -57,25 +57,27 @@ Track completed and current stages in `STATUS.md`. Execute the remaining stages 
 | P20 | Session screen: integration | Replace the pilot session with the full session, including exercise types, planned composition, replay, progress display and the empty-plan messages with optional practice. | P12, P14–P18; F-04–F-11, D-91 |
 | P21 | Session screen: resume and pauses | Resume the last saved position without repeated awards, save-error pause, time accrual only during exercises. | P19, P20; F-36, F-43, F-22 |
 | P22 | Session reward screen | Stars, praise, reduced motion and sticker reveal; per-profile persistence and daily reward limits. Ask for unspecified reward amounts first. | P21; F-18, F-19, F-21, F-24 |
-| P23 | Parent access | First-launch PIN, access, PIN change and forgotten-PIN multiplication check; reset keeps profiles and progress. | P06, P05; F-25, D-28, D-54 |
+| P28 | Sticker album | One page per level, variable sticker count, special completion sticker, later review stickers, reward limit. | P22; F-19, D-24, D-41 |
+| P29 | Lesson/level screen | Current, completed and unlocked lessons/levels, separate from mastery; child's theme switch outside exercises. | P15, P21; F-15, F-31, F-34 |
+| C1-… | Remaining Level 1 lessons | One task per remaining Level 1 lesson, with the same checks as P04. Complete Level 1 before the family test. | P10 fixes, P20; section 7, D-44, D-61, D-97 |
+| P29A | Early family test | Before the test, use temporary profiles on the Pages test build to verify session completion, resume and profile isolation. Collect the D-95 baseline before the first learning session. Then use one shared device and browser online for three weeks. Record return use, progress and the D-95 listening checks. Keep personal data local. Review whether the learning flow needs fixes before continuing with P23. | P10–P22, P28, P29, all C1 stages; section 11, D-85, D-95, D-97 |
+| P23 | Parent access | First-launch PIN, access, PIN change and forgotten-PIN multiplication check; reset keeps profiles and progress. | P05, P06, P29A; F-25, D-28, D-54, D-97 |
 | P24 | Parent profile management | Add/edit/delete profiles from the parent panel; replaces the pilot's PIN-less profile screen (F-03). | P23; F-02, F-03, F-26 |
 | P25 | Profile picker | Tap to select a profile; no-profile and returning states; entry tap for audio; app updates activate here. | P24; F-01, F-36, D-60 |
 | P26 | Backup data operations | Full export and replacing import, validation before writing, single-transaction commit, failure recovery and retry; test interrupted import. | P11; F-30, N-13, D-27, D-64 |
 | P27 | Data migration | Versioned migrations that keep old data on failure; realistic older fixtures, success/abort/interruption checks. Strict field validation requires compatibility/version migration whenever persisted fields change, including changes made in earlier stages (P06 review). | P26; N-11, N-13, D-55, D-64 |
-| P28 | Sticker album | One page per level, variable sticker count, special completion sticker, later review stickers, reward limit. | P22; F-19, D-24, D-41 |
-| P29 | Lesson/level screen | Current, completed and unlocked lessons/levels, separate from mastery; child's theme switch outside exercises. | P15, P21; F-15, F-31, F-34 |
 | P30 | Skip-level test and starting level | 10 questions, pass at 8; complete/unlock without mastery; starting-level override; seed unintroduced words under F-38. | P13, P29; F-16, F-17, F-26, F-38, D-31, D-53 |
 | P31 | Parent summary | Show learning days, daily time, completed lessons and levels. Explain the two vocabulary counts for each profile and avoid comparing children. | P19, P23, P29; F-14, F-27, D-96 |
 | P32 | Difficult words | Use up to 5 recent checked answers. Add words at 2 errors and remove them below 2. Exclude ungraded audio failures. Show translations, offer audio replay and give the parent a short listening-practice suggestion. | P06, P23; F-28, F-39, D-68, D-96 |
 | P33 | Parent settings | Time limit, automatic voice-over, per-profile themes, PIN change; changes apply to the intended profile. Restrict `dailyLimitMinutes` entry to whole minutes and address existing fractional values when tightening validation (P06 review). | P19, P23; F-29, F-31 |
 | P34 | Backup and storage screen | Export/import confirmation and retry, persistence request/result, installation guidance, 7-day backup reminder. | P26, P27; F-30, F-37, D-66 |
 | P35 | About screen | Credit Twemoji and the voices as their licences require, from the provenance recorded in P02. | P02; F-33, D-82 |
-| C01… | Remaining lesson content | One task per remaining level-1 lesson and scoped level-2 lesson, with the same checks as P04. | P10 fixes; section 7, D-44, D-61 |
-| P36 | Offline package and readiness | Manifest and precache for all final content and assets; download, verification of every listed file, readiness display, retry of interrupted preparation, offline reopen. | all C stages, P03; N-03–N-04, F-42, D-63 |
+| C2-… | Remaining Level 2 lessons | One task per scoped Level 2 lesson, with the same checks as P04. Use the lesson pattern refined during P10 and P29A. | P29A; section 7, D-44, D-61, D-97 |
+| P36 | Offline package and readiness | Manifest and precache for all final content and assets; download, verification of every listed file, readiness display, retry of interrupted preparation, offline reopen. | all C1 and C2 stages, P03; N-03–N-04, F-42, D-63 |
 | P37 | App updates with existing data | New version activates only on the profile picker; existing progress survives; migrations run safely. | P36, P27, P25; N-11, F-36 |
 | P38 | Release verification | Tests and critical browser flows; themes, orientations, touch targets, audio and offline on real devices; first usable load against N-07. Record devices and conditions. | P28–P37; N-01–N-08 |
 | P39 | GitHub Pages release | The test-build Pages workflow exists since D-85; remove the test banner and confirm the workflow for the repository base path; publish after the product owner's approval; verify live path, assets, offline reopen and preserved local data. | P38; N-05, D-02 |
-| P40 | Three-week MVP test | Use a short parent-led listening check before and after the test (≥10 matched Level 1 words per child). Use local due-review history as a supplementary retention measure. Observe both children against section 11, report combined findings without personal data and evaluate the v1.1 gate. | P39; section 11, D-95 |
+| P40 | Full MVP evaluation | Assess the released MVP against section 11, including the three-week period and D-95 listening checks. Use local due-review history as a supplementary retention measure. Record combined findings without personal data and evaluate the v1.1 gate. | P39; section 11, D-95, D-97 |
 
 ## Verification priorities
 
