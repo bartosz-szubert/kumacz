@@ -65,8 +65,8 @@ Track completed and current stages in `STATUS.md`. Execute the remaining stages 
 | P28 | Sticker album | One page per level, variable sticker count, special completion sticker, later review stickers, reward limit. | P22; F-19, D-24, D-41 |
 | P29 | Lesson/level screen | Current, completed and unlocked lessons/levels, separate from mastery; child's theme switch outside exercises. | P15, P21; F-15, F-31, F-34 |
 | P30 | Skip-level test and starting level | 10 questions, pass at 8; complete/unlock without mastery; starting-level override; seed unintroduced words under F-38. | P13, P29; F-16, F-17, F-26, F-38, D-31, D-53 |
-| P31 | Parent summary | Learning days, daily time, completed lessons and levels; no comparison between children. | P19, P23, P29; F-27 |
-| P32 | Difficult words | Latest up to 5 checked answers; enter at 2 errors, leave below 2; translations and replay; exclude ungraded audio failures. | P06, P23; F-28, F-39, D-68 |
+| P31 | Parent summary | Show learning days, daily time, completed lessons and levels. Explain the two vocabulary counts for each profile and avoid comparing children. | P19, P23, P29; F-14, F-27, D-96 |
+| P32 | Difficult words | Use up to 5 recent checked answers. Add words at 2 errors and remove them below 2. Exclude ungraded audio failures. Show translations, offer audio replay and give the parent a short listening-practice suggestion. | P06, P23; F-28, F-39, D-68, D-96 |
 | P33 | Parent settings | Time limit, automatic voice-over, per-profile themes, PIN change; changes apply to the intended profile. Restrict `dailyLimitMinutes` entry to whole minutes and address existing fractional values when tightening validation (P06 review). | P19, P23; F-29, F-31 |
 | P34 | Backup and storage screen | Export/import confirmation and retry, persistence request/result, installation guidance, 7-day backup reminder. | P26, P27; F-30, F-37, D-66 |
 | P35 | About screen | Credit Twemoji and the voices as their licences require, from the provenance recorded in P02. | P02; F-33, D-82 |
