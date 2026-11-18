@@ -4,6 +4,8 @@ Older Done and Handoff entries moved from [STATUS.md](STATUS.md) since 2026-11-1
 
 ## Done
 
+- 2026-11-17 · The owner chose U-03 variant A. D-92 records the shared suggested daily time target in the MVP and adds observation of attention to the P10 protocol.
+
 - 2026-11-17 · The owner chose U-02 variant A. D-91 records shorter sessions, empty-plan messages and optional practice of weaker words.
 
 - 2026-11-17 · The owner chose U-01 variant A. D-90 makes one completed session sufficient for learning-day credit and sets 10 minutes as a suggested daily target. The pilot protocol for U-08 was merged in PR #28.
@@ -139,6 +141,8 @@ Older Done and Handoff entries moved from [STATUS.md](STATUS.md) since 2026-11-1
 ## Handoff log
 
 Newest first. One line per finished task: date · agent · what was done · anything the next agent must know.
+
+- 2026-11-17 · Codex · Recorded owner approval to merge U-03 PR #31 with D-92 · Discuss U-04 next. P11 waits for the pilot and remaining decisions.
 
 - 2026-11-17 · Codex · Recorded owner approval to merge U-02 PR #30 with D-91 · Discuss U-03 next. Complete the pilot and remaining decisions before P11.
 
