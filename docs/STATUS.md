@@ -6,7 +6,7 @@ Older Done and Handoff entries: [STATUS_ARCHIVE.md](STATUS_ARCHIVE.md).
 
 ## In progress
 
-_U-09 variant A is ready for merge review. P09 device checks and P10 observations are pending._
+_No agent task running. Next are the P09 device checks, P10 observations and discussion of U-10._
 
 ## Resume point
 
@@ -20,7 +20,7 @@ _U-09 variant A is ready for merge review. P09 device checks and P10 observation
 
 1. Complete P09 on the Android tablet with Chrome, including online audio, cached replay in airplane mode while the page stays open, a complete session, resume, both themes and instructions.
 2. Run P10 using the [pilot observation protocol](PILOT_PROTOCOL.md). Keep raw observations local and record combined findings without personal data.
-3. The five questions in section 5 of the [concept review](CONCEPT_REVIEW.md) have been answered. After the U-09 merge, discuss exercise scope in U-10. Start P11 after P10 and these decisions.
+3. The five questions in section 5 of the [concept review](CONCEPT_REVIEW.md) have been answered. Discuss exercise scope in U-10. Start P11 after P10 and these decisions.
 4. Discuss later: U-11 rewards, U-12 child instructions and error messages, U-13 reading, U-14 pronunciation, U-15 devices and backups, U-16 short phrases and U-17 PRD consistency. These remain proposals.
 5. Verify WebKit when its binary is available. P12 upgrade recovery, P27 general migrations and imports, P33 whole-minute validation and P36 offline preparation remain in the [implementation plan](IMPLEMENTATION.md).
 
@@ -38,7 +38,7 @@ _U-09 variant A is ready for merge review. P09 device checks and P10 observation
 
 ## Handoff log
 
-- 2026-11-18 · Codex · Prepared D-97 for U-09 · Await separate merge approval, then discuss U-10. P11 follows P10 and the remaining decisions.
+- 2026-11-18 · Codex · Recorded owner approval to merge U-09 PR #36 with D-97 · Discuss U-10 next. P11 follows P10 and the remaining decisions.
 
 - 2026-11-18 · Codex · Recorded owner approval to merge U-07 PR #35 with D-96 · Discuss U-09 next. Complete P10 and the remaining decisions before P11.
 
