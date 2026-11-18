@@ -6,7 +6,7 @@ Older Done and Handoff entries: [STATUS_ARCHIVE.md](STATUS_ARCHIVE.md).
 
 ## In progress
 
-_No agent task running. Next are the P09 device checks, P10 observations and discussion of U-07._
+_U-07 variant A is ready for merge review. P09 device checks and P10 observations are pending._
 
 ## Resume point
 
@@ -20,11 +20,13 @@ _No agent task running. Next are the P09 device checks, P10 observations and dis
 
 1. Complete P09 on the Android tablet with Chrome, including online audio, cached replay in airplane mode while the page stays open, a complete session, resume, both themes and instructions.
 2. Run P10 using the [pilot observation protocol](PILOT_PROTOCOL.md). Keep raw observations local and record combined findings without personal data.
-3. The five questions in section 5 of the [concept review](CONCEPT_REVIEW.md) have been answered. Discuss U-07 and U-09–U-10 in order, one topic at a time. Start P11 after P10 and these decisions.
+3. The five questions in section 5 of the [concept review](CONCEPT_REVIEW.md) have been answered. After the U-07 merge, discuss U-09 and U-10 in order, one topic at a time. Start P11 after P10 and these decisions.
 4. Discuss later: U-11 rewards, U-12 child instructions and error messages, U-13 reading, U-14 pronunciation, U-15 devices and backups, U-16 short phrases and U-17 PRD consistency. These remain proposals.
 5. Verify WebKit when its binary is available. P12 upgrade recovery, P27 general migrations and imports, P33 whole-minute validation and P36 offline preparation remain in the [implementation plan](IMPLEMENTATION.md).
 
 ## Done
+
+- 2026-11-18 · The owner chose U-07 variant A. D-96 adds two vocabulary counts to the parent summary and a listening-practice suggestion to the difficult-word list.
 
 - 2026-11-18 · The owner chose U-06 variant A. D-95 specifies a parent-led listening check before and after the MVP test, supplemented by in-app retention data.
 
@@ -34,9 +36,9 @@ _No agent task running. Next are the P09 device checks, P10 observations and dis
 
 - 2026-11-17 · The owner chose U-03 variant A. D-92 records the shared suggested daily time target in the MVP and adds observation of attention to the P10 protocol.
 
-- 2026-11-17 · The owner chose U-02 variant A. D-91 records shorter sessions, empty-plan messages and optional practice of weaker words.
-
 ## Handoff log
+
+- 2026-11-18 · Codex · Prepared D-96 for U-07 · Await separate merge approval, then discuss U-09. Complete P10 and the remaining decisions before P11.
 
 - 2026-11-18 · Codex · Recorded owner approval to merge U-06 PR #34 with D-95 · Discuss U-07 next. Complete P10 and the remaining decisions before P11.
 
@@ -45,5 +47,3 @@ _No agent task running. Next are the P09 device checks, P10 observations and dis
 - 2026-11-17 · Codex · Recorded owner approval to merge U-04 PR #32 with D-93 · Discuss U-05 next. Finish P10 and the remaining decisions before P11.
 
 - 2026-11-17 · Codex · Recorded owner approval to merge U-03 PR #31 with D-92 · Discuss U-04 next. P11 waits for the pilot and remaining decisions.
-
-- 2026-11-17 · Codex · Recorded owner approval to merge U-02 PR #30 with D-91 · Discuss U-03 next. Complete the pilot and remaining decisions before P11.
