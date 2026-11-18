@@ -6,7 +6,7 @@ Older Done and Handoff entries: [STATUS_ARCHIVE.md](STATUS_ARCHIVE.md).
 
 ## In progress
 
-_No agent task running. Next are the P09 device checks, P10 observations and discussion of U-10._
+_U-10 variant A is ready for merge review. P09 device checks and P10 observations are pending._
 
 ## Resume point
 
@@ -20,11 +20,13 @@ _No agent task running. Next are the P09 device checks, P10 observations and dis
 
 1. Complete P09 on the Android tablet with Chrome, including online audio, cached replay in airplane mode while the page stays open, a complete session, resume, both themes and instructions.
 2. Run P10 using the [pilot observation protocol](PILOT_PROTOCOL.md). Keep raw observations local and record combined findings without personal data.
-3. The five questions in section 5 of the [concept review](CONCEPT_REVIEW.md) have been answered. Discuss exercise scope in U-10. Start P11 after P10 and these decisions.
+3. Merge the U-10 decision after owner approval. Start P11 after P10 and the merge of D-98, the final pre-P11 decision.
 4. Discuss later: U-11 rewards, U-12 child instructions and error messages, U-13 reading, U-14 pronunciation, U-15 devices and backups, U-16 short phrases and U-17 PRD consistency. These remain proposals.
 5. Verify WebKit when its binary is available. P12 upgrade recovery, P27 general migrations and imports, P33 whole-minute validation and P36 offline preparation remain in the [implementation plan](IMPLEMENTATION.md).
 
 ## Done
+
+- 2026-11-18 · The owner chose U-10 variant A. D-98 keeps three exercise types and the parent-set starting level in the MVP, and defers context questions and the skip-level test.
 
 - 2026-11-18 · The owner chose U-09 variant A. D-97 schedules the three-week family test P29A once the learning flow and Level 1 are ready.
 
@@ -34,9 +36,9 @@ _No agent task running. Next are the P09 device checks, P10 observations and dis
 
 - 2026-11-17 · The owner chose U-05 variant A. D-94 allows a flashcard to return once after „Jeszcze nie” if it fits the planned full MVP session.
 
-- 2026-11-17 · The owner chose U-04 variant A for the MVP. D-93 keeps simple flashcards focused on listening and records a preference to consider optional recall after the MVP.
-
 ## Handoff log
+
+- 2026-11-18 · Codex · Prepared D-98 for U-10 · Await separate merge approval. Complete the P09 device checks and P10 before starting P11.
 
 - 2026-11-18 · Codex · Recorded owner approval to merge U-09 PR #36 with D-97 · Discuss U-10 next. P11 follows P10 and the remaining decisions.
 
@@ -45,5 +47,3 @@ _No agent task running. Next are the P09 device checks, P10 observations and dis
 - 2026-11-18 · Codex · Recorded owner approval to merge U-06 PR #34 with D-95 · Discuss U-07 next. Complete P10 and the remaining decisions before P11.
 
 - 2026-11-17 · Codex · Recorded owner approval to merge U-05 PR #33 with D-94 · Discuss U-06 next. Complete P10 and the remaining decisions before P11.
-
-- 2026-11-17 · Codex · Recorded owner approval to merge U-04 PR #32 with D-93 · Discuss U-05 next. Finish P10 and the remaining decisions before P11.

@@ -55,11 +55,11 @@ The personas below describe the initial MVP users. Older primary-school pupils a
 |---|---|
 | Module | English, levels 1–2, with a focus on understanding spoken vocabulary (D-93, section 7) |
 | Profiles | Child profile picker (nickname + avatar), no passwords |
-| Exercise types | Flashcards with voice-over · Listen and tap · Picture → word · Context questions |
+| Exercise types | Flashcards with voice-over · Listen and tap · Picture → word (F-08–F-10, D-98) |
 | Review | Leitner system for vocabulary |
 | Gamification | Stars ⭐ · Sticker album · Weekly goal |
 | Time | Suggested daily target of 10 minutes · per-profile timer · gentle reminder after 30 min |
-| Parent panel | Profiles, summaries, difficult words, settings, PIN |
+| Parent panel | Profiles with parent-set starting level (F-17), summaries, difficult words, settings, PIN |
 | Themes | "Electric" and "Neon", switchable |
 | Data storage | Local in the browser (through a dedicated data layer) |
 | Devices | Computer and tablet, touch and mouse, portrait and landscape |
@@ -70,6 +70,7 @@ The personas below describe the initial MVP users. Older primary-school pupils a
 - **Family tree**: shared sibling goal.
 - New exercise types: **Memory (pairs)**, **Spell the word from letters**.
 - English level 3.
+- Candidate: context questions (F-11), e.g. "What colour is a banana?" with colour choices. Before scheduling, define the prompt language, audio and content by category (D-98).
 - Candidate: own SVG stickers and avatars on top of the open emoji set (D-18), if the MVP test confirms the need.
 
 ### v1.2
@@ -82,6 +83,7 @@ The personas below describe the initial MVP users. Older primary-school pupils a
 
 - Broader coverage across all primary-school grades, beyond the initial grades 1–3 audience (D-73).
 - Modules: German, maths, natural science, geography and other primary-school subjects (aligned with the national curriculum); no release dates assigned (D-75).
+- Reconsider the child-facing skip-level test (F-16) when more English levels are available. The earlier test design is recorded in D-31 and D-53 (D-98).
 - AI conversation: requires a backend, an API key and a separate privacy assessment.
 
 ### Out of scope
@@ -120,15 +122,14 @@ The personas below describe the initial MVP users. Older primary-school pupils a
 | **F-08** | Flashcards with voice-over | picture → flip → word + pronunciation; child marks "I know it" / "not yet" (Polish buttons: **„Znam” / „Jeszcze nie”**, D-87); The child can flip directly from the picture (D-93). In the full MVP session, „Jeszcze nie” can bring back that word as a flashcard once later in the same session if the plan has room. „Znam” continues without scheduling a replay. Both choices are ungraded and leave the Leitner box and review date unchanged (D-33, D-94). |
 | **F-09** | Listen and tap | voice says a word, child picks 1 of 3–4 pictures |
 | **F-10** | Picture → word | picture shown, child picks the correct written word from 3–4; before answering, only the Polish instruction can be played; English pronunciation is available after answering (D-43) |
-| **F-11** | Context questions | e.g. "What colour is a banana?" → colour tiles |
 
-- **F-40** Wrong options in checked exercises (F-09, F-10, F-11) come from the same lesson or category (e.g. other colours). One question never shows two easily confused pictures (e.g. pen and pencil) (D-59).
+- **F-40** Wrong options in checked exercises (F-09, F-10) come from the same lesson or category (e.g. other colours). One question never shows two easily confused pictures (e.g. pen and pencil) (D-59).
 - **F-39** The Polish translation of a word is shown, with a play-audio button, on the back of the flashcard (F-08) and after the child answers a checked exercise, never before the answer. The parent panel shows translations next to words, e.g. in the difficult-word list (F-28) (D-58).
 - **F-35** Introduce exercise types progressively, separately for each word. Choosing its written form (F-10) becomes available only after the child has answered that word correctly at least once in a listen-and-tap exercise (F-09). Until then, use listening and picture-based tasks for the word; flashcard self-assessment does not satisfy this condition. The trigger is word-specific rather than based on the lesson's session number (D-37, D-70).
 
 ### 6.4 Review (Leitner)
 
-- **F-12** Each word has a box 1–5. A new word enters box 1 when it is introduced (F-04); its first review is due on the next local calendar date (D-52, D-67). A correct answer in a due review using a checked exercise (F-09, F-10, F-11) moves it up by one box, up to box 5 (D-45), with at most one upward move per word per profile per day, across all sessions (D-32). Further correct answers that day are practice and do not move it up again. A wrong answer in a due review moves it down two boxes, not below box 1, and its next review follows the new box (F-13). A wrong answer outside a due review does not change the box; it still counts for the difficult-word list (F-28) and the word follows the retry policy in F-06, including carryover when needed (D-51, D-69). Flashcard self-assessment (F-08) does not change the box (D-33).
+- **F-12** Each word has a box 1–5. A new word enters box 1 when it is introduced (F-04); its first review is due on the next local calendar date (D-52, D-67). A correct answer in a due review using a checked exercise (F-09, F-10) moves it up by one box, up to box 5 (D-45), with at most one upward move per word per profile per day, across all sessions (D-32). Further correct answers that day are practice and do not move it up again. A wrong answer in a due review moves it down two boxes, not below box 1, and its next review follows the new box (F-13). A wrong answer outside a due review does not change the box; it still counts for the difficult-word list (F-28) and the word follows the retry policy in F-06, including carryover when needed (D-51, D-69). Flashcard self-assessment (F-08) does not change the box (D-33).
 - **F-13** The word's resulting box sets when its next review is due (D-29):
 
   | Box | Next review |
@@ -146,11 +147,10 @@ The personas below describe the initial MVP users. Older primary-school pupils a
 
 ### 6.5 Levels
 
-- **F-15** Lessons are grouped into levels (section 7). The next level unlocks when the previous one is completed. A level is completed when all its lessons are completed (F-34) or the skip-level test is passed (F-16) (D-23).
-- **F-34** A lesson is completed when every word in it has been answered correctly at least once. Only checked exercises count (F-09, F-10, F-11); flashcard self-assessment "I know it" (F-08) does not. Its words keep coming back in Leitner reviews afterwards (D-21, D-22).
-- **F-16** "Skip level" test: 10 questions, at least 8 correct to pass. Passing completes the level and unlocks the next one without completing its lessons. It does not mark the level's words as mastered; they enter reviews as described in F-38 (D-31, D-53).
+- **F-15** Lessons are grouped into levels (section 7). The next level unlocks when the previous one is completed. A level is completed when all its lessons are completed under F-34 (D-23, D-98).
+- **F-34** A lesson is completed when every word in it has been answered correctly at least once. Only checked exercises count (F-09, F-10); flashcard self-assessment "I know it" (F-08) does not. Its words keep coming back in Leitner reviews afterwards (D-21, D-22).
 - **F-17** The parent can set a profile's starting level. Words of the levels below it enter reviews as described in F-38.
-- **F-38** Words of a level completed by the skip-level test (F-16) or bypassed by the starting level (F-17) that have not been introduced yet are assigned at random, as evenly as possible, to boxes 3, 4 and 5, with the next review due after that box's interval (F-13), so reviews are spread over time. These words are marked "unconfirmed": they do not count as mastered (F-14) until their first correct due review. Words already introduced keep their current box (D-53).
+- **F-38** Previously unintroduced words from levels below the profile's starting level (F-17) are assigned at random, as evenly as possible, to boxes 3, 4 and 5, with the next review due after that box's interval (F-13), so reviews are spread over time. These words are marked "unconfirmed": they do not count as mastered (F-14) until their first correct due review. Words already introduced keep their current box (D-53, D-98).
 
 ### 6.6 Gamification
 
@@ -288,7 +288,7 @@ Use the criteria below to assess return use, progress and listening comprehensio
 | Risk | Impact | Mitigation |
 |---|---|---|
 | Voice-over quality differs between devices | poor pronunciation on some hardware | bundled audio files (D-47); local-only speech synthesis as fallback (D-62); retry without grading when required audio is unavailable (F-41); test on the Android tablet and computer, and retest if moving to iPad |
-| Children get bored quickly | drop in consistency | short sessions, mixed exercise types, themed stickers; observe during tests |
+| Children get bored quickly | drop in consistency | short sessions, mixed exercise types, themed stickers; observe whether exercises feel repetitive in the P29A family test (D-98) |
 | No sync in the MVP confuses children | "where are my stars?" | clear information for the parent; progress export; v1.1 right after tests |
 | Children bypass the limit by switching profiles | time exceeded | parent panel shows actual time; conversation instead of blocking |
 | Browser data cleared | progress lost in v1.0 | persistent storage, home-screen install and backup reminder (F-37); backup export (F-30); sync in v1.1 |
@@ -313,11 +313,11 @@ Use the criteria below to assess return use, progress and listening comprehensio
 | D-03 | Colour-only themes ("Electric", "Neon"), no trademarks |
 | D-04 | Devices: computer and tablet |
 | D-05 | Option B: local storage in MVP, sync (Supabase) in v1.1 |
-| D-06 | Start at Pre A1; 5-level path; "skip level" test |
+| D-06 | Start at Pre A1; 5-level path; "skip level" test. The test is deferred by D-98. |
 | D-07 | Daily goal at least 10 min, with longer learning allowed (clarified by D-74); 30 min limit with a gentle reminder, no blocking |
 | D-08 | Gamification without competition: stars, sticker album (v1.0), room building (v1.2) |
 | D-09 | Shared sibling goal ("family tree") in v1.1 |
-| D-10 | MVP exercise types: flashcards, listen and tap, picture → word, context questions |
+| D-10 | MVP exercise types: flashcards, listen and tap, picture → word, context questions. D-98 defers context questions. |
 | D-11 | Parent panel with PIN, scope F-25…F-30 |
 | D-12 | MVP success criteria as in section 11 |
 | D-13 | Name: **Kumacz** |
@@ -329,8 +329,8 @@ Use the criteria below to assess return use, progress and listening comprehensio
 | D-19 | Theme stored per profile; the child switches it on their profile screen without a PIN (not during exercises), the parent in the parent panel (revised after review) |
 | D-20 | British English for learning content, matching school textbooks; prefer an en-GB speech synthesis voice (confirmed after review) |
 | D-21 | Lesson completion: every word in the lesson answered correctly at least once; mastery continues through Leitner reviews (F-34) |
-| D-22 | Only checked exercises (listen and tap, picture → word, context questions) count towards lesson completion; flashcard "I know it" does not (F-34) |
-| D-23 | Level completion: all lessons of the level completed (or skip-level test passed, F-16); no extra end-of-level test (F-15) |
+| D-22 | Only checked exercises (listen and tap, picture → word, context questions) count towards lesson completion; flashcard "I know it" does not (F-34). The MVP uses F-09 and F-10 under D-98. |
+| D-23 | Level completion: all lessons of the level completed (or skip-level test passed, F-16); no extra end-of-level test (F-15). The test is deferred by D-98. |
 | D-24 | Sticker album: a sticker after every session; level completion adds a special large level sticker marking completion; the page continues to accept review stickers (F-19, clarified by D-41) |
 | D-25 | A learning day requires at least 10 minutes of counted learning and at least one completed learning or review-only session on the same day, as revised by D-76; weekly goal stays 4 of 7 days (F-20). |
 | D-26 | Count visible exercise time only, excluding menus and background; pause after 60 s of inactivity, audio playback is not inactivity; 30-minute default limit and post-limit reward rules unchanged (F-22–F-24) |
@@ -338,9 +338,9 @@ Use the criteria below to assess return use, progress and listening comprehensio
 | D-28 | Forgotten-PIN reset without deleting profiles or progress; the local PIN guards against accidental access, not strong authentication (F-25) |
 | D-29 | Leitner review intervals 1, 2, 4, 7, 14 days for boxes 1–5; overdue reviews spread across normal-length sessions (F-13) |
 | D-30 | Mixed sessions: about half due reviews, the rest current lesson, unused review places filled with lesson exercises; separate review-only sessions (F-05). Short and empty plans follow D-91. |
-| D-31 | Skip-level test: 10 questions, min. 8 correct; passing completes the level and unlocks the next one, without marking its words as mastered (F-16); their Leitner placement is defined by D-53 |
+| D-31 | Skip-level test: 10 questions, min. 8 correct; passing completes the level and unlocks the next one, without marking its words as mastered (F-16); their Leitner placement is defined by D-53. The test is deferred by D-98. |
 | D-32 | Leitner: at most one upward move per word per profile per day, across all sessions; further same-day correct answers are practice without another upward move (F-12). This prevents repeated practice in one day from being treated as long-term retention. |
-| D-33 | Only checked exercises (F-09, F-10, F-11) can promote a word in Leitner, subject to D-32. Flashcard self-assessment (F-08), whether "I know it" or "not yet", does not change the box. |
+| D-33 | Only checked exercises (F-09, F-10, F-11) can promote a word in Leitner, subject to D-32. Flashcard self-assessment (F-08), whether "I know it" or "not yet", does not change the box. The MVP uses F-09 and F-10 under D-98. |
 | D-34 | Introduce at most 3 new words per learning session, leaving room for practice and reviews within the existing 8–12-exercise session (F-04, F-05). |
 | D-35 | Introduce each new word with a picture, written English word and pronunciation before asking the child to answer a checked exercise. Due reviews start with a question; they do not repeat the introductory presentation (F-04). |
 | D-36 | After a wrong answer, show and read out the correct answer, then retry after other exercises rather than immediately; spacing and end-of-session handling are defined by D-69 (F-06). |
@@ -360,7 +360,7 @@ Use the criteria below to assess return use, progress and listening comprehensio
 | D-50 | Protect local data: request persistent browser storage, show the parent how to install the app on the home screen on first launch, and remind the parent in the parent panel to export a backup when the last one is older than 7 days (F-37). |
 | D-51 | A wrong checked answer in a due review moves the word down two boxes (minimum box 1); a wrong answer outside a due review leaves the box unchanged but counts for difficult words (F-28) and triggers the retry policy in F-06, with spacing and carryover clarified by D-69. Replaces the box-1 reset in F-12 and D-45, so an accidental tap does not undo weeks of progress. |
 | D-52 | A new word enters Leitner box 1 when it is introduced in a session, with its first review due the next day, regardless of answers in that session (F-12). |
-| D-53 | Words of a skipped level (F-16) or a level below the starting level (F-17) that were not introduced yet go at random, about one third each, into boxes 3, 4 and 5, with reviews due after the box interval. They stay "unconfirmed" and do not count as mastered until their first correct due review (F-14, F-38). |
+| D-53 | Words of a skipped level (F-16) or a level below the starting level (F-17) that were not introduced yet go at random, about one third each, into boxes 3, 4 and 5, with reviews due after the box interval. They stay "unconfirmed" and do not count as mastered until their first correct due review (F-14, F-38). The MVP applies this to F-17 under D-98. |
 | D-54 | Forgotten-PIN reset requires an adult check: a random two-digit by two-digit multiplication. Sufficient for protection against accidental access (D-28); no recovery code (F-25). |
 | D-55 | Technical data rules: stable content IDs (N-10), a data format version with migration (N-11), and answer history kept for 90 days, older entries deleted automatically (N-12). |
 | D-56 | Implementation will be split into small stages, each fitting one agent session's token limit; the stage plan is prepared after the technology choice (section 10). |
@@ -404,4 +404,5 @@ Use the criteria below to assess return use, progress and listening comprehensio
 | D-94 | U-05, variant A, selected on 2026-11-17. After P10, in the full MVP session, „Jeszcze nie” can bring back the word as a flashcard once later in the same session if the planned exercise count allows it. Allow at most one self-assessment replay per word per session. „Znam” continues without scheduling a replay. If there is no room, continue the session. Self-assessment changes neither the word's grade, Leitner box nor review date. P10 observes how children understand both buttons in the existing pilot (F-08, D-33, D-87, D-89). |
 | D-95 | U-06, variant A, selected on 2026-11-18. The primary learning measure in the three-week MVP test is a parent-led listening-and-picture check before and after the test, with at least 10 matched Level 1 words per child. Change the order and picture positions between checks. Require a gain of at least 20 percentage points below an 80% baseline, or maintenance of the baseline at 80% or above. Fewer than 10 matched results means insufficient measurement. The first and last eligible due reviews supplement the check with a measure of retention. Keep raw results local and report combined findings without personal data (section 11, D-93, N-09). |
 | D-96 | U-07, variant A, selected on 2026-11-18. In the parent summary, show „Opanowane w powtórkach” for words that meet F-14 and „W trakcie nauki” for introduced words that do not currently meet F-14, separately per profile. Explain both labels briefly. Add a short suggestion to the difficult-word list for the parent to play a word and ask the child to point to its picture. The parent-led listening check remains part of the MVP test under D-95 (F-14, F-27, F-28). |
-| D-97 | U-09, variant A, selected on 2026-11-18. After P10 and the pre-P11 decisions, prepare progress saving, reviews, full learning sessions, rewards, a simple sticker album and all Level 1 lessons. Then run a three-week family test on the GitHub Pages test build (P29A), online in the same browser on one shared device, before the parent panel, backups and offline packaging. Use the D-95 listening check and observations of return use to review the learning flow before resuming the MVP plan. U-10 determines exercise scope. Keep verification of the full MVP before release and the P40 evaluation for the v1.1 decision (section 11, D-85). |
+| D-97 | U-09, variant A, selected on 2026-11-18. After P10 and the pre-P11 decisions, prepare progress saving, reviews, full learning sessions, rewards, a simple sticker album and all Level 1 lessons. Then run a three-week family test on the GitHub Pages test build (P29A), online in the same browser on one shared device, before the parent panel, backups and offline packaging. Use the D-95 listening check and observations of return use to review the learning flow before resuming the MVP plan. Exercise scope follows D-98. Keep verification of the full MVP before release and the P40 evaluation for the v1.1 decision (section 11, D-85). |
+| D-98 | U-10, variant A, selected on 2026-11-18. The MVP and P29A use voiced flashcards, listen and tap, and picture-to-word exercises (F-08–F-10). Only F-09 and F-10 count as checked exercises. Defer context questions (F-11) as a v1.1 candidate and reconsider the child-facing skip-level test (F-16) when more English levels are available. Complete a level by completing all its lessons (F-15). Keep the parent-set starting level, with unintroduced words from earlier levels entering reviews as unconfirmed (F-17, F-38). |
