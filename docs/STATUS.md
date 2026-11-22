@@ -6,7 +6,7 @@ Older Done and Handoff entries: [STATUS_ARCHIVE.md](STATUS_ARCHIVE.md).
 
 ## In progress
 
-_README refresh is ready for merge review. P09 device checks and P10 observations are pending._
+_No agent task running. P09 device checks and P10 observations are pending._
 
 ## Resume point
 
@@ -38,7 +38,7 @@ _README refresh is ready for merge review. P09 device checks and P10 observation
 
 ## Handoff log
 
-- 2026-11-22 · Codex · Prepared the README refresh for merge review · P09 device checks and P10 are next.
+- 2026-11-22 · Codex · Recorded owner approval to merge the README refresh in PR #38 · P09 device checks and P10 are next.
 
 - 2026-11-18 · Codex · Recorded owner approval to merge U-10 PR #37 with D-98 · Complete the P09 device checks and P10 before starting P11.
 
