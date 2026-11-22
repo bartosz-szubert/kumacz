@@ -28,6 +28,7 @@ This file is read by every agent (Codex, Claude Code). Keep it short: every line
 - If asked to start a stage before the previous one is merged (stacked PRs), first explain the risks (conflicts, retargeting, fixes carried across stages) and advise against it; proceed only if the product owner confirms.
 - Keep tasks small: one screen, one exercise type, one data change. Each task must fit one session's token limit; split larger work into stages (D-56).
 - Before finishing, update `docs/STATUS.md` in the same PR: move the task to Done, set Next, add a one-line handoff note.
+- Review `README.md` when a change affects the public description, release status, demo link, local setup or project licensing. Update it in the same PR when needed. Link to the PRD for detailed scope and roadmap.
 - Commit messages: English, imperative mood, short (`Add profile picker screen`).
 
 ## Product rules

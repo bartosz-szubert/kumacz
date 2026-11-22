@@ -4,6 +4,8 @@ Older Done and Handoff entries moved from [STATUS.md](STATUS.md) since 2026-11-1
 
 ## Done
 
+- 2026-11-17 · The owner chose U-05 variant A. D-94 allows a flashcard to return once after „Jeszcze nie” if it fits the planned full MVP session.
+
 - 2026-11-17 · The owner chose U-04 variant A for the MVP. D-93 keeps simple flashcards focused on listening and records a preference to consider optional recall after the MVP.
 
 - 2026-11-17 · The owner chose U-03 variant A. D-92 records the shared suggested daily time target in the MVP and adds observation of attention to the P10 protocol.
@@ -143,6 +145,8 @@ Older Done and Handoff entries moved from [STATUS.md](STATUS.md) since 2026-11-1
 ## Handoff log
 
 Newest first. One line per finished task: date · agent · what was done · anything the next agent must know.
+
+- 2026-11-17 · Codex · Recorded owner approval to merge U-05 PR #33 with D-94 · Discuss U-06 next. Complete P10 and the remaining decisions before P11.
 
 - 2026-11-17 · Codex · Recorded owner approval to merge U-04 PR #32 with D-93 · Discuss U-05 next. Finish P10 and the remaining decisions before P11.
 
