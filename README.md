@@ -1,82 +1,29 @@
 # Kumacz
 
-**A learning web app for primary school kids: short daily sessions, gentle gamification, no competition.**
+Kumacz is a web app for short, regular learning sessions for primary-school children. The first module helps children in grades 1–3 understand beginner English words when they hear them. The long-term goal is to cover all primary-school grades and more subjects.
 
-The first module starts with beginner English for children in grades 1–3. The long-term aim is to support all primary-school grades and subjects, including German, maths, natural science and geography. These future modules are outside the initial MVP.
+## Try the pilot
 
-> **Status:** Development. PRD v0.12 and the pilot implementation through P09 are accepted. GitHub Pages publishes the main branch for device testing. Target-device/child checks remain pending; this is a test build, not the MVP.
-> **Live app:** coming with v1.0 on GitHub Pages.
+The test build includes one English lesson with spoken vocabulary, flashcards and picture choices. Profiles and session progress are stored in the browser. The next steps are checks on an Android tablet and a pilot with children. [Open the test build](https://bartosz-szubert.github.io/kumacz/)
 
-## Why
+## Run locally
 
-Kids pick up the basics of English at school, but there is little at home for short, regular practice that suits a child who is still learning to read. Many apps are paid, overloaded, or built around leaderboards and streaks that punish a missed day. Parents rarely get a clear view of what their child actually practised.
+Use the Node.js version in `.nvmrc`. With nvm, run these commands from the repository root.
 
-Kumacz aims to make daily learning approachable, starting with a 7-year-old who can use it alone and a parent who can follow progress at a glance. The suggested daily target is 10 minutes, and children can continue for longer.
+```sh
+nvm use
+npm ci
+npm run dev
+```
 
-## Principles
+Open the URL printed by Vite under `/kumacz/`. The app uses React, TypeScript and IndexedDB. [Development and testing guide](docs/DEVELOPMENT.md)
 
-- **Short and regular:** a suggested daily target of 10 minutes and a weekly goal of 4 learning days out of 7, without streaks. Completing a learning or review-only session earns credit for the day.
-- **Listen before you read:** every word and instruction can be played aloud.
-- **No competition, no penalties:** stars and a sticker album, never leaderboards; a wrong answer never takes anything away.
-- **Built for parents too:** a PIN-protected panel with learning time, progress and the words a child struggles with.
-- **Modular by design:** content lives in data files, so a new lesson or subject does not require changing the app.
-- **Minimal data:** a nickname, an avatar and learning progress, nothing more.
+## Project documentation
 
-## Modules
-
-| Module | Level framework | Status |
-|---|---|---|
-| English | Cambridge Pre A1 Starters, 5 levels | in planning (first module) |
-| German | to be defined | idea |
-| Maths | Polish national curriculum | idea |
-| Natural science | Polish national curriculum | idea |
-| Geography | Polish national curriculum | idea |
-
-## Roadmap
-
-| Version | Highlights |
-|---|---|
-| **v1.0 (MVP)** | English levels 1–2 · flashcards, listen-and-tap, picture-to-word, context questions · Leitner review · stars and sticker album · parent panel · two colour themes · offline-capable, data stored on the device |
-| **v1.1** | Sync across devices · shared sibling goal ("family tree") · memory and spelling exercises · level 3 |
-| **v1.2** | Decorating "my place" with earned stars · levels 4–5 · pronunciation practice |
-
-A three-week family test of the learning flow and Level 1 comes before the parent panel, backups and offline packaging. The full MVP evaluation guides the decision to start v1.1. See the [implementation plan](docs/IMPLEMENTATION.md) and [PRD success criteria](docs/PRD.md#11-mvp-success-criteria).
-
-## How this project is run
-
-Kumacz is built product-first. Before any code, the product was defined in a requirements document with:
-
-- personas, design principles and a scoped release plan,
-- numbered functional and non-functional requirements,
-- measurable MVP success criteria and a release gate,
-- a risk table and a decision log explaining every key choice.
-
-📄 Read it here: [docs/PRD.md](docs/PRD.md)
-
-## Tech
-
-- Static web app hosted on GitHub Pages; no server in v1.0.
-- Designed for tablet (Android first, iPad-compatible) and desktop, touch and mouse.
-- Installable to the home screen; ready for offline learning after the complete MVP package is downloaded.
-- Bundled audio files for voice-over, with local browser speech synthesis as a fallback.
-- User interface in Polish; learning content in the module's language.
-
-Technology: React + TypeScript + Vite, local data in IndexedDB (D-78–D-82). See the [technology decision](docs/TECHNOLOGY_PROPOSAL.md) and the [implementation stages](docs/IMPLEMENTATION.md).
-
-For the pinned toolchain, installation, commands and verification status, see [local development](docs/DEVELOPMENT.md).
-
-The [P02 asset and voice review](docs/ASSET_LICENCES.md) records licence sources and synthetic evaluation clips; the product owner approved the voices (D-83).
-
-The [P09 pilot-session guide](docs/PILOT_SESSION.md) covers the profile picker, nine-exercise sequence, safe saving/resume and the current review status. The audio preview remains available at `?preview=audio`.
-
-The [P03 audio-player guide](docs/AUDIO_PLAYER.md) covers playback, tests, failure handling and the remaining device checks.
-
-## Privacy
-
-- v1.0 keeps all data in the browser on the device; nothing is sent anywhere.
-- From v1.1, only a parent creates an account, and each family can see only its own data.
-- No surnames, birth dates, photos, voice recordings, ads or third-party analytics.
+- Product requirements, release scope and decisions. [PRD](docs/PRD.md)
+- Implementation stages and current progress. [Implementation plan](docs/IMPLEMENTATION.md) · [Status](docs/STATUS.md)
+- Pilot session and device checks. [Pilot guide](docs/PILOT_SESSION.md)
 
 ## License
 
-Not chosen yet. Until a license is added, all rights are reserved.
+All rights are reserved for Kumacz's own code and materials until a project licence is added. Third-party assets and voices follow their respective licences. [Asset and voice licences](docs/ASSET_LICENCES.md)

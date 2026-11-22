@@ -6,7 +6,7 @@ Older Done and Handoff entries: [STATUS_ARCHIVE.md](STATUS_ARCHIVE.md).
 
 ## In progress
 
-_No agent task running. P09 device checks and P10 observations are pending._
+_README refresh is ready for merge review. P09 device checks and P10 observations are pending._
 
 ## Resume point
 
@@ -26,6 +26,8 @@ _No agent task running. P09 device checks and P10 observations are pending._
 
 ## Done
 
+- 2026-11-22 · Shortened the public README, linked the published pilot and added a maintenance rule to AGENTS.md.
+
 - 2026-11-18 · The owner chose U-10 variant A. D-98 keeps three exercise types and the parent-set starting level in the MVP, and defers context questions and the skip-level test.
 
 - 2026-11-18 · The owner chose U-09 variant A. D-97 schedules the three-week family test P29A once the learning flow and Level 1 are ready.
@@ -34,9 +36,9 @@ _No agent task running. P09 device checks and P10 observations are pending._
 
 - 2026-11-18 · The owner chose U-06 variant A. D-95 specifies a parent-led listening check before and after the MVP test, supplemented by in-app retention data.
 
-- 2026-11-17 · The owner chose U-05 variant A. D-94 allows a flashcard to return once after „Jeszcze nie” if it fits the planned full MVP session.
-
 ## Handoff log
+
+- 2026-11-22 · Codex · Prepared the README refresh for merge review · P09 device checks and P10 are next.
 
 - 2026-11-18 · Codex · Recorded owner approval to merge U-10 PR #37 with D-98 · Complete the P09 device checks and P10 before starting P11.
 
@@ -45,5 +47,3 @@ _No agent task running. P09 device checks and P10 observations are pending._
 - 2026-11-18 · Codex · Recorded owner approval to merge U-07 PR #35 with D-96 · Discuss U-09 next. Complete P10 and the remaining decisions before P11.
 
 - 2026-11-18 · Codex · Recorded owner approval to merge U-06 PR #34 with D-95 · Discuss U-07 next. Complete P10 and the remaining decisions before P11.
-
-- 2026-11-17 · Codex · Recorded owner approval to merge U-05 PR #33 with D-94 · Discuss U-06 next. Complete P10 and the remaining decisions before P11.
